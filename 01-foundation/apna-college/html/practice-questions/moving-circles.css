@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* First Circle: Moves horizontally */
+.circle1 {
+    width: 200px;              /* circle width */
+    height: 200px;             /* circle height */
+    background-color: #3bd8a4; /* orange color */
+    border-radius: 50%;        /* makes it a perfect circle */
+    font-size: 20px;           /* text size inside the circle */
+
+    display: flex;             /* enables flex layout for centering */
+    justify-content: center;   /* centers content horizontally */
+    align-items: center;       /* centers content vertically */
+
+    animation-name: move-circle1;       /* animation keyframe name */
+    animation-duration: 4s;             /* one cycle duration */
+    animation-timing-function: ease-in-out; /* starts slowly */
+    animation-delay: 0;                 /* no initial delay */
+    animation-iteration-count: infinite;/* repeats forever */
+    animation-direction: alternate;     /* reverses every cycle */
+}
+
+/* Keyframe: move circle1 left to right */
+@keyframes move-circle1 {
+    from { transform: translateX(0px); }     /* start at initial position */
+    to   { transform: translateX(300px); }   /* move 300px to the right */
+}
+
+
+/* Second Circle: Moves vertically */
+.circle2 {
+    width: 200px;
+    height: 200px;
+    background-color: #e3941f;     /* cyan color */
+    border-radius: 50%;
+    font-size: 20px;
+
+    display: flex;             /* enables flex layout for centering */
+    justify-content: center;   /* centers content horizontally */
+    align-items: center;       /* centers content vertically */
+
+    animation-name: move-circle2;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* Keyframe: move circle2 top to bottom */
+@keyframes move-circle2 {
+    from { transform: translateY(-200px); }  /* start above */
+    to   { transform: translateY(300px); }   /* move downward */
+}

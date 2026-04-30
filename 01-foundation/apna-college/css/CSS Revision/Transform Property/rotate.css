@@ -1,0 +1,18 @@
+div {
+    height: 100px;
+    width: 100px;
+    background-color: rgb(62, 201, 225);
+    /* color: white; */
+
+    position: absolute;
+    top: 200px;
+    left: 200px;
+
+    transition-property: transform;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+}
+
+div:hover {
+    transform: rotate(-45deg);
+}

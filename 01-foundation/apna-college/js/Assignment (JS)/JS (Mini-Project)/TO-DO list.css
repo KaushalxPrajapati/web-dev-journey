@@ -1,0 +1,59 @@
+/* General Styling */
+* {
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 10px 20px;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+input {
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+.add-button {
+    padding: 8px 15px;
+    font-size: 15px;
+    background-color: rgb(80, 160, 80); /* Green */
+    color: white;
+    border: none;
+    cursor: pointer;
+
+    /* Initial State: Hide the main "Add Task" button */
+    display: none;
+}
+
+/* LIST ITEM STYLING */
+li {
+    font-size: 20px;
+    padding: 5px;
+    margin: 5px 0;
+}
+
+/* DELETE BUTTON STYLING */
+/* We give the created button this class in JS */
+.delete-btn {
+    margin-left: 15px;
+    background-color: rgb(240, 70, 50); /* Red */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+
+    /* UI STATE: Hidden by default */
+    display: none;
+}
+
+/* HOVER MAGIC: 
+   When the User hovers over the LI, find the .delete-btn inside it 
+   and display it. This saves us from writing complex JS mouse events. 
+*/
+li:hover .delete-btn {
+    display: inline-block;
+}

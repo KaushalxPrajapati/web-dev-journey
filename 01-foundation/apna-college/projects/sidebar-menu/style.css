@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+.main_box {
+    background-image: url("photo.jpg");
+    background-size: cover;
+    height: 100vh;
+}
+
+/* Hamburger icon */
+.btn_one i {
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 60px;
+    position: absolute;
+    left: 20px;
+    cursor: pointer;
+    opacity: 1;
+    transition-property: font-size, opacity;
+    transition-duration: 0.25s, 0.25s;
+    transition-timing-function: ease-out, ease-out;
+    transition-delay: 0s, 0.4s;
+    /* fade-in after sidebar closes */
+}
+
+/* Sidebar */
+.sidebar_menu {
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+    left: -300px;
+    /* hidden initially */
+    background-color: transparent;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+    transition: left 0.4s ease-in-out;
+}
+
+/* Logo */
+.sidebar_menu .logo {
+    position: absolute;
+    width: 100%;
+    line-height: 60px;
+    margin-left: 10px;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+}
+
+.sidebar_menu .logo a {
+    position: absolute;
+    left: 20px;
+    /* aligned with menu items */
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    transition: left 0.4s ease-in-out;
+}
+
+/* Close icon */
+.sidebar_menu .btn_two i {
+    color: grey;
+    font-size: 25px;
+    line-height: 60px;
+    position: absolute;
+    left: 270px;
+    cursor: pointer;
+    opacity: 0;
+    transition-property: font-size, opacity;
+    transition-duration: 0.25s, 0.25s;
+    transition-timing-function: ease-out, ease-out;
+    transition-delay: 0s, 0.15s;
+}
+
+/* Menu section */
+.sidebar_menu .menu {
+    width: 100%;
+    position: absolute;
+    top: 80px;
+}
+
+.sidebar_menu .menu ul {
+    list-style: none;
+}
+
+.sidebar_menu .menu li {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.sidebar_menu .menu i,
+.sidebar_menu .menu a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.menu i {
+    padding-right: 10px;
+}
+
+/* Social media */
+.social_media {
+    font-size: 20px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.social_media ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+.social_media i {
+    color: white;
+    opacity: 0.5;
+    cursor: pointer;
+    transition-property: opacity, transform;
+    transition-duration: 0.3s, 0.3s;
+    transition-timing-function: ease, ease;
+}
+
+/* Checkbox */
+#check {
+    display: none;
+}
+
+/* Hover effects */
+.menu li:hover {
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+.btn_one i:hover {
+    font-size: 35px;
+}
+
+.btn_two i:hover {
+    font-size: 30px;
+}
+
+.social_media i:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* Sidebar open state */
+#check:checked~.sidebar_menu {
+    left: 0;
+}
+
+/* Hide hamburger when open */
+#check:checked~.btn_one i {
+    opacity: 0;
+    transition-delay: 0s, 0s;   /* no delay for hiding */
+    pointer-events: none;
+}
+
+/* Show close icon when open */
+#check:checked~.sidebar_menu .btn_two i {
+    opacity: 1;
+}

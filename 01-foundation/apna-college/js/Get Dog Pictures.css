@@ -1,0 +1,79 @@
+/* =========================================
+   RESET & LAYOUT
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif; /* Cleaner font */
+}
+
+body {
+    /* CENTER THE CARD: Flexbox Magic */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    background-color: #f0f2f5;
+    overflow-x: hidden; /* Prevent accidental horizontal scroll */
+}
+
+/* =========================================
+   THE CARD COMPONENT
+   ========================================= */
+.container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 15px; /* Soft edges */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Professional shadow */
+
+    /* STACK ITEMS: Vertical Layout */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    /* RESPONSIVE RULES */
+    width: 90%; /* Mobile: Takes up most of the screen */
+    max-width: 500px; /* Desktop: Stops growing at 500px */
+}
+
+h1 {
+    color: #333;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+/* =========================================
+   IMAGE HANDLING
+   ========================================= */
+img {
+    width: 100%; /* Fill the container width */
+    max-height: 60vh; /* Constraint: Never cover more than 60% of screen height */
+
+    /* CRITICAL FIX: 'contain' prevents the dog from looking squished/stretched */
+    object-fit: contain;
+
+    border-radius: 10px;
+    display: none; /* Hidden until JS activates it */
+}
+
+/* =========================================
+   BUTTON STYLES
+   ========================================= */
+button {
+    background-color: rgb(70, 160, 220);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 30px;
+    cursor: pointer;
+
+    /* Smooth animation for hover effect */
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue */
+}

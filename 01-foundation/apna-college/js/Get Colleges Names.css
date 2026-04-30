@@ -1,0 +1,83 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    /* padding-top: 50px; Push content down slightly */
+    margin-top: 1.25rem;
+}
+
+/* APP CONTAINER */
+.app-container {
+    background-color: white;
+    width: 90%;
+    max-width: 450px; /* Limits width on big screens */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+
+    display: flex;
+    flex-direction: column; /* Stacks items vertically */
+    gap: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* SEARCH AREA */
+.search-box {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    flex-grow: 1; /* Input takes up remaining space */
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: rgb(52, 185, 229);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+button:hover {
+    background-color: rgb(20, 150, 200);
+}
+
+/* LIST STYLING */
+#list {
+    list-style: none; /* Remove bullet points */
+    max-height: 335px; /* Limit height */
+    overflow-y: auto; /* Enable scrolling inside the list if it's too long */
+    border-top: 1px solid #eee;
+}
+
+#list li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    color: #555;
+}
+
+#status-msg {
+    text-align: center;
+    font-style: italic;
+    color: gray;
+}

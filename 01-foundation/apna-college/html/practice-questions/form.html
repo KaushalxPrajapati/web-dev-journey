@@ -1,0 +1,79 @@
+<!DOCTYPE html> <!-- Declares the document type as HTML5 -->
+<html lang="en"> <!-- Root element with language set to English -->
+
+<head>
+    <meta charset="UTF-8"> <!-- Character encoding for international characters -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsive scaling -->
+    <title>Student Form</title> <!-- Title shown on the browser tab -->
+</head>
+
+<body>
+    <!-- Main form starts here -->
+    <form>
+
+        <!-- Form heading -->
+        <h2>Student Information Form</h2>
+
+        <!-- Username input -->
+        <label>
+            Username:
+            <input type="text" name="username" placeholder="Enter your username">
+        </label>
+        <br><br>
+
+        <!-- Password input -->
+        <label>
+            Password:
+            <input type="password" name="password" placeholder="Enter your password">
+        </label>
+
+        <hr> <!-- Horizontal line for section separation -->
+
+        <!-- Class selection using radio buttons (only one can be selected) -->
+        <p>Select your class:</p>
+        <label>
+            <input type="radio" name="class" value="class XI"> Class XI
+        </label>
+        <label>
+            <input type="radio" name="class" value="class XII"> Class XII
+        </label>
+
+        <hr>
+
+        <!-- Subject selection using checkboxes (multiple allowed) -->
+        <p>Select your favorite subjects:</p>
+        <label><input type="checkbox" name="subject" value="CS"> Computer Science</label>
+        <label><input type="checkbox" name="subject" value="Maths"> Maths</label>
+        <label><input type="checkbox" name="subject" value="English"> English</label>
+        <label><input type="checkbox" name="subject" value="Physics"> Physics</label>
+
+        <br><br>
+
+        <!-- Dropdown for city selection -->
+        <label>
+            Select your city:
+            <select name="city">
+                <option value="Delhi">Delhi</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Bangalore">Bangalore</option> <!-- Corrected spelling -->
+            </select>
+        </label>
+
+        <br><br>
+
+        <!-- Textarea for open feedback input -->
+        <label>
+            Your Feedback:
+            <br>
+            <textarea name="feedback" rows="5" placeholder="Please give your valuable feedback here"></textarea>
+        </label>
+
+        <br><br>
+
+        <!-- Submit button to send form data -->
+        <button type="submit">Submit</button>
+
+    </form>
+</body>
+
+</html>

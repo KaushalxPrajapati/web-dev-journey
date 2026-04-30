@@ -1,0 +1,9 @@
+{
+    "name": "package",
+    "version": "1.0.0",
+    "description": "first package.json",
+    "license": "ISC",
+    "main": "math.js",
+    "author": "Kaushal Prajapati",
+    "type": "module"
+}

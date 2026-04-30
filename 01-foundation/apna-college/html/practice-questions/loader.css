@@ -1,0 +1,34 @@
+.loader {
+    width: 100px;                  /* Sets the width of the loader */
+    height: 100px;                 /* Sets the height of the loader */
+    border-radius: 50%;           /* Makes the div perfectly circular */
+
+    /* Border setup for spinner effect */
+    /* 
+    border-width: 20px;           Width of the border ring
+    border-style: solid;          Solid lines around all sides
+    border-color: grey;           Default color for all sides
+    */
+    border: 20px solid grey;       /* Shorthand for width, style, color */
+    border-top: 20px solid #0ca70c;/* Overrides the top border with green to create animation contrast */
+
+    /* Animation properties */
+    /*
+    animation-name: loader;           Name of the keyframe to run
+    animation-duration: 2s;           One complete rotation every 2 seconds
+    animation-timing-function: ease-in-out; Smooth start and end
+    animation-delay: 0s;              No wait before starting animation
+    animation-iteration-count: infinite; Repeats forever
+    animation-direction: normal;      Runs from 0deg to 360deg in order
+    */
+    animation: loader 2s ease-in-out 0s infinite normal; /* Shorthand for all above */
+}
+
+@keyframes loader {
+    from {
+        transform: rotate(0deg);      /* Start rotation at 0 degrees */
+    }
+    to {
+        transform: rotate(360deg);    /* End rotation at full circle */
+    }
+}

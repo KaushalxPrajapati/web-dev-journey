@@ -1,0 +1,17 @@
+{
+    "dependencies": {
+        "@faker-js/faker": "^10.4.0",
+        "mysql2": "^3.20.0"
+    },
+    "name": "sql",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "Kaushal Prajapati",
+    "license": "ISC",
+    "type": "module"
+}

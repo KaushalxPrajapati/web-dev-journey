@@ -1,0 +1,14 @@
+/* Base Styles */
+body {
+    font-family: sans-serif;
+    padding: 20px;
+}
+
+/* The "Special" Class we will toggle with JS */
+.green-mode {
+    color: darkgreen;
+    background-color: lightgreen;
+    border: 3px dashed green;
+    padding: 10px;
+    font-size: 50px; /* Makes it HUGE */
+}

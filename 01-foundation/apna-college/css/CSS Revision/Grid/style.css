@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 600px;
+    height: 600px;
+    background-color: white;
+
+    /* Make this element a grid container because only the main container becomes grid and its direct children become grid items */
+    display: grid;
+
+    /* --------------------------------------------- */
+
+    /* 1st method to write: */
+    /* grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px; */
+
+    /* 2nd method to write the above: */
+    /* grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px); */
+
+    /* 3rd method to write: */
+    /* Define a 3x3 grid using fraction units (responsive inside container), if you want to cover full height & width of the container by grid items then use the 'fr' unit */
+    /* grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr); */
+
+    /* 4th method to write the above: */
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    /* Use gap instead of 'margin' for proper spacing between grid items, grid spacing must be controlled only by 'gap' */
+    gap: 10px;
+}
+
+.item {
+    /* You can remove height & width property, when using 3rd method, No need to define width/height when using Fraction units (fr) units, Items automatically stretch to fill grid cells */
+    /* height: 100px;
+    width: 100px; */
+
+    background-color: greenyellow;
+    border: 2px solid black;
+
+    /* Center content horizontally and vertically */
+    text-align: center;
+    align-content: center;
+}

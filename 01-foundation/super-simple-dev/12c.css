@@ -1,0 +1,8 @@
+.flexbox{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.one, .two, .three, .four{
+    background-color: lightpink;
+}

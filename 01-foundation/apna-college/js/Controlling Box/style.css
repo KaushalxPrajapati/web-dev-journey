@@ -1,0 +1,31 @@
+.box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    /* background-color: lightskyblue; */
+    background-color: rgb(10, 200, 200);
+    border: 2px solid black;
+    /* border-radius: 50%; */
+
+    /* for the inner text to keep them centered */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Syntax: property | duration | timing-function | delay */
+    transition: transform 100ms ease-out;
+
+    z-index: -1;
+}
+
+h1 {
+    font-family: sans-serif;
+    text-align: center; /* Centers the text perfectly */
+    margin-top: 20px; /* Adds a little breathing room from the top */
+}

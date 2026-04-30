@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Metadata goes in the head section and is not visible on the webpage -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sample HTML Webpage</title>
+        <!-- You can also link external CSS files here -->
+        <style>
+            body {
+                font-family: sans-serif;
+                margin: 20px;
+            }
+            header,
+            footer,
+            section,
+            article,
+            nav,
+            aside {
+                padding: 15px;
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+            }
+            nav ul {
+                list-style-type: none;
+                padding: 0;
+            }
+            nav ul li {
+                display: inline;
+                margin-right: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- The body contains all visible content -->
+
+        <header>
+            <h1>Major HTML Elements Example</h1>
+            <p>This page demonstrates common HTML tags for structure and content.</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#section1">Section 1</a></li>
+                <li><a href="#section2">Section 2</a></li>
+                <li><a href="https://www.example.com">External Link</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="section1">
+                <h2>Headings and Paragraphs</h2>
+                <p>
+                    HTML uses headings from <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> for structure. The <code>&lt;p&gt;</code> tag defines a
+                    paragraph of text. You can use <b>bold text</b> with the <code>&lt;b&gt;</code> tag or <strong>strong text</strong> with the
+                    <code>&lt;strong&gt;</code> tag.
+                </p>
+                <hr />
+                <!-- The <hr> tag inserts a horizontal line -->
+            </section>
+
+            <section id="section2">
+                <h2>Lists and Images</h2>
+                <h3>Unordered List (Bulleted)</h3>
+                <ul>
+                    <li>Item A</li>
+                    <li>Item B</li>
+                    <li>Item C</li>
+                </ul>
+
+                <h3>Ordered List (Numbered)</h3>
+                <ol>
+                    <li>First Step</li>
+                    <li>Second Step</li>
+                    <li>Third Step</li>
+                </ol>
+
+                <h3>Image Example</h3>
+                <p>An image is embedded using the <code>&lt;img&gt;</code> tag with <code>src</code> and <code>alt</code> attributes.</p>
+                <img src="https://picsum.photos" alt="A cute dog" />
+            </section>
+
+            <article>
+                <h2>Forms</h2>
+                <form action="#" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" />
+                    <button type="submit">Submit</button>
+                </form>
+            </article>
+        </main>
+
+        <footer>
+            <p>© 2026 Sample Webpage. All rights reserved.</p>
+        </footer>
+    </body>
+</html>

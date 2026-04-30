@@ -1,0 +1,10 @@
+div {
+    height: 100px;
+    width: 100px;
+    background-color: lightskyblue;
+    transition: transform 1s ease-in-out;
+}
+
+div:hover {
+    transform: translateX(250px);
+}

@@ -1,0 +1,22 @@
+#navbar {
+    width: 900px;
+    height: 50px;
+    background-color: pink;
+    border: 2px solid lightseagreen;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;      /* Vertical centering */
+    gap: 40px;                /* Equal horizontal spacing */
+    padding-left: 20px;       /* Visual padding for 'Logo' */
+}
+
+.option {
+    height: 50px;   /* Still fixes vertical alignment */
+                    /* width removed for natural spacing */
+    font-size: 24px;
+    font-family: serif;
+    display: flex;
+    justify-content: center;/* Horizontal centering */
+    align-items: center;    /* Vertical centering */
+}

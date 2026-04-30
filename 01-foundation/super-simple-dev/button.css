@@ -1,0 +1,86 @@
+/* SUBSCRIBE BUTTON */
+.subscribe-button {
+  /*
+    height: 36px; 
+    width: 110px; 
+    */
+
+  padding-top: 10px; /* Adding Padding instead of using height and width */
+  padding-bottom: 10px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  background-color: rgb(210, 44, 44); /* red background */
+  color: white; /* white text */
+  border: none; /* no border */
+  border-radius: 2px; /* slightly rounded corners */
+  cursor: pointer; /* pointer cursor on hover */
+  margin-right: 10px; /* spacing between buttons */
+  transition: opacity 0.2s; /* smooth fade effect on hover/active */
+}
+
+.subscribe-button:hover {
+  opacity: 0.75; /* slightly transparent on hover */
+}
+
+.subscribe-button:active {
+  opacity: 0.5; /* more transparent when clicked */
+}
+
+/* JOIN BUTTON */
+.join-button {
+  /*
+    height: 36px;
+    width: 60px; 
+    */
+
+  padding-top: 9px; /* Adding Padding instead of using height and width */
+  padding-bottom: 9px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  background-color: white; /* white background */
+  color: rgb(0, 136, 255); /* blue text */
+  border-color: rgb(41, 118, 211); /* blue border */
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.2s, color 0.2s; /* smooth bg and text color transition */
+}
+
+.join-button:hover {
+  background-color: rgb(41, 118, 211); /* bg turns blue on hover */
+  color: white; /* text turns white */
+}
+
+.join-button:active {
+  opacity: 0.5; /* transparency effect on click */
+}
+
+/* TWEET BUTTON */
+.tweet-button {
+  /*
+    height: 36px;
+    width: 70px; 
+    */
+
+  padding-top: 10px; /* Adding Padding instead of using height and width */
+  padding-bottom: 10px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  background-color: rgb(0, 173, 225); /* Twitter blue */
+  color: white;
+  font-weight: bold; /* bold text */
+  font-size: 15px;
+  border: none;
+  border-radius: 18px; /* pill-shaped button */
+  cursor: pointer;
+  transition: box-shadow 0.15s; /* smooth shadow on hover */
+}
+
+.tweet-button:hover {
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15); /* subtle shadow effect */
+}
