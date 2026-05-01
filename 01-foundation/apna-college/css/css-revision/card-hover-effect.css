@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container {
+    display: inline-block;
+}
+
+.card {
+    height: 200px;
+    width: 200px;
+    background-image: url('kaushal.png');
+    background-size: cover;
+
+    border: 2px solid black;
+    padding: 1rem;
+
+    border-radius: 5px;
+}
+
+img {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+}
+
+.desc{
+    padding: 10px;
+}
