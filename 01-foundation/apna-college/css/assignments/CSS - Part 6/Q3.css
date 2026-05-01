@@ -1,0 +1,24 @@
+.loader {
+    width: 150px;
+    height: 150px;
+
+    border: 15px solid rgb(220, 220, 220);
+    border-top-color: goldenrod;
+    border-radius: 50%;
+
+    animation-name: spin;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
