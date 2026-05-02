@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registration Page</title>
+	<link rel="stylesheet" href="style.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+	<!-- for font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+	<nav>
+		<div class="nav-container">
+
+			<div class="left-logo-title">
+				<i class="fa-solid fa-hotel"></i>
+				<h3>Serinity Hotels</h3>
+			</div>
+
+			<div class="right-options">
+				<a href="#">Contact Us</a>
+				<button>Login</button>
+			</div>
+
+		</div>
+	</nav>
+
+	<div class="main-container">
+		<!-- flex-direction: row -->
+
+		<main>
+			<!-- flex-direction: row -->
+			<div class="img-form">
+				<img src="hotel's-image.png" alt="Hotel's Img">
+
+				<!-- flex-direction: column -->
+				<div class="form">
+					<div class="form-title">
+						<h2>Hotel Registration</h2>
+						<p>Complete the form below to book your room. We look forward to welcoming you.</p>
+					</div>
+
+					<h4 id="customer-details-h4">Customer Details</h4>
+					<div class="input-fields1">
+
+						<!-- flex-direction: row; -->
+						<div class="customer-details">
+
+							<div class="left-input-fields">
+
+								<div class="ind-field">
+									<label for="name">Name</label>
+									<input type="text" placeholder="John Doe" id="name">
+								</div>
+
+								<div class="ind-field">
+									<label for="no-of-people">Number of people</label>
+									<input type="text" placeholder="1" id="no-of-people">
+								</div>
+
+							</div>
+
+							<div class="right-input-fields">
+
+								<div class="ind-field">
+									<label for="mobile">Mobile</label>
+									<input type="number" placeholder="(123)456-7890" id="mobile">
+								</div>
+
+								<div class="ind-field">
+									<label for="No-of-days">Number of days</label>
+									<select name="days" id="No-of-days">
+										<option value="1" selected>1 Day</option>
+										<option value="2">2 days</option>
+										<option value="3">3 days</option>
+										<option value="4">4 days</option>
+										<option value="5">5 days</option>
+									</select>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+					<h4 id="room-type">Room Type Selection</h4>
+					<div class="radio-fields2">
+
+						<!-- flex-direction: row; -->
+						<div class="room-type">
+							<label class="ind-field2">
+								<input type="radio" name="room-type" id="standard-room">
+								<img src="double-bed-svg-icon.svg" alt="double-bed-svg-icon">
+								<span>Standard Room</span>
+							</label>
+
+							<label class="ind-field2">
+								<input type="radio" name="room-type" id="deluxe-room">
+								<img src="double-bed-svg-icon.svg" alt="double-bed-svg-icon">
+								<span>Deluxe Suite</span>
+							</label>
+						</div>
+
+					</div>
+
+					<h4 id="add-ons">Add-ons</h4>
+					<div class="addons-section">
+
+						<label class="addon-item">
+							<input type="checkbox">
+							<i class="fa-solid fa-utensils"></i>
+							<span>Daily Breakfast</span>
+						</label>
+
+						<label class="addon-item">
+							<input type="checkbox">
+							<i class="fa-solid fa-square-parking"></i>
+							<span>Valet Parking</span>
+						</label>
+
+						<label class="addon-item">
+							<input type="checkbox">
+							<i class="fa-solid fa-clock"></i>
+							<span>Late Check-out</span>
+						</label>
+
+					</div>
+
+					<h5>Advance Payment ($)</h5>
+					<div class="payment-section">
+						<input type="number" placeholder="$ 50.00">
+					</div>
+
+					<div class="submit-section">
+						<button>Complete</button>
+					</div>
+
+				</div>
+			</div>
+		</main>
+	</div>
+	<script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.main-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 400px;
+    height: 200px;
+    background-color: lightblue;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    border: 2px solid black;
+    border-radius: 1em;
+}
+
+.input-btn {
+    display: flex;
+    gap: 14px;
+}
+
+input {
+    padding: 10px;
+
+    border: none;
+    border-radius: 0.75em;
+
+    /* background-color: rgb(223, 212, 212); */
+}
+
+#check-btn {
+    background-color: rgb(76, 175, 80);
+    color: white;
+
+    padding: 10px;
+
+    border: none;
+    border-radius: 0.75em;
+}

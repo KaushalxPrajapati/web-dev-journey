@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Form Submit Preview</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div id="container">
+		<div id="input-fields">
+			<div class="input-field">
+				<label for="productId">Product Id</label>
+				<input type="text" id="productId" required>
+			</div>
+
+			<div class="input-field">
+				<label for="name">Name</label>
+				<input type="text" id="name">
+			</div>
+
+			<div class="input-field">
+				<label for="price">Price</label>
+				<input type="number" id="price">
+			</div>
+
+			<div class="option-field">
+				<label for="city">Shipped To</label>
+				<select id="city">
+					<option value="">Select City</option>
+					<option>Mumbai</option>
+					<option>Delhi</option>
+					<option>Kolkata</option>
+					<option>Chennai</option>
+					<option>Jamshedpur</option>
+					<option>Ranchi</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="btn-container">
+			<button id="openBtn">Submit</button>
+		</div>
+	</div>
+
+	<!-- modal popup structure -->
+	<div id="modal" class="overlay">
+		<div id="modal-box">
+			<button id="closeBtn">x</button>
+
+			<!-- ----------------------- -->
+
+			<h3>Product Details</h3>
+
+			<div class="width-to-keep">
+				<p id="modalProductId"></p>
+				<p id="modalName"></p>
+				<p id="modalPrice"></p>
+				<p id="modalCity"></p>
+			</div>
+
+			<!-- ----------------------- -->
+
+			<div class="ok">
+				<button type="button" id="okBtn">OK</button>
+			</div>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+
+</html>

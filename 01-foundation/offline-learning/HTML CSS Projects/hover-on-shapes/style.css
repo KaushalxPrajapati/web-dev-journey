@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+h1,
+p {
+    text-align: center;
+    align-content: center;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    background-color: rgb(200, 200, 200);
+}
+
+/* ---------------------------------------------------------------- */
+
+#div1,
+#div2 {
+    height: 100px;
+    width: 100px;
+
+    margin: auto;
+    padding: 100px;
+
+    border: 2px dotted black;
+
+    letter-spacing: 5px;
+    line-height: 25px;
+    text-align: center;
+    align-content: center;
+
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
+/* ---------------------------------------------------------------- */
+
+#div1:hover {
+    border-radius: 50%;
+}
+
+#div2:hover {
+    border-radius: 0;
+}
+
+/* ---------------------------------------------------------------- */
+
+#div1 {
+    background-color: #82b74b;
+}
+
+#div2 {
+    background-color: #f7786b;
+    border-radius: 50%;
+}

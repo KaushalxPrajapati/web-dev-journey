@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 20px;
+
+    transition-property: border-color, box-shadow;
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+}
+
+.card:hover {
+    border-color: white;
+    box-shadow: 7px 7px;
+}
+
+.card img {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.desc {
+    padding: 10px 15px;
+    line-height: 25px;
+}

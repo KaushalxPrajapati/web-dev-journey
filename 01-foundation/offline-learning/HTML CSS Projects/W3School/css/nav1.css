@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+/* ------------------------------------------------------------ */
+
+header {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+}
+
+/* ------------------------------------------------------------ */
+
+/* nav1 items styling */
+#nav1 {
+    height: 50px;
+    background-color: antiquewhite;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+img[alt='w3school-logo'] {
+    height: 3em;
+    padding: 8px 16px;
+}
+
+.dropdown-options-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.dropdown-options-container a {
+    color: black;
+    text-decoration: none;
+
+    font-size: 0.85em;
+
+    display: flex;
+    align-items: center;
+
+    padding: 1em;
+}
+
+.dropdown-options-container i {
+    font-size: 0.75em;
+}
+
+/* for search box */
+.search-box {
+    display: inline-block;
+    position: relative;
+
+    /* margin-right: 0.5em; */
+    padding: 0.625em 0.5em;
+}
+
+.search-box {
+    position: relative;
+    width: 11em;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 0.7em;
+    box-sizing: border-box;
+
+    color: lightgray;
+    border-radius: 1.25em;
+    border: 1px solid;
+}
+
+.search-box input:placeholder-shown {
+    font-style: italic;
+}
+
+.search-box i {
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    right: 10px;
+
+    color: rgb(0, 0, 0);
+}
+
+/* ---------------------------------------------------------------- */
+
+img[alt='three-dots-vertical'] {
+    height: 1.4em;
+}
+
+/* ---------------------------------------------------------------- */
+
+.right-options-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    padding-right: 10px;
+}
+
+.right-options {
+    font-size: 1.125em;
+}
+
+.right-options-container .right-options a {
+    color: black;
+    text-decoration: none;
+    font-size: 0.75em;
+
+    margin-right: 2em;
+}
+
+#profile-pic img {
+    margin-right: 10px;
+    height: 2.25em;
+    border-radius: 50%;
+}
+
+#profile-pic i {
+    font-size: 0.65em;
+    transform: translateX(-18px);
+}

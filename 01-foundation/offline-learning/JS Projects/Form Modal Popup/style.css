@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    height: 400px;
+    width: 400px;
+
+    border: 2px solid black;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+#input-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75em;
+    font-size: 1.25em;
+
+    margin-top: 0.75em;
+}
+
+.input-field,
+.option-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    text-align: start;
+}
+
+.input-field label,
+.option-field label {
+    min-width: 100px;
+}
+
+.input-field input {
+    padding: 1em;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.option-field select {
+    width: 100%;
+    padding: 1em;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+button {
+    background-color: rgb(58, 176, 235);
+    color: white;
+    font-size: 1em;
+    border: none;
+    border-radius: 1.5em;
+    padding: 0.75em 3em;
+
+    cursor: pointer;
+
+    transition: background-color 0.25s ease-in-out;
+}
+
+button:hover {
+    background-color: rgb(90, 200, 255);
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: none;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.overlay.show {
+    display: flex;
+}
+
+#modal-box {
+    width: 400px;
+    background: white;
+    border: 1px solid black;
+    border-radius: 1em;
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    position: relative;
+    top: 30px;
+}
+
+#closeBtn {
+    background: none;
+    color: black;
+    padding: 0;
+    border: none;
+    position: absolute;
+    top: 12px;
+    right: 16px;
+}
+
+#modal-box h3 {
+    font-size: 2em;
+    font-weight: normal;
+}
+
+.width-to-keep {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75em 0;
+    font-size: 1.1em;
+}
+
+.ok {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}

@@ -1,0 +1,142 @@
+.card {
+    width: 325px;
+    background-color: black;
+}
+
+/* --- CSS Grid Layout --- */
+.buttons-grid {
+    display: grid;
+    /* Making 4 equal columns */
+    /* grid-template-columns: repeat(4, 1fr);  */
+    /* or */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1em;
+}
+
+/* --- Display Screen Styling--- */
+.display {
+    width: 100%;
+    background-color: rgb(51, 51, 51);
+    font-size: 3rem;
+
+    /* border: 2px solid rgb(51, 51, 51); */
+    border-radius: 0.3em;
+
+    /* Hides overflow when number exceeds display width */
+    overflow-y: hidden;
+
+    /* Ensures consistent height even when empty */
+    /* max-height: 90px; */
+
+    min-height: 75px;
+    padding: 0px 20px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* --- Buttons Styling --- */
+
+.btn {
+    height: 56px;
+    width: 56px;
+
+    font-size: 1.25rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-secondary {
+    background-color: rgb(165, 165, 165);
+    color: black;
+    font-weight: bold;
+    transition: background-color 0.25s ease;
+}
+
+.btn-secondary:hover,
+.btn-secondary:active,
+.btn-secondary:focus,
+.btn-secondary:focus-visible {
+    background-color: rgb(200, 200, 200);
+    color: black;
+    box-shadow: none;
+}
+.btn-warning {
+    background-color: rgb(255, 150, 0);
+    color: white;
+    border: none;
+    font-size: 1.25rem;
+    font-weight: 700;
+    transition: background-color 0.25s ease;
+}
+
+.btn-warning:hover,
+.btn-warning:active,
+.btn-warning:focus,
+.btn-warning:focus-visible {
+    background-color: rgb(250, 170, 70);
+    color: white;
+    box-shadow: none;
+}
+/* use proper button classes instead of .btn-light-gray and .btn-orange from bootstrap, as they are commented out in the HTML file */
+/* .btn-light-gray {
+    background-color: rgb(165, 165, 165);
+    color: black;
+    font-weight: bold;
+    transition:
+        background-color 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.btn-light-gray:hover {
+    background-color: #fff;
+    opacity: 0.5;
+} */
+
+/* .btn-orange {
+    background-color: #ff9900;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+    transition:
+        background-color 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.btn-orange:hover {
+    background-color: #ff9900;
+    opacity: 0.5;
+    color: white;
+} */
+
+/* .btn-warning {
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    font-size: 1.25rem;
+    font-weight: bolder;
+    transition: opacity 0.25s ease;
+}
+
+.btn-warning:hover {
+    opacity: 0.5;
+    color: white;
+} */
+
+/* ------------------------------------------------------------------------------------------ */
+
+/* --- Styling zero button --- */
+.zero-btn {
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    width: 100%;
+
+    /* display: flex; */
+    justify-content: flex-start;
+    padding-left: 1em;
+    border: none;
+}
