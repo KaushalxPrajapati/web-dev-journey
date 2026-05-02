@@ -13,6 +13,12 @@ function changeColor(color, delay) {
         setTimeout(() => {
             const h1 = document.querySelector('h1');
 
+            // Extra...
+            if (!h1) {
+                reject('h1 element not found');
+                return;
+            }
+
             // 1. Perform the visual change
             h1.style.color = color;
             console.log(`${color.toUpperCase()} color has been Applied!`);
@@ -30,22 +36,19 @@ function changeColor(color, delay) {
 // ============================================================
 // Reading flow: "Do this... THEN do this... THEN do this..."
 
-changeColor('red', 1000) // Returns a Promise
+changeColor('purple', 1000) // This line returns a Promise object and an object has it's own methods like the promise object has .then() and .catch()
     .then(() => {
         // This runs ONLY after 'red' is resolved.
-        return changeColor('green', 1000); // Return the NEXT promise to keep the chain alive
+        return changeColor('hotpink', 1000); // Return the NEXT promise to keep the chain alive
     })
     .then(() => {
         return changeColor('blue', 1000);
     })
     .then(() => {
-        return changeColor('hotpink', 1000);
-    })
-    .then(() => {
-        return changeColor('purple', 1000);
-    })
-    .then(() => {
         return changeColor('orange', 1000);
+    })
+    .then(() => {
+        return changeColor('green', 1000);
     })
     // Optional: Catch any errors in the entire chain
     .catch((error) => {
