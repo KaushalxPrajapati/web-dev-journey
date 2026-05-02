@@ -1,11 +1,22 @@
+# Node / React
 node_modules/
-*.pdf
 
-# optional but recommended
+# Environment variables (critical)
 .env
+
+# Build output
 dist/
 build/
+
+# Logs
 *.log
+
+# OS files
 .DS_Store
 Thumbs.db
+
+# Editor (optional)
 .vscode/
+
+# Notes / PDFs
+*.pdf
