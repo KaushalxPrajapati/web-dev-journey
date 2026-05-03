@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HTML - Class 1 HW</title>
+</head>
+
+<body>
+	<form action="#" method="post">
+
+		<label for="name">Name: </label>
+		<input type="text" placeholder="Enter your name" id="name" required autofocus>
+
+		<br><br>
+
+		<!-- min / max for numbers -->
+		<label for="age">Age: </label>
+		<input type="number" id="age" min="1" max="120">
+
+		<br><br>
+
+		<input type="radio" id="male" name="gender" checked>
+		<label for="male">Male</label>
+
+		<input type="radio" id="female" name="gender">
+		<label for="female">Female</label>
+
+
+		<br><br>
+
+		<label for="name">Username: </label>
+		<input type="text" placeholder="Create username:" id="name" minlength="3" required> <!-- required: form won't submit if empty -->
+		<br><br>
+		<label for="password">Password: </label>
+		<input type="password" placeholder="Create password:" id="password" maxlength="20" required>
+
+		<br><br>
+		<textarea placeholder="Give your feedback here..." rows="10" cols="30"></textarea>
+
+		<br><br>
+
+		<!-- Submit button -->
+		<button>Submit</button>
+
+		<!-- Reset button -->
+		<button type="reset">Reset</button>
+
+		<!-- 
+		1. Written boilerplate caode from scratch
+		2. Rearranged everything
+		3. Read MDN Doc (about forms, name attribute, type="number" and void element) 
+		-->
+
+		<p><strong>Made with &hearts; by <em>Kaushal</em></strong></p>
+	</form>
+</body>
+
+</html>

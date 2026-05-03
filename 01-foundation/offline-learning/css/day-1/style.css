@@ -1,0 +1,8 @@
+div h1 {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    /* flex-direction: column; Don't set the flex-direction to column */
+    justify-content: center;
+    align-items: center;
+}
