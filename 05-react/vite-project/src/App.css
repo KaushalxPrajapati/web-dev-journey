@@ -1,0 +1,19 @@
+#centre {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.counter {
+    font-size: 16px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.counter:hover {
+    border: 2px solid purple;
+}
