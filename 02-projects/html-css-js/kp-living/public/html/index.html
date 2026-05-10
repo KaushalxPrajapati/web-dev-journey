@@ -28,8 +28,12 @@
 </head>
 
 <body data-page="home">
-	<div class="top-strip">
-		<p>Free delivery in selected cities • Easy returns within 7 days • Furniture made for Indian homes</p>
+	<div class="top-strip" id="topStrip">
+		<p><span>Free delivery in selected cities</span> &bull; <span>Easy returns within 7 days </span> &bull; <span>Furniture made for Indian homes</span></p>
+
+		<button type="button" class="top-strip-close" id="topStripCloseButton" aria-label="Close top message">
+			&times;
+		</button>
 	</div>
 
 	<header class="site-header" id="siteHeader">
@@ -189,7 +193,140 @@
 					<a href="products.html?sort=popularity" class="text-link">See best sellers</a>
 				</div>
 
-				<div class="product-grid home-product-grid" id="bestSellerGrid"></div>
+				<!-- <div class="product-grid home-product-grid" id="bestSellerGrid"></div> -->
+
+				<div class="product-grid home-product-grid" id="bestSellerGrid">
+
+					<article class="product-card">
+						<div class="product-image-wrap">
+							<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Meera Queen Size Bed" loading="lazy">
+							<span class="discount-badge">28% OFF</span>
+							<span class="availability-badge">In Stock</span>
+						</div>
+
+						<div class="product-content">
+							<div class="product-tags">
+								<span>Wooden Beds</span>
+								<span>Bedroom</span>
+								<span>Engineered Wood</span>
+							</div>
+
+							<h3>Meera Queen Size Bed</h3>
+
+							<div class="product-rating">★★★★★ 4.8 (256)</div>
+
+							<p>A sturdy queen size bed with a warm wooden finish for peaceful family homes.</p>
+
+							<div class="price-row">
+								<span class="current-price">₹27,999</span>
+								<span class="old-price">₹38,999</span>
+							</div>
+
+							<div class="product-actions">
+								<a href="product-details.html?id=meera-queen-size-bed" class="secondary-button">View Details</a>
+								<button type="button" class="primary-button add-cart-button" data-product-id="meera-queen-size-bed">Add to Cart</button>
+							</div>
+						</div>
+					</article>
+
+					<article class="product-card">
+						<div class="product-image-wrap">
+							<img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=80" alt="Aarav Wooden Sofa Set" loading="lazy">
+							<span class="discount-badge">26% OFF</span>
+							<span class="availability-badge">In Stock</span>
+						</div>
+
+						<div class="product-content">
+							<div class="product-tags">
+								<span>Sofa Sets</span>
+								<span>Living Room</span>
+								<span>Sheesham Wood</span>
+							</div>
+
+							<h3>Aarav Wooden Sofa Set</h3>
+
+							<div class="product-rating">★★★★★ 4.7 (214)</div>
+
+							<p>A comfortable sofa set made for guests, family talks, and daily living room use.</p>
+
+							<div class="price-row">
+								<span class="current-price">₹34,999</span>
+								<span class="old-price">₹46,999</span>
+							</div>
+
+							<div class="product-actions">
+								<a href="product-details.html?id=aarav-wooden-sofa-set" class="secondary-button">View Details</a>
+								<button type="button" class="primary-button add-cart-button" data-product-id="aarav-wooden-sofa-set">Add to Cart</button>
+							</div>
+						</div>
+					</article>
+
+					<article class="product-card">
+						<div class="product-image-wrap">
+							<img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=900&q=80" alt="Royal Sheesham Dining Table" loading="lazy">
+							<span class="discount-badge">26% OFF</span>
+							<span class="availability-badge">In Stock</span>
+						</div>
+
+						<div class="product-content">
+							<div class="product-tags">
+								<span>Dining Tables</span>
+								<span>Dining Room</span>
+								<span>Sheesham Wood</span>
+							</div>
+
+							<h3>Royal Sheesham Dining Table</h3>
+
+							<div class="product-rating">★★★★★ 4.8 (201)</div>
+
+							<p>A solid dining table made for family dinners, guests, and festival meals.</p>
+
+							<div class="price-row">
+								<span class="current-price">₹38,999</span>
+								<span class="old-price">₹52,999</span>
+							</div>
+
+							<div class="product-actions">
+								<a href="product-details.html?id=royal-sheesham-dining-table" class="secondary-button">View Details</a>
+								<button type="button" class="primary-button add-cart-button" data-product-id="royal-sheesham-dining-table">Add to Cart</button>
+							</div>
+						</div>
+					</article>
+
+					<article class="product-card">
+						<div class="product-image-wrap">
+							<img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80" alt="Arjun Office Chair" loading="lazy">
+							<span class="discount-badge">31% OFF</span>
+							<span class="availability-badge">In Stock</span>
+						</div>
+
+						<div class="product-content">
+							<div class="product-tags">
+								<span>Office Chairs</span>
+								<span>Study Room</span>
+								<span>Mesh and Metal</span>
+							</div>
+
+							<h3>Arjun Office Chair</h3>
+
+							<div class="product-rating">★★★★★ 4.6 (222)</div>
+
+							<p>A practical chair for study, coding, online classes, and work-from-home days.</p>
+
+							<div class="price-row">
+								<span class="current-price">₹8,999</span>
+								<span class="old-price">₹12,999</span>
+							</div>
+
+							<div class="product-actions">
+								<a href="product-details.html?id=arjun-office-chair" class="secondary-button">View Details</a>
+								<button type="button" class="primary-button add-cart-button" data-product-id="arjun-office-chair">Add to Cart</button>
+							</div>
+						</div>
+					</article>
+
+				</div>
+
 			</div>
 		</section>
 
@@ -203,7 +340,140 @@
 					<a href="products.html?sort=newest" class="text-link">Explore new arrivals</a>
 				</div>
 
-				<div class="product-grid home-product-grid" id="newArrivalGrid"></div>
+				<!-- <div class="product-grid home-product-grid" id="newArrivalGrid"></div> -->
+
+				<div class="product-grid home-product-grid" id="newArrivalGrid">
+
+					<article class="product-card">
+						<div class="product-image-wrap">
+							<img src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=900&q=80" alt="Isha L Shape Sectional Sofa" loading="lazy">
+							<span class="discount-badge">24% OFF</span>
+							<span class="availability-badge">Limited Stock</span>
+						</div>
+
+						<div class="product-content">
+							<div class="product-tags">
+								<span>Sectional Sofas</span>
+								<span>Living Room</span>
+								<span>Fabric and Wood</span>
+							</div>
+
+							<h3>Isha L Shape Sectional Sofa</h3>
+
+							<div class="product-rating">★★★★★ 4.6 (176)</div>
+
+							<p>A spacious L shape sofa for movie nights, relatives, and weekend family comfort.</p>
+
+							<div class="price-row">
+								<span class="current-price">₹52,999</span>
+								<span class="old-price">₹69,999</span>
+							</div>
+
+							<div class="product-actions">
+								<a href="product-details.html?id=isha-sectional-sofa" class="secondary-button">View Details</a>
+								<button type="button" class="primary-button add-cart-button" data-product-id="isha-sectional-sofa">Add to Cart</button>
+							</div>
+						</div>
+					</article>
+
+					<article class="product-card">
+						<div class="product-image-wrap">
+							<img src="https://images.unsplash.com/photo-1600210491369-e753d80a41f3?auto=format&fit=crop&w=900&q=80" alt="Cozy Balcony Chair Set" loading="lazy">
+							<span class="discount-badge">25% OFF</span>
+							<span class="availability-badge">In Stock</span>
+						</div>
+
+						<div class="product-content">
+							<div class="product-tags">
+								<span>Balcony Chairs</span>
+								<span>Balcony</span>
+								<span>Metal and Rope</span>
+							</div>
+
+							<h3>Cozy Balcony Chair Set</h3>
+
+							<div class="product-rating">★★★★★ 4.5 (147)</div>
+
+							<p>A compact balcony chair set for morning tea, evening chai, and fresh air.</p>
+
+							<div class="price-row">
+								<span class="current-price">₹11,999</span>
+								<span class="old-price">₹15,999</span>
+							</div>
+
+							<div class="product-actions">
+								<a href="product-details.html?id=cozy-balcony-chair-set" class="secondary-button">View Details</a>
+								<button type="button" class="primary-button add-cart-button" data-product-id="cozy-balcony-chair-set">Add to Cart</button>
+							</div>
+						</div>
+					</article>
+
+					<article class="product-card">
+						<div class="product-image-wrap">
+							<img src="https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?auto=format&fit=crop&w=900&q=80" alt="Nila Storage Cabinet" loading="lazy">
+							<span class="discount-badge">29% OFF</span>
+							<span class="availability-badge">In Stock</span>
+						</div>
+
+						<div class="product-content">
+							<div class="product-tags">
+								<span>Storage Cabinets</span>
+								<span>Compact Homes</span>
+								<span>Engineered Wood</span>
+							</div>
+
+							<h3>Nila Storage Cabinet</h3>
+
+							<div class="product-rating">★★★★★ 4.5 (131)</div>
+
+							<p>A neat storage cabinet for clothes, files, toys, and daily home essentials.</p>
+
+							<div class="price-row">
+								<span class="current-price">₹14,999</span>
+								<span class="old-price">₹20,999</span>
+							</div>
+
+							<div class="product-actions">
+								<a href="product-details.html?id=nila-storage-cabinet" class="secondary-button">View Details</a>
+								<button type="button" class="primary-button add-cart-button" data-product-id="nila-storage-cabinet">Add to Cart</button>
+							</div>
+						</div>
+					</article>
+
+					<article class="product-card">
+						<div class="product-image-wrap">
+							<img src="https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=900&q=80" alt="Pune Office Desk" loading="lazy">
+							<span class="discount-badge">26% OFF</span>
+							<span class="availability-badge">In Stock</span>
+						</div>
+
+						<div class="product-content">
+							<div class="product-tags">
+								<span>Office Desks</span>
+								<span>Study Room</span>
+								<span>Wood and Metal</span>
+							</div>
+
+							<h3>Pune Office Desk</h3>
+
+							<div class="product-rating">★★★★☆ 4.4 (104)</div>
+
+							<p>A clean desk with space for laptop, monitor, books, notes, and study setup.</p>
+
+							<div class="price-row">
+								<span class="current-price">₹13,999</span>
+								<span class="old-price">₹18,999</span>
+							</div>
+
+							<div class="product-actions">
+								<a href="product-details.html?id=pune-office-desk" class="secondary-button">View Details</a>
+								<button type="button" class="primary-button add-cart-button" data-product-id="pune-office-desk">Add to Cart</button>
+							</div>
+						</div>
+					</article>
+
+				</div>
+
 			</div>
 		</section>
 

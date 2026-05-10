@@ -44,7 +44,7 @@ Keep this file linked last in every HTML page
     }
 
     .hero-image-card img {
-        height: 500px;
+        height: 440px;
     }
 }
 
@@ -92,7 +92,7 @@ Keep this file linked last in every HTML page
     .hero-image-card img,
     .split-image img,
     .main-details-image {
-        height: 360px;
+        height: 330px;
     }
 
     .room-grid {

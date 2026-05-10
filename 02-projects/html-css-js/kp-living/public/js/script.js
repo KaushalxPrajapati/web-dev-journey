@@ -23,22 +23,158 @@ No backend is used.
 ==================================================
 */
 
-function createImageUrl(keyword, imageNumber) {
+// function createImageUrl(keyword, imageNumber) {
+//     return (
+//         'https://source.unsplash.com/900x700/?' +
+//         encodeURIComponent(keyword) +
+//         '&sig=' +
+//         imageNumber
+//     );
+// }
+
+// function createProductImages(keyword, startNumber) {
+//     return [
+//         createImageUrl(keyword, startNumber),
+//         createImageUrl(keyword + ' furniture', startNumber + 1),
+//         createImageUrl(keyword + ' home decor', startNumber + 2),
+//         createImageUrl(keyword + ' modern indian home', startNumber + 3),
+//     ];
+// }
+
+function getUnsplashImage(photoId) {
     return (
-        'https://source.unsplash.com/900x700/?' +
-        encodeURIComponent(keyword) +
-        '&sig=' +
-        imageNumber
+        'https://images.unsplash.com/' +
+        photoId +
+        '?auto=format&fit=crop&w=900&q=80'
     );
 }
 
 function createProductImages(keyword, startNumber) {
-    return [
-        createImageUrl(keyword, startNumber),
-        createImageUrl(keyword + ' furniture', startNumber + 1),
-        createImageUrl(keyword + ' home decor', startNumber + 2),
-        createImageUrl(keyword + ' modern indian home', startNumber + 3),
+    const productKeyword = keyword.toLowerCase();
+
+    const sofaImages = [
+        getUnsplashImage('photo-1555041469-a586c61ea9bc'),
+        getUnsplashImage('photo-1540574163026-643ea20ade25'),
+        getUnsplashImage('photo-1618220179428-22790b461013'),
+        getUnsplashImage('photo-1616486338812-3dadae4b4ace'),
     ];
+
+    const bedImages = [
+        getUnsplashImage('photo-1505693416388-ac5ce068fe85'),
+        getUnsplashImage('photo-1616594039964-ae9021a400a0'),
+        getUnsplashImage('photo-1560448204-e02f11c3d0e2'),
+        getUnsplashImage('photo-1615873968403-89e068629265'),
+    ];
+
+    const diningImages = [
+        getUnsplashImage('photo-1617806118233-18e1de247200'),
+        getUnsplashImage('photo-1604578762246-41134e37f9cc'),
+        getUnsplashImage('photo-1560184897-ae75f418493e'),
+        getUnsplashImage('photo-1600210491892-03d54c0aaf87'),
+    ];
+
+    const chairImages = [
+        getUnsplashImage('photo-1586023492125-27b2c045efd7'),
+        getUnsplashImage('photo-1567538096630-e0c55bd6374c'),
+        getUnsplashImage('photo-1506439773649-6e0eb8cfb237'),
+        getUnsplashImage('photo-1592078615290-033ee584e267'),
+    ];
+
+    const deskImages = [
+        getUnsplashImage('photo-1518455027359-f3f8164ba6bd'),
+        getUnsplashImage('photo-1497366754035-f200968a6e72'),
+        getUnsplashImage('photo-1516321318423-f06f85e504b3'),
+        getUnsplashImage('photo-1524758631624-e2822e304c36'),
+    ];
+
+    const storageImages = [
+        getUnsplashImage('photo-1595428774223-ef52624120d2'),
+        getUnsplashImage('photo-1594026112284-02bb6f3352fe'),
+        getUnsplashImage('photo-1598300042247-d088f8ab3a91'),
+        getUnsplashImage('photo-1583847268964-b28dc8f51f92'),
+    ];
+
+    const decorImages = [
+        getUnsplashImage('photo-1513519245088-0e12902e5a38'),
+        getUnsplashImage('photo-1524758631624-e2822e304c36'),
+        getUnsplashImage('photo-1494438639946-1ebd1d20bf85'),
+        getUnsplashImage('photo-1485955900006-10f4d324d411'),
+    ];
+
+    const balconyImages = [
+        getUnsplashImage('photo-1600210491369-e753d80a41f3'),
+        getUnsplashImage('photo-1600607687939-ce8a6c25118c'),
+        getUnsplashImage('photo-1600566753151-384129cf4e3e'),
+        getUnsplashImage('photo-1600607687920-4e2a09cf159d'),
+    ];
+
+    const defaultFurnitureImages = [
+        getUnsplashImage('photo-1618220179428-22790b461013'),
+        getUnsplashImage('photo-1616486338812-3dadae4b4ace'),
+        getUnsplashImage('photo-1555041469-a586c61ea9bc'),
+        getUnsplashImage('photo-1600210491892-03d54c0aaf87'),
+    ];
+
+    if (
+        productKeyword.includes('sofa') ||
+        productKeyword.includes('sectional')
+    ) {
+        return sofaImages;
+    }
+
+    if (productKeyword.includes('bed') || productKeyword.includes('mattress')) {
+        return bedImages;
+    }
+
+    if (productKeyword.includes('dining')) {
+        return diningImages;
+    }
+
+    if (
+        productKeyword.includes('chair') ||
+        productKeyword.includes('recliner')
+    ) {
+        return chairImages;
+    }
+
+    if (
+        productKeyword.includes('desk') ||
+        productKeyword.includes('study') ||
+        productKeyword.includes('office')
+    ) {
+        return deskImages;
+    }
+
+    if (
+        productKeyword.includes('storage') ||
+        productKeyword.includes('cabinet') ||
+        productKeyword.includes('wardrobe') ||
+        productKeyword.includes('shoe') ||
+        productKeyword.includes('bookshelf') ||
+        productKeyword.includes('shelf') ||
+        productKeyword.includes('tv unit')
+    ) {
+        return storageImages;
+    }
+
+    if (
+        productKeyword.includes('lamp') ||
+        productKeyword.includes('mirror') ||
+        productKeyword.includes('rug') ||
+        productKeyword.includes('cushion') ||
+        productKeyword.includes('curtain') ||
+        productKeyword.includes('decor') ||
+        productKeyword.includes('vase') ||
+        productKeyword.includes('mandir')
+    ) {
+        return decorImages;
+    }
+
+    if (productKeyword.includes('balcony')) {
+        return balconyImages;
+    }
+
+    return defaultFurnitureImages;
 }
 
 const products = [
@@ -683,6 +819,19 @@ function showToast(message) {
 ==================================================
 */
 
+function initializeTopStrip() {
+    const topStrip = document.getElementById('topStrip');
+    const topStripCloseButton = document.getElementById('topStripCloseButton');
+
+    if (!topStrip || !topStripCloseButton) {
+        return;
+    }
+
+    topStripCloseButton.addEventListener('click', function () {
+        topStrip.classList.add('hide');
+    });
+}
+
 function initializeNavigation() {
     const mobileMenuButton = document.getElementById('mobileMenuButton');
     const mainNav = document.getElementById('mainNav');
@@ -986,25 +1135,10 @@ function initializeHomePage() {
     const newArrivalGrid = document.getElementById('newArrivalGrid');
 
     if (bestSellerGrid) {
-        const bestSellers = products
-            .slice()
-            .sort(function (firstProduct, secondProduct) {
-                return secondProduct.popularity - firstProduct.popularity;
-            })
-            .slice(0, 4);
-
-        bestSellerGrid.innerHTML = bestSellers.map(createProductCard).join('');
         attachProductCardEvents(bestSellerGrid);
     }
 
     if (newArrivalGrid) {
-        const newArrivals = products
-            .filter(function (product) {
-                return product.isNew === true;
-            })
-            .slice(0, 4);
-
-        newArrivalGrid.innerHTML = newArrivals.map(createProductCard).join('');
         attachProductCardEvents(newArrivalGrid);
     }
 }
@@ -2194,6 +2328,7 @@ Each page uses data-page to run only the required code.
 */
 
 document.addEventListener('DOMContentLoaded', function () {
+    initializeTopStrip();
     initializeNavigation();
     initializeGlobalSearch();
     updateCartCounter();
