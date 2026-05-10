@@ -18,9 +18,17 @@ Footer layout and footer links
 }
 
 .footer-logo {
-    color: #f0d59a;
-    font-size: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 12px;
+    height: 70px;
+}
+
+.footer-logo img {
+    height: 100%;
+    width: auto;
+    display: block;
 }
 
 .site-footer h3 {
