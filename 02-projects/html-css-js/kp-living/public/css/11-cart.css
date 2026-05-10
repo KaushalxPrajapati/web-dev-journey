@@ -1,0 +1,68 @@
+/*
+==================================================
+11-cart.css
+Cart page layout, cart items, and summary card
+==================================================
+*/
+
+.cart-layout {
+    grid-template-columns: 1fr 360px;
+    align-items: start;
+}
+
+.cart-items-panel,
+.order-summary-card {
+    min-width: 0;
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 130px 1fr auto;
+    gap: 18px;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid #e3d4bf;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item img {
+    width: 130px;
+    height: 105px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.cart-item-name {
+    font-size: 19px;
+    font-weight: 900;
+}
+
+.cart-item-actions {
+    margin-top: 12px;
+}
+
+.order-summary-card h2 {
+    margin-bottom: 18px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid #e3d4bf;
+    color: #74685f;
+}
+
+.summary-row strong {
+    color: #5b351d;
+}
+
+.total-row {
+    border-bottom: none;
+    font-size: 19px;
+    color: #5b351d;
+}

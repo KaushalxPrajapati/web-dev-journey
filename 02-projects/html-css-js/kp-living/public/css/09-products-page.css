@@ -1,0 +1,75 @@
+/*
+==================================================
+09-products-page.css
+Products page filters, toolbar, product listing layout
+==================================================
+*/
+
+.products-layout {
+    grid-template-columns: 280px 1fr;
+    align-items: start;
+}
+
+.filter-sidebar,
+.order-summary-card {
+    position: sticky;
+    top: 104px;
+}
+
+.filter-header,
+.products-toolbar,
+.cart-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.filter-header {
+    margin-bottom: 18px;
+}
+
+.filter-header button {
+    border: none;
+    background-color: #f7efe3;
+    color: #5b351d;
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-weight: 800;
+}
+
+.filter-group {
+    display: grid;
+    gap: 7px;
+    margin-bottom: 16px;
+}
+
+.filter-group label {
+    color: #5b351d;
+    font-weight: 900;
+    font-size: 14px;
+}
+
+.products-main {
+    min-width: 0;
+}
+
+.products-toolbar {
+    margin-bottom: 22px;
+}
+
+.products-toolbar p {
+    color: #74685f;
+}
+
+.products-controls {
+    display: grid;
+    grid-template-columns: minmax(220px, 300px) 190px;
+    gap: 12px;
+}
+
+.load-more-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}

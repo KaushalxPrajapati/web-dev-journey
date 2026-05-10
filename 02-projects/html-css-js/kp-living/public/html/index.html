@@ -6,8 +6,25 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>KP Living | Furniture Made for Every Indian Home</title>
 	<meta name="description" content="KP Living is a premium Indian furniture and home decor store for modern apartments, family homes, and compact city homes.">
-	<link rel="stylesheet" href="style.css">
-	<script src="script.js" defer></script>
+
+	<!-- Main CSS files loaded in proper order -->
+	<link rel="stylesheet" href="/public/css/01-base.css">
+	<link rel="stylesheet" href="/public/css/02-header.css">
+	<link rel="stylesheet" href="/public/css/03-layout.css">
+	<link rel="stylesheet" href="/public/css/04-buttons.css">
+	<link rel="stylesheet" href="/public/css/05-home.css">
+	<link rel="stylesheet" href="/public/css/06-product-card.css">
+	<link rel="stylesheet" href="/public/css/07-forms-feedback.css">
+	<link rel="stylesheet" href="/public/css/08-footer.css">
+	<link rel="stylesheet" href="/public/css/09-products-page.css">
+	<link rel="stylesheet" href="/public/css/10-product-details.css">
+	<link rel="stylesheet" href="/public/css/11-cart.css">
+	<link rel="stylesheet" href="/public/css/12-checkout.css">
+	<link rel="stylesheet" href="/public/css/13-about.css">
+	<link rel="stylesheet" href="/public/css/14-contact.css">
+	<link rel="stylesheet" href="/public/css/15-responsive.css">
+
+	<script src="/public/js/script.js" defer></script>
 </head>
 
 <body data-page="home">
@@ -60,6 +77,7 @@
 						<a href="products.html" class="primary-button">Shop Now</a>
 						<a href="#festivalOffers" class="secondary-button">Explore Offers</a>
 					</div>
+
 					<div class="hero-trust-row">
 						<div>
 							<strong>7 Days</strong>
@@ -75,6 +93,7 @@
 						</div>
 					</div>
 				</div>
+
 				<div class="hero-image-card">
 					<img src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1100&q=80" alt="Warm premium living room with Indian home furniture">
 					<div class="hero-floating-card">
@@ -92,23 +111,28 @@
 					<h2>Find furniture for every corner of your home</h2>
 					<p>From compact flats to large family homes, choose pieces that fit your space and daily life.</p>
 				</div>
+
 				<div class="room-grid">
 					<a href="products.html?room=Living%20Room" class="room-card large-room-card">
 						<img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=80" alt="Living room furniture">
 						<span>Living Room</span>
 					</a>
+
 					<a href="products.html?room=Bedroom" class="room-card">
 						<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=700&q=80" alt="Bedroom furniture">
 						<span>Bedroom</span>
 					</a>
+
 					<a href="products.html?room=Dining Room" class="room-card">
 						<img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=700&q=80" alt="Dining room furniture">
 						<span>Dining Room</span>
 					</a>
+
 					<a href="products.html?room=Study%20Room" class="room-card">
 						<img src="https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=700&q=80" alt="Study room furniture">
 						<span>Study Room</span>
 					</a>
+
 					<a href="products.html?room=Balcony" class="room-card">
 						<img src="https://images.unsplash.com/photo-1600210491369-e753d80a41f3?auto=format&fit=crop&w=700&q=80" alt="Balcony furniture">
 						<span>Balcony</span>
@@ -126,22 +150,26 @@
 					</div>
 					<a href="products.html" class="text-link">View all products</a>
 				</div>
+
 				<div class="category-grid">
 					<a href="products.html?category=Sofa%20Sets" class="category-card">
 						<span class="category-icon">🛋️</span>
 						<h3>Sofa Sets</h3>
 						<p>Comfortable seating for family time.</p>
 					</a>
+
 					<a href="products.html?category=Wooden%20Beds" class="category-card">
 						<span class="category-icon">🛏️</span>
 						<h3>Wooden Beds</h3>
 						<p>Strong beds for peaceful sleep.</p>
 					</a>
+
 					<a href="products.html?category=Dining%20Tables" class="category-card">
 						<span class="category-icon">🍽️</span>
 						<h3>Dining Tables</h3>
 						<p>Perfect for family dinners.</p>
 					</a>
+
 					<a href="products.html?category=Storage%20Cabinets" class="category-card">
 						<span class="category-icon">🧺</span>
 						<h3>Storage</h3>
@@ -160,6 +188,7 @@
 					</div>
 					<a href="products.html?sort=popularity" class="text-link">See best sellers</a>
 				</div>
+
 				<div class="product-grid home-product-grid" id="bestSellerGrid"></div>
 			</div>
 		</section>
@@ -173,6 +202,7 @@
 					</div>
 					<a href="products.html?sort=newest" class="text-link">Explore new arrivals</a>
 				</div>
+
 				<div class="product-grid home-product-grid" id="newArrivalGrid"></div>
 			</div>
 		</section>
@@ -185,6 +215,7 @@
 					<p>Save more on sofa sets, beds, dining tables, decor items, and smart storage. Beautiful designs at honest prices.</p>
 					<a href="products.html?discount=20" class="primary-button">Shop Festival Deals</a>
 				</div>
+
 				<div class="offer-card-stack">
 					<div class="mini-offer-card">Up to 35% off sofa sets</div>
 					<div class="mini-offer-card">Extra ₹500 off with FESTIVE500</div>
@@ -198,10 +229,12 @@
 				<div class="split-image">
 					<img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=80" alt="Furniture suitable for Indian homes">
 				</div>
+
 				<div class="split-content">
 					<p class="eyebrow">Made for Indian Homes</p>
 					<h2>Strong, stylish, and made for daily use</h2>
 					<p>KP Living furniture is designed for everyday Indian family life. It looks elegant, handles regular use, and fits modern apartments as well as traditional homes.</p>
+
 					<ul class="check-list">
 						<li>Durable materials for long-term use</li>
 						<li>Easy-to-clean finishes for busy homes</li>
@@ -220,6 +253,7 @@
 					<p>Make the most of every square foot with slim shoe racks, foldable tables, storage beds, wall shelves, and balcony sets.</p>
 					<a href="products.html?room=Compact%20Homes" class="secondary-button">Explore Compact Furniture</a>
 				</div>
+
 				<div class="compact-card-grid">
 					<div class="compact-card">Storage beds for extra space</div>
 					<div class="compact-card">Wall shelves for small rooms</div>
@@ -235,22 +269,26 @@
 					<p class="eyebrow">Why Choose KP Living</p>
 					<h2>Premium feel, practical value</h2>
 				</div>
+
 				<div class="why-grid">
 					<div class="why-card">
 						<span>🏠</span>
 						<h3>Made for daily family life</h3>
 						<p>Comfortable designs that work well for meals, guests, study, work, and relaxed evenings.</p>
 					</div>
+
 					<div class="why-card">
 						<span>🪵</span>
 						<h3>Quality materials</h3>
 						<p>Wooden tones, strong frames, neat finishing, and simple care instructions.</p>
 					</div>
+
 					<div class="why-card">
 						<span>🚚</span>
 						<h3>Smooth delivery support</h3>
 						<p>Delivery updates, selected-city free delivery, and simple return support.</p>
 					</div>
+
 					<div class="why-card">
 						<span>💛</span>
 						<h3>Honest prices</h3>
@@ -266,6 +304,7 @@
 					<p class="eyebrow">Customer Reviews</p>
 					<h2>What Indian customers say</h2>
 				</div>
+
 				<div class="review-grid">
 					<article class="review-card">
 						<div class="stars">★★★★★</div>
@@ -273,18 +312,21 @@
 						<strong>Priya Sharma</strong>
 						<span>Pune</span>
 					</article>
+
 					<article class="review-card">
 						<div class="stars">★★★★★</div>
 						<p>“Good quality dining table for the price. Perfect for our family.”</p>
 						<strong>Rohit Verma</strong>
 						<span>Jaipur</span>
 					</article>
+
 					<article class="review-card">
 						<div class="stars">★★★★☆</div>
 						<p>“The shoe rack helped us save space near the entrance.”</p>
 						<strong>Ananya Nair</strong>
 						<span>Bengaluru</span>
 					</article>
+
 					<article class="review-card">
 						<div class="stars">★★★★★</div>
 						<p>“The study table is strong and perfect for my work-from-home setup.”</p>
@@ -302,6 +344,7 @@
 					<h2>Get home styling ideas and special offers</h2>
 					<p>Simple tips, festive deals, and new furniture updates directly in your inbox.</p>
 				</div>
+
 				<form class="newsletter-form" id="newsletterForm">
 					<input type="email" id="newsletterEmail" placeholder="Enter your email address" aria-label="Email address">
 					<button type="submit" class="primary-button">Subscribe</button>
@@ -317,6 +360,7 @@
 				<a href="index.html" class="footer-logo">KP Living</a>
 				<p>Premium furniture and home decor made for Indian homes, compact apartments, and warm family spaces.</p>
 			</div>
+
 			<div>
 				<h3>Shop</h3>
 				<a href="products.html?category=Sofa%20Sets">Sofa Sets</a>
@@ -324,6 +368,7 @@
 				<a href="products.html?category=Dining%20Tables">Dining Tables</a>
 				<a href="products.html?category=Decor%20Items">Decor Items</a>
 			</div>
+
 			<div>
 				<h3>Company</h3>
 				<a href="about.html">About Us</a>
@@ -331,6 +376,7 @@
 				<a href="products.html">Products</a>
 				<a href="cart.html">Cart</a>
 			</div>
+
 			<div>
 				<h3>Contact</h3>
 				<p>KP Living Studio, Sakchi, Jamshedpur</p>
@@ -338,6 +384,7 @@
 				<p>support@kpliving.in</p>
 			</div>
 		</div>
+
 		<div class="footer-bottom">
 			<p>© 2026 KP Living. All rights reserved.</p>
 		</div>

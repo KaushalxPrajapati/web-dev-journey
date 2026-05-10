@@ -1,22 +1,44 @@
-/* ==================================================
-   KP Living - Main JavaScript File
-   Technologies used: Vanilla JavaScript only
-   Purpose: Navigation, products, cart, checkout, forms
-   ================================================== */
+/*
+==================================================
+KP Living - Main JavaScript File
+Technology: Vanilla JavaScript only
+Purpose:
+1. Mobile menu
+2. Sticky header
+3. Product rendering
+4. Product search and filters
+5. Product details page
+6. Cart using localStorage
+7. Checkout validation
+8. Contact form validation
+9. Newsletter validation
+==================================================
+*/
 
-/* ==================================================
-   1. PRODUCT DATA
-   Product information is stored in a JavaScript array.
-   This makes the website dynamic without using a backend.
-   ================================================== */
+/*
+==================================================
+1. PRODUCT DATA
+All product data is stored in this JavaScript array.
+No backend is used.
+==================================================
+*/
 
-function imageFromKeyword(keyword, imageNumber) {
+function createImageUrl(keyword, imageNumber) {
     return (
         'https://source.unsplash.com/900x700/?' +
         encodeURIComponent(keyword) +
         '&sig=' +
         imageNumber
     );
+}
+
+function createProductImages(keyword, startNumber) {
+    return [
+        createImageUrl(keyword, startNumber),
+        createImageUrl(keyword + ' furniture', startNumber + 1),
+        createImageUrl(keyword + ' home decor', startNumber + 2),
+        createImageUrl(keyword + ' modern indian home', startNumber + 3),
+    ];
 }
 
 const products = [
@@ -40,12 +62,7 @@ const products = [
         dimensions: '82 x 34 x 32 inches',
         delivery:
             'Free delivery in selected cities. Usually delivered within 5 to 8 days.',
-        images: [
-            imageFromKeyword('wooden sofa set living room', 1),
-            imageFromKeyword('indian living room sofa', 2),
-            imageFromKeyword('premium sofa furniture', 3),
-            imageFromKeyword('brown sofa set', 4),
-        ],
+        images: createProductImages('wooden sofa set living room', 1),
     },
     {
         id: 'isha-sectional-sofa',
@@ -67,15 +84,10 @@ const products = [
         dimensions: '102 x 68 x 33 inches',
         delivery:
             'Delivered within 7 to 10 days. Assembly support available in selected cities.',
-        images: [
-            imageFromKeyword('l shape sofa beige living room', 5),
-            imageFromKeyword('sectional sofa modern home', 6),
-            imageFromKeyword('cream sectional sofa', 7),
-            imageFromKeyword('large living room sofa', 8),
-        ],
+        images: createProductImages('beige l shape sectional sofa', 10),
     },
     {
-        id: 'veer-recliner-chair',
+        id: 'veer-comfort-recliner',
         name: 'Veer Comfort Recliner',
         category: 'Recliners',
         room: 'Living Room',
@@ -94,12 +106,7 @@ const products = [
         dimensions: '38 x 36 x 40 inches',
         delivery:
             'Delivered within 4 to 7 days. No complicated assembly required.',
-        images: [
-            imageFromKeyword('brown recliner chair', 9),
-            imageFromKeyword('leather recliner furniture', 10),
-            imageFromKeyword('recliner chair living room', 11),
-            imageFromKeyword('comfortable recliner', 12),
-        ],
+        images: createProductImages('brown recliner chair', 20),
     },
     {
         id: 'kerala-cane-chair',
@@ -120,12 +127,7 @@ const products = [
             'A light and breathable cane chair that adds a warm Indian touch to your room.',
         dimensions: '28 x 28 x 34 inches',
         delivery: 'Usually delivered within 5 to 7 days.',
-        images: [
-            imageFromKeyword('cane chair wooden furniture', 13),
-            imageFromKeyword('rattan armchair', 14),
-            imageFromKeyword('natural cane chair', 15),
-            imageFromKeyword('wood cane chair', 16),
-        ],
+        images: createProductImages('cane chair wooden furniture', 30),
     },
     {
         id: 'meera-queen-size-bed',
@@ -147,12 +149,7 @@ const products = [
         dimensions: '84 x 64 x 38 inches',
         delivery:
             'Delivered in 6 to 9 days. Assembly support included in selected cities.',
-        images: [
-            imageFromKeyword('queen size wooden bed', 17),
-            imageFromKeyword('bedroom wooden bed', 18),
-            imageFromKeyword('modern bed furniture', 19),
-            imageFromKeyword('wooden bed headboard', 20),
-        ],
+        images: createProductImages('queen size wooden bed', 40),
     },
     {
         id: 'suhana-storage-bed',
@@ -173,12 +170,7 @@ const products = [
             'A premium storage bed for compact homes where extra space is always useful.',
         dimensions: '85 x 66 x 40 inches',
         delivery: 'Delivered in 8 to 12 days with assembly support.',
-        images: [
-            imageFromKeyword('storage bed wooden', 21),
-            imageFromKeyword('hydraulic storage bed', 22),
-            imageFromKeyword('bed with storage', 23),
-            imageFromKeyword('dark wood bed', 24),
-        ],
+        images: createProductImages('wooden storage bed', 50),
     },
     {
         id: 'nandi-orthopedic-mattress',
@@ -199,12 +191,7 @@ const products = [
             'A supportive mattress designed for comfortable sleep and better back support.',
         dimensions: '78 x 60 x 6 inches',
         delivery: 'Rolled pack delivery within 3 to 6 days.',
-        images: [
-            imageFromKeyword('white mattress bedroom', 25),
-            imageFromKeyword('orthopedic mattress', 26),
-            imageFromKeyword('foam mattress', 27),
-            imageFromKeyword('bed mattress', 28),
-        ],
+        images: createProductImages('white orthopedic mattress', 60),
     },
     {
         id: 'royal-sheesham-dining-table',
@@ -226,12 +213,7 @@ const products = [
         dimensions: '72 x 36 x 30 inches',
         delivery:
             'Delivered within 7 to 10 days. Assembly available in selected cities.',
-        images: [
-            imageFromKeyword('wooden dining table', 29),
-            imageFromKeyword('dining room table chairs', 30),
-            imageFromKeyword('sheesham dining table', 31),
-            imageFromKeyword('family dining table', 32),
-        ],
+        images: createProductImages('wooden dining table', 70),
     },
     {
         id: 'delhi-study-desk',
@@ -252,12 +234,7 @@ const products = [
             'A simple and strong study desk for students, coding practice, and work-from-home use.',
         dimensions: '42 x 22 x 30 inches',
         delivery: 'Delivered within 4 to 6 days.',
-        images: [
-            imageFromKeyword('study desk wooden', 33),
-            imageFromKeyword('home office desk', 34),
-            imageFromKeyword('student study table', 35),
-            imageFromKeyword('wooden writing desk', 36),
-        ],
+        images: createProductImages('wooden study desk', 80),
     },
     {
         id: 'kavya-bookshelf',
@@ -278,12 +255,7 @@ const products = [
             'A clean bookshelf for books, decor, study notes, and everyday storage.',
         dimensions: '30 x 14 x 66 inches',
         delivery: 'Delivered within 5 to 8 days.',
-        images: [
-            imageFromKeyword('wooden bookshelf', 37),
-            imageFromKeyword('bookcase furniture', 38),
-            imageFromKeyword('study room bookshelf', 39),
-            imageFromKeyword('modern bookshelf', 40),
-        ],
+        images: createProductImages('wooden bookshelf', 90),
     },
     {
         id: 'mumbai-compact-shoe-rack',
@@ -304,12 +276,7 @@ const products = [
             'A slim shoe rack that keeps the entrance clean and works well for compact homes.',
         dimensions: '32 x 14 x 36 inches',
         delivery: 'Delivered within 3 to 6 days.',
-        images: [
-            imageFromKeyword('wooden shoe rack', 41),
-            imageFromKeyword('compact shoe cabinet', 42),
-            imageFromKeyword('entryway shoe rack', 43),
-            imageFromKeyword('shoe storage cabinet', 44),
-        ],
+        images: createProductImages('wooden shoe rack', 100),
     },
     {
         id: 'nila-storage-cabinet',
@@ -330,15 +297,10 @@ const products = [
             'A neat storage cabinet for clothes, files, toys, kitchen extras, or home essentials.',
         dimensions: '36 x 16 x 54 inches',
         delivery: 'Delivered within 5 to 8 days.',
-        images: [
-            imageFromKeyword('white storage cabinet', 45),
-            imageFromKeyword('wooden storage cabinet', 46),
-            imageFromKeyword('home storage furniture', 47),
-            imageFromKeyword('modern cabinet', 48),
-        ],
+        images: createProductImages('white storage cabinet', 110),
     },
     {
-        id: 'rajasthan-wardrobe',
+        id: 'rajasthan-two-door-wardrobe',
         name: 'Rajasthan Two Door Wardrobe',
         category: 'Wardrobes',
         room: 'Bedroom',
@@ -356,12 +318,7 @@ const products = [
             'A practical wardrobe with hanging space and shelves for organized daily storage.',
         dimensions: '32 x 20 x 72 inches',
         delivery: 'Delivered within 7 to 10 days with assembly support.',
-        images: [
-            imageFromKeyword('wooden wardrobe', 49),
-            imageFromKeyword('two door wardrobe', 50),
-            imageFromKeyword('bedroom wardrobe', 51),
-            imageFromKeyword('closet furniture', 52),
-        ],
+        images: createProductImages('wooden wardrobe', 120),
     },
     {
         id: 'jaipur-coffee-table',
@@ -382,12 +339,7 @@ const products = [
             'A beautiful wooden coffee table for snacks, chai, books, and living room decor.',
         dimensions: '42 x 22 x 18 inches',
         delivery: 'Delivered within 4 to 6 days.',
-        images: [
-            imageFromKeyword('wooden coffee table', 53),
-            imageFromKeyword('living room coffee table', 54),
-            imageFromKeyword('mango wood table', 55),
-            imageFromKeyword('rustic coffee table', 56),
-        ],
+        images: createProductImages('wooden coffee table', 130),
     },
     {
         id: 'tara-side-table',
@@ -408,12 +360,7 @@ const products = [
             'A small side table for lamps, books, water bottles, and bedside essentials.',
         dimensions: '18 x 18 x 22 inches',
         delivery: 'Delivered within 3 to 5 days.',
-        images: [
-            imageFromKeyword('wooden side table', 57),
-            imageFromKeyword('bedside table', 58),
-            imageFromKeyword('nightstand furniture', 59),
-            imageFromKeyword('small wooden table', 60),
-        ],
+        images: createProductImages('wooden side table', 140),
     },
     {
         id: 'cozy-balcony-chair-set',
@@ -434,12 +381,7 @@ const products = [
             'A compact balcony chair set for morning tea, evening chai, and relaxed talks.',
         dimensions: '2 chairs and 1 table set',
         delivery: 'Delivered within 4 to 7 days.',
-        images: [
-            imageFromKeyword('balcony chair set', 61),
-            imageFromKeyword('outdoor chair set balcony', 62),
-            imageFromKeyword('patio chairs small balcony', 63),
-            imageFromKeyword('balcony furniture', 64),
-        ],
+        images: createProductImages('balcony chair set', 150),
     },
     {
         id: 'arjun-office-chair',
@@ -460,12 +402,7 @@ const products = [
             'An ergonomic office chair for work-from-home, study, coding, and long desk hours.',
         dimensions: '24 x 24 x 42 inches',
         delivery: 'Delivered within 3 to 6 days.',
-        images: [
-            imageFromKeyword('ergonomic office chair', 65),
-            imageFromKeyword('black office chair', 66),
-            imageFromKeyword('work from home chair', 67),
-            imageFromKeyword('mesh office chair', 68),
-        ],
+        images: createProductImages('ergonomic office chair', 160),
     },
     {
         id: 'pune-office-desk',
@@ -486,12 +423,7 @@ const products = [
             'A modern office desk with enough space for laptop, monitor, books, and notes.',
         dimensions: '48 x 24 x 30 inches',
         delivery: 'Delivered within 4 to 7 days.',
-        images: [
-            imageFromKeyword('office desk wooden metal', 69),
-            imageFromKeyword('modern work desk', 70),
-            imageFromKeyword('home office table', 71),
-            imageFromKeyword('computer desk', 72),
-        ],
+        images: createProductImages('office desk wooden metal', 170),
     },
     {
         id: 'ayodhya-mandir-unit',
@@ -512,12 +444,7 @@ const products = [
             'A graceful mandir unit with storage for pooja items and a calm home prayer space.',
         dimensions: '30 x 16 x 60 inches',
         delivery: 'Delivered within 5 to 9 days.',
-        images: [
-            imageFromKeyword('home mandir unit', 73),
-            imageFromKeyword('pooja mandir furniture', 74),
-            imageFromKeyword('white wooden temple cabinet', 75),
-            imageFromKeyword('indian pooja unit', 76),
-        ],
+        images: createProductImages('home mandir unit', 180),
     },
     {
         id: 'surya-floor-lamp',
@@ -538,12 +465,7 @@ const products = [
             'A warm floor lamp that gives your living room a calm and premium evening glow.',
         dimensions: '15 x 15 x 58 inches',
         delivery: 'Delivered within 3 to 5 days.',
-        images: [
-            imageFromKeyword('floor lamp living room', 77),
-            imageFromKeyword('gold floor lamp', 78),
-            imageFromKeyword('modern lamp furniture', 79),
-            imageFromKeyword('lamp home decor', 80),
-        ],
+        images: createProductImages('floor lamp living room', 190),
     },
     {
         id: 'chandni-wall-mirror',
@@ -564,15 +486,10 @@ const products = [
             'A clean wall mirror that makes rooms feel brighter and more open.',
         dimensions: '24 x 36 inches',
         delivery: 'Delivered within 4 to 6 days with safe packaging.',
-        images: [
-            imageFromKeyword('wooden wall mirror', 81),
-            imageFromKeyword('bedroom wall mirror', 82),
-            imageFromKeyword('round wall mirror', 83),
-            imageFromKeyword('decor mirror', 84),
-        ],
+        images: createProductImages('wooden wall mirror', 200),
     },
     {
-        id: 'banaras-rug',
+        id: 'banaras-pattern-rug',
         name: 'Banaras Pattern Rug',
         category: 'Rugs',
         room: 'Living Room',
@@ -590,12 +507,7 @@ const products = [
             'A soft patterned rug that adds warmth and character to your living room floor.',
         dimensions: '5 x 7 feet',
         delivery: 'Delivered within 3 to 5 days.',
-        images: [
-            imageFromKeyword('cream brown rug living room', 85),
-            imageFromKeyword('pattern rug home', 86),
-            imageFromKeyword('living room carpet rug', 87),
-            imageFromKeyword('indian pattern rug', 88),
-        ],
+        images: createProductImages('cream brown rug living room', 210),
     },
     {
         id: 'rangoli-cushion-set',
@@ -616,15 +528,10 @@ const products = [
             'A set of soft cushions that brings color and comfort to your sofa or bed.',
         dimensions: '16 x 16 inches, set of 5',
         delivery: 'Delivered within 2 to 4 days.',
-        images: [
-            imageFromKeyword('colorful cushion set', 89),
-            imageFromKeyword('sofa cushions', 90),
-            imageFromKeyword('home decor pillows', 91),
-            imageFromKeyword('cotton cushion covers', 92),
-        ],
+        images: createProductImages('colorful cushion set', 220),
     },
     {
-        id: 'malabar-curtains',
+        id: 'malabar-cotton-curtains',
         name: 'Malabar Cotton Curtains',
         category: 'Curtains',
         room: 'Living Room',
@@ -642,12 +549,7 @@ const products = [
             'Simple beige curtains that soften sunlight and make your room feel calm.',
         dimensions: 'Door size, set of 2',
         delivery: 'Delivered within 2 to 5 days.',
-        images: [
-            imageFromKeyword('beige curtains living room', 93),
-            imageFromKeyword('cotton curtains', 94),
-            imageFromKeyword('window curtains home', 95),
-            imageFromKeyword('warm curtains', 96),
-        ],
+        images: createProductImages('beige curtains living room', 230),
     },
     {
         id: 'udaipur-wall-shelf',
@@ -668,12 +570,7 @@ const products = [
             'A wall shelf for books, plants, frames, and small decor without using floor space.',
         dimensions: '36 x 8 x 10 inches',
         delivery: 'Delivered within 3 to 5 days.',
-        images: [
-            imageFromKeyword('wooden wall shelf', 97),
-            imageFromKeyword('floating wall shelf', 98),
-            imageFromKeyword('wall shelf decor', 99),
-            imageFromKeyword('small wall storage', 100),
-        ],
+        images: createProductImages('wooden wall shelf', 240),
     },
     {
         id: 'mysore-tv-unit',
@@ -694,12 +591,7 @@ const products = [
             'A smart TV unit with shelves for set-top box, books, decor, and living room storage.',
         dimensions: '60 x 16 x 22 inches',
         delivery: 'Delivered within 5 to 8 days.',
-        images: [
-            imageFromKeyword('wooden tv unit', 101),
-            imageFromKeyword('living room tv cabinet', 102),
-            imageFromKeyword('modern tv console', 103),
-            imageFromKeyword('tv stand furniture', 104),
-        ],
+        images: createProductImages('wooden tv unit', 250),
     },
     {
         id: 'mitti-decor-vase-set',
@@ -720,53 +612,33 @@ const products = [
             'A warm ceramic vase set for shelves, coffee tables, side tables, and festive decor.',
         dimensions: 'Set of 3 assorted sizes',
         delivery: 'Delivered within 2 to 5 days with safe packaging.',
-        images: [
-            imageFromKeyword('ceramic vase set', 105),
-            imageFromKeyword('terracotta vase decor', 106),
-            imageFromKeyword('home decor vase', 107),
-            imageFromKeyword('table decor items', 108),
-        ],
+        images: createProductImages('ceramic vase set', 260),
     },
 ];
 
-/* ==================================================
-   2. GENERAL HELPERS
-   These helper functions are reused across pages.
-   ================================================== */
+/*
+==================================================
+2. GLOBAL VARIABLES AND HELPER FUNCTIONS
+==================================================
+*/
 
-const CART_STORAGE_KEY = 'kpLivingCart';
+const cartStorageKey = 'kpLivingCart';
+
 let productsVisibleCount = 12;
-let filteredProductsForPage = [];
 let selectedDetailsQuantity = 1;
 let checkoutCouponDiscount = 0;
-let activeCouponCode = '';
 
 function getCurrentPageName() {
-    return document.body.dataset.page || '';
+    return document.body.getAttribute('data-page') || '';
 }
 
 function formatPrice(amount) {
     return '₹' + Number(amount).toLocaleString('en-IN');
 }
 
-function getCart() {
-    const cartString = localStorage.getItem(CART_STORAGE_KEY);
-
-    if (!cartString) {
-        return [];
-    }
-
-    try {
-        return JSON.parse(cartString);
-    } catch (error) {
-        console.warn('Cart data was not valid. Resetting cart.', error);
-        localStorage.removeItem(CART_STORAGE_KEY);
-        return [];
-    }
-}
-
-function saveCart(cartItems) {
-    localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cartItems));
+function getQueryParameter(parameterName) {
+    const urlParameters = new URLSearchParams(window.location.search);
+    return urlParameters.get(parameterName);
 }
 
 function findProductById(productId) {
@@ -775,42 +647,19 @@ function findProductById(productId) {
     });
 }
 
-function getCartWithProductDetails() {
-    const cartItems = getCart();
+function createRatingStars(rating) {
+    const roundedRating = Math.round(rating);
+    let starsText = '';
 
-    return cartItems
-        .map(function (cartItem) {
-            const product = findProductById(cartItem.id);
-
-            if (!product) {
-                return null;
-            }
-
-            return {
-                product: product,
-                quantity: cartItem.quantity,
-            };
-        })
-        .filter(function (item) {
-            return item !== null;
-        });
-}
-
-function updateCartCounter() {
-    const counterElement = document.getElementById('cartCounter');
-
-    if (!counterElement) {
-        return;
+    for (let count = 1; count <= 5; count++) {
+        if (count <= roundedRating) {
+            starsText = starsText + '★';
+        } else {
+            starsText = starsText + '☆';
+        }
     }
 
-    const cartItems = getCart();
-    let totalQuantity = 0;
-
-    cartItems.forEach(function (item) {
-        totalQuantity = totalQuantity + item.quantity;
-    });
-
-    counterElement.textContent = totalQuantity;
+    return starsText;
 }
 
 function showToast(message) {
@@ -828,31 +677,11 @@ function showToast(message) {
     }, 2500);
 }
 
-function getQueryParameter(parameterName) {
-    const urlParameters = new URLSearchParams(window.location.search);
-    return urlParameters.get(parameterName);
-}
-
-function createRatingStars(rating) {
-    const roundedRating = Math.round(rating);
-    let stars = '';
-
-    for (let count = 1; count <= 5; count++) {
-        if (count <= roundedRating) {
-            stars = stars + '★';
-        } else {
-            stars = stars + '☆';
-        }
-    }
-
-    return stars;
-}
-
-/* ==================================================
-   3. NAVIGATION AND GLOBAL SEARCH
-   This section handles mobile navigation, sticky header,
-   global product search, and page-wide cart counter.
-   ================================================== */
+/*
+==================================================
+3. NAVIGATION AND GLOBAL SEARCH
+==================================================
+*/
 
 function initializeNavigation() {
     const mobileMenuButton = document.getElementById('mobileMenuButton');
@@ -889,7 +718,7 @@ function initializeGlobalSearch() {
 
         const searchText = globalSearchInput.value.trim();
 
-        if (searchText.length === 0) {
+        if (searchText === '') {
             window.location.href = 'products.html';
             return;
         }
@@ -899,40 +728,219 @@ function initializeGlobalSearch() {
     });
 }
 
-/* ==================================================
-   4. PRODUCT CARD RENDERING
-   The same product card is used on home, products,
-   details related products, and filtered product grid.
-   ================================================== */
+/*
+==================================================
+4. CART STORAGE FUNCTIONS
+==================================================
+*/
+
+function getCart() {
+    const cartString = localStorage.getItem(cartStorageKey);
+
+    if (!cartString) {
+        return [];
+    }
+
+    try {
+        return JSON.parse(cartString);
+    } catch (error) {
+        localStorage.removeItem(cartStorageKey);
+        return [];
+    }
+}
+
+function saveCart(cartItems) {
+    localStorage.setItem(cartStorageKey, JSON.stringify(cartItems));
+}
+
+function updateCartCounter() {
+    const counterElement = document.getElementById('cartCounter');
+
+    if (!counterElement) {
+        return;
+    }
+
+    const cartItems = getCart();
+    let totalQuantity = 0;
+
+    cartItems.forEach(function (cartItem) {
+        totalQuantity = totalQuantity + cartItem.quantity;
+    });
+
+    counterElement.textContent = totalQuantity;
+}
+
+function addProductToCart(productId, quantityToAdd) {
+    const product = findProductById(productId);
+
+    if (!product) {
+        showToast('Product not found');
+        return;
+    }
+
+    const cartItems = getCart();
+
+    const existingCartItem = cartItems.find(function (cartItem) {
+        return cartItem.id === productId;
+    });
+
+    if (existingCartItem) {
+        existingCartItem.quantity = existingCartItem.quantity + quantityToAdd;
+    } else {
+        cartItems.push({
+            id: productId,
+            quantity: quantityToAdd,
+        });
+    }
+
+    saveCart(cartItems);
+    updateCartCounter();
+}
+
+function updateCartItemQuantity(productId, newQuantity) {
+    let cartItems = getCart();
+
+    if (newQuantity <= 0) {
+        cartItems = cartItems.filter(function (cartItem) {
+            return cartItem.id !== productId;
+        });
+    } else {
+        cartItems = cartItems.map(function (cartItem) {
+            if (cartItem.id === productId) {
+                return {
+                    id: cartItem.id,
+                    quantity: newQuantity,
+                };
+            }
+
+            return cartItem;
+        });
+    }
+
+    saveCart(cartItems);
+    updateCartCounter();
+}
+
+function removeProductFromCart(productId) {
+    const cartItems = getCart();
+
+    const updatedCartItems = cartItems.filter(function (cartItem) {
+        return cartItem.id !== productId;
+    });
+
+    saveCart(updatedCartItems);
+    updateCartCounter();
+}
+
+function getCartWithProductDetails() {
+    const cartItems = getCart();
+
+    const detailedCartItems = cartItems
+        .map(function (cartItem) {
+            const product = findProductById(cartItem.id);
+
+            if (!product) {
+                return null;
+            }
+
+            return {
+                product: product,
+                quantity: cartItem.quantity,
+            };
+        })
+        .filter(function (item) {
+            return item !== null;
+        });
+
+    return detailedCartItems;
+}
+
+function calculateCartTotals(couponDiscountAmount) {
+    const detailedCartItems = getCartWithProductDetails();
+
+    let subtotalBeforeDiscount = 0;
+    let subtotalAfterProductDiscount = 0;
+
+    detailedCartItems.forEach(function (item) {
+        subtotalBeforeDiscount =
+            subtotalBeforeDiscount + item.product.oldPrice * item.quantity;
+        subtotalAfterProductDiscount =
+            subtotalAfterProductDiscount + item.product.price * item.quantity;
+    });
+
+    const productDiscount =
+        subtotalBeforeDiscount - subtotalAfterProductDiscount;
+    const safeCouponDiscount = Math.min(
+        couponDiscountAmount || 0,
+        subtotalAfterProductDiscount
+    );
+    const taxableAmount = Math.max(
+        subtotalAfterProductDiscount - safeCouponDiscount,
+        0
+    );
+    const deliveryCharge =
+        taxableAmount === 0 || taxableAmount >= 25000 ? 0 : 299;
+    const tax = Math.round(taxableAmount * 0.18);
+    const totalAmount = taxableAmount + deliveryCharge + tax;
+
+    return {
+        subtotalBeforeDiscount: subtotalBeforeDiscount,
+        subtotalAfterProductDiscount: subtotalAfterProductDiscount,
+        productDiscount: productDiscount,
+        couponDiscount: safeCouponDiscount,
+        deliveryCharge: deliveryCharge,
+        tax: tax,
+        totalAmount: totalAmount,
+    };
+}
+
+/*
+==================================================
+5. PRODUCT CARD CREATION
+==================================================
+*/
 
 function createProductCard(product) {
     return `
-        <article class="product-card">
-            <div class="product-image-wrap">
-                <img src="${product.images[0]}" alt="${product.name} - ${product.category}" loading="lazy">
-                <span class="discount-badge">${product.discount}% OFF</span>
-                <span class="availability-badge">${product.availability}</span>
-            </div>
-            <div class="product-content">
-                <div class="product-tags">
-                    <span>${product.category}</span>
-                    <span>${product.room}</span>
-                    <span>${product.material}</span>
-                </div>
-                <h3>${product.name}</h3>
-                <div class="product-rating">${createRatingStars(product.rating)} ${product.rating} (${product.reviews})</div>
-                <p>${product.description}</p>
-                <div class="price-row">
-                    <span class="current-price">${formatPrice(product.price)}</span>
-                    <span class="old-price">${formatPrice(product.oldPrice)}</span>
-                </div>
-                <div class="product-actions">
-                    <button type="button" class="secondary-button view-details-button" data-product-id="${product.id}">View Details</button>
-                    <button type="button" class="primary-button add-cart-button" data-product-id="${product.id}">Add to Cart</button>
-                </div>
-            </div>
-        </article>
-    `;
+		<article class="product-card">
+			<div class="product-image-wrap">
+				<img src="${product.images[0]}" alt="${product.name} - ${product.category}" loading="lazy">
+				<span class="discount-badge">${product.discount}% OFF</span>
+				<span class="availability-badge">${product.availability}</span>
+			</div>
+
+			<div class="product-content">
+				<div class="product-tags">
+					<span>${product.category}</span>
+					<span>${product.room}</span>
+					<span>${product.material}</span>
+				</div>
+
+				<h3>${product.name}</h3>
+
+				<div class="product-rating">
+					${createRatingStars(product.rating)} ${product.rating} (${product.reviews})
+				</div>
+
+				<p>${product.description}</p>
+
+				<div class="price-row">
+					<span class="current-price">${formatPrice(product.price)}</span>
+					<span class="old-price">${formatPrice(product.oldPrice)}</span>
+				</div>
+
+				<div class="product-actions">
+					<button type="button" class="secondary-button view-details-button" data-product-id="${product.id}">
+						View Details
+					</button>
+
+					<button type="button" class="primary-button add-cart-button" data-product-id="${product.id}">
+						Add to Cart
+					</button>
+				</div>
+			</div>
+		</article>
+	`;
 }
 
 function attachProductCardEvents(parentElement) {
@@ -945,14 +953,14 @@ function attachProductCardEvents(parentElement) {
         const addCartButton = event.target.closest('.add-cart-button');
 
         if (viewDetailsButton) {
-            const productId = viewDetailsButton.dataset.productId;
+            const productId = viewDetailsButton.getAttribute('data-product-id');
             localStorage.setItem('kpLivingSelectedProduct', productId);
             window.location.href =
                 'product-details.html?id=' + encodeURIComponent(productId);
         }
 
         if (addCartButton) {
-            const productId = addCartButton.dataset.productId;
+            const productId = addCartButton.getAttribute('data-product-id');
             addProductToCart(productId, 1);
             showToast('Product added to cart');
 
@@ -963,10 +971,11 @@ function attachProductCardEvents(parentElement) {
     });
 }
 
-/* ==================================================
-   5. HOME PAGE SECTIONS
-   Best sellers and new arrivals are rendered dynamically.
-   ================================================== */
+/*
+==================================================
+6. HOME PAGE
+==================================================
+*/
 
 function initializeHomePage() {
     if (getCurrentPageName() !== 'home') {
@@ -1000,12 +1009,13 @@ function initializeHomePage() {
     }
 }
 
-/* ==================================================
-   6. PRODUCTS PAGE
-   Search, filters, sorting, product count, and load more.
-   ================================================== */
+/*
+==================================================
+7. PRODUCTS PAGE
+==================================================
+*/
 
-function getUniqueValues(keyName) {
+function getUniqueProductValues(keyName) {
     const values = products.map(function (product) {
         return product[keyName];
     });
@@ -1021,7 +1031,7 @@ function getUniqueValues(keyName) {
     return uniqueValues.sort();
 }
 
-function fillFilterOptions(selectId, values) {
+function fillSelectOptions(selectId, values) {
     const selectElement = document.getElementById(selectId);
 
     if (!selectElement) {
@@ -1036,14 +1046,14 @@ function fillFilterOptions(selectId, values) {
     });
 }
 
-function initializeProductFilters() {
-    fillFilterOptions('filterCategory', getUniqueValues('category'));
-    fillFilterOptions('filterRoom', getUniqueValues('room'));
-    fillFilterOptions('filterMaterial', getUniqueValues('material'));
-    fillFilterOptions('filterColor', getUniqueValues('color'));
+function initializeProductFilterOptions() {
+    fillSelectOptions('categoryFilter', getUniqueProductValues('category'));
+    fillSelectOptions('roomFilter', getUniqueProductValues('room'));
+    fillSelectOptions('materialFilter', getUniqueProductValues('material'));
+    fillSelectOptions('colorFilter', getUniqueProductValues('color'));
 }
 
-function setFiltersFromUrl() {
+function setProductFiltersFromUrl() {
     const searchQuery = getQueryParameter('search');
     const categoryQuery = getQueryParameter('category');
     const roomQuery = getQueryParameter('room');
@@ -1051,53 +1061,57 @@ function setFiltersFromUrl() {
     const sortQuery = getQueryParameter('sort');
 
     const productSearchInput = document.getElementById('productSearchInput');
-    const filterCategory = document.getElementById('filterCategory');
-    const filterRoom = document.getElementById('filterRoom');
-    const filterDiscount = document.getElementById('filterDiscount');
-    const sortProducts = document.getElementById('sortProducts');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const roomFilter = document.getElementById('roomFilter');
+    const discountFilter = document.getElementById('discountFilter');
+    const sortSelect = document.getElementById('sortSelect');
 
     if (searchQuery && productSearchInput) {
         productSearchInput.value = searchQuery;
     }
 
-    if (categoryQuery && filterCategory) {
-        filterCategory.value = categoryQuery;
+    if (categoryQuery && categoryFilter) {
+        categoryFilter.value = categoryQuery;
     }
 
-    if (roomQuery && filterRoom) {
-        filterRoom.value = roomQuery;
+    if (roomQuery && roomFilter) {
+        roomFilter.value = roomQuery;
     }
 
-    if (discountQuery && filterDiscount) {
-        filterDiscount.value = discountQuery;
+    if (discountQuery && discountFilter) {
+        discountFilter.value = discountQuery;
     }
 
-    if (sortQuery && sortProducts) {
-        if (sortQuery === 'popularity') {
-            sortProducts.value = 'popularityHighLow';
-        }
-
-        if (sortQuery === 'newest') {
-            sortProducts.value = 'default';
-        }
+    if (sortQuery && sortSelect) {
+        sortSelect.value = sortQuery;
     }
 }
 
-function getCurrentFilterValues() {
+function getCurrentProductFilterValues() {
+    const productSearchInput = document.getElementById('productSearchInput');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const roomFilter = document.getElementById('roomFilter');
+    const priceFilter = document.getElementById('priceFilter');
+    const materialFilter = document.getElementById('materialFilter');
+    const colorFilter = document.getElementById('colorFilter');
+    const ratingFilter = document.getElementById('ratingFilter');
+    const discountFilter = document.getElementById('discountFilter');
+    const availabilityFilter = document.getElementById('availabilityFilter');
+    const sortSelect = document.getElementById('sortSelect');
+
     return {
-        searchText: (document.getElementById('productSearchInput')?.value || '')
-            .trim()
-            .toLowerCase(),
-        category: document.getElementById('filterCategory')?.value || '',
-        room: document.getElementById('filterRoom')?.value || '',
-        priceRange: document.getElementById('filterPrice')?.value || '',
-        material: document.getElementById('filterMaterial')?.value || '',
-        color: document.getElementById('filterColor')?.value || '',
-        rating: document.getElementById('filterRating')?.value || '',
-        discount: document.getElementById('filterDiscount')?.value || '',
-        availability:
-            document.getElementById('filterAvailability')?.value || '',
-        sortBy: document.getElementById('sortProducts')?.value || 'default',
+        searchText: productSearchInput
+            ? productSearchInput.value.trim().toLowerCase()
+            : '',
+        category: categoryFilter ? categoryFilter.value : '',
+        room: roomFilter ? roomFilter.value : '',
+        priceRange: priceFilter ? priceFilter.value : '',
+        material: materialFilter ? materialFilter.value : '',
+        color: colorFilter ? colorFilter.value : '',
+        rating: ratingFilter ? ratingFilter.value : '',
+        discount: discountFilter ? discountFilter.value : '',
+        availability: availabilityFilter ? availabilityFilter.value : '',
+        sortBy: sortSelect ? sortSelect.value : 'default',
     };
 }
 
@@ -1113,10 +1127,10 @@ function productMatchesPriceRange(product, priceRange) {
     return product.price >= minimumPrice && product.price <= maximumPrice;
 }
 
-function filterProducts() {
-    const filters = getCurrentFilterValues();
+function getFilteredProducts() {
+    const filters = getCurrentProductFilterValues();
 
-    let result = products.filter(function (product) {
+    let filteredProducts = products.filter(function (product) {
         const searchableText = [
             product.name,
             product.category,
@@ -1165,40 +1179,51 @@ function filterProducts() {
         );
     });
 
-    result = sortProductList(result, filters.sortBy);
-    return result;
+    filteredProducts = sortProductList(filteredProducts, filters.sortBy);
+
+    return filteredProducts;
 }
 
 function sortProductList(productList, sortBy) {
     const sortedList = productList.slice();
 
-    if (sortBy === 'priceLowHigh') {
-        sortedList.sort(function (a, b) {
-            return a.price - b.price;
+    if (sortBy === 'price-low') {
+        sortedList.sort(function (firstProduct, secondProduct) {
+            return firstProduct.price - secondProduct.price;
         });
     }
 
-    if (sortBy === 'priceHighLow') {
-        sortedList.sort(function (a, b) {
-            return b.price - a.price;
+    if (sortBy === 'price-high') {
+        sortedList.sort(function (firstProduct, secondProduct) {
+            return secondProduct.price - firstProduct.price;
         });
     }
 
-    if (sortBy === 'ratingHighLow') {
-        sortedList.sort(function (a, b) {
-            return b.rating - a.rating;
+    if (sortBy === 'rating-high') {
+        sortedList.sort(function (firstProduct, secondProduct) {
+            return secondProduct.rating - firstProduct.rating;
         });
     }
 
-    if (sortBy === 'discountHighLow') {
-        sortedList.sort(function (a, b) {
-            return b.discount - a.discount;
+    if (sortBy === 'discount-high') {
+        sortedList.sort(function (firstProduct, secondProduct) {
+            return secondProduct.discount - firstProduct.discount;
         });
     }
 
-    if (sortBy === 'popularityHighLow') {
-        sortedList.sort(function (a, b) {
-            return b.popularity - a.popularity;
+    if (sortBy === 'popularity') {
+        sortedList.sort(function (firstProduct, secondProduct) {
+            return secondProduct.popularity - firstProduct.popularity;
+        });
+    }
+
+    if (sortBy === 'newest') {
+        sortedList.sort(function (firstProduct, secondProduct) {
+            if (firstProduct.isNew === secondProduct.isNew) {
+                return secondProduct.popularity - firstProduct.popularity;
+            }
+
+            return firstProduct.isNew ? -1 : 1;
         });
     }
 
@@ -1207,41 +1232,45 @@ function sortProductList(productList, sortBy) {
 
 function renderProductsPage() {
     const productsGrid = document.getElementById('productsGrid');
+    const productCountHeading = document.getElementById('productCountHeading');
     const productCountText = document.getElementById('productCountText');
-    const noProductsMessage = document.getElementById('noProductsMessage');
+    const emptyProductsMessage = document.getElementById(
+        'emptyProductsMessage'
+    );
     const loadMoreButton = document.getElementById('loadMoreButton');
 
     if (!productsGrid) {
         return;
     }
 
-    filteredProductsForPage = filterProducts();
+    const filteredProducts = getFilteredProducts();
+    const visibleProducts = filteredProducts.slice(0, productsVisibleCount);
 
-    const visibleProducts = filteredProductsForPage.slice(
-        0,
-        productsVisibleCount
-    );
     productsGrid.innerHTML = visibleProducts.map(createProductCard).join('');
+
+    if (productCountHeading) {
+        productCountHeading.textContent = 'All Products';
+    }
 
     if (productCountText) {
         productCountText.textContent =
             'Showing ' +
             visibleProducts.length +
             ' of ' +
-            filteredProductsForPage.length +
+            filteredProducts.length +
             ' products';
     }
 
-    if (noProductsMessage) {
-        if (filteredProductsForPage.length === 0) {
-            noProductsMessage.classList.add('show');
+    if (emptyProductsMessage) {
+        if (filteredProducts.length === 0) {
+            emptyProductsMessage.classList.add('show');
         } else {
-            noProductsMessage.classList.remove('show');
+            emptyProductsMessage.classList.remove('show');
         }
     }
 
     if (loadMoreButton) {
-        if (productsVisibleCount >= filteredProductsForPage.length) {
+        if (productsVisibleCount >= filteredProducts.length) {
             loadMoreButton.style.display = 'none';
         } else {
             loadMoreButton.style.display = 'inline-flex';
@@ -1254,8 +1283,8 @@ function initializeProductsPage() {
         return;
     }
 
-    initializeProductFilters();
-    setFiltersFromUrl();
+    initializeProductFilterOptions();
+    setProductFiltersFromUrl();
     renderProductsPage();
 
     const productsGrid = document.getElementById('productsGrid');
@@ -1264,20 +1293,20 @@ function initializeProductsPage() {
 
     attachProductCardEvents(productsGrid);
 
-    const filterElements = [
+    const filterElementIds = [
         'productSearchInput',
-        'filterCategory',
-        'filterRoom',
-        'filterPrice',
-        'filterMaterial',
-        'filterColor',
-        'filterRating',
-        'filterDiscount',
-        'filterAvailability',
-        'sortProducts',
+        'categoryFilter',
+        'roomFilter',
+        'priceFilter',
+        'materialFilter',
+        'colorFilter',
+        'ratingFilter',
+        'discountFilter',
+        'availabilityFilter',
+        'sortSelect',
     ];
 
-    filterElements.forEach(function (elementId) {
+    filterElementIds.forEach(function (elementId) {
         const element = document.getElementById(elementId);
 
         if (element) {
@@ -1302,12 +1331,15 @@ function initializeProductsPage() {
 
     if (clearFiltersButton) {
         clearFiltersButton.addEventListener('click', function () {
-            filterElements.forEach(function (elementId) {
+            filterElementIds.forEach(function (elementId) {
                 const element = document.getElementById(elementId);
 
                 if (element) {
-                    element.value =
-                        elementId === 'sortProducts' ? 'default' : '';
+                    if (elementId === 'sortSelect') {
+                        element.value = 'default';
+                    } else {
+                        element.value = '';
+                    }
                 }
             });
 
@@ -1317,117 +1349,14 @@ function initializeProductsPage() {
     }
 }
 
-/* ==================================================
-   7. CART FUNCTIONS
-   These functions add products to localStorage and update
-   cart totals on cart and checkout pages.
-   ================================================== */
-
-function addProductToCart(productId, quantityToAdd) {
-    const product = findProductById(productId);
-
-    if (!product) {
-        showToast('Product not found');
-        return;
-    }
-
-    const cartItems = getCart();
-    const existingCartItem = cartItems.find(function (item) {
-        return item.id === productId;
-    });
-
-    if (existingCartItem) {
-        existingCartItem.quantity = existingCartItem.quantity + quantityToAdd;
-    } else {
-        cartItems.push({
-            id: productId,
-            quantity: quantityToAdd,
-        });
-    }
-
-    saveCart(cartItems);
-    updateCartCounter();
-}
-
-function updateCartItemQuantity(productId, newQuantity) {
-    let cartItems = getCart();
-
-    if (newQuantity <= 0) {
-        cartItems = cartItems.filter(function (item) {
-            return item.id !== productId;
-        });
-    } else {
-        cartItems = cartItems.map(function (item) {
-            if (item.id === productId) {
-                return {
-                    id: item.id,
-                    quantity: newQuantity,
-                };
-            }
-
-            return item;
-        });
-    }
-
-    saveCart(cartItems);
-    updateCartCounter();
-}
-
-function removeProductFromCart(productId) {
-    const updatedCart = getCart().filter(function (item) {
-        return item.id !== productId;
-    });
-
-    saveCart(updatedCart);
-    updateCartCounter();
-}
-
-function calculateCartTotals(couponDiscountAmount) {
-    const detailedCart = getCartWithProductDetails();
-
-    let subtotalBeforeDiscount = 0;
-    let subtotalAfterProductDiscount = 0;
-
-    detailedCart.forEach(function (item) {
-        subtotalBeforeDiscount =
-            subtotalBeforeDiscount + item.product.oldPrice * item.quantity;
-        subtotalAfterProductDiscount =
-            subtotalAfterProductDiscount + item.product.price * item.quantity;
-    });
-
-    const productDiscount =
-        subtotalBeforeDiscount - subtotalAfterProductDiscount;
-    const safeCouponDiscount = Math.min(
-        couponDiscountAmount || 0,
-        subtotalAfterProductDiscount
-    );
-    const taxableAmount = Math.max(
-        subtotalAfterProductDiscount - safeCouponDiscount,
-        0
-    );
-    const deliveryCharge =
-        taxableAmount === 0 || taxableAmount >= 25000 ? 0 : 299;
-    const tax = Math.round(taxableAmount * 0.18);
-    const totalAmount = taxableAmount + deliveryCharge + tax;
-
-    return {
-        subtotalBeforeDiscount: subtotalBeforeDiscount,
-        subtotalAfterProductDiscount: subtotalAfterProductDiscount,
-        productDiscount: productDiscount,
-        couponDiscount: safeCouponDiscount,
-        deliveryCharge: deliveryCharge,
-        tax: tax,
-        totalAmount: totalAmount,
-    };
-}
-
-/* ==================================================
-   8. PRODUCT DETAILS PAGE
-   Loads selected product using URL parameter or localStorage.
-   ================================================== */
+/*
+==================================================
+8. PRODUCT DETAILS PAGE
+==================================================
+*/
 
 function initializeProductDetailsPage() {
-    if (getCurrentPageName() !== 'details') {
+    if (getCurrentPageName() !== 'product-details') {
         return;
     }
 
@@ -1448,12 +1377,13 @@ function initializeProductDetailsPage() {
 
     if (!selectedProduct) {
         detailsContainer.innerHTML = `
-            <div class="empty-state show">
-                <h2>Product not found</h2>
-                <p>The product you are looking for is not available.</p>
-                <a href="products.html" class="primary-button">Back to Products</a>
-            </div>
-        `;
+			<div class="empty-state show">
+				<h2>Product not found</h2>
+				<p>The product you are looking for is not available.</p>
+				<a href="products.html" class="primary-button">Back to Products</a>
+			</div>
+		`;
+
         return;
     }
 
@@ -1461,67 +1391,97 @@ function initializeProductDetailsPage() {
     selectedDetailsQuantity = 1;
 
     detailsContainer.innerHTML = `
-        <div class="details-grid">
-            <div class="details-gallery-card">
-                <img src="${selectedProduct.images[0]}" alt="${selectedProduct.name}" class="main-details-image" id="mainDetailsImage">
-                <div class="thumbnail-row">
-                    ${selectedProduct.images
-                        .map(function (imageUrl, index) {
-                            return `
-                            <button type="button" class="thumbnail-button ${index === 0 ? 'active' : ''}" data-image-url="${imageUrl}">
-                                <img src="${imageUrl}" alt="${selectedProduct.name} view ${index + 1}">
-                            </button>
-                        `;
-                        })
-                        .join('')}
-                </div>
-            </div>
+		<div class="details-gallery-card">
+			<img src="${selectedProduct.images[0]}" alt="${selectedProduct.name}" class="main-details-image" id="mainDetailsImage">
 
-            <div class="details-info-card">
-                <p class="eyebrow">${selectedProduct.category}</p>
-                <h1 class="details-title">${selectedProduct.name}</h1>
-                <div class="product-rating">${createRatingStars(selectedProduct.rating)} ${selectedProduct.rating} (${selectedProduct.reviews} reviews)</div>
-                <p class="details-description">${selectedProduct.description}</p>
-                <div class="price-row">
-                    <span class="current-price">${formatPrice(selectedProduct.price)}</span>
-                    <span class="old-price">${formatPrice(selectedProduct.oldPrice)}</span>
-                    <span class="discount-badge static-discount">${selectedProduct.discount}% OFF</span>
-                </div>
-                <div class="details-table">
-                    <div><span>Material</span><span>${selectedProduct.material}</span></div>
-                    <div><span>Dimensions</span><span>${selectedProduct.dimensions}</span></div>
-                    <div><span>Room Type</span><span>${selectedProduct.room}</span></div>
-                    <div><span>Availability</span><span>${selectedProduct.availability}</span></div>
-                </div>
-                <h3>Color Options</h3>
-                <div class="color-options">
-                    <span class="color-pill">${selectedProduct.color}</span>
-                    <span class="color-pill">Warm White</span>
-                    <span class="color-pill">Soft Brown</span>
-                </div>
-                <div class="delivery-box">
-                    <strong>Delivery Information</strong>
-                    <p>${selectedProduct.delivery}</p>
-                </div>
-                <h3>Quantity</h3>
-                <div class="quantity-selector">
-                    <button type="button" id="decreaseDetailsQuantity">−</button>
-                    <span id="detailsQuantityText">1</span>
-                    <button type="button" id="increaseDetailsQuantity">+</button>
-                </div>
-                <div class="details-actions">
-                    <button type="button" class="secondary-button" id="detailsAddToCartButton">Add to Cart</button>
-                    <button type="button" class="primary-button" id="detailsBuyNowButton">Buy Now</button>
-                </div>
-            </div>
-        </div>
-    `;
+			<div class="thumbnail-row">
+				${selectedProduct.images
+                    .map(function (imageUrl, index) {
+                        return `
+						<button type="button" class="thumbnail-button ${index === 0 ? 'active' : ''}" data-image-url="${imageUrl}">
+							<img src="${imageUrl}" alt="${selectedProduct.name} view ${index + 1}">
+						</button>
+					`;
+                    })
+                    .join('')}
+			</div>
+		</div>
 
-    initializeDetailsPageEvents(selectedProduct);
+		<div class="details-info-card">
+			<p class="eyebrow">${selectedProduct.category}</p>
+			<h1 class="details-title">${selectedProduct.name}</h1>
+
+			<div class="product-rating">
+				${createRatingStars(selectedProduct.rating)} ${selectedProduct.rating} (${selectedProduct.reviews} reviews)
+			</div>
+
+			<p class="details-description">${selectedProduct.description}</p>
+
+			<div class="price-row">
+				<span class="current-price">${formatPrice(selectedProduct.price)}</span>
+				<span class="old-price">${formatPrice(selectedProduct.oldPrice)}</span>
+			</div>
+
+			<div class="details-table">
+				<div>
+					<span>Material</span>
+					<span>${selectedProduct.material}</span>
+				</div>
+
+				<div>
+					<span>Dimensions</span>
+					<span>${selectedProduct.dimensions}</span>
+				</div>
+
+				<div>
+					<span>Room Type</span>
+					<span>${selectedProduct.room}</span>
+				</div>
+
+				<div>
+					<span>Discount</span>
+					<span>${selectedProduct.discount}% OFF</span>
+				</div>
+
+				<div>
+					<span>Availability</span>
+					<span>${selectedProduct.availability}</span>
+				</div>
+			</div>
+
+			<h3>Color Options</h3>
+
+			<div class="color-options">
+				<span class="color-pill">${selectedProduct.color}</span>
+				<span class="color-pill">Warm White</span>
+				<span class="color-pill">Soft Brown</span>
+			</div>
+
+			<div class="delivery-box">
+				<strong>Delivery Information</strong>
+				<p>${selectedProduct.delivery}</p>
+			</div>
+
+			<h3>Quantity</h3>
+
+			<div class="quantity-selector">
+				<button type="button" id="decreaseDetailsQuantity">−</button>
+				<span id="detailsQuantityText">1</span>
+				<button type="button" id="increaseDetailsQuantity">+</button>
+			</div>
+
+			<div class="details-actions">
+				<button type="button" class="secondary-button" id="detailsAddToCartButton">Add to Cart</button>
+				<button type="button" class="primary-button" id="detailsBuyNowButton">Buy Now</button>
+			</div>
+		</div>
+	`;
+
+    initializeProductDetailsEvents(selectedProduct);
     renderRelatedProducts(selectedProduct, relatedProductsGrid);
 }
 
-function initializeDetailsPageEvents(selectedProduct) {
+function initializeProductDetailsEvents(selectedProduct) {
     const mainDetailsImage = document.getElementById('mainDetailsImage');
     const thumbnailButtons = document.querySelectorAll('.thumbnail-button');
     const decreaseButton = document.getElementById('decreaseDetailsQuantity');
@@ -1532,14 +1492,14 @@ function initializeDetailsPageEvents(selectedProduct) {
 
     thumbnailButtons.forEach(function (button) {
         button.addEventListener('click', function () {
-            thumbnailButtons.forEach(function (thumbnail) {
-                thumbnail.classList.remove('active');
+            thumbnailButtons.forEach(function (thumbnailButton) {
+                thumbnailButton.classList.remove('active');
             });
 
             button.classList.add('active');
 
             if (mainDetailsImage) {
-                mainDetailsImage.src = button.dataset.imageUrl;
+                mainDetailsImage.src = button.getAttribute('data-image-url');
             }
         });
     });
@@ -1586,11 +1546,12 @@ function renderRelatedProducts(selectedProduct, relatedProductsGrid) {
 
     const relatedProducts = products
         .filter(function (product) {
-            return (
-                product.id !== selectedProduct.id &&
-                (product.category === selectedProduct.category ||
-                    product.room === selectedProduct.room)
-            );
+            const isSameProduct = product.id === selectedProduct.id;
+            const isRelatedCategory =
+                product.category === selectedProduct.category;
+            const isRelatedRoom = product.room === selectedProduct.room;
+
+            return !isSameProduct && (isRelatedCategory || isRelatedRoom);
         })
         .slice(0, 4);
 
@@ -1600,10 +1561,11 @@ function renderRelatedProducts(selectedProduct, relatedProductsGrid) {
     attachProductCardEvents(relatedProductsGrid);
 }
 
-/* ==================================================
-   9. CART PAGE
-   Loads cart from localStorage and updates totals live.
-   ================================================== */
+/*
+==================================================
+9. CART PAGE
+==================================================
+*/
 
 function initializeCartPage() {
     if (getCurrentPageName() !== 'cart') {
@@ -1616,64 +1578,78 @@ function initializeCartPage() {
 function renderCartPage() {
     const cartItemsContainer = document.getElementById('cartItemsContainer');
     const emptyCartMessage = document.getElementById('emptyCartMessage');
-    const cartSummaryCard = document.getElementById('cartSummaryCard');
+    const checkoutButton = document.getElementById('checkoutButton');
 
     if (!cartItemsContainer) {
         return;
     }
 
-    const detailedCart = getCartWithProductDetails();
+    const detailedCartItems = getCartWithProductDetails();
 
-    if (detailedCart.length === 0) {
+    if (detailedCartItems.length === 0) {
         cartItemsContainer.innerHTML = '';
-        emptyCartMessage?.classList.add('show');
-        if (cartSummaryCard) {
-            cartSummaryCard.style.display = 'none';
+
+        if (emptyCartMessage) {
+            emptyCartMessage.classList.add('show');
         }
+
+        if (checkoutButton) {
+            checkoutButton.style.pointerEvents = 'none';
+            checkoutButton.style.opacity = '0.5';
+        }
+
+        updateCartSummary();
         return;
     }
 
-    emptyCartMessage?.classList.remove('show');
-    if (cartSummaryCard) {
-        cartSummaryCard.style.display = 'block';
+    if (emptyCartMessage) {
+        emptyCartMessage.classList.remove('show');
     }
 
-    cartItemsContainer.innerHTML = detailedCart
+    if (checkoutButton) {
+        checkoutButton.style.pointerEvents = 'auto';
+        checkoutButton.style.opacity = '1';
+    }
+
+    cartItemsContainer.innerHTML = detailedCartItems
         .map(function (item) {
             return `
-            <div class="cart-item">
-                <img src="${item.product.images[0]}" alt="${item.product.name}">
-                <div>
-                    <h3 class="cart-item-name">${item.product.name}</h3>
-                    <p class="cart-item-meta">${item.product.category} • ${item.product.material} • ${item.product.color}</p>
-                    <div class="cart-item-actions">
-                        <button type="button" class="small-action-button decrease-cart-item" data-product-id="${item.product.id}">−</button>
-                        <strong>${item.quantity}</strong>
-                        <button type="button" class="small-action-button increase-cart-item" data-product-id="${item.product.id}">+</button>
-                        <button type="button" class="remove-button remove-cart-item" data-product-id="${item.product.id}">Remove</button>
-                    </div>
-                </div>
-                <div class="cart-item-price-row">
-                    <strong>${formatPrice(item.product.price * item.quantity)}</strong>
-                    <span class="old-price">${formatPrice(item.product.oldPrice * item.quantity)}</span>
-                </div>
-            </div>
-        `;
+			<div class="cart-item">
+				<img src="${item.product.images[0]}" alt="${item.product.name}">
+
+				<div>
+					<h3 class="cart-item-name">${item.product.name}</h3>
+					<p class="cart-item-meta">${item.product.category} • ${item.product.material} • ${item.product.color}</p>
+
+					<div class="cart-item-actions">
+						<button type="button" class="small-action-button decrease-cart-item" data-product-id="${item.product.id}">−</button>
+						<strong>${item.quantity}</strong>
+						<button type="button" class="small-action-button increase-cart-item" data-product-id="${item.product.id}">+</button>
+						<button type="button" class="remove-button remove-cart-item" data-product-id="${item.product.id}">Remove</button>
+					</div>
+				</div>
+
+				<div class="cart-item-price-row">
+					<strong>${formatPrice(item.product.price * item.quantity)}</strong>
+					<span class="old-price">${formatPrice(item.product.oldPrice * item.quantity)}</span>
+				</div>
+			</div>
+		`;
         })
         .join('');
 
-    attachCartPageEvents(cartItemsContainer);
+    attachCartItemEvents(cartItemsContainer);
     updateCartSummary();
 }
 
-function attachCartPageEvents(cartItemsContainer) {
+function attachCartItemEvents(cartItemsContainer) {
     cartItemsContainer.onclick = function (event) {
         const increaseButton = event.target.closest('.increase-cart-item');
         const decreaseButton = event.target.closest('.decrease-cart-item');
         const removeButton = event.target.closest('.remove-cart-item');
 
         if (increaseButton) {
-            const productId = increaseButton.dataset.productId;
+            const productId = increaseButton.getAttribute('data-product-id');
             const cartItem = getCart().find(function (item) {
                 return item.id === productId;
             });
@@ -1685,7 +1661,7 @@ function attachCartPageEvents(cartItemsContainer) {
         }
 
         if (decreaseButton) {
-            const productId = decreaseButton.dataset.productId;
+            const productId = decreaseButton.getAttribute('data-product-id');
             const cartItem = getCart().find(function (item) {
                 return item.id === productId;
             });
@@ -1697,7 +1673,7 @@ function attachCartPageEvents(cartItemsContainer) {
         }
 
         if (removeButton) {
-            const productId = removeButton.dataset.productId;
+            const productId = removeButton.getAttribute('data-product-id');
             removeProductFromCart(productId);
             showToast('Item removed from cart');
             renderCartPage();
@@ -1725,10 +1701,11 @@ function updateCartSummary() {
     }
 
     if (deliveryElement) {
-        deliveryElement.textContent =
-            totals.deliveryCharge === 0
-                ? 'Free'
-                : formatPrice(totals.deliveryCharge);
+        if (totals.deliveryCharge === 0) {
+            deliveryElement.textContent = 'Free';
+        } else {
+            deliveryElement.textContent = formatPrice(totals.deliveryCharge);
+        }
     }
 
     if (taxElement) {
@@ -1740,11 +1717,11 @@ function updateCartSummary() {
     }
 }
 
-/* ==================================================
-   10. CHECKOUT PAGE
-   Handles order summary, coupon, validation, payment,
-   order success message, and cart clearing.
-   ================================================== */
+/*
+==================================================
+10. CHECKOUT PAGE
+==================================================
+*/
 
 function initializeCheckoutPage() {
     if (getCurrentPageName() !== 'checkout') {
@@ -1757,33 +1734,37 @@ function initializeCheckoutPage() {
 }
 
 function renderCheckoutSummary() {
-    const checkoutItems = document.getElementById('checkoutItems');
-    const detailedCart = getCartWithProductDetails();
+    const checkoutItemsContainer = document.getElementById(
+        'checkoutItemsContainer'
+    );
 
-    if (!checkoutItems) {
+    if (!checkoutItemsContainer) {
         return;
     }
 
-    if (detailedCart.length === 0) {
-        checkoutItems.innerHTML = `
-            <div class="empty-state show">
-                <h3>No items in cart</h3>
-                <p>Add products before checkout.</p>
-                <a href="products.html" class="primary-button">Shop Products</a>
-            </div>
-        `;
+    const detailedCartItems = getCartWithProductDetails();
+
+    if (detailedCartItems.length === 0) {
+        checkoutItemsContainer.innerHTML = `
+			<div class="empty-state show">
+				<h3>No items in cart</h3>
+				<p>Add products before checkout.</p>
+				<a href="products.html" class="primary-button">Shop Products</a>
+			</div>
+		`;
     } else {
-        checkoutItems.innerHTML = detailedCart
+        checkoutItemsContainer.innerHTML = detailedCartItems
             .map(function (item) {
                 return `
-                <div class="checkout-mini-item">
-                    <img src="${item.product.images[0]}" alt="${item.product.name}">
-                    <div>
-                        <h3>${item.product.name}</h3>
-                        <p>Qty: ${item.quantity} • ${formatPrice(item.product.price * item.quantity)}</p>
-                    </div>
-                </div>
-            `;
+				<div class="checkout-mini-item">
+					<img src="${item.product.images[0]}" alt="${item.product.name}">
+
+					<div>
+						<h3>${item.product.name}</h3>
+						<p>Qty: ${item.quantity} • ${formatPrice(item.product.price * item.quantity)}</p>
+					</div>
+				</div>
+			`;
             })
             .join('');
     }
@@ -1796,9 +1777,6 @@ function updateCheckoutTotals() {
 
     const subtotalElement = document.getElementById('checkoutSubtotal');
     const discountElement = document.getElementById('checkoutDiscount');
-    const couponDiscountElement = document.getElementById(
-        'checkoutCouponDiscount'
-    );
     const deliveryElement = document.getElementById('checkoutDelivery');
     const taxElement = document.getElementById('checkoutTax');
     const totalElement = document.getElementById('checkoutTotal');
@@ -1810,19 +1788,16 @@ function updateCheckoutTotals() {
     }
 
     if (discountElement) {
-        discountElement.textContent = '-' + formatPrice(totals.productDiscount);
-    }
-
-    if (couponDiscountElement) {
-        couponDiscountElement.textContent =
-            '-' + formatPrice(totals.couponDiscount);
+        discountElement.textContent =
+            '-' + formatPrice(totals.productDiscount + totals.couponDiscount);
     }
 
     if (deliveryElement) {
-        deliveryElement.textContent =
-            totals.deliveryCharge === 0
-                ? 'Free'
-                : formatPrice(totals.deliveryCharge);
+        if (totals.deliveryCharge === 0) {
+            deliveryElement.textContent = 'Free';
+        } else {
+            deliveryElement.textContent = formatPrice(totals.deliveryCharge);
+        }
     }
 
     if (taxElement) {
@@ -1849,7 +1824,6 @@ function initializeCouponSystem() {
         const cartValue = totalsWithoutCoupon.subtotalAfterProductDiscount;
 
         checkoutCouponDiscount = 0;
-        activeCouponCode = '';
 
         if (couponCode === '') {
             couponMessage.textContent = 'Please enter a coupon code.';
@@ -1861,7 +1835,6 @@ function initializeCouponSystem() {
         if (couponCode === 'FESTIVE500') {
             if (cartValue >= 5000) {
                 checkoutCouponDiscount = 500;
-                activeCouponCode = couponCode;
                 couponMessage.textContent =
                     'FESTIVE500 applied. You saved ₹500.';
                 couponMessage.className = 'form-message success';
@@ -1872,7 +1845,6 @@ function initializeCouponSystem() {
             }
         } else if (couponCode === 'KPLIVING10') {
             checkoutCouponDiscount = Math.round(cartValue * 0.1);
-            activeCouponCode = couponCode;
             couponMessage.textContent = 'KPLIVING10 applied. You saved 10%.';
             couponMessage.className = 'form-message success';
         } else {
@@ -1909,10 +1881,10 @@ function initializeCheckoutForm() {
             return;
         }
 
-        localStorage.removeItem(CART_STORAGE_KEY);
+        localStorage.removeItem(cartStorageKey);
         updateCartCounter();
+
         checkoutCouponDiscount = 0;
-        activeCouponCode = '';
 
         const successBox = document.getElementById('orderSuccessBox');
 
@@ -1976,20 +1948,24 @@ function validateCheckoutForm() {
             paymentMessage.textContent = 'Please select a payment method.';
             paymentMessage.className = 'form-message error';
         }
+
         isValid = false;
-    } else if (paymentMessage) {
-        paymentMessage.textContent =
-            'Payment method selected: ' + selectedPaymentMethod.value;
-        paymentMessage.className = 'form-message success';
+    } else {
+        if (paymentMessage) {
+            paymentMessage.textContent =
+                'Payment method selected: ' + selectedPaymentMethod.value;
+            paymentMessage.className = 'form-message success';
+        }
     }
 
     return isValid;
 }
 
-/* ==================================================
-   11. CONTACT AND NEWSLETTER FORMS
-   Basic frontend validation only.
-   ================================================== */
+/*
+==================================================
+11. NEWSLETTER AND CONTACT FORMS
+==================================================
+*/
 
 function initializeNewsletterForm() {
     const newsletterForm = document.getElementById('newsletterForm');
@@ -2003,7 +1979,9 @@ function initializeNewsletterForm() {
     newsletterForm.addEventListener('submit', function (event) {
         event.preventDefault();
 
-        if (isValidEmail(newsletterEmail.value.trim())) {
+        const emailValue = newsletterEmail.value.trim();
+
+        if (isValidEmail(emailValue)) {
             newsletterMessage.textContent =
                 'Thank you. You will receive KP Living updates soon.';
             newsletterMessage.className = 'form-message success';
@@ -2056,18 +2034,29 @@ function initializeContactForm() {
         }
 
         if (isValid) {
-            contactFormMessage.textContent =
-                'Message sent successfully. KP Living team will contact you soon.';
-            contactFormMessage.className = 'form-message success';
+            if (contactFormMessage) {
+                contactFormMessage.textContent =
+                    'Message sent successfully. KP Living team will contact you soon.';
+                contactFormMessage.className = 'form-message success';
+            }
+
             contactForm.reset();
             showToast('Message submitted successfully');
         } else {
-            contactFormMessage.textContent =
-                'Please fix the highlighted fields.';
-            contactFormMessage.className = 'form-message error';
+            if (contactFormMessage) {
+                contactFormMessage.textContent =
+                    'Please fix the highlighted fields.';
+                contactFormMessage.className = 'form-message error';
+            }
         }
     });
 }
+
+/*
+==================================================
+12. FORM VALIDATION HELPERS
+==================================================
+*/
 
 function validateRequiredInput(inputElement, errorMessage) {
     if (!inputElement) {
@@ -2196,22 +2185,25 @@ function setFieldSuccess(inputElement) {
     }
 }
 
-/* ==================================================
-   12. PAGE STARTUP
-   DOMContentLoaded runs after the HTML is loaded.
-   Each page checks its body data-page value and runs only
-   the JavaScript needed for that page.
-   ================================================== */
+/*
+==================================================
+13. PAGE STARTUP
+This runs after the HTML page is loaded.
+Each page uses data-page to run only the required code.
+==================================================
+*/
 
 document.addEventListener('DOMContentLoaded', function () {
     initializeNavigation();
     initializeGlobalSearch();
     updateCartCounter();
+
     initializeHomePage();
     initializeProductsPage();
     initializeProductDetailsPage();
     initializeCartPage();
     initializeCheckoutPage();
+
     initializeNewsletterForm();
     initializeContactForm();
 });

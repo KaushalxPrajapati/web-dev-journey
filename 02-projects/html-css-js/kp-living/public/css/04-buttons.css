@@ -1,0 +1,92 @@
+/*
+==================================================
+04-buttons.css
+Primary, secondary, text, and WhatsApp buttons
+==================================================
+*/
+
+.hero-actions,
+.product-actions,
+.details-actions,
+.cart-item-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+
+.primary-button,
+.secondary-button,
+.text-link,
+.whatsapp-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 999px;
+    font-weight: 800;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.primary-button {
+    border: none;
+    background: linear-gradient(135deg, #5b351d, #8a5a35);
+    color: #fffaf3;
+    padding: 13px 22px;
+    box-shadow: 0 12px 25px rgba(91, 53, 29, 0.23);
+}
+
+.secondary-button {
+    border: 1px solid #e3d4bf;
+    background-color: #ffffff;
+    color: #5b351d;
+    padding: 12px 20px;
+}
+
+.text-link {
+    color: #8a5a35;
+    gap: 5px;
+}
+
+.text-link:hover,
+.primary-button:hover,
+.secondary-button:hover,
+.whatsapp-button:hover {
+    transform: translateY(-2px);
+}
+
+.primary-button:hover {
+    box-shadow: 0 16px 30px rgba(91, 53, 29, 0.3);
+}
+
+.full-width-button {
+    width: 100%;
+    margin-top: 14px;
+}
+
+.remove-button,
+.small-action-button {
+    border: none;
+    border-radius: 999px;
+    padding: 8px 12px;
+    font-weight: 800;
+}
+
+.remove-button {
+    background-color: #fff1ee;
+    color: #b44532;
+}
+
+.small-action-button {
+    background-color: #f7efe3;
+    color: #5b351d;
+}
+
+.whatsapp-button {
+    margin-top: 12px;
+    background-color: #25d366;
+    color: #ffffff;
+    padding: 12px 18px;
+}

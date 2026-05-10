@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Contact KP Living</title>
+
+	<link rel="stylesheet" href="/public/css/01-base.css">
+	<link rel="stylesheet" href="/public/css/02-header.css">
+	<link rel="stylesheet" href="/public/css/03-layout.css">
+	<link rel="stylesheet" href="/public/css/04-buttons.css">
+	<link rel="stylesheet" href="/public/css/05-home.css">
+	<link rel="stylesheet" href="/public/css/06-product-card.css">
+	<link rel="stylesheet" href="/public/css/07-forms-feedback.css">
+	<link rel="stylesheet" href="/public/css/08-footer.css">
+	<link rel="stylesheet" href="/public/css/09-products-page.css">
+	<link rel="stylesheet" href="/public/css/10-product-details.css">
+	<link rel="stylesheet" href="/public/css/11-cart.css">
+	<link rel="stylesheet" href="/public/css/12-checkout.css">
+	<link rel="stylesheet" href="/public/css/13-about.css">
+	<link rel="stylesheet" href="/public/css/14-contact.css">
+	<link rel="stylesheet" href="/public/css/15-responsive.css">
+
+	<script src="/public/js/script.js" defer></script>
+</head>
+
+<body data-page="contact">
+	<div class="top-strip">
+		<p>Free delivery in selected cities • Easy returns within 7 days • Furniture made for Indian homes</p>
+	</div>
+
+	<header class="site-header" id="siteHeader">
+		<div class="container header-inner">
+			<a href="index.html" class="logo" aria-label="KP Living home">
+				<span class="logo-mark">KP</span>
+				<span class="logo-text">Living</span>
+			</a>
+
+			<button class="mobile-menu-button" id="mobileMenuButton" aria-label="Open navigation menu">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+
+			<nav class="main-nav" id="mainNav">
+				<a href="index.html" class="nav-link">Home</a>
+				<a href="products.html" class="nav-link">Products</a>
+				<a href="about.html" class="nav-link">About</a>
+				<a href="contact.html" class="nav-link active">Contact</a>
+			</nav>
+
+			<div class="header-actions">
+				<form class="header-search" id="globalSearchForm">
+					<input type="search" id="globalSearchInput" placeholder="Search sofa, bed, table..." aria-label="Search products">
+					<button type="submit" aria-label="Search">Search</button>
+				</form>
+
+				<a href="cart.html" class="cart-link" aria-label="Open cart">
+					<span class="cart-icon">🛒</span>
+					<span class="cart-counter" id="cartCounter">0</span>
+				</a>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<section class="page-hero small-page-hero">
+			<div class="container">
+				<p class="eyebrow">Contact Us</p>
+				<h1>We are here to help</h1>
+				<p>Ask about products, delivery, returns, or furniture suggestions for your home.</p>
+			</div>
+		</section>
+
+		<section class="contact-section">
+			<div class="container contact-layout">
+				<form class="form-card" id="contactForm">
+					<h2>Send a Message</h2>
+
+					<div class="form-grid">
+						<div class="form-group">
+							<label for="contactName">Name</label>
+							<input type="text" id="contactName" placeholder="Your name">
+							<small></small>
+						</div>
+
+						<div class="form-group">
+							<label for="contactEmail">Email</label>
+							<input type="email" id="contactEmail" placeholder="Your email">
+							<small></small>
+						</div>
+
+						<div class="form-group full-form-row">
+							<label for="contactPhone">Phone Number</label>
+							<input type="tel" id="contactPhone" placeholder="Optional 10-digit number">
+							<small></small>
+						</div>
+
+						<div class="form-group full-form-row">
+							<label for="contactMessage">Message</label>
+							<textarea id="contactMessage" rows="6" placeholder="How can we help you?"></textarea>
+							<small></small>
+						</div>
+					</div>
+
+					<button type="submit" class="primary-button full-width-button">Submit Message</button>
+					<p class="form-message" id="contactFormMessage"></p>
+				</form>
+
+				<div class="contact-info-column">
+					<div class="info-card">
+						<h2>KP Living Studio</h2>
+						<p>KP Living Studio, Sakchi, Jamshedpur, Jharkhand</p>
+						<p><strong>Phone:</strong> +91 98765 43210</p>
+						<p><strong>Email:</strong> support@kpliving.in</p>
+						<p><strong>Working Hours:</strong> Monday to Saturday, 10:00 AM - 7:00 PM</p>
+						<a href="https://wa.me/919876543210" class="whatsapp-button" target="_blank" rel="noopener">Chat on WhatsApp</a>
+					</div>
+
+					<div class="map-placeholder">
+						<div>
+							<span>Map Placeholder</span>
+							<p>Sakchi, Jamshedpur</p>
+						</div>
+					</div>
+
+					<div class="info-card">
+						<h2>Follow Us</h2>
+						<div class="social-row">
+							<a href="#">Instagram</a>
+							<a href="#">Facebook</a>
+							<a href="#">YouTube</a>
+							<a href="#">Pinterest</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container footer-grid">
+			<div>
+				<a href="index.html" class="footer-logo">KP Living</a>
+				<p>Premium furniture and home decor made for Indian homes, compact apartments, and warm family spaces.</p>
+			</div>
+
+			<div>
+				<h3>Shop</h3>
+				<a href="products.html?category=Sofa%20Sets">Sofa Sets</a>
+				<a href="products.html?category=Wooden%20Beds">Beds</a>
+				<a href="products.html?category=Dining%20Tables">Dining Tables</a>
+				<a href="products.html?category=Decor%20Items">Decor Items</a>
+			</div>
+
+			<div>
+				<h3>Company</h3>
+				<a href="about.html">About Us</a>
+				<a href="contact.html">Contact</a>
+				<a href="products.html">Products</a>
+				<a href="cart.html">Cart</a>
+			</div>
+
+			<div>
+				<h3>Contact</h3>
+				<p>KP Living Studio, Sakchi, Jamshedpur</p>
+				<p>+91 98765 43210</p>
+				<p>support@kpliving.in</p>
+			</div>
+		</div>
+
+		<div class="footer-bottom">
+			<p>© 2026 KP Living. All rights reserved.</p>
+		</div>
+	</footer>
+
+	<div class="toast" id="toast"></div>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+/*
+==================================================
+08-footer.css
+Footer layout and footer links
+==================================================
+*/
+
+.site-footer {
+    background-color: #1c1917;
+    color: rgba(255, 250, 243, 0.82);
+    padding-top: 58px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 1fr;
+    gap: 28px;
+}
+
+.footer-logo {
+    color: #f0d59a;
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.site-footer h3 {
+    color: #ffffff;
+    margin-bottom: 14px;
+}
+
+.site-footer a:not(.footer-logo) {
+    display: block;
+    margin-bottom: 9px;
+    color: rgba(255, 250, 243, 0.74);
+}
+
+.site-footer a:hover {
+    color: #f0d59a;
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 250, 243, 0.1);
+}

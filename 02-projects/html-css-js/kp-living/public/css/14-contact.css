@@ -1,0 +1,52 @@
+/*
+==================================================
+14-contact.css
+Contact page layout, contact information, map, social links
+==================================================
+*/
+
+.contact-layout {
+    grid-template-columns: 1fr 0.85fr;
+    align-items: start;
+}
+
+.contact-info-column {
+    display: grid;
+    gap: 18px;
+}
+
+.map-placeholder {
+    min-height: 250px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(91, 53, 29, 0.78),
+            rgba(201, 154, 61, 0.55)
+        ),
+        url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=900&q=80')
+            center/cover;
+    color: #ffffff;
+}
+
+.map-placeholder span {
+    display: block;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.social-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.social-row a {
+    padding: 11px 14px;
+    border-radius: 999px;
+    background-color: #f7efe3;
+    color: #5b351d;
+    font-weight: 800;
+}

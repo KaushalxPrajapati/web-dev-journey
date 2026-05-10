@@ -1,0 +1,125 @@
+/*
+==================================================
+07-forms-feedback.css
+Inputs, forms, validation messages, toast notification
+==================================================
+*/
+
+.newsletter-form input,
+.products-controls input,
+.products-controls select,
+.filter-group select,
+.form-group input,
+.form-group textarea,
+.coupon-row input {
+    width: 100%;
+    border: 1px solid #e3d4bf;
+    border-radius: 14px;
+    padding: 13px 14px;
+    outline: none;
+    background-color: #ffffff;
+    color: #24211f;
+    transition:
+        border 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.newsletter-form input:focus,
+.products-controls input:focus,
+.products-controls select:focus,
+.filter-group select:focus,
+.form-group input:focus,
+.form-group textarea:focus,
+.coupon-row input:focus {
+    border-color: #c99a3d;
+    box-shadow: 0 0 0 4px rgba(201, 154, 61, 0.15);
+}
+
+.form-message {
+    grid-column: 1 / -1;
+    min-height: 22px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.form-message.success {
+    color: #2f6f4e;
+}
+
+.form-message.error {
+    color: #b44532;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 18px;
+}
+
+.full-form-row {
+    grid-column: 1 / -1;
+}
+
+.form-group label,
+.coupon-box label {
+    color: #5b351d;
+    font-weight: 900;
+    font-size: 14px;
+}
+
+.form-group small {
+    display: block;
+    min-height: 18px;
+    color: #b44532;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 4px;
+}
+
+.form-group.error input,
+.form-group.error textarea {
+    border-color: #b44532;
+}
+
+.form-group.success input,
+.form-group.success textarea {
+    border-color: #2f6f4e;
+}
+
+.toast {
+    position: fixed;
+    left: 50%;
+    bottom: 24px;
+    transform: translate(-50%, 140%);
+    z-index: 2000;
+    max-width: min(92vw, 420px);
+    padding: 14px 18px;
+    border-radius: 999px;
+    background-color: #24211f;
+    color: #ffffff;
+    font-weight: 800;
+    box-shadow: 0 18px 45px rgba(67, 45, 25, 0.12);
+    opacity: 0;
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.toast.show {
+    transform: translate(-50%, 0);
+    opacity: 1;
+}
+
+.success-box {
+    display: none;
+    padding: 18px;
+    border-radius: 18px;
+    background-color: #edf8f1;
+    color: #2f6f4e;
+    font-weight: 800;
+}
+
+.success-box.show {
+    display: block;
+}
