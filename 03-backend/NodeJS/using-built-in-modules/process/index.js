@@ -10,3 +10,5 @@ for (let i = 2; i < args.length; i++) {
         console.log(chalk.yellow(args[i]));
     }
 }
+
+// Run this by typing "node index.js" in the terminal and passing some arguments like - hello, error, world
