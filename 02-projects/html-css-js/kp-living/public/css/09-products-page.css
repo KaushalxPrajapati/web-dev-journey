@@ -41,7 +41,7 @@ Products page filters, toolbar, product listing layout
 .filter-group {
     display: grid;
     gap: 7px;
-    margin-bottom: 16px;
+    margin-bottom: 25px;
 }
 
 .filter-group label {
