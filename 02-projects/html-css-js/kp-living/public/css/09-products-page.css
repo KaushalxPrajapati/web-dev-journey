@@ -13,7 +13,7 @@ Products page filters, toolbar, product listing layout
 .filter-sidebar,
 .order-summary-card {
     position: sticky;
-    top: 104px;
+    top: 100px;
 }
 
 .filter-header,
