@@ -727,7 +727,12 @@ const products = [
             'A smart TV unit with shelves for set-top box, books, decor, and living room storage.',
         dimensions: '60 x 16 x 22 inches',
         delivery: 'Delivered within 5 to 8 days.',
-        images: createProductImages('wooden tv unit', 250),
+        images: [
+            'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=900&q=80',
+            'https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=900&q=80',
+            'https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=900&q=80',
+            'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80',
+        ],
     },
     {
         id: 'mitti-decor-vase-set',
