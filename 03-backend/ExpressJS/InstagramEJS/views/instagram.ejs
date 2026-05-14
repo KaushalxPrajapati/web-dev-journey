@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Instagram</title>
-	<link rel="stylesheet" href="/css/style.css">
-	<!-- <style>
-            img{
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Instagram</title>
+        <link rel="stylesheet" href="/css/style.css" />
+        <style>
+            img {
                 height: 100px;
             }
-        </style> -->
-</head>
+        </style>
+    </head>
 
-<body>
-	<h1>This page belongs to @<%= user.name %></h1>
-	<button>Follow</button>
-	<button>Message</button>
+    <body>
+        <h1>This page belongs to @<%= user.name %></h1>
+        <button>Follow</button>
+        <button>Message</button>
 
-	<h3>Followers: <%= user.followers %> &nbsp; &nbsp; &nbsp; &nbsp; Following: <%= user.following %></h3>
+        <h3>
+            Followers:
+            <%= user.followers %>
+            &nbsp; &nbsp; &nbsp; &nbsp; Following:
+            <%= user.following %>
+        </h3>
 
-	<hr />
+        <hr />
 
-	<% for (let post of user.posts) {  %>
-	<img src="<%= post.image %>" alt="Some image">
-	<p> Likes: <%= post.likes  %></p>
-	<p> comments: <%= post.comments  %></p>
+        <% for (let post of user.posts) {  %>
+        <img src="<%= post.image %>" alt="Some image" />
+        <p>Likes: <%= post.likes %></p>
+        <p>comments: <%= post.comments %></p>
 
-	<hr>
-	<% } %>
+        <hr />
+        <% } %>
 
-	<script src="/js/script.js"></script>
-</body>
-
+        <!-- <script src="/js/script.js"></script> -->
+        <script src="../public/js/script.js"></script>
+    </body>
 </html>
