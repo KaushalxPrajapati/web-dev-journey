@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ADD User</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+
+        <h1>ADD User</h1>
+        <p class="description">Add a new user to the database</p>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="get.html">GET Users</a>
+            <a href="add.html" class="active">ADD User</a>
+            <a href="update.html">UPDATE User</a>
+            <a href="delete.html">DELETE User</a>
+        </nav>
+
+        <div class="card">
+
+            <input type="text" id="name" placeholder="Enter Name" />
+
+            <button onclick="addUser()">Add User</button>
+
+            <p id="message"></p>
+
+        </div>
+
+        <script>
+
+            const nameInput = document.getElementById("name");
+            const message = document.getElementById("message");
+
+            // Send a POST request with the new user's name
+            async function addUser() {
+
+                const name = nameInput.value.trim();
+
+                // Stop if input is empty
+                if (!name) {
+                    message.className = "error";
+                    message.textContent = "Please enter a name";
+                    return;
+                }
+
+                const res = await fetch("/users", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ name })   // send name as JSON to the server
+                });
+
+                const data = await res.json();
+
+                message.className = "";
+                message.textContent = `${data.message} — ID: ${data.user.id}, Name: ${data.user.name}`;
+
+                // Clear the input after adding
+                nameInput.value = "";
+            }
+
+        </script>
+
+    </body>
+</html>

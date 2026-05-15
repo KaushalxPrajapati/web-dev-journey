@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>UPDATE User</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+
+        <h1>UPDATE User</h1>
+        <p class="description">Change a user's name by entering their ID</p>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="get.html">GET Users</a>
+            <a href="add.html">ADD User</a>
+            <a href="update.html" class="active">UPDATE User</a>
+            <a href="delete.html">DELETE User</a>
+        </nav>
+
+        <div class="card">
+
+            <input type="number" id="userId" placeholder="Enter User ID" />
+            <input type="text" id="name" placeholder="Enter New Name" />
+
+            <button onclick="updateUser()">Update User</button>
+
+            <p id="message"></p>
+
+        </div>
+
+        <script>
+
+            const userIdInput = document.getElementById("userId");
+            const nameInput = document.getElementById("name");
+            const message = document.getElementById("message");
+
+            // Send a PUT request to update the user's name by ID
+            async function updateUser() {
+
+                const id = parseInt(userIdInput.value);
+                const name = nameInput.value.trim();
+
+                // Stop if either field is empty
+                if (!id || !name) {
+                    message.className = "error";
+                    message.textContent = "Please enter both ID and new Name";
+                    return;
+                }
+
+                // ID goes in the URL, new name goes in the body
+                const res = await fetch(`/users/${id}`, {
+                    method: "PUT",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ name })
+                });
+
+                const data = await res.json();
+
+                // If server returned 404, show error styling
+                if (res.status === 404) {
+                    message.className = "error";
+                    message.textContent = data.message;
+                    return;
+                }
+
+                message.className = "";
+                message.textContent = `${data.message} — ID: ${data.user.id}, Name: ${data.user.name}`;
+
+                // Clear inputs after updating
+                userIdInput.value = "";
+                nameInput.value = "";
+            }
+
+        </script>
+
+    </body>
+</html>

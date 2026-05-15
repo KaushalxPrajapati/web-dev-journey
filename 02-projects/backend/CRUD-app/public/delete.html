@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DELETE User</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+
+        <h1>DELETE User</h1>
+        <p class="description">Permanently remove a user by their ID</p>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="get.html">GET Users</a>
+            <a href="add.html">ADD User</a>
+            <a href="update.html">UPDATE User</a>
+            <a href="delete.html" class="active">DELETE User</a>
+        </nav>
+
+        <div class="card">
+
+            <input type="number" id="userId" placeholder="Enter User ID to Delete" />
+
+            <button onclick="deleteUser()">Delete User</button>
+
+            <p id="message"></p>
+
+        </div>
+
+        <script>
+
+            const userIdInput = document.getElementById("userId");
+            const message = document.getElementById("message");
+
+            // Send a DELETE request with the user ID in the URL
+            async function deleteUser() {
+
+                const id = parseInt(userIdInput.value);
+
+                // Stop if input is empty
+                if (!id) {
+                    message.className = "error";
+                    message.textContent = "Please enter a User ID";
+                    return;
+                }
+
+                // No body needed — just the ID in the URL is enough
+                const res = await fetch(`/users/${id}`, {
+                    method: "DELETE"
+                });
+
+                const data = await res.json();
+
+                // If server returned 404, show error styling
+                if (res.status === 404) {
+                    message.className = "error";
+                    message.textContent = data.message;
+                    return;
+                }
+
+                message.className = "";
+                message.textContent = data.message;
+
+                // Clear input after deleting
+                userIdInput.value = "";
+            }
+
+        </script>
+
+    </body>
+</html>
