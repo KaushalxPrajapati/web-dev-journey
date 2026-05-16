@@ -1,186 +1,257 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Contact KP Living</title>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Contact KP Living</title>
+        <link rel="stylesheet" href="../css/01-base.css" />
+        <link rel="stylesheet" href="../css/02-header.css" />
+        <link rel="stylesheet" href="../css/03-layout.css" />
+        <link rel="stylesheet" href="../css/04-buttons.css" />
+        <link rel="stylesheet" href="../css/05-home.css" />
+        <link rel="stylesheet" href="../css/06-product-card.css" />
+        <link rel="stylesheet" href="../css/07-forms-feedback.css" />
+        <link rel="stylesheet" href="../css/08-footer.css" />
+        <link rel="stylesheet" href="../css/09-products-page.css" />
+        <link rel="stylesheet" href="../css/10-product-details.css" />
+        <link rel="stylesheet" href="../css/11-cart.css" />
+        <link rel="stylesheet" href="../css/12-checkout.css" />
+        <link rel="stylesheet" href="../css/13-about.css" />
+        <link rel="stylesheet" href="../css/14-contact.css" />
+        <link rel="stylesheet" href="../css/15-responsive.css" />
 
-	<link rel="stylesheet" href="../css/01-base.css">
-	<link rel="stylesheet" href="../css/02-header.css">
-	<link rel="stylesheet" href="../css/03-layout.css">
-	<link rel="stylesheet" href="../css/04-buttons.css">
-	<link rel="stylesheet" href="../css/05-home.css">
-	<link rel="stylesheet" href="../css/06-product-card.css">
-	<link rel="stylesheet" href="../css/07-forms-feedback.css">
-	<link rel="stylesheet" href="../css/08-footer.css">
-	<link rel="stylesheet" href="../css/09-products-page.css">
-	<link rel="stylesheet" href="../css/10-product-details.css">
-	<link rel="stylesheet" href="../css/11-cart.css">
-	<link rel="stylesheet" href="../css/12-checkout.css">
-	<link rel="stylesheet" href="../css/13-about.css">
-	<link rel="stylesheet" href="../css/14-contact.css">
-	<link rel="stylesheet" href="../css/15-responsive.css">
+        <script src="../js/script.js" defer></script>
+    </head>
 
-	<script src="../js/script.js" defer></script>
-</head>
+    <body data-page="contact">
+        <div class="top-strip" id="topStrip">
+            <p>Free delivery in selected cities • Easy returns within 7 days • Furniture made for Indian homes</p>
 
-<body data-page="contact">
-	<div class="top-strip" id="topStrip">
-		<p>Free delivery in selected cities • Easy returns within 7 days • Furniture made for Indian homes</p>
+            <button type="button" class="top-strip-close" id="topStripCloseButton" aria-label="Close top message">&times;</button>
+        </div>
 
-		<button type="button" class="top-strip-close" id="topStripCloseButton" aria-label="Close top message">
-			&times;
-		</button>
-	</div>
+        <header class="site-header" id="siteHeader">
+            <div class="container header-inner">
+                <a href="index.html" class="logo" aria-label="KP Living home">
+                    <img src="../assets/logo.svg" alt="KP Living" class="logo-img" />
+                </a>
 
-	<header class="site-header" id="siteHeader">
-		<div class="container header-inner">
-			<a href="index.html" class="logo" aria-label="KP Living home">
-				<img src="../assets/logo.svg" alt="KP Living" class="logo-img">
-			</a>
+                <button class="mobile-menu-button" id="mobileMenuButton" aria-label="Open navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
 
-			<button class="mobile-menu-button" id="mobileMenuButton" aria-label="Open navigation menu">
-				<span></span>
-				<span></span>
-				<span></span>
-			</button>
+                <nav class="main-nav" id="mainNav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="products.html" class="nav-link">Products</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link active">Contact</a>
+                </nav>
 
-			<nav class="main-nav" id="mainNav">
-				<a href="index.html" class="nav-link">Home</a>
-				<a href="products.html" class="nav-link">Products</a>
-				<a href="about.html" class="nav-link">About</a>
-				<a href="contact.html" class="nav-link active">Contact</a>
-			</nav>
+                <div class="header-actions">
+                    <form class="header-search" id="globalSearchForm">
+                        <input type="search" id="globalSearchInput" placeholder="Search sofa, bed, table..." aria-label="Search products" />
+                        <button type="submit" aria-label="Search">Search</button>
+                    </form>
 
-			<div class="header-actions">
-				<form class="header-search" id="globalSearchForm">
-					<input type="search" id="globalSearchInput" placeholder="Search sofa, bed, table..." aria-label="Search products">
-					<button type="submit" aria-label="Search">Search</button>
-				</form>
+                    <a href="cart.html" class="cart-link" aria-label="Open cart">
+                        <span class="cart-icon">🛒</span>
+                        <span class="cart-counter" id="cartCounter">0</span>
+                    </a>
+                </div>
+            </div>
+        </header>
 
-				<a href="cart.html" class="cart-link" aria-label="Open cart">
-					<span class="cart-icon">🛒</span>
-					<span class="cart-counter" id="cartCounter">0</span>
-				</a>
-			</div>
-		</div>
-	</header>
+        <main>
+            <section class="page-hero small-page-hero">
+                <div class="container">
+                    <p class="eyebrow">Contact Us</p>
+                    <h1>We are here to help</h1>
+                    <p>Ask about products, delivery, returns, or furniture suggestions for your home.</p>
+                </div>
+            </section>
 
-	<main>
-		<section class="page-hero small-page-hero">
-			<div class="container">
-				<p class="eyebrow">Contact Us</p>
-				<h1>We are here to help</h1>
-				<p>Ask about products, delivery, returns, or furniture suggestions for your home.</p>
-			</div>
-		</section>
+            <section class="contact-section">
+                <div class="container contact-layout">
+                    <form class="form-card" id="contactForm">
+                        <h2>Send a Message</h2>
 
-		<section class="contact-section">
-			<div class="container contact-layout">
-				<form class="form-card" id="contactForm">
-					<h2>Send a Message</h2>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="contactName">Name</label>
+                                <input type="text" id="contactName" placeholder="Your name" />
+                                <small></small>
+                            </div>
 
-					<div class="form-grid">
-						<div class="form-group">
-							<label for="contactName">Name</label>
-							<input type="text" id="contactName" placeholder="Your name">
-							<small></small>
-						</div>
+                            <div class="form-group">
+                                <label for="contactEmail">Email</label>
+                                <input type="email" id="contactEmail" placeholder="Your email" />
+                                <small></small>
+                            </div>
 
-						<div class="form-group">
-							<label for="contactEmail">Email</label>
-							<input type="email" id="contactEmail" placeholder="Your email">
-							<small></small>
-						</div>
+                            <div class="form-group full-form-row">
+                                <label for="contactPhone">Phone Number</label>
+                                <input type="tel" id="contactPhone" placeholder="Optional 10-digit number" />
+                                <small></small>
+                            </div>
 
-						<div class="form-group full-form-row">
-							<label for="contactPhone">Phone Number</label>
-							<input type="tel" id="contactPhone" placeholder="Optional 10-digit number">
-							<small></small>
-						</div>
+                            <div class="form-group full-form-row">
+                                <label for="contactMessage">Message</label>
+                                <textarea id="contactMessage" rows="6" placeholder="How can we help you?"></textarea>
+                                <small></small>
+                            </div>
+                        </div>
 
-						<div class="form-group full-form-row">
-							<label for="contactMessage">Message</label>
-							<textarea id="contactMessage" rows="6" placeholder="How can we help you?"></textarea>
-							<small></small>
-						</div>
-					</div>
+                        <button type="submit" class="primary-button full-width-button">Submit Message</button>
+                        <p class="form-message" id="contactFormMessage"></p>
+                    </form>
 
-					<button type="submit" class="primary-button full-width-button">Submit Message</button>
-					<p class="form-message" id="contactFormMessage"></p>
-				</form>
+                    <div class="contact-info-column">
+                        <div class="info-card contact-studio-card">
+                            <p class="eyebrow">Visit Our Studio</p>
+                            <h2>KP Living Studio</h2>
+                            <p>KP Living Studio, Sakchi, Jamshedpur, Jharkhand</p>
+                            <p><strong>Phone:</strong> +91 98765 43210</p>
+                            <p><strong>Email:</strong> support@kpliving.in</p>
+                            <p><strong>Working Hours:</strong> Monday to Saturday, 10:00 AM - 7:00 PM</p>
 
-				<div class="contact-info-column">
-					<div class="info-card">
-						<h2>KP Living Studio</h2>
-						<p>KP Living Studio, Sakchi, Jamshedpur, Jharkhand</p>
-						<p><strong>Phone:</strong> +91 98765 43210</p>
-						<p><strong>Email:</strong> support@kpliving.in</p>
-						<p><strong>Working Hours:</strong> Monday to Saturday, 10:00 AM - 7:00 PM</p>
-						<a href="https://wa.me/919876543210" class="whatsapp-button" target="_blank" rel="noopener">Chat on WhatsApp</a>
-					</div>
+                            <a href="https://wa.me/919876543210" class="whatsapp-button" target="_blank" rel="noopener noreferrer"> Chat on WhatsApp </a>
+                        </div>
 
-					<div class="map-placeholder">
-						<div>
-							<span>Map Placeholder</span>
-							<p>Sakchi, Jamshedpur</p>
-						</div>
-					</div>
+                        <div class="contact-map-card">
+                            <iframe title="Map showing Jamshedpur, Jharkhand" src="https://www.openstreetmap.org/export/embed.html?bbox=86.126%2C22.746%2C86.282%2C22.869&layer=mapnik&marker=22.8046%2C86.2029" loading="lazy"> </iframe>
 
-					<div class="info-card">
-						<h2>Follow Us</h2>
-						<div class="social-row">
-							<a href="#">Instagram</a>
-							<a href="#">Facebook</a>
-							<a href="#">YouTube</a>
-							<a href="#">Pinterest</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	</main>
+                            <div class="map-card-content">
+                                <span>Jamshedpur Map</span>
+                                <p>Sakchi, Jamshedpur, Jharkhand</p>
+                                <a href="https://www.openstreetmap.org/search?query=Sakchi%20Jamshedpur%20Jharkhand" target="_blank" rel="noopener noreferrer"> Open larger map </a>
+                            </div>
+                        </div>
 
-	<footer class="site-footer">
-		<div class="container footer-grid">
-			<div>
-				<a href="index.html" class="footer-logo">
-					<img src="../assets/logo.svg" alt="KP Living">
-				</a>
-				<p>Premium furniture and home decor made for Indian homes, compact apartments, and warm family spaces.</p>
-			</div>
+                        <div class="info-card contact-gallery-card">
+                            <div class="section-heading compact-contact-heading">
+                                <p class="eyebrow">Store Experience</p>
+                                <h2>Explore KP Living services</h2>
+                                <p>Swipe or scroll horizontally to view more cards.</p>
+                            </div>
 
-			<div>
-				<h3>Shop</h3>
-				<a href="products.html?category=Sofa%20Sets">Sofa Sets</a>
-				<a href="products.html?category=Wooden%20Beds">Beds</a>
-				<a href="products.html?category=Dining%20Tables">Dining Tables</a>
-				<a href="products.html?category=Decor%20Items">Decor Items</a>
-			</div>
+                            <div class="contact-card-scroll" aria-label="KP Living service cards">
+                                <article class="contact-scroll-card">
+                                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=700&q=80" alt="Beautiful living room furniture" />
+                                    <div>
+                                        <h3>Living Room Setup</h3>
+                                        <p>Furniture ideas for warm and comfortable Indian living rooms.</p>
+                                    </div>
+                                </article>
 
-			<div>
-				<h3>Company</h3>
-				<a href="about.html">About Us</a>
-				<a href="contact.html">Contact</a>
-				<a href="products.html">Products</a>
-				<a href="cart.html">Cart</a>
-			</div>
+                                <article class="contact-scroll-card">
+                                    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=700&q=80" alt="Comfortable bedroom furniture" />
+                                    <div>
+                                        <h3>Bedroom Planning</h3>
+                                        <p>Beds, wardrobes, and storage solutions for peaceful bedrooms.</p>
+                                    </div>
+                                </article>
 
-			<div>
-				<h3>Contact</h3>
-				<p>KP Living Studio, Sakchi, Jamshedpur</p>
-				<p>+91 98765 43210</p>
-				<p>support@kpliving.in</p>
-			</div>
-		</div>
+                                <article class="contact-scroll-card">
+                                    <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=700&q=80" alt="Dining table furniture" />
+                                    <div>
+                                        <h3>Dining Suggestions</h3>
+                                        <p>Dining tables and seating ideas for family meals and guests.</p>
+                                    </div>
+                                </article>
 
-		<div class="footer-bottom">
-			<p>© 2026 KP Living. All rights reserved.</p>
-		</div>
-	</footer>
+                                <article class="contact-scroll-card">
+                                    <img src="https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=700&q=80" alt="Study room furniture" />
+                                    <div>
+                                        <h3>Study Room Setup</h3>
+                                        <p>Desks, chairs, and shelves for students and work-from-home setups.</p>
+                                    </div>
+                                </article>
 
-	<div class="toast" id="toast"></div>
-</body>
+                                <article class="contact-scroll-card">
+                                    <img src="https://images.unsplash.com/photo-1600210491369-e753d80a41f3?auto=format&fit=crop&w=700&q=80" alt="Balcony furniture setup" />
+                                    <div>
+                                        <h3>Balcony Comfort</h3>
+                                        <p>Compact balcony seating for morning tea and relaxed evenings.</p>
+                                    </div>
+                                </article>
 
+                                <article class="contact-scroll-card">
+                                    <img src="https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?auto=format&fit=crop&w=700&q=80" alt="Storage cabinet furniture" />
+                                    <div>
+                                        <h3>Storage Support</h3>
+                                        <p>Cabinets, shelves, and compact storage for organized homes.</p>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+                        <div class="info-card follow-card">
+                            <p class="eyebrow">Social Links</p>
+                            <h2>Follow Us</h2>
+
+                            <div class="social-row">
+                                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="social-link">
+                                    <img src="https://cdn.simpleicons.org/instagram/5B351D" alt="" class="social-icon" />
+                                    <span>Instagram</span>
+                                </a>
+
+                                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-link">
+                                    <img src="https://cdn.simpleicons.org/facebook/5B351D" alt="" class="social-icon" />
+                                    <span>Facebook</span>
+                                </a>
+
+                                <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="social-link">
+                                    <img src="https://cdn.simpleicons.org/youtube/5B351D" alt="" class="social-icon" />
+                                    <span>YouTube</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container footer-grid">
+                <div>
+                    <a href="index.html" class="footer-logo">
+                        <img src="../assets/logo.svg" alt="KP Living" />
+                    </a>
+                    <p>Premium furniture and home decor made for Indian homes, compact apartments, and warm family spaces.</p>
+                </div>
+
+                <div>
+                    <h3>Shop</h3>
+                    <a href="products.html?category=Sofa%20Sets">Sofa Sets</a>
+                    <a href="products.html?category=Wooden%20Beds">Beds</a>
+                    <a href="products.html?category=Dining%20Tables">Dining Tables</a>
+                    <a href="products.html?category=Decor%20Items">Decor Items</a>
+                </div>
+
+                <div>
+                    <h3>Company</h3>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="products.html">Products</a>
+                    <a href="cart.html">Cart</a>
+                </div>
+
+                <div>
+                    <h3>Contact</h3>
+                    <p>KP Living Studio, Sakchi, Jamshedpur</p>
+                    <p>+91 98765 43210</p>
+                    <p>support@kpliving.in</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 KP Living. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <div class="toast" id="toast"></div>
+    </body>
 </html>

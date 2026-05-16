@@ -42,83 +42,31 @@ No backend is used.
 // }
 
 function getUnsplashImage(photoId) {
-    return (
-        'https://images.unsplash.com/' +
-        photoId +
-        '?auto=format&fit=crop&w=900&q=80'
-    );
+    return 'https://images.unsplash.com/' + photoId + '?auto=format&fit=crop&w=900&q=80';
 }
 
 function createProductImages(keyword, startNumber) {
     const productKeyword = keyword.toLowerCase();
 
-    const sofaImages = [
-        getUnsplashImage('photo-1555041469-a586c61ea9bc'),
-        getUnsplashImage('photo-1540574163026-643ea20ade25'),
-        getUnsplashImage('photo-1618220179428-22790b461013'),
-        getUnsplashImage('photo-1616486338812-3dadae4b4ace'),
-    ];
+    const sofaImages = [getUnsplashImage('photo-1555041469-a586c61ea9bc'), getUnsplashImage('photo-1540574163026-643ea20ade25'), getUnsplashImage('photo-1618220179428-22790b461013'), getUnsplashImage('photo-1616486338812-3dadae4b4ace')];
 
-    const bedImages = [
-        getUnsplashImage('photo-1505693416388-ac5ce068fe85'),
-        getUnsplashImage('photo-1616594039964-ae9021a400a0'),
-        getUnsplashImage('photo-1560448204-e02f11c3d0e2'),
-        getUnsplashImage('photo-1615873968403-89e068629265'),
-    ];
+    const bedImages = [getUnsplashImage('photo-1505693416388-ac5ce068fe85'), getUnsplashImage('photo-1616594039964-ae9021a400a0'), getUnsplashImage('photo-1560448204-e02f11c3d0e2'), getUnsplashImage('photo-1615873968403-89e068629265')];
 
-    const diningImages = [
-        getUnsplashImage('photo-1617806118233-18e1de247200'),
-        getUnsplashImage('photo-1604578762246-41134e37f9cc'),
-        getUnsplashImage('photo-1560184897-ae75f418493e'),
-        getUnsplashImage('photo-1600210491892-03d54c0aaf87'),
-    ];
+    const diningImages = [getUnsplashImage('photo-1617806118233-18e1de247200'), getUnsplashImage('photo-1604578762246-41134e37f9cc'), getUnsplashImage('photo-1560184897-ae75f418493e'), getUnsplashImage('photo-1600210491892-03d54c0aaf87')];
 
-    const chairImages = [
-        getUnsplashImage('photo-1586023492125-27b2c045efd7'),
-        getUnsplashImage('photo-1567538096630-e0c55bd6374c'),
-        getUnsplashImage('photo-1506439773649-6e0eb8cfb237'),
-        getUnsplashImage('photo-1592078615290-033ee584e267'),
-    ];
+    const chairImages = [getUnsplashImage('photo-1586023492125-27b2c045efd7'), getUnsplashImage('photo-1567538096630-e0c55bd6374c'), getUnsplashImage('photo-1506439773649-6e0eb8cfb237'), getUnsplashImage('photo-1592078615290-033ee584e267')];
 
-    const deskImages = [
-        getUnsplashImage('photo-1518455027359-f3f8164ba6bd'),
-        getUnsplashImage('photo-1497366754035-f200968a6e72'),
-        getUnsplashImage('photo-1516321318423-f06f85e504b3'),
-        getUnsplashImage('photo-1524758631624-e2822e304c36'),
-    ];
+    const deskImages = [getUnsplashImage('photo-1518455027359-f3f8164ba6bd'), getUnsplashImage('photo-1497366754035-f200968a6e72'), getUnsplashImage('photo-1516321318423-f06f85e504b3'), getUnsplashImage('photo-1524758631624-e2822e304c36')];
 
-    const storageImages = [
-        getUnsplashImage('photo-1595428774223-ef52624120d2'),
-        getUnsplashImage('photo-1594026112284-02bb6f3352fe'),
-        getUnsplashImage('photo-1598300042247-d088f8ab3a91'),
-        getUnsplashImage('photo-1583847268964-b28dc8f51f92'),
-    ];
+    const storageImages = [getUnsplashImage('photo-1595428774223-ef52624120d2'), getUnsplashImage('photo-1594026112284-02bb6f3352fe'), getUnsplashImage('photo-1598300042247-d088f8ab3a91'), getUnsplashImage('photo-1583847268964-b28dc8f51f92')];
 
-    const decorImages = [
-        getUnsplashImage('photo-1513519245088-0e12902e5a38'),
-        getUnsplashImage('photo-1524758631624-e2822e304c36'),
-        getUnsplashImage('photo-1494438639946-1ebd1d20bf85'),
-        getUnsplashImage('photo-1485955900006-10f4d324d411'),
-    ];
+    const decorImages = [getUnsplashImage('photo-1513519245088-0e12902e5a38'), getUnsplashImage('photo-1524758631624-e2822e304c36'), getUnsplashImage('photo-1494438639946-1ebd1d20bf85'), getUnsplashImage('photo-1485955900006-10f4d324d411')];
 
-    const balconyImages = [
-        getUnsplashImage('photo-1600210491369-e753d80a41f3'),
-        getUnsplashImage('photo-1600607687939-ce8a6c25118c'),
-        getUnsplashImage('photo-1600566753151-384129cf4e3e'),
-        getUnsplashImage('photo-1600607687920-4e2a09cf159d'),
-    ];
+    const balconyImages = [getUnsplashImage('photo-1600210491369-e753d80a41f3'), getUnsplashImage('photo-1600607687939-ce8a6c25118c'), getUnsplashImage('photo-1600566753151-384129cf4e3e'), getUnsplashImage('photo-1600607687920-4e2a09cf159d')];
 
-    const defaultFurnitureImages = [
-        getUnsplashImage('photo-1618220179428-22790b461013'),
-        getUnsplashImage('photo-1616486338812-3dadae4b4ace'),
-        getUnsplashImage('photo-1555041469-a586c61ea9bc'),
-        getUnsplashImage('photo-1600210491892-03d54c0aaf87'),
-    ];
+    const defaultFurnitureImages = [getUnsplashImage('photo-1618220179428-22790b461013'), getUnsplashImage('photo-1616486338812-3dadae4b4ace'), getUnsplashImage('photo-1555041469-a586c61ea9bc'), getUnsplashImage('photo-1600210491892-03d54c0aaf87')];
 
-    if (
-        productKeyword.includes('sofa') ||
-        productKeyword.includes('sectional')
-    ) {
+    if (productKeyword.includes('sofa') || productKeyword.includes('sectional')) {
         return sofaImages;
     }
 
@@ -130,43 +78,19 @@ function createProductImages(keyword, startNumber) {
         return diningImages;
     }
 
-    if (
-        productKeyword.includes('chair') ||
-        productKeyword.includes('recliner')
-    ) {
+    if (productKeyword.includes('chair') || productKeyword.includes('recliner')) {
         return chairImages;
     }
 
-    if (
-        productKeyword.includes('desk') ||
-        productKeyword.includes('study') ||
-        productKeyword.includes('office')
-    ) {
+    if (productKeyword.includes('desk') || productKeyword.includes('study') || productKeyword.includes('office')) {
         return deskImages;
     }
 
-    if (
-        productKeyword.includes('storage') ||
-        productKeyword.includes('cabinet') ||
-        productKeyword.includes('wardrobe') ||
-        productKeyword.includes('shoe') ||
-        productKeyword.includes('bookshelf') ||
-        productKeyword.includes('shelf') ||
-        productKeyword.includes('tv unit')
-    ) {
+    if (productKeyword.includes('storage') || productKeyword.includes('cabinet') || productKeyword.includes('wardrobe') || productKeyword.includes('shoe') || productKeyword.includes('bookshelf') || productKeyword.includes('shelf') || productKeyword.includes('tv unit')) {
         return storageImages;
     }
 
-    if (
-        productKeyword.includes('lamp') ||
-        productKeyword.includes('mirror') ||
-        productKeyword.includes('rug') ||
-        productKeyword.includes('cushion') ||
-        productKeyword.includes('curtain') ||
-        productKeyword.includes('decor') ||
-        productKeyword.includes('vase') ||
-        productKeyword.includes('mandir')
-    ) {
+    if (productKeyword.includes('lamp') || productKeyword.includes('mirror') || productKeyword.includes('rug') || productKeyword.includes('cushion') || productKeyword.includes('curtain') || productKeyword.includes('decor') || productKeyword.includes('vase') || productKeyword.includes('mandir')) {
         return decorImages;
     }
 
@@ -193,11 +117,9 @@ const products = [
         popularity: 98,
         availability: 'In Stock',
         isNew: false,
-        description:
-            'A warm wooden sofa set with comfortable cushions, made for family seating and daily Indian home use.',
+        description: 'A warm wooden sofa set with comfortable cushions, made for family seating and daily Indian home use.',
         dimensions: '82 x 34 x 32 inches',
-        delivery:
-            'Free delivery in selected cities. Usually delivered within 5 to 8 days.',
+        delivery: 'Free delivery in selected cities. Usually delivered within 5 to 8 days.',
         images: createProductImages('wooden sofa set living room', 1),
     },
     {
@@ -215,11 +137,9 @@ const products = [
         popularity: 94,
         availability: 'Limited Stock',
         isNew: true,
-        description:
-            'A spacious L shape sofa for movie nights, family talks, and weekend comfort.',
+        description: 'A spacious L shape sofa for movie nights, family talks, and weekend comfort.',
         dimensions: '102 x 68 x 33 inches',
-        delivery:
-            'Delivered within 7 to 10 days. Assembly support available in selected cities.',
+        delivery: 'Delivered within 7 to 10 days. Assembly support available in selected cities.',
         images: createProductImages('beige l shape sectional sofa', 10),
     },
     {
@@ -237,11 +157,9 @@ const products = [
         popularity: 88,
         availability: 'In Stock',
         isNew: false,
-        description:
-            'A relaxing recliner for reading, watching TV, and evening rest after a long day.',
+        description: 'A relaxing recliner for reading, watching TV, and evening rest after a long day.',
         dimensions: '38 x 36 x 40 inches',
-        delivery:
-            'Delivered within 4 to 7 days. No complicated assembly required.',
+        delivery: 'Delivered within 4 to 7 days. No complicated assembly required.',
         images: createProductImages('brown recliner chair', 20),
     },
     {
@@ -259,8 +177,7 @@ const products = [
         popularity: 82,
         availability: 'In Stock',
         isNew: true,
-        description:
-            'A light and breathable cane chair that adds a warm Indian touch to your room.',
+        description: 'A light and breathable cane chair that adds a warm Indian touch to your room.',
         dimensions: '28 x 28 x 34 inches',
         delivery: 'Usually delivered within 5 to 7 days.',
         images: createProductImages('cane chair wooden furniture', 30),
@@ -280,11 +197,9 @@ const products = [
         popularity: 99,
         availability: 'In Stock',
         isNew: false,
-        description:
-            'A sturdy queen size bed with a clean headboard and warm wooden finish for peaceful sleep.',
+        description: 'A sturdy queen size bed with a clean headboard and warm wooden finish for peaceful sleep.',
         dimensions: '84 x 64 x 38 inches',
-        delivery:
-            'Delivered in 6 to 9 days. Assembly support included in selected cities.',
+        delivery: 'Delivered in 6 to 9 days. Assembly support included in selected cities.',
         images: createProductImages('queen size wooden bed', 40),
     },
     {
@@ -302,8 +217,7 @@ const products = [
         popularity: 91,
         availability: 'Limited Stock',
         isNew: true,
-        description:
-            'A premium storage bed for compact homes where extra space is always useful.',
+        description: 'A premium storage bed for compact homes where extra space is always useful.',
         dimensions: '85 x 66 x 40 inches',
         delivery: 'Delivered in 8 to 12 days with assembly support.',
         images: createProductImages('wooden storage bed', 50),
@@ -323,8 +237,7 @@ const products = [
         popularity: 76,
         availability: 'In Stock',
         isNew: false,
-        description:
-            'A supportive mattress designed for comfortable sleep and better back support.',
+        description: 'A supportive mattress designed for comfortable sleep and better back support.',
         dimensions: '78 x 60 x 6 inches',
         delivery: 'Rolled pack delivery within 3 to 6 days.',
         images: createProductImages('white orthopedic mattress', 60),
@@ -344,11 +257,9 @@ const products = [
         popularity: 96,
         availability: 'In Stock',
         isNew: false,
-        description:
-            'A solid dining table made for family dinners, guests, and festive meals.',
+        description: 'A solid dining table made for family dinners, guests, and festive meals.',
         dimensions: '72 x 36 x 30 inches',
-        delivery:
-            'Delivered within 7 to 10 days. Assembly available in selected cities.',
+        delivery: 'Delivered within 7 to 10 days. Assembly available in selected cities.',
         images: createProductImages('wooden dining table', 70),
     },
     {
@@ -366,8 +277,7 @@ const products = [
         popularity: 75,
         availability: 'In Stock',
         isNew: false,
-        description:
-            'A simple and strong study desk for students, coding practice, and work-from-home use.',
+        description: 'A simple and strong study desk for students, coding practice, and work-from-home use.',
         dimensions: '42 x 22 x 30 inches',
         delivery: 'Delivered within 4 to 6 days.',
         images: createProductImages('wooden study desk', 80),
@@ -387,8 +297,7 @@ const products = [
         popularity: 78,
         availability: 'In Stock',
         isNew: true,
-        description:
-            'A clean bookshelf for books, decor, study notes, and everyday storage.',
+        description: 'A clean bookshelf for books, decor, study notes, and everyday storage.',
         dimensions: '30 x 14 x 66 inches',
         delivery: 'Delivered within 5 to 8 days.',
         images: createProductImages('wooden bookshelf', 90),
@@ -408,8 +317,7 @@ const products = [
         popularity: 73,
         availability: 'In Stock',
         isNew: false,
-        description:
-            'A slim shoe rack that keeps the entrance clean and works well for compact homes.',
+        description: 'A slim shoe rack that keeps the entrance clean and works well for compact homes.',
         dimensions: '32 x 14 x 36 inches',
         delivery: 'Delivered within 3 to 6 days.',
         images: createProductImages('wooden shoe rack', 100),
@@ -429,8 +337,7 @@ const products = [
         popularity: 85,
         availability: 'In Stock',
         isNew: false,
-        description:
-            'A neat storage cabinet for clothes, files, toys, kitchen extras, or home essentials.',
+        description: 'A neat storage cabinet for clothes, files, toys, kitchen extras, or home essentials.',
         dimensions: '36 x 16 x 54 inches',
         delivery: 'Delivered within 5 to 8 days.',
         images: createProductImages('white storage cabinet', 110),
@@ -450,8 +357,7 @@ const products = [
         popularity: 80,
         availability: 'Limited Stock',
         isNew: false,
-        description:
-            'A practical wardrobe with hanging space and shelves for organized daily storage.',
+        description: 'A practical wardrobe with hanging space and shelves for organized daily storage.',
         dimensions: '32 x 20 x 72 inches',
         delivery: 'Delivered within 7 to 10 days with assembly support.',
         images: createProductImages('wooden wardrobe', 120),
@@ -471,8 +377,7 @@ const products = [
         popularity: 87,
         availability: 'In Stock',
         isNew: true,
-        description:
-            'A beautiful wooden coffee table for snacks, chai, books, and living room decor.',
+        description: 'A beautiful wooden coffee table for snacks, chai, books, and living room decor.',
         dimensions: '42 x 22 x 18 inches',
         delivery: 'Delivered within 4 to 6 days.',
         images: createProductImages('wooden coffee table', 130),
@@ -492,8 +397,7 @@ const products = [
         popularity: 68,
         availability: 'In Stock',
         isNew: false,
-        description:
-            'A small side table for lamps, books, water bottles, and bedside essentials.',
+        description: 'A small side table for lamps, books, water bottles, and bedside essentials.',
         dimensions: '18 x 18 x 22 inches',
         delivery: 'Delivered within 3 to 5 days.',
         images: createProductImages('wooden side table', 140),
@@ -513,8 +417,7 @@ const products = [
         popularity: 90,
         availability: 'In Stock',
         isNew: true,
-        description:
-            'A compact balcony chair set for morning tea, evening chai, and relaxed talks.',
+        description: 'A compact balcony chair set for morning tea, evening chai, and relaxed talks.',
         dimensions: '2 chairs and 1 table set',
         delivery: 'Delivered within 4 to 7 days.',
         images: createProductImages('balcony chair set', 150),
@@ -534,8 +437,7 @@ const products = [
         popularity: 93,
         availability: 'In Stock',
         isNew: false,
-        description:
-            'An ergonomic office chair for work-from-home, study, coding, and long desk hours.',
+        description: 'An ergonomic office chair for work-from-home, study, coding, and long desk hours.',
         dimensions: '24 x 24 x 42 inches',
         delivery: 'Delivered within 3 to 6 days.',
         images: createProductImages('ergonomic office chair', 160),
@@ -555,8 +457,7 @@ const products = [
         popularity: 79,
         availability: 'In Stock',
         isNew: true,
-        description:
-            'A modern office desk with enough space for laptop, monitor, books, and notes.',
+        description: 'A modern office desk with enough space for laptop, monitor, books, and notes.',
         dimensions: '48 x 24 x 30 inches',
         delivery: 'Delivered within 4 to 7 days.',
         images: createProductImages('office desk wooden metal', 170),
@@ -576,8 +477,7 @@ const products = [
         popularity: 89,
         availability: 'In Stock',
         isNew: true,
-        description:
-            'A graceful mandir unit with storage for pooja items and a calm home prayer space.',
+        description: 'A graceful mandir unit with storage for pooja items and a calm home prayer space.',
         dimensions: '30 x 16 x 60 inches',
         delivery: 'Delivered within 5 to 9 days.',
         images: createProductImages('home mandir unit', 180),
@@ -597,8 +497,7 @@ const products = [
         popularity: 72,
         availability: 'In Stock',
         isNew: false,
-        description:
-            'A warm floor lamp that gives your living room a calm and premium evening glow.',
+        description: 'A warm floor lamp that gives your living room a calm and premium evening glow.',
         dimensions: '15 x 15 x 58 inches',
         delivery: 'Delivered within 3 to 5 days.',
         images: createProductImages('floor lamp living room', 190),
@@ -618,8 +517,7 @@ const products = [
         popularity: 70,
         availability: 'In Stock',
         isNew: false,
-        description:
-            'A clean wall mirror that makes rooms feel brighter and more open.',
+        description: 'A clean wall mirror that makes rooms feel brighter and more open.',
         dimensions: '24 x 36 inches',
         delivery: 'Delivered within 4 to 6 days with safe packaging.',
         images: createProductImages('wooden wall mirror', 200),
@@ -639,8 +537,7 @@ const products = [
         popularity: 66,
         availability: 'In Stock',
         isNew: true,
-        description:
-            'A soft patterned rug that adds warmth and character to your living room floor.',
+        description: 'A soft patterned rug that adds warmth and character to your living room floor.',
         dimensions: '5 x 7 feet',
         delivery: 'Delivered within 3 to 5 days.',
         images: createProductImages('cream brown rug living room', 210),
@@ -660,8 +557,7 @@ const products = [
         popularity: 65,
         availability: 'In Stock',
         isNew: true,
-        description:
-            'A set of soft cushions that brings color and comfort to your sofa or bed.',
+        description: 'A set of soft cushions that brings color and comfort to your sofa or bed.',
         dimensions: '16 x 16 inches, set of 5',
         delivery: 'Delivered within 2 to 4 days.',
         images: createProductImages('colorful cushion set', 220),
@@ -681,8 +577,7 @@ const products = [
         popularity: 64,
         availability: 'In Stock',
         isNew: false,
-        description:
-            'Simple beige curtains that soften sunlight and make your room feel calm.',
+        description: 'Simple beige curtains that soften sunlight and make your room feel calm.',
         dimensions: 'Door size, set of 2',
         delivery: 'Delivered within 2 to 5 days.',
         images: createProductImages('beige curtains living room', 230),
@@ -702,8 +597,7 @@ const products = [
         popularity: 67,
         availability: 'In Stock',
         isNew: false,
-        description:
-            'A wall shelf for books, plants, frames, and small decor without using floor space.',
+        description: 'A wall shelf for books, plants, frames, and small decor without using floor space.',
         dimensions: '36 x 8 x 10 inches',
         delivery: 'Delivered within 3 to 5 days.',
         images: createProductImages('wooden wall shelf', 240),
@@ -723,8 +617,7 @@ const products = [
         popularity: 84,
         availability: 'In Stock',
         isNew: false,
-        description:
-            'A smart TV unit with shelves for set-top box, books, decor, and living room storage.',
+        description: 'A smart TV unit with shelves for set-top box, books, decor, and living room storage.',
         dimensions: '60 x 16 x 22 inches',
         delivery: 'Delivered within 5 to 8 days.',
         images: [
@@ -749,8 +642,7 @@ const products = [
         popularity: 69,
         availability: 'In Stock',
         isNew: true,
-        description:
-            'A warm ceramic vase set for shelves, coffee tables, side tables, and festive decor.',
+        description: 'A warm ceramic vase set for shelves, coffee tables, side tables, and festive decor.',
         dimensions: 'Set of 3 assorted sizes',
         delivery: 'Delivered within 2 to 5 days with safe packaging.',
         images: createProductImages('ceramic vase set', 260),
@@ -827,13 +719,22 @@ function showToast(message) {
 function initializeTopStrip() {
     const topStrip = document.getElementById('topStrip');
     const topStripCloseButton = document.getElementById('topStripCloseButton');
+    const topStripStorageKey = 'kpLivingTopStripClosed';
 
     if (!topStrip || !topStripCloseButton) {
         return;
     }
 
+    const isTopStripClosed = localStorage.getItem(topStripStorageKey) === 'true';
+
+    if (isTopStripClosed) {
+        topStrip.classList.add('hide');
+        return;
+    }
+
     topStripCloseButton.addEventListener('click', function () {
         topStrip.classList.add('hide');
+        localStorage.setItem(topStripStorageKey, 'true');
     });
 }
 
@@ -877,8 +778,7 @@ function initializeGlobalSearch() {
             return;
         }
 
-        window.location.href =
-            'products.html?search=' + encodeURIComponent(searchText);
+        window.location.href = 'products.html?search=' + encodeURIComponent(searchText);
     });
 }
 
@@ -1016,24 +916,14 @@ function calculateCartTotals(couponDiscountAmount) {
     let subtotalAfterProductDiscount = 0;
 
     detailedCartItems.forEach(function (item) {
-        subtotalBeforeDiscount =
-            subtotalBeforeDiscount + item.product.oldPrice * item.quantity;
-        subtotalAfterProductDiscount =
-            subtotalAfterProductDiscount + item.product.price * item.quantity;
+        subtotalBeforeDiscount = subtotalBeforeDiscount + item.product.oldPrice * item.quantity;
+        subtotalAfterProductDiscount = subtotalAfterProductDiscount + item.product.price * item.quantity;
     });
 
-    const productDiscount =
-        subtotalBeforeDiscount - subtotalAfterProductDiscount;
-    const safeCouponDiscount = Math.min(
-        couponDiscountAmount || 0,
-        subtotalAfterProductDiscount
-    );
-    const taxableAmount = Math.max(
-        subtotalAfterProductDiscount - safeCouponDiscount,
-        0
-    );
-    const deliveryCharge =
-        taxableAmount === 0 || taxableAmount >= 25000 ? 0 : 299;
+    const productDiscount = subtotalBeforeDiscount - subtotalAfterProductDiscount;
+    const safeCouponDiscount = Math.min(couponDiscountAmount || 0, subtotalAfterProductDiscount);
+    const taxableAmount = Math.max(subtotalAfterProductDiscount - safeCouponDiscount, 0);
+    const deliveryCharge = taxableAmount === 0 || taxableAmount >= 25000 ? 0 : 299;
     const tax = Math.round(taxableAmount * 0.18);
     const totalAmount = taxableAmount + deliveryCharge + tax;
 
@@ -1109,8 +999,7 @@ function attachProductCardEvents(parentElement) {
         if (viewDetailsButton) {
             const productId = viewDetailsButton.getAttribute('data-product-id');
             localStorage.setItem('kpLivingSelectedProduct', productId);
-            window.location.href =
-                'product-details.html?id=' + encodeURIComponent(productId);
+            window.location.href = 'product-details.html?id=' + encodeURIComponent(productId);
         }
 
         if (addCartButton) {
@@ -1259,9 +1148,7 @@ function getCurrentProductFilterValues() {
     const sortSelect = document.getElementById('sortSelect');
 
     return {
-        searchText: productSearchInput
-            ? productSearchInput.value.trim().toLowerCase()
-            : '',
+        searchText: productSearchInput ? productSearchInput.value.trim().toLowerCase() : '',
         category: categoryFilter ? categoryFilter.value : '',
         room: roomFilter ? roomFilter.value : '',
         priceRange: priceFilter ? priceFilter.value : '',
@@ -1290,52 +1177,19 @@ function getFilteredProducts() {
     const filters = getCurrentProductFilterValues();
 
     let filteredProducts = products.filter(function (product) {
-        const searchableText = [
-            product.name,
-            product.category,
-            product.room,
-            product.material,
-            product.color,
-            product.description,
-        ]
-            .join(' ')
-            .toLowerCase();
+        const searchableText = [product.name, product.category, product.room, product.material, product.color, product.description].join(' ').toLowerCase();
 
-        const matchesSearch =
-            filters.searchText === '' ||
-            searchableText.includes(filters.searchText);
-        const matchesCategory =
-            filters.category === '' || product.category === filters.category;
-        const matchesRoom =
-            filters.room === '' || product.room === filters.room;
-        const matchesPrice = productMatchesPriceRange(
-            product,
-            filters.priceRange
-        );
-        const matchesMaterial =
-            filters.material === '' || product.material === filters.material;
-        const matchesColor =
-            filters.color === '' || product.color === filters.color;
-        const matchesRating =
-            filters.rating === '' || product.rating >= Number(filters.rating);
-        const matchesDiscount =
-            filters.discount === '' ||
-            product.discount >= Number(filters.discount);
-        const matchesAvailability =
-            filters.availability === '' ||
-            product.availability === filters.availability;
+        const matchesSearch = filters.searchText === '' || searchableText.includes(filters.searchText);
+        const matchesCategory = filters.category === '' || product.category === filters.category;
+        const matchesRoom = filters.room === '' || product.room === filters.room;
+        const matchesPrice = productMatchesPriceRange(product, filters.priceRange);
+        const matchesMaterial = filters.material === '' || product.material === filters.material;
+        const matchesColor = filters.color === '' || product.color === filters.color;
+        const matchesRating = filters.rating === '' || product.rating >= Number(filters.rating);
+        const matchesDiscount = filters.discount === '' || product.discount >= Number(filters.discount);
+        const matchesAvailability = filters.availability === '' || product.availability === filters.availability;
 
-        return (
-            matchesSearch &&
-            matchesCategory &&
-            matchesRoom &&
-            matchesPrice &&
-            matchesMaterial &&
-            matchesColor &&
-            matchesRating &&
-            matchesDiscount &&
-            matchesAvailability
-        );
+        return matchesSearch && matchesCategory && matchesRoom && matchesPrice && matchesMaterial && matchesColor && matchesRating && matchesDiscount && matchesAvailability;
     });
 
     filteredProducts = sortProductList(filteredProducts, filters.sortBy);
@@ -1393,9 +1247,7 @@ function renderProductsPage() {
     const productsGrid = document.getElementById('productsGrid');
     const productCountHeading = document.getElementById('productCountHeading');
     const productCountText = document.getElementById('productCountText');
-    const emptyProductsMessage = document.getElementById(
-        'emptyProductsMessage'
-    );
+    const emptyProductsMessage = document.getElementById('emptyProductsMessage');
     const loadMoreButton = document.getElementById('loadMoreButton');
 
     if (!productsGrid) {
@@ -1412,12 +1264,7 @@ function renderProductsPage() {
     }
 
     if (productCountText) {
-        productCountText.textContent =
-            'Showing ' +
-            visibleProducts.length +
-            ' of ' +
-            filteredProducts.length +
-            ' products';
+        productCountText.textContent = 'Showing ' + visibleProducts.length + ' of ' + filteredProducts.length + ' products';
     }
 
     if (emptyProductsMessage) {
@@ -1452,18 +1299,7 @@ function initializeProductsPage() {
 
     attachProductCardEvents(productsGrid);
 
-    const filterElementIds = [
-        'productSearchInput',
-        'categoryFilter',
-        'roomFilter',
-        'priceFilter',
-        'materialFilter',
-        'colorFilter',
-        'ratingFilter',
-        'discountFilter',
-        'availabilityFilter',
-        'sortSelect',
-    ];
+    const filterElementIds = ['productSearchInput', 'categoryFilter', 'roomFilter', 'priceFilter', 'materialFilter', 'colorFilter', 'ratingFilter', 'discountFilter', 'availabilityFilter', 'sortSelect'];
 
     filterElementIds.forEach(function (elementId) {
         const element = document.getElementById(elementId);
@@ -1527,11 +1363,8 @@ function initializeProductDetailsPage() {
     }
 
     const productIdFromUrl = getQueryParameter('id');
-    const productIdFromStorage = localStorage.getItem(
-        'kpLivingSelectedProduct'
-    );
-    const selectedProductId =
-        productIdFromUrl || productIdFromStorage || products[0].id;
+    const productIdFromStorage = localStorage.getItem('kpLivingSelectedProduct');
+    const selectedProductId = productIdFromUrl || productIdFromStorage || products[0].id;
     const selectedProduct = findProductById(selectedProductId);
 
     if (!selectedProduct) {
@@ -1706,17 +1539,14 @@ function renderRelatedProducts(selectedProduct, relatedProductsGrid) {
     const relatedProducts = products
         .filter(function (product) {
             const isSameProduct = product.id === selectedProduct.id;
-            const isRelatedCategory =
-                product.category === selectedProduct.category;
+            const isRelatedCategory = product.category === selectedProduct.category;
             const isRelatedRoom = product.room === selectedProduct.room;
 
             return !isSameProduct && (isRelatedCategory || isRelatedRoom);
         })
         .slice(0, 4);
 
-    relatedProductsGrid.innerHTML = relatedProducts
-        .map(createProductCard)
-        .join('');
+    relatedProductsGrid.innerHTML = relatedProducts.map(createProductCard).join('');
     attachProductCardEvents(relatedProductsGrid);
 }
 
@@ -1850,9 +1680,7 @@ function updateCartSummary() {
     const totalElement = document.getElementById('cartTotal');
 
     if (subtotalElement) {
-        subtotalElement.textContent = formatPrice(
-            totals.subtotalBeforeDiscount
-        );
+        subtotalElement.textContent = formatPrice(totals.subtotalBeforeDiscount);
     }
 
     if (discountElement) {
@@ -1893,9 +1721,7 @@ function initializeCheckoutPage() {
 }
 
 function renderCheckoutSummary() {
-    const checkoutItemsContainer = document.getElementById(
-        'checkoutItemsContainer'
-    );
+    const checkoutItemsContainer = document.getElementById('checkoutItemsContainer');
 
     if (!checkoutItemsContainer) {
         return;
@@ -1941,14 +1767,11 @@ function updateCheckoutTotals() {
     const totalElement = document.getElementById('checkoutTotal');
 
     if (subtotalElement) {
-        subtotalElement.textContent = formatPrice(
-            totals.subtotalBeforeDiscount
-        );
+        subtotalElement.textContent = formatPrice(totals.subtotalBeforeDiscount);
     }
 
     if (discountElement) {
-        discountElement.textContent =
-            '-' + formatPrice(totals.productDiscount + totals.couponDiscount);
+        discountElement.textContent = '-' + formatPrice(totals.productDiscount + totals.couponDiscount);
     }
 
     if (deliveryElement) {
@@ -1994,12 +1817,10 @@ function initializeCouponSystem() {
         if (couponCode === 'FESTIVE500') {
             if (cartValue >= 5000) {
                 checkoutCouponDiscount = 500;
-                couponMessage.textContent =
-                    'FESTIVE500 applied. You saved ₹500.';
+                couponMessage.textContent = 'FESTIVE500 applied. You saved ₹500.';
                 couponMessage.className = 'form-message success';
             } else {
-                couponMessage.textContent =
-                    'FESTIVE500 works on orders above ₹5,000.';
+                couponMessage.textContent = 'FESTIVE500 works on orders above ₹5,000.';
                 couponMessage.className = 'form-message error';
             }
         } else if (couponCode === 'KPLIVING10') {
@@ -2007,8 +1828,7 @@ function initializeCouponSystem() {
             couponMessage.textContent = 'KPLIVING10 applied. You saved 10%.';
             couponMessage.className = 'form-message success';
         } else {
-            couponMessage.textContent =
-                'Invalid coupon. Try FESTIVE500 or KPLIVING10.';
+            couponMessage.textContent = 'Invalid coupon. Try FESTIVE500 or KPLIVING10.';
             couponMessage.className = 'form-message error';
         }
 
@@ -2048,8 +1868,7 @@ function initializeCheckoutForm() {
         const successBox = document.getElementById('orderSuccessBox');
 
         if (successBox) {
-            successBox.textContent =
-                'Order placed successfully. Thank you for shopping with KP Living. Our team will contact you soon for delivery updates.';
+            successBox.textContent = 'Order placed successfully. Thank you for shopping with KP Living. Our team will contact you soon for delivery updates.';
             successBox.classList.add('show');
         }
 
@@ -2069,9 +1888,7 @@ function validateCheckoutForm() {
     const cityInput = document.getElementById('checkoutCity');
     const stateInput = document.getElementById('checkoutState');
     const pincodeInput = document.getElementById('checkoutPincode');
-    const selectedPaymentMethod = document.querySelector(
-        "input[name='paymentMethod']:checked"
-    );
+    const selectedPaymentMethod = document.querySelector("input[name='paymentMethod']:checked");
     const paymentMessage = document.getElementById('paymentMessage');
 
     if (!validateRequiredInput(nameInput, 'Name is required.')) {
@@ -2111,8 +1928,7 @@ function validateCheckoutForm() {
         isValid = false;
     } else {
         if (paymentMessage) {
-            paymentMessage.textContent =
-                'Payment method selected: ' + selectedPaymentMethod.value;
+            paymentMessage.textContent = 'Payment method selected: ' + selectedPaymentMethod.value;
             paymentMessage.className = 'form-message success';
         }
     }
@@ -2141,13 +1957,11 @@ function initializeNewsletterForm() {
         const emailValue = newsletterEmail.value.trim();
 
         if (isValidEmail(emailValue)) {
-            newsletterMessage.textContent =
-                'Thank you. You will receive KP Living updates soon.';
+            newsletterMessage.textContent = 'Thank you. You will receive KP Living updates soon.';
             newsletterMessage.className = 'form-message success';
             newsletterForm.reset();
         } else {
-            newsletterMessage.textContent =
-                'Please enter a valid email address.';
+            newsletterMessage.textContent = 'Please enter a valid email address.';
             newsletterMessage.className = 'form-message error';
         }
     });
@@ -2171,8 +1985,7 @@ function initializeContactForm() {
         const emailInput = document.getElementById('contactEmail');
         const phoneInput = document.getElementById('contactPhone');
         const messageInput = document.getElementById('contactMessage');
-        const contactFormMessage =
-            document.getElementById('contactFormMessage');
+        const contactFormMessage = document.getElementById('contactFormMessage');
 
         let isValid = true;
 
@@ -2194,8 +2007,7 @@ function initializeContactForm() {
 
         if (isValid) {
             if (contactFormMessage) {
-                contactFormMessage.textContent =
-                    'Message sent successfully. KP Living team will contact you soon.';
+                contactFormMessage.textContent = 'Message sent successfully. KP Living team will contact you soon.';
                 contactFormMessage.className = 'form-message success';
             }
 
@@ -2203,8 +2015,7 @@ function initializeContactForm() {
             showToast('Message submitted successfully');
         } else {
             if (contactFormMessage) {
-                contactFormMessage.textContent =
-                    'Please fix the highlighted fields.';
+                contactFormMessage.textContent = 'Please fix the highlighted fields.';
                 contactFormMessage.className = 'form-message error';
             }
         }
@@ -2278,10 +2089,7 @@ function validateIndianPhone(inputElement, isRequired) {
     }
 
     if (!indianPhonePattern.test(value)) {
-        setFieldError(
-            inputElement,
-            'Enter a valid 10-digit Indian mobile number.'
-        );
+        setFieldError(inputElement, 'Enter a valid 10-digit Indian mobile number.');
         return false;
     }
 
