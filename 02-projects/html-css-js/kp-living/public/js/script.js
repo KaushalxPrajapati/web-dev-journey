@@ -1131,6 +1131,15 @@ function attachProductCardEvents(parentElement) {
 ==================================================
 */
 
+function renderHomeProductSection(gridElement, productList) {
+    if (!gridElement) {
+        return;
+    }
+
+    gridElement.innerHTML = productList.map(createProductCard).join('');
+    attachProductCardEvents(gridElement);
+}
+
 function initializeHomePage() {
     if (getCurrentPageName() !== 'home') {
         return;
@@ -1139,13 +1148,24 @@ function initializeHomePage() {
     const bestSellerGrid = document.getElementById('bestSellerGrid');
     const newArrivalGrid = document.getElementById('newArrivalGrid');
 
-    if (bestSellerGrid) {
-        attachProductCardEvents(bestSellerGrid);
-    }
+    const bestSellerProducts = products
+        .slice()
+        .sort(function (firstProduct, secondProduct) {
+            return secondProduct.popularity - firstProduct.popularity;
+        })
+        .slice(0, 6);
 
-    if (newArrivalGrid) {
-        attachProductCardEvents(newArrivalGrid);
-    }
+    const newArrivalProducts = products
+        .filter(function (product) {
+            return product.isNew;
+        })
+        .sort(function (firstProduct, secondProduct) {
+            return secondProduct.popularity - firstProduct.popularity;
+        })
+        .slice(0, 6);
+
+    renderHomeProductSection(bestSellerGrid, bestSellerProducts);
+    renderHomeProductSection(newArrivalGrid, newArrivalProducts);
 }
 
 /*

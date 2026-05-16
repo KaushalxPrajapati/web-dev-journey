@@ -6,7 +6,7 @@ Products page filters, toolbar, product listing layout
 */
 
 .products-layout {
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: 250px 1fr;
     align-items: start;
 }
 
@@ -33,7 +33,7 @@ Products page filters, toolbar, product listing layout
     border: none;
     background-color: #f7efe3;
     color: #5b351d;
-    padding: 8px 12px;
+    padding: 5px 20px;
     border-radius: 999px;
     font-weight: 800;
 }
