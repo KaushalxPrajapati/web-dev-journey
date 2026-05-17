@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Basics of Express</title>
+        <style>
+            div {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                gap: 1em;
+            }
+
+            a {
+                font-size: 1.5em;
+                text-decoration: none;
+            }
+
+            a:visited {
+                color: gray;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <a href="/">Home</a>
+            <a href="/products">All Products</a>
+            <a href="/products/1">Product 1</a>
+            <a href="/products/2">Product 2</a>
+            <a href="/products/3">Product 3</a>
+            <a href="/search?city=Mumbai&category=shoes&maxprice=500">Search Shoes</a>
+        </div>
+    </body>
+</html>

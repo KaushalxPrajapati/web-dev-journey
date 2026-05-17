@@ -19,20 +19,21 @@
 //   GET /products/:id                            → Single product by ID
 //   GET /search?city=&category=&maxprice=        → Search with filters
 
-import express from 'express';
-
+const express = require('express');
 // express() creates an Express application instance.
+
+const app = express();
 // This 'app' object is the core of your server —
 // you define routes on it and it handles all incoming requests.
-const app = express();
 
+const PORT = 5000; // uppercase — convention for constants
+// Port 5000 is a convention for local development.
+// In production, this usually comes from environment variables: process.env.PORT
 // app.listen(port, callback)
 // Starts the server and makes it listen for incoming HTTP requests on the specified port.
-// Port 3000 is a convention for local development.
-// In production, this usually comes from environment variables: process.env.PORT
-// The callback runs once the server is successfully started.
-app.listen(3000, () => {
-    console.log(`App is listening on port 3000`);
+// The callback runs once the server is successfully started and it logs the message in our terminal.
+app.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}`);
 });
 
 // ROUTING
@@ -41,9 +42,21 @@ app.listen(3000, () => {
 // res = response object → used to send something back to the client
 // Every URL the user visits triggers the matching route's callback.
 
+// import path from 'path';
+
+// Or import specific methods
+// import { join, resolve, basename } from 'path';
+// Using node.js built-in module which is path module to connect my html and js file without explicitly changing the URL in the address bar
+
+const path = require('path');
+
+console.log('Directory name:', __dirname);
+
 // Home route — responds when user hits the base URL
 app.get('/', (req, res) => {
-    res.send('Welcome to ShopKaro');
+    // res.send('Welcome to ShopKaro');
+    // res.sendFile(path.resolve('index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Products route — returns all products (in real apps, you'd fetch from a DB here)
