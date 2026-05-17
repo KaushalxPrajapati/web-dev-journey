@@ -1,6 +1,20 @@
 {
-  "plugins": ["prettier-plugin-ejs"],
-  "singleQuote": true,
-  "semi": true,
-  "tabWidth": 4
+    "plugins": ["prettier-plugin-ejs"],
+    "printWidth": 300,
+    "tabWidth": 4,
+    "useTabs": false,
+    "singleQuote": true,
+    "semi": true,
+    "trailingComma": "es5",
+    "htmlWhitespaceSensitivity": "css",
+    "singleAttributePerLine": false,
+    "proseWrap": "never",
+    "overrides": [
+        {
+            "files": "*.ejs",
+            "options": {
+                "parser": "html"
+            }
+        }
+    ]
 }
