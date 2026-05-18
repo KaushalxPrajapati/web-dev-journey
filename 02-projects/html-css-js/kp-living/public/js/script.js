@@ -1978,7 +1978,7 @@ function initializeContactForm() {
         return;
     }
 
-    contactForm.addEventListener('submit', function (event) {
+    contactForm.addEventListener('submit', async function (event) {
         event.preventDefault();
 
         const nameInput = document.getElementById('contactName');
@@ -2005,17 +2005,41 @@ function initializeContactForm() {
             isValid = false;
         }
 
-        if (isValid) {
-            if (contactFormMessage) {
-                contactFormMessage.textContent = 'Message sent successfully. KP Living team will contact you soon.';
-                contactFormMessage.className = 'form-message success';
-            }
-
-            contactForm.reset();
-            showToast('Message submitted successfully');
-        } else {
+        if (!isValid) {
             if (contactFormMessage) {
                 contactFormMessage.textContent = 'Please fix the highlighted fields.';
+                contactFormMessage.className = 'form-message error';
+            }
+            return;
+        }
+
+        try {
+            const formData = new FormData(contactForm);
+
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData,
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                if (contactFormMessage) {
+                    contactFormMessage.textContent = 'Message sent successfully. KP Living team will contact you soon.';
+                    contactFormMessage.className = 'form-message success';
+                }
+
+                contactForm.reset();
+                showToast('Message submitted successfully');
+            } else {
+                if (contactFormMessage) {
+                    contactFormMessage.textContent = 'Something went wrong. Please try again.';
+                    contactFormMessage.className = 'form-message error';
+                }
+            }
+        } catch (error) {
+            if (contactFormMessage) {
+                contactFormMessage.textContent = 'Unable to send message. Please check your internet connection.';
                 contactFormMessage.className = 'form-message error';
             }
         }

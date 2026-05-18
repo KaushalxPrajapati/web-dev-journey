@@ -75,31 +75,33 @@
 
             <section class="contact-section">
                 <div class="container contact-layout">
-                    <form class="form-card" id="contactForm">
+                    <form class="form-card" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
                         <h2>Send a Message</h2>
+
+                        <input type="hidden" name="access_key" value="019eb01b-3386-45d0-a14c-965e6d261e41" />
 
                         <div class="form-grid">
                             <div class="form-group">
                                 <label for="contactName">Name</label>
-                                <input type="text" id="contactName" placeholder="Your name" />
+                                <input type="text" id="contactName" name="name" placeholder="Your name" required />
                                 <small></small>
                             </div>
 
                             <div class="form-group">
                                 <label for="contactEmail">Email</label>
-                                <input type="email" id="contactEmail" placeholder="Your email" />
+                                <input type="email" id="contactEmail" name="email" placeholder="Your email" required />
                                 <small></small>
                             </div>
 
                             <div class="form-group full-form-row">
                                 <label for="contactPhone">Phone Number</label>
-                                <input type="tel" id="contactPhone" placeholder="Optional 10-digit number" />
+                                <input type="tel" id="contactPhone" name="phone" placeholder="Optional 10-digit number" />
                                 <small></small>
                             </div>
 
                             <div class="form-group full-form-row">
                                 <label for="contactMessage">Message</label>
-                                <textarea id="contactMessage" rows="6" placeholder="How can we help you?"></textarea>
+                                <textarea id="contactMessage" name="message" rows="6" placeholder="How can we help you?" required></textarea>
                                 <small></small>
                             </div>
                         </div>
@@ -113,20 +115,29 @@
                             <p class="eyebrow">Visit Our Studio</p>
                             <h2>KP Living Studio</h2>
                             <p>KP Living Studio, Sakchi, Jamshedpur, Jharkhand</p>
-                            <p><strong>Phone:</strong> +91 98765 43210</p>
-                            <p><strong>Email:</strong> support@kpliving.in</p>
-                            <p><strong>Working Hours:</strong> Monday to Saturday, 10:00 AM - 7:00 PM</p>
+                            <p>
+                                <strong>Phone:</strong>
+                                +91 92346 62688
+                            </p>
+                            <p>
+                                <strong>Email:</strong>
+                                support@kpliving.in
+                            </p>
+                            <p>
+                                <strong>Working Hours:</strong>
+                                Monday to Saturday, 10:00 AM - 7:00 PM
+                            </p>
 
-                            <a href="https://wa.me/919876543210" class="whatsapp-button" target="_blank" rel="noopener noreferrer"> Chat on WhatsApp </a>
+                            <a href="https://wa.me/919234662688" class="whatsapp-button" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
                         </div>
 
                         <div class="contact-map-card">
-                            <iframe title="Map showing Jamshedpur, Jharkhand" src="https://www.openstreetmap.org/export/embed.html?bbox=86.126%2C22.746%2C86.282%2C22.869&layer=mapnik&marker=22.8046%2C86.2029" loading="lazy"> </iframe>
+                            <iframe title="Map showing Jamshedpur, Jharkhand" src="https://www.openstreetmap.org/export/embed.html?bbox=86.126%2C22.746%2C86.282%2C22.869&layer=mapnik&marker=22.8046%2C86.2029" loading="lazy"></iframe>
 
                             <div class="map-card-content">
                                 <span>Jamshedpur Map</span>
                                 <p>Sakchi, Jamshedpur, Jharkhand</p>
-                                <a href="https://www.openstreetmap.org/search?query=Sakchi%20Jamshedpur%20Jharkhand" target="_blank" rel="noopener noreferrer"> Open larger map </a>
+                                <a href="https://www.openstreetmap.org/search?query=Sakchi%20Jamshedpur%20Jharkhand" target="_blank" rel="noopener noreferrer">Open larger map</a>
                             </div>
                         </div>
 
