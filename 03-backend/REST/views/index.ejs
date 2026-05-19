@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>All Posts</title>
+        <link rel="stylesheet" href="/style.css" />
+    </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>All Posts</title>
-	<link rel="stylesheet" href="/style.css">
-</head>
+    <body>
+        <h1>Quora</h1>
 
-<body>
-	<h1>Quora</h1>
+        <% for(post of posts) { %>
+        <div class="post">
+            <hr />
 
-	<% for(post of posts) { %>
-	<div class="post">
-		<hr>
+            <h3 class="username">
+                Username: @<u><%= post.username %></u>
+            </h3>
+            <h3><%= post.content %></h3>
 
-		<h3 class="username">Username: @<u><%= post.username %></u></h3>
-		<h3><%= post.content %></h3>
+            <div class="same-line">
+                <form action="/posts/<%= post.id %>">
+                    <button type="submit">See in detail</button>
+                </form>
 
-		<div class="same-line">
-			<form action="/posts/<%= post.id %>">
-				<button type="submit">See in detail</button>
-			</form>
+                <form action="/posts/<%= post.id %>/edit">
+                    <button type="submit">Edit Post</button>
+                </form>
 
-			<form action="/posts/<%= post.id %>/edit">
-				<button type="submit">Edit Post</button>
-			</form>
+                <form method="POST" action="/posts/<%= post.id %>?_method=DELETE">
+                    <button type="submit" style="background-color: rgb(230, 70, 70)">Delete</button>
+                </form>
+            </div>
 
-			<form method="POST" action="/posts/<%= post.id %>?_method=DELETE">
-				<button type="submit" style="background-color: rgb(230, 70, 70);">Delete</button>
-			</form>
-		</div>
+            <hr />
+        </div>
+        <% } %>
 
-		<hr>
-	</div>
-	<% } %>
+        <br />
 
-	<br>
-
-	<form action="/posts/new">
-		<button type="submit">Create New Post</button>
-	</form>
-</body>
-
+        <form action="/posts/new">
+            <button type="submit">Create New Post</button>
+        </form>
+    </body>
 </html>
