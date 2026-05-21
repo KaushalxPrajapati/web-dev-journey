@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Lottery Wala</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 2em;
+            }
+
+            .card {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                padding: 1em;
+
+                border: 5px solid black;
+                box-shadow: 8px 8px 0 black;
+            }
+
+            h1 {
+                padding: 0.5em;
+                letter-spacing: 3px;
+                font-family: sans-serif;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="card">
+                <h1>
+                    Welcome,
+                    <%= name %>
+                </h1>
+
+                <h1>
+                    <%= naam %>
+                    has won the lottery of
+                    <%= obj.amount %>
+                </h1>
+            </div>
+        </div>
+    </body>
+</html>
