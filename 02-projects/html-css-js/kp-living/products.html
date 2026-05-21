@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Products | KP Living</title>
+        <meta name="description" content="Explore KP Living furniture products for Indian homes, apartments, and family spaces." />
+
+        <link rel="stylesheet" href="static/css/01-base.css" />
+        <link rel="stylesheet" href="static/css/02-header.css" />
+        <link rel="stylesheet" href="static/css/03-layout.css" />
+        <link rel="stylesheet" href="static/css/04-buttons.css" />
+        <link rel="stylesheet" href="static/css/05-home.css" />
+        <link rel="stylesheet" href="static/css/06-product-card.css" />
+        <link rel="stylesheet" href="static/css/07-forms-feedback.css" />
+        <link rel="stylesheet" href="static/css/08-footer.css" />
+        <link rel="stylesheet" href="static/css/09-products-page.css" />
+        <link rel="stylesheet" href="static/css/10-product-details.css" />
+        <link rel="stylesheet" href="static/css/11-cart.css" />
+        <link rel="stylesheet" href="static/css/12-checkout.css" />
+        <link rel="stylesheet" href="static/css/13-about.css" />
+        <link rel="stylesheet" href="static/css/14-contact.css" />
+        <link rel="stylesheet" href="static/css/15-responsive.css" />
+
+        <script src="static/js/script.js" defer></script>
+    </head>
+
+    <body data-page="products">
+        <div class="top-strip" id="topStrip">
+            <p>Free delivery in selected cities • Easy returns within 7 days • Furniture made for Indian homes</p>
+
+            <button type="button" class="top-strip-close" id="topStripCloseButton" aria-label="Close top message">&times;</button>
+        </div>
+
+        <header class="site-header" id="siteHeader">
+            <div class="container header-inner">
+                <a href="index.html" class="logo" aria-label="KP Living home">
+                    <img src="static/assets/logo.svg" alt="KP Living" class="logo-img" />
+                </a>
+
+                <button class="mobile-menu-button" id="mobileMenuButton" aria-label="Open navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav class="main-nav" id="mainNav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="products.html" class="nav-link active">Products</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+
+                <div class="header-actions">
+                    <form class="header-search" id="globalSearchForm">
+                        <input type="search" id="globalSearchInput" placeholder="Search sofa, bed, table..." aria-label="Search products" />
+                        <button type="submit" aria-label="Search">Search</button>
+                    </form>
+
+                    <a href="cart.html" class="cart-link" aria-label="Open cart">
+                        <span class="cart-icon">🛒</span>
+                        <span class="cart-counter" id="cartCounter">0</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="page-hero small-page-hero">
+                <div class="container">
+                    <p class="eyebrow">KP Living Products</p>
+                    <h1>Furniture for every Indian room</h1>
+                    <p>Search, filter, and choose furniture that fits your home, style, and budget.</p>
+                </div>
+            </section>
+
+            <section class="products-layout-section">
+                <div class="container products-layout">
+                    <aside class="filter-sidebar">
+                        <div class="filter-header">
+                            <h2>Filters</h2>
+                            <button type="button" id="clearFiltersButton">Clear</button>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="categoryFilter">Category</label>
+                            <select id="categoryFilter">
+                                <option value="">All categories</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="roomFilter">Room type</label>
+                            <select id="roomFilter">
+                                <option value="">All rooms</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="priceFilter">Price range</label>
+                            <select id="priceFilter">
+                                <option value="">All prices</option>
+                                <option value="0-5000">Under ₹5,000</option>
+                                <option value="5000-15000">₹5,000 - ₹15,000</option>
+                                <option value="15000-30000">₹15,000 - ₹30,000</option>
+                                <option value="30000-60000">₹30,000 - ₹60,000</option>
+                                <option value="60000-200000">Above ₹60,000</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="materialFilter">Material</label>
+                            <select id="materialFilter">
+                                <option value="">All materials</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="colorFilter">Color</label>
+                            <select id="colorFilter">
+                                <option value="">All colors</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="ratingFilter">Rating</label>
+                            <select id="ratingFilter">
+                                <option value="">All ratings</option>
+                                <option value="4">4 stars and above</option>
+                                <option value="4.5">4.5 stars and above</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="discountFilter">Discount</label>
+                            <select id="discountFilter">
+                                <option value="">All discounts</option>
+                                <option value="10">10% and above</option>
+                                <option value="20">20% and above</option>
+                                <option value="30">30% and above</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="availabilityFilter">Availability</label>
+                            <select id="availabilityFilter">
+                                <option value="">All</option>
+                                <option value="In Stock">In Stock</option>
+                                <option value="Limited Stock">Limited Stock</option>
+                            </select>
+                        </div>
+                    </aside>
+
+                    <section class="products-main">
+                        <div class="products-toolbar">
+                            <div>
+                                <p class="eyebrow">Browse Furniture</p>
+                                <h2 id="productCountHeading">All Products</h2>
+                                <p id="productCountText">Showing products for Indian homes.</p>
+                            </div>
+
+                            <div class="products-controls">
+                                <input type="search" id="productSearchInput" placeholder="Search products..." aria-label="Search products" />
+                                <select id="sortSelect" aria-label="Sort products">
+                                    <option value="default">Sort by default</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                    <option value="rating-high">Rating: High to Low</option>
+                                    <option value="discount-high">Discount: High to Low</option>
+                                    <option value="popularity">Popularity</option>
+                                    <option value="newest">Newest</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="product-grid" id="productsGrid"></div>
+
+                        <div class="empty-state" id="emptyProductsMessage">
+                            <h3>No products found</h3>
+                            <p>Try changing your search or filters.</p>
+                        </div>
+
+                        <div class="load-more-wrapper">
+                            <button type="button" class="secondary-button" id="loadMoreButton">Load More Products</button>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container footer-grid">
+                <div>
+                    <a href="index.html" class="footer-logo">
+                        <img src="static/assets/logo.svg" alt="KP Living" />
+                    </a>
+                    <p>Premium furniture and home decor made for Indian homes, compact apartments, and warm family spaces.</p>
+                </div>
+
+                <div>
+                    <h3>Shop</h3>
+                    <a href="products.html?category=Sofa%20Sets">Sofa Sets</a>
+                    <a href="products.html?category=Wooden%20Beds">Beds</a>
+                    <a href="products.html?category=Dining%20Tables">Dining Tables</a>
+                    <a href="products.html?category=Decor%20Items">Decor Items</a>
+                </div>
+
+                <div>
+                    <h3>Company</h3>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="products.html">Products</a>
+                    <a href="cart.html">Cart</a>
+                </div>
+
+                <div>
+                    <h3>Contact</h3>
+                    <p>KP Living Studio, Sakchi, Jamshedpur</p>
+                    <p>+91 98765 43210</p>
+                    <p>support@kpliving.in</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 KP Living. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <div class="toast" id="toast"></div>
+    </body>
+</html>

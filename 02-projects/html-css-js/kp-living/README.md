@@ -1,35 +1,46 @@
 # KP Living
 
-KP Living is a static ecommerce-style furniture website built with HTML, CSS, and Vanilla JavaScript. It is designed as a frontend practice project focused on product listing, filtering, cart functionality, checkout validation, and responsive UI.
+KP Living is a static ecommerce-style furniture website built with HTML, CSS, and Vanilla JavaScript. It is designed as a frontend practice project focused on product listing, product filtering, cart functionality, checkout validation, and responsive user interface design.
+
+The project simulates a furniture and home decor shopping experience for Indian homes.
 
 ## Live Demo
 
-Live Project: https://kaushalxprajapati.github.io/web-dev-journey/02-projects/html-css-js/kp-living/public/html/index.html
+Live Project: https://kp-living.vercel.app
+
+Personal Website: https://hellokaushal.dev
+
+> KP Living is currently deployed on Vercel. My personal website `hellokaushal.dev` is used as my main portfolio/project index where visitors can explore my hosted projects.
+
+## Repository
+
+GitHub Repository: https://github.com/KaushalxPrajapati/kp-living
 
 ## Project Overview
 
-KP Living is a furniture and home decor website for Indian homes. The project simulates a basic ecommerce experience where users can browse products, search and filter furniture, view product details, add items to cart, and complete a demo checkout flow.
+KP Living is a frontend-only furniture ecommerce website. Users can browse furniture products, search and filter items, view product details, add products to the cart, update item quantities, apply coupon codes, and complete a demo checkout form.
 
-This is a frontend-only project. No real order, payment, or backend processing is performed.
+This project does not use any backend, database, real payment gateway, or real order processing. All cart-related data is handled in the browser using localStorage.
 
 ## Features
 
-- Multi-page static website
-- Home page with best sellers and new arrivals
+- Multi-page static ecommerce-style website
+- Home page with hero section, featured categories, best sellers, and new arrivals
 - Product listing page
-- Product search
-- Category, room, material, color, price, rating, discount, and availability filters
-- Product sorting
+- Product search functionality
+- Product filtering by category, room, material, color, price, rating, discount, and availability
+- Product sorting functionality
 - Product details page
 - Related products section
-- Cart using localStorage
+- Add to cart functionality
+- Cart data saved using localStorage
 - Quantity update and remove item functionality
 - Cart subtotal, discount, delivery charge, GST, and total calculation
-- Checkout form validation
 - Coupon code system
+- Checkout form validation
 - Contact form validation
 - Newsletter form validation
-- Responsive design for desktop, tablet, and mobile
+- Responsive design for desktop, tablet, and mobile devices
 
 ## Tech Stack
 
@@ -37,16 +48,33 @@ This is a frontend-only project. No real order, payment, or backend processing i
 - CSS3
 - Vanilla JavaScript
 - localStorage
-- Git and GitHub
-- GitHub Pages for deployment
+- Git
+- GitHub
+- Vercel
+
+## Pages
+
+- `index.html` - Home page
+- `products.html` - Product listing page
+- `product-details.html` - Single product details page
+- `cart.html` - Shopping cart page
+- `checkout.html` - Demo checkout page
+- `about.html` - About page
+- `contact.html` - Contact page
 
 ## Folder Structure
 
 ```text
 kp-living/
 ├── index.html
+├── products.html
+├── product-details.html
+├── cart.html
+├── checkout.html
+├── about.html
+├── contact.html
 ├── README.md
-└── public/
+└── static/
     ├── assets/
     │   └── logo.svg
     ├── css/
@@ -65,14 +93,64 @@ kp-living/
     │   ├── 13-about.css
     │   ├── 14-contact.css
     │   └── 15-responsive.css
-    ├── html/
-    │   ├── index.html
-    │   ├── products.html
-    │   ├── product-details.html
-    │   ├── cart.html
-    │   ├── checkout.html
-    │   ├── about.html
-    │   └── contact.html
     └── js/
         └── script.js
 ```
+
+## How to Run Locally
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/KaushalxPrajapati/kp-living.git
+```
+
+2. Open the project folder:
+
+```bash
+cd kp-living
+```
+
+3. Open `index.html` directly in your browser.
+
+You can also use the VS Code Live Server extension for a better local development experience.
+
+````md
+## Deployment
+
+This project is deployed on Vercel and is available here:
+
+```text
+https://kp-living.vercel.app
+
+
+## Important Notes
+
+- This is a frontend-only project.
+- No real payment is processed.
+- No real order is placed.
+- No backend or database is connected.
+- Cart data is stored only in the browser using localStorage.
+- Product images are loaded from online image sources.
+- This project is created for learning, practice, and portfolio-building purposes.
+
+## Future Improvements
+
+- Add backend support using Node.js and Express.js
+- Store products and orders in a database
+- Add user authentication
+- Add real checkout flow
+- Add admin panel for product management
+- Improve product image handling
+- Add loading states and better error handling
+- Improve accessibility
+- Add wishlist functionality
+- Add search result highlighting
+
+## Author
+
+Created by Kaushal Prajapati
+
+GitHub: https://github.com/KaushalxPrajapati
+
+Personal Website: https://hellokaushal.dev
