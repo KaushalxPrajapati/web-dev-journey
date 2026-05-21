@@ -1,10 +1,6 @@
 import express from 'express';
 const app = express();
-const port = 3000;
-
-app.listen(port, () => {
-    console.log(`App is listening on the PORT: ${port}, Go Check!`);
-});
+const PORT = 3000;
 
 app.set('view engine', 'ejs');
 
@@ -29,4 +25,8 @@ let posts = [
 
 app.get('/posts', (req, res) => {
     res.render('posts.ejs', { posts });
+});
+
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
 });

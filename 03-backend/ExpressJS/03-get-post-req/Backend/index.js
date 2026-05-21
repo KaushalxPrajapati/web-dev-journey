@@ -1,6 +1,6 @@
 import express from 'express';
 const app = express();
-const port = 3000;
+const PORT = 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -34,6 +34,6 @@ app.post('/submit', (req, res) => {
     console.log(req.body);
 });
 
-app.listen(port, () => {
-    console.log(`Server running at PORT:${port}, Go Check form.html and open with live server`);
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
 });

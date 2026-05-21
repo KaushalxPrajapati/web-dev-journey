@@ -1,6 +1,15 @@
 const express = require('express');
+const path = require('path');
+
 const app = express();
-const port = 3000;
+const PORT = 3000;
+
+// 1. Set the folder for templates
+app.set('views', path.join(__dirname, 'views'));
+
+// 2. Set the template engine (e.g., EJS)
+app.set('view engine', 'ejs');
+
 
 // Root
 app.get('/', (req, res) => {
@@ -38,6 +47,6 @@ app.get('/:user', (req, res) => {
 });
 
 // Start Server
-app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
 });

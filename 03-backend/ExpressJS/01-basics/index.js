@@ -96,5 +96,5 @@ app.use((req, res) => {
 // app.listen() starts the server.
 // The callback runs once the server starts successfully.
 app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
+    console.log(`Server running on http://localhost:${PORT}`);
 });

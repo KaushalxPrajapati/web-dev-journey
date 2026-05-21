@@ -1,14 +1,14 @@
 import express from 'express';
 const app = express();
-const port = 3000;
-
-app.listen(port, () => {
-    console.log(`App is listening on the PORT: ${port}, Go Check the browser!`);
-});
+const PORT = 3000;
 
 app.set('view engine', 'ejs');
 
 app.get('/pass/:marks', (req, res) => {
     let marks = Number(req.params.marks);
     res.render('result.ejs', { marks });
+});
+
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
 });
