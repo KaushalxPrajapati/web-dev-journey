@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #cccccc;
+
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-card {
+    width: 575px;
+    height: 525px;
+
+    background-color: white;
+
+    padding: 1em 1.5em;
+    border-radius: 8px;
+}
+
+.form-card h1 {
+    margin-bottom: 0.625em;
+    text-align: center;
+}
+
+.name-fields,
+.email-role-fields,
+.city-pincode-fields,
+.date-cv-field {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+
+    /* align-self: center; */
+}
+
+.name-fields {
+    margin-bottom: 1em;
+}
+
+.first-name,
+.last-name {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+label {
+    font-size: 0.875em;
+}
+
+.email-role-fields {
+    margin-bottom: 1.2em;
+}
+
+.email,
+.select-role,
+.address-box,
+.city-field,
+.pincode-field,
+.date,
+.cv {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+input,
+select,
+textarea {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 8px 12px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+
+.address-box {
+    margin-bottom: 1.2em;
+}
+
+.city-pincode-fields {
+    margin-bottom: 1em;
+}
+
+.cv {
+    min-width: 50%;
+}
+
+button {
+    min-width: 100%;
+    padding: 0.75em;
+    margin: 1.5em 0;
+
+    background-color: #0056b3;
+    color: white;
+
+    border: 1px solid #cccccc;
+    border-radius: 0.625em;
+
+    font-size: 1em;
+    letter-spacing: 2.5px;
+}
