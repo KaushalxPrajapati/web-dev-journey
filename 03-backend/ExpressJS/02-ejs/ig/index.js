@@ -30,4 +30,5 @@ app.get('/ig/:username', (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}/ig/cats`);
+    console.log(`Server running on http://localhost:${PORT}/ig/dogs`);
 });
