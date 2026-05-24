@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0c0e14;
+    font-family: 'Outfit', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* card */
+.card {
+    background-color: #161a24;
+    border: 1px solid #2a2f3d;
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+}
+
+/* header text */
+.label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: #4f8eff;
+    margin-bottom: 0.75rem;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #e8eaf0;
+    line-height: 1.2;
+    margin-bottom: 0.4rem;
+}
+
+.accent {
+    color: #4f8eff;
+}
+
+.subtext {
+    font-size: 0.82rem;
+    color: #555e75;
+    margin-bottom: 1.75rem;
+}
+
+/* divider between header and inputs */
+.card hr {
+    border: none;
+    border-top: 1px solid #2a2f3d;
+    margin-bottom: 1.75rem;
+}
+
+/* input */
+input[type='number'] {
+    width: 100%;
+    background-color: #1e2330;
+    border: 1px solid #2a2f3d;
+    border-radius: 8px;
+    color: #e8eaf0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+    outline: none;
+    text-align: center;
+    margin-bottom: 0.75rem;
+    transition: border-color 0.25s;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    appearance: none;
+}
+
+input[type='number']::placeholder {
+    color: #3a4155;
+}
+
+input[type='number']:focus {
+    border-color: #4f8eff;
+}
+
+/* button */
+button {
+    width: 100%;
+    background-color: #4f8eff;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.8rem;
+    cursor: pointer;
+    transition:
+        background-color 0.2s,
+        transform 0.1s;
+    margin-bottom: 1.5rem;
+}
+
+button:hover {
+    background-color: #3a72e0;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* result */
+#result {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.88rem;
+    font-weight: 500;
+    min-height: 1.2rem;
+    transition: color 0.25s;
+}
