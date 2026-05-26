@@ -75,16 +75,17 @@ body {
     /* Adding Padding instead of using height and width */
     padding: 1.25em 2.125em;
 
-    background-color: rgb(29, 155, 240); /* Twitter blue */
+    background-color: rgb(2, 155, 255); /* Twitter blue */
     color: white;
-    font-weight: bold; /* bold text */
     font-size: 15px;
+    font-weight: bold; /* bold text */
     border: none;
     border-radius: 25px; /* pill-shaped button */
     cursor: pointer;
-    transition: box-shadow 0.5s; /* smooth shadow on hover */
+
+    transition: box-shadow 0.375s ease-in-out; /* smooth shadow on hover */
 }
 
 .tweet-button:hover {
-    box-shadow: 0.5em 0.5em 1.5em rgba(0, 0, 0, 0.15); /* subtle shadow effect */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15); /* subtle shadow effect */
 }

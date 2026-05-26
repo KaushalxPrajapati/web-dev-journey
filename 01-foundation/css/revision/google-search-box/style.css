@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+}
+
+.centre {
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 200px;
+}
+
+input {
+    width: 500px;
+    font-size: 1em;
+    padding: 12px 1em;
+
+    border: none;
+    border-radius: 30px;
+    outline: none;
+
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+}
