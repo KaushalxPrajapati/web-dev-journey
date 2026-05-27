@@ -2,22 +2,22 @@ import express from 'express';
 import { v4 as uuidv4 } from 'uuid';
 import methodOverride from 'method-override';
 
+// Create an Express app by calling the express function
 const app = express();
-const port = 3000;
+// Define the port number on which the server will listen for incoming requests
+const PORT = 3000;
 
+// Middlewares
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('public'));
 app.use(methodOverride('_method'));
+app.use(express.static('public'));
 
-app.listen(port, () => {
-    console.log(`App is listening on the PORT: ${port}, Go Check!`);
-});
-
+// Dummy data
 let posts = [
     { id: uuidv4(), username: 'kaushalprajapati', content: 'I love coding!' },
     { id: uuidv4(), username: 'apnacollege', content: 'We make coders!' },
-    { id: uuidv4(), username: 'shradhakhapra', content: 'Hard work is important to achieve success!' },
+    { id: uuidv4(), username: 'shradhakhapra', content: 'Hard work is imPORTant to achieve success!' },
     { id: uuidv4(), username: 'rahulkumar', content: 'I got selected for my 1st internship today!' },
 ];
 
@@ -85,4 +85,8 @@ app.delete('/posts/:id', (req, res) => {
     posts.splice(posts.indexOf(post), 1); // (startIndex, deleteCount)
     console.log('Post deleted!\n', post);
     res.redirect('/posts');
+});
+
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}/posts`);
 });
