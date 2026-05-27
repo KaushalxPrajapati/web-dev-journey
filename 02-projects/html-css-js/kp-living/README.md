@@ -10,7 +10,7 @@ Live Project: https://kp-living.vercel.app
 
 Personal Website: https://hellokaushal.dev
 
-> KP Living is currently deployed on Vercel. My personal website `hellokaushal.dev` is used as my main portfolio/project index where visitors can explore my hosted projects.
+> KP Living is currently deployed on Vercel. My personal website `hellokaushal.dev` is used as my main portfolio and project index, where visitors can explore my hosted projects.
 
 ## Repository
 
@@ -20,7 +20,7 @@ GitHub Repository: https://github.com/KaushalxPrajapati/kp-living
 
 KP Living is a frontend-only furniture ecommerce website. Users can browse furniture products, search and filter items, view product details, add products to the cart, update item quantities, apply coupon codes, and complete a demo checkout form.
 
-This project does not use any backend, database, real payment gateway, or real order processing. All cart-related data is handled in the browser using localStorage.
+This project does not use any backend, database, real payment gateway, or real order processing. All cart-related data is handled in the browser using `localStorage`.
 
 ## Features
 
@@ -33,7 +33,7 @@ This project does not use any backend, database, real payment gateway, or real o
 - Product details page
 - Related products section
 - Add to cart functionality
-- Cart data saved using localStorage
+- Cart data saved using `localStorage`
 - Quantity update and remove item functionality
 - Cart subtotal, discount, delivery charge, GST, and total calculation
 - Coupon code system
@@ -41,6 +41,7 @@ This project does not use any backend, database, real payment gateway, or real o
 - Contact form validation
 - Newsletter form validation
 - Responsive design for desktop, tablet, and mobile devices
+- Favicon and custom logo support
 
 ## Tech Stack
 
@@ -66,35 +67,36 @@ This project does not use any backend, database, real payment gateway, or real o
 
 ```text
 kp-living/
-├── index.html
-├── products.html
-├── product-details.html
+├── static/
+│   ├── assets/
+│   │   ├── favicon.png
+│   │   └── logo.svg
+│   ├── css/
+│   │   ├── 01-base.css
+│   │   ├── 02-header.css
+│   │   ├── 03-layout.css
+│   │   ├── 04-buttons.css
+│   │   ├── 05-home.css
+│   │   ├── 06-product-card.css
+│   │   ├── 07-forms-feedback.css
+│   │   ├── 08-footer.css
+│   │   ├── 09-products-page.css
+│   │   ├── 10-product-details.css
+│   │   ├── 11-cart.css
+│   │   ├── 12-checkout.css
+│   │   ├── 13-about.css
+│   │   ├── 14-contact.css
+│   │   └── 15-responsive.css
+│   └── js/
+│       └── script.js
+├── about.html
 ├── cart.html
 ├── checkout.html
-├── about.html
 ├── contact.html
-├── README.md
-└── static/
-    ├── assets/
-    │   └── logo.svg
-    ├── css/
-    │   ├── 01-base.css
-    │   ├── 02-header.css
-    │   ├── 03-layout.css
-    │   ├── 04-buttons.css
-    │   ├── 05-home.css
-    │   ├── 06-product-card.css
-    │   ├── 07-forms-feedback.css
-    │   ├── 08-footer.css
-    │   ├── 09-products-page.css
-    │   ├── 10-product-details.css
-    │   ├── 11-cart.css
-    │   ├── 12-checkout.css
-    │   ├── 13-about.css
-    │   ├── 14-contact.css
-    │   └── 15-responsive.css
-    └── js/
-        └── script.js
+├── index.html
+├── product-details.html
+├── products.html
+└── README.md
 ```
 
 ## How to Run Locally
@@ -115,14 +117,13 @@ cd kp-living
 
 You can also use the VS Code Live Server extension for a better local development experience.
 
-````md
 ## Deployment
 
 This project is deployed on Vercel and is available here:
 
 ```text
 https://kp-living.vercel.app
-
+```
 
 ## Important Notes
 
@@ -130,9 +131,17 @@ https://kp-living.vercel.app
 - No real payment is processed.
 - No real order is placed.
 - No backend or database is connected.
-- Cart data is stored only in the browser using localStorage.
+- Cart data is stored only in the browser using `localStorage`.
 - Product images are loaded from online image sources.
 - This project is created for learning, practice, and portfolio-building purposes.
+
+## Current Limitations
+
+- Product data is stored directly inside JavaScript.
+- Cart data can be edited from the browser because it uses `localStorage`.
+- The checkout form is only a demo and does not send real order data.
+- There is no login, user account, admin panel, or database.
+- Images depend on external image URLs, so some images may fail if the external source changes.
 
 ## Future Improvements
 
@@ -141,11 +150,12 @@ https://kp-living.vercel.app
 - Add user authentication
 - Add real checkout flow
 - Add admin panel for product management
-- Improve product image handling
+- Improve product image fallback handling
 - Add loading states and better error handling
 - Improve accessibility
 - Add wishlist functionality
 - Add search result highlighting
+- Add reusable header and footer rendering with JavaScript
 
 ## Author
 
