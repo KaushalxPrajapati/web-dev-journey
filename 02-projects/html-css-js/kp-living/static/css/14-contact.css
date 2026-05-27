@@ -171,3 +171,12 @@ Contact page layout, map, service cards, social links
     object-fit: contain;
     flex-shrink: 0;
 }
+
+.social-svg {
+    display: block;
+    flex-shrink: 0;
+}
+
+.linkedin-icon {
+    color: #0a66c2;
+}
