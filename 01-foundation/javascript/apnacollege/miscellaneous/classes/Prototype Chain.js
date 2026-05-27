@@ -2,7 +2,8 @@
 class Animal {
     // Method defined here goes onto Animal.prototype, NOT on each object
     // Every object created from Animal shares this one method via the prototype chain
-    speak() {   // ← THIS is the point — where does this method actually live?
+    speak() {
+        // ← THIS is the point — where does this method actually live?
         console.log('Some sound');
     }
 }
