@@ -134,18 +134,19 @@ Contact page layout, map, service cards, social links
 }
 
 .social-row {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
 }
 
 .social-link {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    min-height: 48px;
-    padding: 12px 18px;
-    border: 1px solid rgba(91, 53, 29, 0.1);
+    justify-content: center;
+    gap: 12px;
+    min-height: 62px;
+    padding: 14px 18px;
+    border: 1px solid rgba(91, 53, 29, 0.12);
     border-radius: 999px;
     background-color: #f7efe3;
     color: #5b351d;
@@ -153,16 +154,18 @@ Contact page layout, map, service cards, social links
     font-size: 16px;
     font-weight: 800;
     line-height: 1;
+    text-align: center;
+    white-space: nowrap;
     transition:
         transform 0.2s ease,
+        border-color 0.2s ease,
         background-color 0.2s ease,
         box-shadow 0.2s ease;
 }
 
 .social-link:hover {
-    transform: translateY(-2px);
-    background-color: #efe1cf;
-    box-shadow: 0 10px 24px rgba(91, 53, 29, 0.12);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(91, 53, 29, 0.12);
 }
 
 .social-icon {
@@ -174,9 +177,41 @@ Contact page layout, map, service cards, social links
 
 .social-svg {
     display: block;
+    width: 24px;
+    height: 24px;
     flex-shrink: 0;
 }
 
 .linkedin-icon {
     color: #0a66c2;
+}
+
+.instagram-link:hover {
+    border-color: rgba(228, 64, 95, 0.35);
+    background-color: rgba(228, 64, 95, 0.08);
+}
+
+.facebook-link:hover {
+    border-color: rgba(24, 119, 242, 0.35);
+    background-color: rgba(24, 119, 242, 0.08);
+}
+
+.youtube-link:hover {
+    border-color: rgba(255, 0, 0, 0.35);
+    background-color: rgba(255, 0, 0, 0.08);
+}
+
+.pinterest-link:hover {
+    border-color: rgba(189, 8, 28, 0.35);
+    background-color: rgba(189, 8, 28, 0.08);
+}
+
+.linkedin-link:hover {
+    border-color: rgba(10, 102, 194, 0.35);
+    background-color: rgba(10, 102, 194, 0.08);
+}
+
+.x-link:hover {
+    border-color: rgba(17, 17, 17, 0.3);
+    background-color: rgba(17, 17, 17, 0.06);
 }
