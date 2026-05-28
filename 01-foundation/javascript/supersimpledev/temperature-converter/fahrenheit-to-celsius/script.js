@@ -1,7 +1,7 @@
-let h1 = document.getElementById('h1');
+let heading = document.getElementById('heading');
 
 // Fahrenheit to Celsius
+let fahrenheitTemp = 86;
 celsiusTemp = ((fahrenheitTemp - 32) * 5) / 9;
-h1.innerText = celsiusTemp + '°F';
 
-h1.innerText = fahrenheitTemp + '°C';
+heading.innerText = celsiusTemp + '°C';
