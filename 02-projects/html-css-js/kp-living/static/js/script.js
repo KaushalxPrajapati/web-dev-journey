@@ -656,6 +656,7 @@ const products = [
 */
 
 const cartStorageKey = 'kpLivingCart';
+const topStripStorageKey = 'kpLivingTopStripClosed';
 
 let productsVisibleCount = 12;
 let selectedDetailsQuantity = 1;
@@ -710,6 +711,22 @@ function showToast(message) {
     }, 2500);
 }
 
+function getStorageValue(keyName) {
+    try {
+        return localStorage.getItem(keyName);
+    } catch (error) {
+        return null;
+    }
+}
+
+function setStorageValue(keyName, value) {
+    try {
+        localStorage.setItem(keyName, value);
+    } catch (error) {
+        return;
+    }
+}
+
 /*
 ==================================================
 3. NAVIGATION AND GLOBAL SEARCH
@@ -719,22 +736,21 @@ function showToast(message) {
 function initializeTopStrip() {
     const topStrip = document.getElementById('topStrip');
     const topStripCloseButton = document.getElementById('topStripCloseButton');
-    const topStripStorageKey = 'kpLivingTopStripClosed';
 
     if (!topStrip || !topStripCloseButton) {
         return;
     }
 
-    const isTopStripClosed = localStorage.getItem(topStripStorageKey) === 'true';
+    const isTopStripClosed = getStorageValue(topStripStorageKey) === 'true';
 
     if (isTopStripClosed) {
-        topStrip.classList.add('hide');
+        topStrip.classList.add('is-hidden');
         return;
     }
 
     topStripCloseButton.addEventListener('click', function () {
-        topStrip.classList.add('hide');
-        localStorage.setItem(topStripStorageKey, 'true');
+        topStrip.classList.add('is-hidden');
+        setStorageValue(topStripStorageKey, 'true');
     });
 }
 
