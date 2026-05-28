@@ -91,7 +91,7 @@ button {
     transform: translateY(-50%) scale(1.05);
 }
 
+.top-strip.is-hidden,
 .top-strip.is-hidden {
     display: none;
 }
-    
