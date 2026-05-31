@@ -9,13 +9,10 @@
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
-            }
-
-            body {
                 font-family: sans-serif;
             }
 
-            .centre {
+            body {
                 height: 100vh;
                 display: flex;
                 justify-content: center;
@@ -30,7 +27,7 @@
                 font-size: 1.25em;
                 text-align: center;
 
-                padding: 1em 0;
+                padding: 1.125em 0;
             }
 
             button {
@@ -43,37 +40,35 @@
         </style>
     </head>
     <body>
-        <div class="centre">
-            <div class="card">
-                <h3>Cart Quantity</h3>
-                <button onclick="plusOne()">Add to Cart</button>
-                <button onclick="plusOne()">+1</button>
-                <button onclick="reset()">Reset</button>
-                <button onclick="plusTwo()">+2</button>
-                <button onclick="show()">Show Quantity</button>
-            </div>
+        <div class="card">
+            <h3>Cart Quantity</h3>
+            <button onclick="plusOne()">Add to Cart</button>
+            <button onclick="plusOne()">+1</button>
+            <button onclick="reset()">Reset</button>
+            <button onclick="plusTwo()">+2</button>
+            <button onclick="show()">Show Quantity</button>
         </div>
 
         <script>
-            let item = 0;
+            let cartQuantity = 0;
 
             function plusOne() {
-                item++;
-                console.log(`Cart Quantity: ${item}`);
+                cartQuantity++;
+                console.log(`Cart Quantity: ${cartQuantity}`);
             }
 
             function plusTwo() {
-                item = item + 2;
-                console.log(`Cart Quantity: ${item}`);
+                cartQuantity = cartQuantity + 2;
+                console.log(`Cart Quantity: ${cartQuantity}`);
             }
 
             function reset() {
-                item = 0;
-                console.log(`Cart has been Reset: ${item}`);
+                cartQuantity = 0;
+                console.log(`Cart has been Reset: ${cartQuantity}`);
             }
 
             function show() {
-                console.log(`Total Cart's Quantity: ${item}`);
+                console.log(`Cart Quantity: ${cartQuantity}`);
             }
         </script>
     </body>
