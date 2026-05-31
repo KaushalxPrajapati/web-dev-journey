@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Shopping Cart</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            body {
+                background-color: #f8f9fa;
+                color: #333;
+            }
+
+            .container {
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .card {
+                background: white;
+                padding: 2rem;
+                border-radius: 12px;
+                box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+
+            .title {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+                color: #212529;
+            }
+
+            .controls {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            select {
+                padding: 0.6rem;
+                border: 1px solid #ced4da;
+                border-radius: 6px;
+                font-size: 1rem;
+                font-weight: 600;
+                outline: none;
+            }
+
+            select:hover {
+                background-color: whitesmoke;
+            }
+
+            button {
+                padding: 10px 18px;
+                border: none;
+                border-radius: 7px;
+                font-size: 1rem;
+                font-weight: 600;
+                transition: background-color 0.2s ease;
+            }
+
+            select,
+            button {
+                cursor: pointer;
+            }
+
+            .btn-primary {
+                background-color: #0d6efd;
+                color: white;
+            }
+
+            .btn-primary:hover {
+                background-color: #0b5ed7;
+            }
+
+            .btn-secondary {
+                background-color: whitesmoke;
+                color: #212529;
+            }
+
+            .btn-secondary:hover {
+                background-color: #dde2e6;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="card">
+                <h2 id="cart-display" class="title">Cart Quantity: 0</h2>
+
+                <div class="controls">
+                    <span>
+                        <label for="quantity">Quantity:</label>
+                        <select name="quantity" id="quantity">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </span>
+
+                    <button class="btn-primary" onclick="addToCart()">Add to Cart</button>
+                    <button class="btn-secondary" onclick="resetCart()">Reset</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            let totalQuantity = 0;
+            const quantitySelector = document.getElementById('quantity');
+            const cartDisplay = document.getElementById('cart-display');
+
+            function addToCart() {
+                const quantityToAdd = Number(quantitySelector.value);
+                totalQuantity += quantityToAdd;
+                cartDisplay.innerText = `Cart Quantity: ${totalQuantity}`;
+            }
+
+            function resetCart() {
+                totalQuantity = 0;
+                cartDisplay.innerText = `Cart Quantity: ${totalQuantity}`;
+            }
+        </script>
+    </body>
+</html>
