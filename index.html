@@ -3,108 +3,444 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>'s &nbsp; Web Dev Journey</title>
+        <title>Kaushal Prajapati — Web Developer</title>
+        <meta name="description" content="Kaushal Prajapati's web development portfolio. Showcasing the KP Living flagship project and a comprehensive archive of learning exercises." />
         <link rel="shortcut icon" href="kaushal-favicon.png" type="image/x-icon" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" />
         <link rel="stylesheet" href="style.css" />
     </head>
 
     <body>
-        <main class="d-flex flex-column justify-content-center align-items-center min-vh-100">
-            <h1 class="mb-4">
-                My Projects
-                <span aria-hidden="true">&hearts;</span>
-            </h1>
-
-            <div class="d-flex flex-row flex-wrap justify-content-center gap-3">
-                <!-- HTML-CSS Projects -->
-                <div class="card left-card">
-                    <div class="card-header">
-                        <h2 class="card-title mb-0 p-2">HTML-CSS Projects</h2>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <a href="02-projects/html-css/spotify-clone/index.html" target="_blank" rel="noopener noreferrer">Spotify Clone</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="02-projects/html-css/w3schools-clone/html/index.html" target="_blank" rel="noopener noreferrer">W3 Schools Landing Page</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="02-projects/html-css/sidebar-menu/index.html" target="_blank" rel="noopener noreferrer">Sidebar Menu</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="02-projects/html-css/hotel-registration-page/index.html" target="_blank" rel="noopener noreferrer">Hotel Registration Page</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="02-projects/html-css/tribute-website/index.html" target="_blank" rel="noopener noreferrer">Tribute Website</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="02-projects/html-css/hover-on-shapes/index.html" target="_blank" rel="noopener noreferrer">Hover on Shapes</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="02-projects/html-css/job-card/index.html" target="_blank" rel="noopener noreferrer">Job Card</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="02-projects/html-css/calendar-card/index.html" target="_blank" rel="noopener noreferrer">Calendar Card</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="02-projects/html-css/smiley-face/index.html" target="_blank" rel="noopener noreferrer">Smiley Face</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="02-projects/html-css/button-shadow-transition/index.html" target="_blank" rel="noopener noreferrer">Button Shadow Transition</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- JavaScript Projects -->
-                <div class="card right-card">
-                    <div class="card-header">
-                        <h2 class="card-title mb-0 p-2">JavaScript Projects</h2>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <a href="02-projects/html-css-js/kp-living/index.html" target="_blank" rel="noopener noreferrer">KP Living</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="02-projects/html-css-js/simon-says-game/index.html" target="_blank" rel="noopener noreferrer">Simon Says Game</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="02-projects/html-css-js/calculator/index.html" target="_blank" rel="noopener noreferrer">Calculator</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="02-projects/html-css-js/leap-year-checker/index.html" target="_blank" rel="noopener noreferrer">Leap Year Checker</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="02-projects/html-css-js/to-do-list/index.html" target="_blank" rel="noopener noreferrer">To-Do List</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="02-projects/html-css/job-application-form/index.html" target="_blank" rel="noopener noreferrer">Job Application Form</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="02-projects/html-css-js/control-moving-box/index.html" target="_blank" rel="noopener noreferrer">Control Moving Box</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="02-projects/html-css-js/form-modal-popup/index.html" target="_blank" rel="noopener noreferrer">Form Modal Popup</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="02-projects/html-css-js/basic-modal-popup/index.html" target="_blank" rel="noopener noreferrer">Modal Popup</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="02-projects/html-css-js/prime-number-checker/index.html" target="_blank" rel="noopener noreferrer">Prime No. Checker</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="02-projects/html-css-js/counter-app/index.html" target="_blank" rel="noopener noreferrer">Counter App</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- <div class="card right-card">
-                    <div class="card-header">
-                        <h2 class="card-title mb-0 p-2">Backend Projects</h2>
-                    </div>
-                </div> -->
+        <!-- NAV -->
+        <nav class="nav" id="navbar">
+            <div class="container">
+                <a href="#" class="nav-logo">KP</a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#flagship" class="nav-link" data-section="flagship">Flagship Project</a></li>
+                    <li><a href="#archive" class="nav-link" data-section="archive">Learning Archive</a></li>
+                    <li><a href="https://github.com/KaushalxPrajapati/web-dev-journey" class="nav-link" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+                </ul>
+                <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-        </main>
+        </nav>
+
+        <!-- HERO -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <div class="hero-avatar">
+                    <img src="kaushal-favicon.png" alt="Kaushal Prajapati" width="120" height="120" />
+                </div>
+                <div class="hero-status">
+                    <span class="pulse"></span>
+                    Open to opportunities
+                </div>
+                <h1 class="hero-name">
+                    Hi, I'm
+                    <span class="highlight">Kaushal Prajapati</span>
+                </h1>
+                <p class="hero-typing"><span class="cursor" id="typingText"></span></p>
+                <p class="hero-tagline">Building the KP Living eCommerce platform and documenting my continuous learning journey.</p>
+                <div class="hero-cta">
+                    <a href="#flagship" class="btn btn-primary">
+                        View Flagship
+                        <span>↓</span>
+                    </a>
+                    <a href="#archive" class="btn btn-outline">
+                        Practice Archive
+                        <span>→</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-scroll" id="scrollIndicator">
+                <span>Scroll</span>
+                <div class="arrow-down"></div>
+            </div>
+        </section>
+
+        <!-- FLAGSHIP PROJECT (KP LIVING) -->
+        <section class="flagship" id="flagship">
+            <div class="container">
+                <div class="flagship-header reveal">
+                    <span class="section-label">
+                        <span class="dot"></span>
+                        My Focus
+                    </span>
+                    <h2 class="section-title">Flagship Project</h2>
+                    <p class="section-subtitle">My main focus — a full eCommerce platform demonstrating my end-to-end frontend capabilities.</p>
+                </div>
+
+                <div class="flagship-card reveal">
+                    <div class="flagship-content">
+                        <span class="flagship-star">⭐ Major Project</span>
+                        <h3 class="flagship-name">KP Living</h3>
+                        <p class="flagship-desc">A comprehensive, multi-page static ecommerce furniture website built from scratch. It simulates a complete shopping experience with functional product filtering, detail views, a local-storage powered cart, and rigorous checkout validation.</p>
+
+                        <div class="flagship-features">
+                            <div class="flagship-feature">
+                                <span class="icon">✓</span>
+                                Multi-page architecture (7 distinct views)
+                            </div>
+                            <div class="flagship-feature">
+                                <span class="icon">✓</span>
+                                Advanced multi-criteria filtering system
+                            </div>
+                            <div class="flagship-feature">
+                                <span class="icon">✓</span>
+                                Persistent cart via localStorage
+                            </div>
+                            <div class="flagship-feature">
+                                <span class="icon">✓</span>
+                                Complex form validation (checkout & contact)
+                            </div>
+                            <div class="flagship-feature">
+                                <span class="icon">✓</span>
+                                Dynamic price, GST & delivery calculations
+                            </div>
+                            <div class="flagship-feature">
+                                <span class="icon">✓</span>
+                                Fully responsive across all breakpoints
+                            </div>
+                        </div>
+
+                        <div class="flagship-techs">
+                            <span class="tag tag-html">HTML5</span>
+                            <span class="tag tag-css">CSS3</span>
+                            <span class="tag tag-js">Vanilla JS</span>
+                            <span class="tag tag-ls">localStorage</span>
+                            <span class="tag tag-bs">Web3Forms</span>
+                        </div>
+
+                        <div class="flagship-actions">
+                            <a href="02-projects/html-css-js/kp-living/index.html" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                                View Live Demo
+                                <span>→</span>
+                            </a>
+                            <a href="https://github.com/KaushalxPrajapati/web-dev-journey/tree/main/02-projects/html-css-js/kp-living" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                                Source Code
+                                <span>↗</span>
+                            </a>
+                            <button class="btn btn-outline version-toggle" aria-expanded="false" aria-controls="v-kpl">
+                                Version History
+                                <span class="chev">▼</span>
+                            </button>
+                        </div>
+
+                        <!-- Flagship Version History -->
+                        <div class="version-history-panel" id="v-kpl">
+                            <div class="version-history-inner">
+                                <div class="ver-item">
+                                    <span class="ver-label now">v5</span>
+                                    <div class="ver-info">
+                                        <strong>Refinement & Integrations</strong>
+                                        <span class="ver-desc">Integrated Web3Forms for the contact page, polished social links, and added favicons.</span>
+                                    </div>
+                                </div>
+                                <div class="ver-item">
+                                    <span class="ver-label prev">v4</span>
+                                    <div class="ver-info">
+                                        <strong>UX Improvements</strong>
+                                        <span class="ver-desc">Implemented a dismissible top announcement strip (persisted in localStorage) and improved hero spacing.</span>
+                                    </div>
+                                </div>
+                                <div class="ver-item">
+                                    <span class="ver-label prev">v3</span>
+                                    <div class="ver-info">
+                                        <strong>Data-Driven Rendering</strong>
+                                        <span class="ver-desc">Moved to data-driven product rendering, added multiple image support per product, and updated branding (SVG logo).</span>
+                                    </div>
+                                </div>
+                                <div class="ver-item">
+                                    <span class="ver-label prev">v2</span>
+                                    <div class="ver-info">
+                                        <strong>Modularity</strong>
+                                        <span class="ver-desc">Restructured the codebase into highly modular HTML, CSS, and JS files for better maintainability.</span>
+                                    </div>
+                                </div>
+                                <div class="ver-item">
+                                    <span class="ver-label prev">v1</span>
+                                    <div class="ver-info">
+                                        <strong>Initial Build</strong>
+                                        <span class="ver-desc">Created the core multi-page structure with a basic static product listing.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRACTICE ARCHIVE -->
+        <section class="archive" id="archive">
+            <div class="container">
+                <div class="archive-header reveal">
+                    <span class="section-label">
+                        <span class="dot"></span>
+                        My Journey
+                    </span>
+                    <h2 class="section-title">Practice & Learning Archive</h2>
+                    <p class="section-subtitle">A categorized catalog of all my learning exercises, UI clones, and logic challenges. This shows my progression from basics to advanced concepts.</p>
+                </div>
+
+                <div class="archive-container reveal stagger">
+                    <!-- Category 1: HTML & CSS -->
+                    <details class="archive-folder" open>
+                        <summary class="folder-header">
+                            <div class="folder-title-wrap">
+                                <span class="folder-icon">🎨</span>
+                                <h3 class="folder-title">HTML & CSS Experiments</h3>
+                                <span class="folder-count">19 Items</span>
+                            </div>
+                            <span class="folder-chevron">▼</span>
+                        </summary>
+
+                        <div class="folder-content">
+                            <!-- Subcategory: UI Clones -->
+                            <h4 class="sub-category-title">UI Recreations & Clones</h4>
+                            <div class="archive-grid">
+                                <a href="02-projects/html-css/spotify-clone/index.html" target="_blank" class="archive-card">
+                                    <div class="archive-card-top">
+                                        <h5>Spotify Clone</h5>
+                                        <span class="ver-badge">v2</span>
+                                    </div>
+                                    <p>Full music player UI with sidebar and playback controls.</p>
+                                </a>
+
+                                <a href="02-projects/html-css/w3schools-clone/html/index.html" target="_blank" class="archive-card">
+                                    <div class="archive-card-top">
+                                        <h5>W3Schools Landing Page</h5>
+                                        <span class="ver-badge">v2</span>
+                                    </div>
+                                    <p>Modular HTML recreation of the W3Schools layout.</p>
+                                </a>
+
+                                <a href="01-foundation/css/revision/google-search-box/index.html" target="_blank" class="archive-card">
+                                    <div class="archive-card-top"><h5>Google Search Box</h5></div>
+                                    <p>Pixel-perfect clone of Google's central search UI.</p>
+                                </a>
+
+                                <a href="01-foundation/css/revision/linkedin-signup/index.html" target="_blank" class="archive-card">
+                                    <div class="archive-card-top"><h5>LinkedIn Sign Up</h5></div>
+                                    <p>Recreation of the LinkedIn professional registration layout.</p>
+                                </a>
+
+                                <a href="01-foundation/css/revision/tweet-textbox/index.html" target="_blank" class="archive-card">
+                                    <div class="archive-card-top"><h5>X (Twitter) Tweet Box</h5></div>
+                                    <p>UI clone of the tweet composition area.</p>
+                                </a>
+
+                                <a href="01-foundation/css/revision/uber-ride-form/index.html" target="_blank" class="archive-card">
+                                    <div class="archive-card-top"><h5>Uber Ride Form</h5></div>
+                                    <p>Recreation of Uber's ride request interface.</p>
+                                </a>
+                            </div>
+
+                            <!-- Subcategory: Components -->
+                            <h4 class="sub-category-title mt-4">UI Components & Layouts</h4>
+                            <div class="archive-grid">
+                                <a href="02-projects/html-css/job-card/index.html" target="_blank" class="archive-card">
+                                    <div class="archive-card-top">
+                                        <h5>Job Card</h5>
+                                        <span class="ver-badge">v2</span>
+                                    </div>
+                                    <p>Professional card UI with hover states and avatar.</p>
+                                </a>
+
+                                <a href="02-projects/html-css/calendar-card/index.html" target="_blank" class="archive-card">
+                                    <div class="archive-card-top"><h5>Calendar Card</h5></div>
+                                    <p>Grid-based layout for a clean calendar UI.</p>
+                                </a>
+
+                                <a href="02-projects/html-css/sidebar-menu/index.html" target="_blank" class="archive-card">
+                                    <div class="archive-card-top"><h5>Sidebar Menu</h5></div>
+                                    <p>Navigation UI with icon links and smooth toggles.</p>
+                                </a>
+
+                                <a href="02-projects/html-css/hotel-registration-page/index.html" target="_blank" class="archive-card">
+                                    <div class="archive-card-top"><h5>Hotel Registration Form</h5></div>
+                                    <p>Styled input fields and image layouts.</p>
+                                </a>
+
+                                <a href="01-foundation/css/revision/signup-form/index.html" target="_blank" class="archive-card">
+                                    <div class="archive-card-top"><h5>Generic Sign Up Form</h5></div>
+                                    <p>Clean authentication UI design.</p>
+                                </a>
+
+                                <a href="01-foundation/css/revision/pagination-buttons/index.html" target="_blank" class="archive-card">
+                                    <div class="archive-card-top"><h5>Pagination Buttons</h5></div>
+                                    <p>Styled multi-page navigation controls.</p>
+                                </a>
+                            </div>
+
+                            <!-- Subcategory: Art & Effects -->
+                            <h4 class="sub-category-title mt-4">CSS Art & Effects</h4>
+                            <div class="archive-grid">
+                                <a href="02-projects/html-css/smiley-face/index.html" target="_blank" class="archive-card">
+                                    <div class="archive-card-top"><h5>Smiley Face</h5></div>
+                                    <p>Pure CSS art using advanced positioning and border-radius.</p>
+                                </a>
+
+                                <a href="02-projects/html-css/hover-on-shapes/index.html" target="_blank" class="archive-card">
+                                    <div class="archive-card-top"><h5>Hover on Shapes</h5></div>
+                                    <p>Experiments with CSS transitions on geometric shapes.</p>
+                                </a>
+
+                                <a href="02-projects/html-css/button-shadow-transition/index.html" target="_blank" class="archive-card">
+                                    <div class="archive-card-top"><h5>Button Shadows</h5></div>
+                                    <p>Interactive box-shadow experiments on buttons.</p>
+                                </a>
+
+                                <a href="01-foundation/css/revision/using-transform-property/rotate.html" target="_blank" class="archive-card">
+                                    <div class="archive-card-top"><h5>Transforms Practice</h5></div>
+                                    <p>Learning rotate, scale, and translate CSS functions.</p>
+                                </a>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- Category 2: JavaScript -->
+                    <details class="archive-folder">
+                        <summary class="folder-header">
+                            <div class="folder-title-wrap">
+                                <span class="folder-icon">⚡</span>
+                                <h3 class="folder-title">JavaScript Fundamentals</h3>
+                                <span class="folder-count">9 Items</span>
+                            </div>
+                            <span class="folder-chevron">▼</span>
+                        </summary>
+
+                        <div class="folder-content">
+                            <!-- Subcategory: Logic -->
+                            <h4 class="sub-category-title">Logic, Math & Games</h4>
+                            <div class="archive-grid">
+                                <div class="archive-card-container">
+                                    <a href="02-projects/html-css-js/calculator/index.html" target="_blank" class="archive-card has-history">
+                                        <div class="archive-card-top">
+                                            <h5>iOS Calculator</h5>
+                                            <span class="ver-badge">v3</span>
+                                        </div>
+                                        <p>Complex display logic, chaining operations, and a polished Bootstrap UI.</p>
+                                    </a>
+                                    <button class="mini-ver-toggle" aria-controls="v-calc">History ▼</button>
+                                    <div class="mini-history" id="v-calc">
+                                        <div class="v-step">
+                                            <b>v3:</b>
+                                            Polished UI, full operations, 10KB refactored JS
+                                        </div>
+                                        <div class="v-step">
+                                            <b>v2:</b>
+                                            Added display chaining and alternate scripts
+                                        </div>
+                                        <div class="v-step">
+                                            <b>v1:</b>
+                                            Basic arithmetic calculator
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <a href="02-projects/html-css-js/simon-says-game/index.html" target="_blank" class="archive-card">
+                                    <div class="archive-card-top"><h5>Simon Says Game</h5></div>
+                                    <p>Memory game requiring state management and event listeners.</p>
+                                </a>
+
+                                <a href="02-projects/html-css-js/leap-year-checker/index.html" target="_blank" class="archive-card">
+                                    <div class="archive-card-top"><h5>Leap Year Checker</h5></div>
+                                    <p>Conditional logic for year validation (1-9999).</p>
+                                </a>
+
+                                <a href="02-projects/html-css-js/prime-number-checker/index.html" target="_blank" class="archive-card">
+                                    <div class="archive-card-top"><h5>Prime Number Checker</h5></div>
+                                    <p>Mathematical logic algorithms for number validation.</p>
+                                </a>
+
+                                <a href="02-projects/html-css-js/counter-app/index.html" target="_blank" class="archive-card">
+                                    <div class="archive-card-top"><h5>Counter App</h5></div>
+                                    <p>State management using increment, decrement, and reset logic.</p>
+                                </a>
+                            </div>
+
+                            <!-- Subcategory: DOM -->
+                            <h4 class="sub-category-title mt-4">DOM Manipulation</h4>
+                            <div class="archive-grid">
+                                <a href="02-projects/html-css-js/to-do-list/index.html" target="_blank" class="archive-card">
+                                    <div class="archive-card-top"><h5>To-Do List</h5></div>
+                                    <p>Dynamic DOM element creation, deletion, and event binding.</p>
+                                </a>
+
+                                <a href="02-projects/html-css-js/control-moving-box/index.html" target="_blank" class="archive-card">
+                                    <div class="archive-card-top"><h5>Control Moving Box</h5></div>
+                                    <p>Keyboard event listeners bound to visual coordinate changes.</p>
+                                </a>
+
+                                <a href="02-projects/html-css-js/form-modal-popup/index.html" target="_blank" class="archive-card">
+                                    <div class="archive-card-top"><h5>Form Modal Popup</h5></div>
+                                    <p>Handling form submission data to dynamically populate a modal.</p>
+                                </a>
+
+                                <a href="02-projects/html-css-js/basic-modal-popup/index.html" target="_blank" class="archive-card">
+                                    <div class="archive-card-top"><h5>Basic Modal</h5></div>
+                                    <p>Simple class toggling for modal visibility.</p>
+                                </a>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- Category 3: Backend & Data -->
+                    <details class="archive-folder">
+                        <summary class="folder-header">
+                            <div class="folder-title-wrap">
+                                <span class="folder-icon">🟢</span>
+                                <h3 class="folder-title">Backend & Database (WIP)</h3>
+                                <span class="folder-count">Exploration</span>
+                            </div>
+                            <span class="folder-chevron">▼</span>
+                        </summary>
+
+                        <div class="folder-content">
+                            <div class="archive-message">
+                                <p>These are backend learning exercises written in Node.js and SQL. They do not have live front-end views, but the source code is available on GitHub.</p>
+                            </div>
+
+                            <div class="archive-grid">
+                                <a href="https://github.com/KaushalxPrajapati/web-dev-journey/tree/main/03-backend/express-js/04-rest" target="_blank" class="archive-card">
+                                    <div class="archive-card-top"><h5>RESTful CRUD API</h5></div>
+                                    <p>Express.js server with full CRUD routing and EJS views.</p>
+                                </a>
+
+                                <a href="https://github.com/KaushalxPrajapati/web-dev-journey/tree/main/03-backend/node-js/modules" target="_blank" class="archive-card">
+                                    <div class="archive-card-top"><h5>Node Core Modules</h5></div>
+                                    <p>Experiments with fs, http, os, and process modules.</p>
+                                </a>
+
+                                <a href="https://github.com/KaushalxPrajapati/web-dev-journey/tree/main/04-database/sql" target="_blank" class="archive-card">
+                                    <div class="archive-card-top"><h5>MySQL & Faker</h5></div>
+                                    <p>Generating mock data using faker.js and pushing to a MySQL database.</p>
+                                </a>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-links">
+                    <a href="https://github.com/KaushalxPrajapati" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://hellokaushal.dev" class="footer-link" target="_blank" rel="noopener noreferrer">hellokaushal.dev</a>
+                    <a href="https://github.com/KaushalxPrajapati/web-dev-journey" class="footer-link" target="_blank" rel="noopener noreferrer">Repository</a>
+                </div>
+                <p class="footer-copy">
+                    Built with
+                    <span class="heart">❤</span>
+                    by Kaushal Prajapati &nbsp;·&nbsp; © 2025
+                </p>
+            </div>
+        </footer>
 
         <script src="script.js"></script>
     </body>
