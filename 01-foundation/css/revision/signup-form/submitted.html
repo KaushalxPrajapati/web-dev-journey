@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Form Submitted</title>
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: sans-serif;
+                background-color: whitesmoke;
+            }
+
+            .success-container {
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .success-card {
+                width: 360px;
+                padding: 32px;
+                text-align: center;
+                border-radius: 16px;
+                background-color: #ffffff;
+                box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+            }
+
+            .success-card h1 {
+                margin-bottom: 12px;
+                font-size: 28px;
+                color: #0f172a;
+            }
+
+            .success-card p {
+                margin-bottom: 24px;
+                font-size: 16px;
+                color: #64748b;
+            }
+
+            .success-card a {
+                display: inline-block;
+                padding: 12px 20px;
+                border-radius: 8px;
+                background-color: #2563eb;
+                color: #ffffff;
+                text-decoration: none;
+                font-weight: bold;
+                transition: background-color 0.25s ease;
+            }
+
+            .success-card a:hover {
+                background-color: #1d4ed8;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="success-container">
+            <div class="success-card">
+                <h1>Form Submitted</h1>
+                <p>Your sign up form has been submitted successfully.</p>
+                <a href="index.html">Go Back</a>
+            </div>
+        </div>
+    </body>
+</html>

@@ -8,15 +8,15 @@
     </head>
 
     <body>
-        <div class="form-container">
+        <form action="submitted.html" class="form-container">
             <div class="name">
-                <input class="first-name" type="text" placeholder="First name" />
-                <input class="last-name" type="text" placeholder="Last name" />
+                <input class="first-name" type="text" placeholder="First name" name="firstName" autofocus />
+                <input class="last-name" type="text" placeholder="Last name" name="lastName" />
             </div>
 
-            <input class="email" type="email" placeholder="Email" />
+            <input type="email" placeholder="Email" name="email" autocomplete="email" autocapitalize="off" />
 
-            <button>Sign Up</button>
-        </div>
+            <button type="submit">Sign Up</button>
+        </form>
     </body>
 </html>
