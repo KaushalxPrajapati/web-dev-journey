@@ -1,149 +1,94 @@
-# Web Dev Journey
+# Kaushal Prajapati — Web Dev Journey
 
-A structured collection of my web development learning, practice projects, frontend experiments, JavaScript mini-projects, and backend development work.
+[![Live Portfolio](https://img.shields.io/badge/Live_Portfolio-hellokaushal.dev-6366f1?style=for-the-badge)](https://hellokaushal.dev)
 
-This repository documents my journey of learning web development from the fundamentals to more practical, real-world project building. It includes HTML, CSS, JavaScript, responsive layouts, DOM manipulation, frontend project structure, and backend practice using Node.js and Express.js.
+Welcome to my Web Development Journey! This repository contains the source code for my portfolio website and documents my entire learning progression from HTML basics to building full-scale web applications.
 
-## Live Website
+Instead of presenting every small learning exercise as a standalone project, I organize my work into a **Flagship Project** (my primary focus) and a **Practice & Learning Archive** (my continuous learning progression).
 
-My hosted project index is available on my custom domain:
+---
 
-**Live Portfolio:** https://hellokaushal.dev
+## 🌟 Flagship Project: KP Living
 
-Some projects are also available through GitHub Pages while I continue improving deployment and project structure.
+**KP Living** is a comprehensive, multi-page static ecommerce furniture website built from scratch. It simulates a complete shopping experience, demonstrating end-to-end frontend capabilities without relying on heavy frameworks.
 
-## About This Repository
+* **Live Demo:** [View in Portfolio](https://hellokaushal.dev/#flagship)
+* **Source Code:** [`/02-projects/html-css-js/kp-living`](./02-projects/html-css-js/kp-living/)
+* **Tech Stack:** HTML5, CSS3, Vanilla JS, localStorage, Web3Forms
 
-This repository is not just a code dump. It is my personal web development learning archive where I build, improve, refactor, and organize projects as I grow as a developer.
+**Key Features:**
+- Multi-page architecture (7 distinct views: Home, Shop, Product Details, Cart, Checkout, etc.)
+- Advanced multi-criteria product filtering system.
+- Persistent shopping cart via JavaScript `localStorage`.
+- Complex form validation for the checkout and contact pages.
+- Dynamic calculations for prices, GST, and delivery.
+- Fully responsive across mobile, tablet, and desktop breakpoints.
 
-The goal is to show consistent progress, clean project structure, practical implementation, and real learning through projects.
+---
 
-## Project Categories
+## 📂 Practice & Learning Archive
 
-### HTML & CSS Projects
+A categorized catalog of all my learning exercises, UI clones, and logic challenges. This archive represents my hands-on practice hours and growth over time.
 
-These projects focus on layout building, visual design, responsiveness, positioning, transitions, and UI fundamentals.
+### 🎨 HTML & CSS Experiments
 
-| Project | Description | Status |
-|---|---|---|
-| Spotify Clone | Static UI clone focused on layout and styling practice | Completed |
-| W3Schools Landing Page | Landing page recreation for layout and CSS practice | Completed |
-| Sidebar Menu | Sidebar navigation UI using HTML and CSS | Completed |
-| Hotel Registration Page | Form-based page for registration UI practice | Completed |
-| Hover on Shapes | CSS hover effects and shape interaction practice | Completed |
-| Job Card | Card-based UI component practice | Completed |
-| Calendar Card | Calendar-style card design practice | Completed |
-| Smiley Face | Simple CSS art and positioning practice | Completed |
-| Button Shadow Transition | Button hover, transition, and shadow effect practice | Completed |
+**UI Recreations & Clones**
+- [Spotify Clone](./02-projects/html-css/spotify-clone/) (v2) — Full music player UI with sidebar and playback controls.
+- [W3Schools Landing Page](./02-projects/html-css/w3schools-clone/) (v2) — Modular HTML layout recreation.
+- [Google Search Box](./01-foundation/css/revision/google-search-box/) — Pixel-perfect clone of Google's search input.
+- [LinkedIn Sign Up](./01-foundation/css/revision/linkedin-signup/) — Professional registration layout.
+- [X (Twitter) Tweet Box](./01-foundation/css/revision/tweet-textbox/) — UI clone of the tweet composition area.
+- [Uber Ride Form](./01-foundation/css/revision/uber-ride-form/) — Ride request interface.
 
-### JavaScript Projects
+**UI Components & Layouts**
+- [Job Card](./02-projects/html-css/job-card/) (v2) — Professional card UI with hover states.
+- [Calendar Card](./02-projects/html-css/calendar-card/) — Grid-based layout.
+- [Sidebar Menu](./02-projects/html-css/sidebar-menu/) — Navigation UI with smooth toggles.
+- [Hotel Registration Form](./02-projects/html-css/hotel-registration-page/)
+- [Generic Sign Up Form](./01-foundation/css/revision/signup-form/)
+- [Pagination Buttons](./01-foundation/css/revision/pagination-buttons/)
 
-These projects focus on DOM manipulation, events, user interaction, local storage, logic building, and frontend functionality.
+**CSS Art & Effects**
+- [Smiley Face](./02-projects/html-css/smiley-face/) — Pure CSS art using advanced positioning.
+- [Hover on Shapes](./02-projects/html-css/hover-on-shapes/) — CSS transitions on geometric shapes.
+- [Button Shadows](./02-projects/html-css/button-shadow-transition/) — Interactive box-shadow experiments.
+- [Transforms Practice](./01-foundation/css/revision/using-transform-property/rotate.html)
 
-| Project | Description | Status |
-|---|---|---|
-| KP Living | Ecommerce-style furniture website with product listing, filters, cart, checkout validation, and responsive UI | Active / Improving |
-| Simon Says Game | Memory-based game using JavaScript events and game logic | Completed |
-| Calculator | Basic calculator for arithmetic operations | Completed |
-| To-Do List | Task management app with add/remove functionality | Completed |
-| Control Moving Box | Keyboard or button-based box movement practice | Completed |
-| Form Modal Popup | Modal-based form interaction project | Completed |
-| Counter App | Simple counter app using JavaScript state updates | Completed |
-| Prime Number Checker | Logic-based project to check prime numbers | Completed |
-| Basic Modal Popup | Basic modal open/close functionality | Completed |
+### ⚡ JavaScript Fundamentals
 
-### Backend Projects
+**Logic, Math & Games**
+- [iOS Calculator](./02-projects/html-css-js/calculator/) (v3) — Complex display logic and chaining operations.
+- [Simon Says Game](./02-projects/html-css-js/simon-says-game/) — Memory game with state management.
+- [Leap Year Checker](./02-projects/html-css-js/leap-year-checker/) — Conditional year validation.
+- [Prime Number Checker](./02-projects/html-css-js/prime-number-checker/) — Mathematical logic algorithms.
+- [Counter App](./02-projects/html-css-js/counter-app/) — State management with increment/decrement logic.
 
-These projects focus on backend concepts like routing, APIs, middleware, static file serving, JSON parsing, and CRUD operations.
+**DOM Manipulation**
+- [To-Do List](./02-projects/html-css-js/to-do-list/) — Dynamic element creation, deletion, and event binding.
+- [Control Moving Box](./02-projects/html-css-js/control-moving-box/) — Keyboard event listeners bound to coordinate changes.
+- [Form Modal Popup](./02-projects/html-css-js/form-modal-popup/) — Handling form submission data to populate a modal.
+- [Basic Modal](./02-projects/html-css-js/basic-modal-popup/) — Class toggling for visibility.
 
-| Project | Description | Status |
-|---|---|---|
-| CRUD App | Basic Express.js CRUD practice project with frontend and backend structure | In Progress |
+### 🟢 Backend & Database (Exploration)
+*(Source code only, no front-end views)*
 
-> Note: Backend projects may require a running Node.js/Express server and may not work fully as static pages.
+- [RESTful CRUD API](./03-backend/express-js/04-rest/) — Express.js server with full CRUD routing and EJS views.
+- [Node Core Modules](./03-backend/node-js/modules/) — Experiments with `fs`, `http`, `os`, and `process`.
+- [MySQL & Faker Data](./04-database/sql/) — Generating mock data using `faker.js` and pushing to a MySQL database.
 
-## Featured Project: KP Living
+---
 
-**KP Living** is a static ecommerce-style furniture website built with HTML, CSS, and Vanilla JavaScript.
+## 🚀 How to Run Locally
 
-It simulates a basic ecommerce experience where users can browse furniture products, filter items, view product details, add products to cart, and complete a demo checkout flow.
+Because the majority of this repository (including the portfolio and flagship project) is built with vanilla web technologies, you don't need a build step!
 
-### KP Living Features
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/KaushalxPrajapati/web-dev-journey.git
+   ```
+2. Open the project in VS Code.
+3. Use the **Live Server** extension on `index.html` (the root file) to view the portfolio.
+4. Navigate through the UI to explore the different projects, or open their respective `index.html` files directly.
 
-- Multi-page static website
-- Home page with best sellers and new arrivals
-- Product listing page
-- Product search
-- Category, room, material, color, price, rating, discount, and availability filters
-- Product sorting
-- Product details page
-- Related products section
-- Cart using localStorage
-- Quantity update and remove item functionality
-- Cart subtotal, discount, delivery charge, GST, and total calculation
-- Checkout form validation
-- Coupon code system
-- Contact form validation
-- Newsletter form validation
-- Responsive design for desktop, tablet, and mobile
-
-### KP Living Tech Stack
-
-- HTML5
-- CSS3
-- Vanilla JavaScript
-- localStorage
-- Git
-- GitHub
-- GitHub Pages / Vercel deployment
-
-## Tech Stack Used in This Repository
-
-- HTML5
-- CSS3
-- JavaScript
-- Bootstrap
-- Node.js
-- Express.js
-- EJS
-- Git
-- GitHub
-- GitHub Pages
-- Vercel
-
-## Folder Structure
-
-```text
-web-dev-journey/
-├── 02-projects/
-│   ├── html-css/
-│   │   ├── spotify-clone/
-│   │   ├── w3schools-clone/
-│   │   ├── sidebar-menu/
-│   │   ├── hotel-registration-page/
-│   │   ├── hover-on-shapes/
-│   │   ├── job-card/
-│   │   ├── calendar-card/
-│   │   ├── smiley-face/
-│   │   └── button-shadow-transition/
-│   │
-│   ├── html-css-js/
-│   │   └── kp-living/
-│   │
-│   ├── javascript/
-│   │   ├── simon-says-game/
-│   │   ├── calculator/
-│   │   ├── to-do-list/
-│   │   ├── control-moving-box/
-│   │   ├── form-modal-popup/
-│   │   ├── counter-app/
-│   │   ├── prime-number-checker/
-│   │   └── basic-modal-popup/
-│   │
-│   └── backend/
-│       └── CRUD-app/
-│
-├── index.html
-├── style.css
-├── script.js
-└── README.md
+---
+*Built with passion and continuous learning. © 2025 Kaushal Prajapati*
