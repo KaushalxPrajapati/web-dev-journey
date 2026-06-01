@@ -5,15 +5,23 @@
 }
 
 body {
-    font-family: Arial;
-}
-
-.centre {
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    background-color: whitesmoke;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25em;
+
+    background-color: white;
+    padding: 2em;
+    border-radius: 16px;
 }
 
 p {
@@ -27,30 +35,39 @@ p {
     margin-bottom: 10px;
 }
 
-.text-box {
+.email input {
+    width: 100%;
     font-size: 16px;
-    width: 400px;
-    border-width: 2px;
+    padding: 8px 10px;
+
+    border-width: 1px;
     border-style: solid;
-    border-color: rgb(100, 100, 100);
-    padding-top: 7px;
-    padding-bottom: 7px;
+    border-color: gray;
     border-radius: 5px;
-    margin-bottom: 20px;
+}
+
+.email input:focus {
+    outline: none;
 }
 
 .disclaimer {
-    font-size: 16px;
-    margin-bottom: 20px;
+    font-size: 15px;
 }
 
-.join-button {
+.btn {
+    width: 100%;
     background-color: rgb(10, 102, 194);
     color: white;
     border: none;
     font-size: 20px;
     width: 400px;
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     border-radius: 30px;
+
+    transition: background-color 0.25s ease;
+}
+
+.btn:hover {
+    background-color: #0b57a4;
 }
