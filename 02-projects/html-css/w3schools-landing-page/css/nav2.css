@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+/* ------------------------------------------------------------ */
+
+header {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+}
+
+/* ------------------------------------------------------------ */
+
+#nav1 {
+    height: 50px;
+    background-color: white;
+}
+
+/* ------------------------------------------------------------ */
+
+#nav2 {
+    height: 40px; /* Initial was 30px, You may have to keep it 45px */
+    width: 100vw;
+    background-color: rgb(40, 42, 53);
+
+    display: flex;
+    flex-wrap: row;
+    flex-wrap: nowrap;
+
+    text-align: center;
+    align-content: center;
+
+    overflow-x: scroll;
+}
+
+#nav2 .tutorial-link {
+    color: white;
+    font-size: 0.75em;
+    font-weight: normal;
+    padding: 5px 15px;
+    text-decoration: none;
+}
+
+#nav2 .tutorial-link:hover {
+    background-color: black;
+}
+
+.white-strip {
+    height: 1em;
+    width: 100vw;
+    background-color: white;
+    position: fixed;
+    top: 76px;
+}
+/* ------------------------------------------------------------ */
