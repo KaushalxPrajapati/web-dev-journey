@@ -1,14 +1,7 @@
-p{
-    font-family: Arial;
-    font-size: 15px;
-}
-
-.border{
-    width: 250px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgb(150, 150, 150);
-    padding-left: 15px;
-    padding-bottom: 20px;
-}
-
+body { margin: 0; padding: 0; height: 100vh; display: flex; justify-content: center; align-items: center; background-color: #f0fdf4; font-family: -apple-system, sans-serif; }
+.border { background: white; width: 300px; padding: 24px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: center; }
+p { font-size: 18px; font-weight: 600; color: #111827; margin-top: 0; margin-bottom: 20px; }
+button { background: #3b82f6; color: white; border: none; padding: 8px 24px; font-size: 16px; border-radius: 6px; cursor: pointer; margin: 0 5px; font-weight: 500; transition: 0.2s; }
+button:hover { background: #2563eb; }
+button:last-child { background: #ef4444; }
+button:last-child:hover { background: #dc2626; }
