@@ -37,8 +37,7 @@ A categorized catalog of all my learning exercises, UI clones, and logic challen
 - [W3Schools Landing Page](./02-projects/html-css/w3schools-landing-page/html/) (v2) — Modular HTML layout recreation.
 - [Google Search Box](./02-projects/experimental/google-search-box/) — Pixel-perfect clone of Google's search input.
 - [LinkedIn Sign Up](./02-projects/experimental/linkedin-signup/) — Professional registration layout.
-- [X (Twitter) Tweet Box](./02-projects/experimental/tweet-textbox/) — UI clone of the tweet composition area.
-- [X (Twitter) Compose UI](./02-projects/experimental/tweet-compose/) — Another iteration of the compose interface.
+- [X (Twitter) Compose UI](./02-projects/experimental/tweet-compose/) — Pixel-perfect clone of the modern X tweet composition area.
 - [Uber Ride Form](./02-projects/experimental/uber-ride-form/) — Ride request interface.
 
 **UI Components & Layouts**
@@ -63,8 +62,7 @@ A categorized catalog of all my learning exercises, UI clones, and logic challen
 - [Transforms Practice](./01-foundation/css/notes/using-transform-property/rotate.html)
 - [Buttons Practice](./02-projects/experimental/buttons/) — Extensive button styling collection.
 - [Image Styling](./02-projects/experimental/image-styling/) — CSS techniques for clipping and framing images.
-- [Text Styling](./02-projects/experimental/text-styling/) — Typography experiments with web fonts.
-- [Tesla Product Text](./02-projects/experimental/tesla-product-text/) — Sleek typography for product headers.
+
 
 ### ⚡ JavaScript Fundamentals
 
