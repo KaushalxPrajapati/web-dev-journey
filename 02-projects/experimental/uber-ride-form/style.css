@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background-color: whitesmoke;
+}
+
+body {
+    font-family: sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    width: 425px;
+    background-color: white;
+
+    padding: 1.5em;
+
+    border: 1px solid lightgray;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+h1 {
+    font-size: 35px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-fields input {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 1em;
+    font-size: 16px;
+}
+
+.form-fields input:focus {
+    outline: none;
+}
+
+/* Base state (Change opacity to rgba color) */
+.form-fields input::placeholder {
+    letter-spacing: 0.75px;
+    color: rgba(0, 0, 0, 0.5); /* Set your preferred default placeholder color */
+    transform: translateX(0);
+    transition:
+        color 1s ease,
+        transform 1s ease; /* Transition color and position instead */
+}
+
+/* Class triggered by JS */
+.form-fields input.fade-placeholder::placeholder {
+    color: rgba(0, 0, 0, 0); /* Fades the text color to completely transparent */
+    transform: translateX(10px); /* Crucial: Triggers the browser paint engine to animate */
+}
+
+.btns {
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+
+    margin-top: 0.5em;
+}
+
+button {
+    border: none;
+
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+    padding: 1em 1.25em;
+}
+
+button[type='submit'] {
+    background-color: black;
+    color: white;
+}

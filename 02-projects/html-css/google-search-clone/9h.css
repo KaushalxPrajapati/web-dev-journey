@@ -1,0 +1,41 @@
+div {
+  text-align: center;
+}
+
+.google-logo {
+  width: 200px;               /* Sets the width of the logo */
+  margin-top: 10px;           /* Space above the logo */
+  margin-bottom: 10px;        /* Space below the logo */
+}
+
+input{
+  width: 500px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2); /* Subtle outer shadow for depth */
+  margin-bottom: 30px;
+  outline: none; /* Removes default blue outline on focus */
+
+  padding-top: 12px;
+  padding-right: 16px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+}
+
+.google-button {
+  background-color: rgb(245, 245, 245);
+  border: none;
+  font-size: 15px;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Very light shadow for button elevation */
+
+  margin-left: 5px;
+  margin-right: 5px;
+
+  padding-top: 12px;
+  padding-right: 20px;
+  padding-bottom: 12px;
+  padding-left: 20px;
+}
+
