@@ -34,25 +34,37 @@ A categorized catalog of all my learning exercises, UI clones, and logic challen
 
 **UI Recreations & Clones**
 - [Spotify Clone](./02-projects/html-css/spotify-clone/) (v2) — Full music player UI with sidebar and playback controls.
-- [W3Schools Landing Page](./02-projects/html-css/w3schools-clone/) (v2) — Modular HTML layout recreation.
-- [Google Search Box](./01-foundation/css/revision/google-search-box/) — Pixel-perfect clone of Google's search input.
-- [LinkedIn Sign Up](./01-foundation/css/revision/linkedin-signup/) — Professional registration layout.
-- [X (Twitter) Tweet Box](./01-foundation/css/revision/tweet-textbox/) — UI clone of the tweet composition area.
-- [Uber Ride Form](./01-foundation/css/revision/uber-ride-form/) — Ride request interface.
+- [W3Schools Landing Page](./02-projects/html-css/w3schools-landing-page/html/) (v2) — Modular HTML layout recreation.
+- [Google Search Box](./02-projects/experimental/google-search-box/) — Pixel-perfect clone of Google's search input.
+- [LinkedIn Sign Up](./02-projects/experimental/linkedin-signup/) — Professional registration layout.
+- [X (Twitter) Tweet Box](./02-projects/experimental/tweet-textbox/) — UI clone of the tweet composition area.
+- [X (Twitter) Compose UI](./02-projects/experimental/tweet-compose/) — Another iteration of the compose interface.
+- [Uber Ride Form](./02-projects/experimental/uber-ride-form/) — Ride request interface.
 
 **UI Components & Layouts**
-- [Job Card](./02-projects/html-css/job-card/) (v2) — Professional card UI with hover states.
-- [Calendar Card](./02-projects/html-css/calendar-card/) — Grid-based layout.
+- [Job Card](./02-projects/experimental/job-card/) (v2) — Professional card UI with hover states.
+- [Profile Card](./02-projects/experimental/profile-card/) — User profile UI component.
+- [Calendar Card](./02-projects/experimental/calendar-card/) — Grid-based layout.
 - [Sidebar Menu](./02-projects/html-css/sidebar-menu/) — Navigation UI with smooth toggles.
-- [Hotel Registration Form](./02-projects/html-css/hotel-registration-page/)
-- [Generic Sign Up Form](./01-foundation/css/revision/signup-form/)
-- [Pagination Buttons](./01-foundation/css/revision/pagination-buttons/)
+- [App Header Navigation](./02-projects/experimental/app-header-navigation/) — Clean top-level navigation bar.
+- [Navigation List Badges](./02-projects/experimental/navigation-list-badges/) — List items with notification badges.
+- [Hotel Registration Form](./01-foundation/css/bootstrap/hotel-registration-page/)
+- [Generic Sign Up Form](./02-projects/experimental/signup-form/)
+- [Service Feedback UI](./02-projects/experimental/service-feedback/) — UI for capturing user ratings.
+- [Pagination Buttons](./02-projects/experimental/pagination-buttons/)
+- [Follow Suggestions](./02-projects/experimental/follow-suggestions-list/) — List UI recommending accounts.
+- [Friend Suggestions](./02-projects/experimental/friend-suggestions/) — Card-based friend recommendation layout.
+- [App Install Banner](./02-projects/experimental/app-install-banner/) — Mobile-style prompt to install an application.
 
-**CSS Art & Effects**
-- [Smiley Face](./02-projects/html-css/smiley-face/) — Pure CSS art using advanced positioning.
-- [Hover on Shapes](./02-projects/html-css/hover-on-shapes/) — CSS transitions on geometric shapes.
-- [Button Shadows](./02-projects/html-css/button-shadow-transition/) — Interactive box-shadow experiments.
-- [Transforms Practice](./01-foundation/css/revision/using-transform-property/rotate.html)
+**CSS Art, Effects & Basic Styling**
+- [Smiley Face](./02-projects/experimental/smiley-face/) — Pure CSS art using advanced positioning.
+- [Hover on Shapes](./02-projects/experimental/hover-on-shapes/) — CSS transitions on geometric shapes.
+- [Button Shadows](./02-projects/experimental/button-shadow-transition/) — Interactive box-shadow experiments.
+- [Transforms Practice](./01-foundation/css/notes/using-transform-property/rotate.html)
+- [Buttons Practice](./02-projects/experimental/buttons/) — Extensive button styling collection.
+- [Image Styling](./02-projects/experimental/image-styling/) — CSS techniques for clipping and framing images.
+- [Text Styling](./02-projects/experimental/text-styling/) — Typography experiments with web fonts.
+- [Tesla Product Text](./02-projects/experimental/tesla-product-text/) — Sleek typography for product headers.
 
 ### ⚡ JavaScript Fundamentals
 
@@ -62,12 +74,15 @@ A categorized catalog of all my learning exercises, UI clones, and logic challen
 - [Leap Year Checker](./02-projects/html-css-js/leap-year-checker/) — Conditional year validation.
 - [Prime Number Checker](./02-projects/html-css-js/prime-number-checker/) — Mathematical logic algorithms.
 - [Counter App](./02-projects/html-css-js/counter-app/) — State management with increment/decrement logic.
+- [Temperature Converter](./02-projects/experimental/temperature-converter/celsius-to-fahrenheit/) — Math conversions handling live user input.
+- [JS Variables Practice](./02-projects/experimental/variables/product-card.html) — Basic variable storage exercises.
 
 **DOM Manipulation**
 - [To-Do List](./02-projects/html-css-js/to-do-list/) — Dynamic element creation, deletion, and event binding.
-- [Control Moving Box](./02-projects/html-css-js/control-moving-box/) — Keyboard event listeners bound to coordinate changes.
-- [Form Modal Popup](./02-projects/html-css-js/form-modal-popup/) — Handling form submission data to populate a modal.
-- [Basic Modal](./02-projects/html-css-js/basic-modal-popup/) — Class toggling for visibility.
+- [Control Moving Box](./02-projects/experimental/control-moving-box/) — Keyboard event listeners bound to coordinate changes.
+- [JS Hover Effects](./02-projects/experimental/hover-effect-using-js/) — Applying mouseenter/mouseleave logic via JS.
+- [Form Modal Popup](./02-projects/experimental/form-modal-popup/) — Handling form submission data to populate a modal.
+- [Basic Modal](./02-projects/experimental/basic-modal-popup/) — Class toggling for visibility.
 
 ### 🟢 Backend & Database (Exploration)
 *(Source code only, no front-end views)*
@@ -91,4 +106,4 @@ Because the majority of this repository (including the portfolio and flagship pr
 4. Navigate through the UI to explore the different projects, or open their respective `index.html` files directly.
 
 ---
-*Built with passion and continuous learning. © 2025 Kaushal Prajapati*
+*Built with passion and continuous learning. © 2026 Kaushal Prajapati*
