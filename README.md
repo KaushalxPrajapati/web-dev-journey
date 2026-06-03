@@ -59,7 +59,6 @@ A categorized catalog of all my learning exercises, UI clones, and logic challen
 - [Smiley Face](./02-projects/experimental/smiley-face/) — Pure CSS art using advanced positioning.
 - [Hover on Shapes](./02-projects/experimental/hover-on-shapes/) — CSS transitions on geometric shapes.
 - [Button Shadows](./02-projects/experimental/button-shadow-transition/) — Interactive box-shadow experiments.
-- [Transforms Practice](./01-foundation/css/notes/using-transform-property/rotate.html)
 - [Buttons Practice](./02-projects/experimental/buttons/) — Extensive button styling collection.
 - [Image Styling](./02-projects/experimental/image-styling/) — CSS techniques for clipping and framing images.
 
