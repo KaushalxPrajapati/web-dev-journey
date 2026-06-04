@@ -1,0 +1,169 @@
+/*
+    CSS GRID AREA
+
+    Previous lessons:
+    01-grid-template created rows and columns.
+    02-grid-gaps added spacing.
+    03-grid-columns controlled columns.
+    04-grid-rows controlled rows.
+    05-grid-properties taught alignment.
+
+    Current lesson:
+    06-grid-area teaches named grid areas.
+
+    Main idea:
+    Named grid areas make it easier to create real webpage layouts.
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #222;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 25px;
+}
+
+.notes,
+.practice {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.notes h2,
+.practice h2 {
+    margin-bottom: 10px;
+}
+
+.notes p {
+    margin-bottom: 12px;
+}
+
+ul,
+ol {
+    padding-left: 22px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+code {
+    background-color: #eef1ff;
+    color: #2836c7;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+/*
+    Layout Container
+
+    grid-template-areas creates a visual layout map.
+
+    Each quoted line represents one row.
+    Each word represents one column area.
+
+    Current layout:
+
+    Row 1: header  header
+    Row 2: sidebar content
+    Row 3: footer  footer
+*/
+.layout {
+    min-height: 500px;
+    margin: 0 auto 25px;
+    background-color: #222;
+    padding: 15px;
+
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    grid-template-rows: 80px 1fr 70px;
+    gap: 15px;
+
+    grid-template-areas:
+        'header header'
+        'sidebar content'
+        'footer footer';
+}
+
+/*
+    Grid Items
+
+    Each item is assigned to a named area using grid-area.
+    These names must match the names written inside grid-template-areas.
+*/
+.box {
+    border: 2px solid black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header {
+    grid-area: header;
+    background-color: lightsalmon;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: lightgreen;
+}
+
+.content {
+    grid-area: content;
+    background-color: lightblue;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: khaki;
+}
+
+/*
+    Responsive Layout
+
+    On small screens, the layout becomes one column.
+
+    This is one of the biggest advantages of grid-template-areas:
+    we can change the full layout by rewriting only the area map.
+*/
+@media (max-width: 600px) {
+    .layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: 70px 120px 250px 70px;
+
+        grid-template-areas:
+            'header'
+            'sidebar'
+            'content'
+            'footer';
+    }
+}

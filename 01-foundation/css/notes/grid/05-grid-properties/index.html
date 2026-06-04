@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CSS Grid Properties</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <main class="container">
+            <h1>CSS Grid Properties</h1>
+
+            <p class="intro">
+                This lesson continues from
+                <strong>04-grid-rows</strong>
+                . Now we will learn useful CSS Grid alignment properties that control how grid items are placed inside their cells and how the whole grid is aligned inside the container.
+            </p>
+
+            <section class="notes">
+                <h2>Important grid alignment properties</h2>
+
+                <p>CSS Grid has two main levels of alignment. Some properties align the items inside their own grid cells, while other properties align the entire grid inside the grid container.</p>
+
+                <ul>
+                    <li>
+                        <code>justify-items</code>
+                        aligns items horizontally inside their cells.
+                    </li>
+                    <li>
+                        <code>align-items</code>
+                        aligns items vertically inside their cells.
+                    </li>
+                    <li>
+                        <code>place-items</code>
+                        is shorthand for
+                        <code>align-items</code>
+                        and
+                        <code>justify-items</code>
+                        .
+                    </li>
+                    <li>
+                        <code>justify-content</code>
+                        aligns the whole grid horizontally inside the container.
+                    </li>
+                    <li>
+                        <code>align-content</code>
+                        aligns the whole grid vertically inside the container.
+                    </li>
+                    <li>
+                        <code>place-content</code>
+                        is shorthand for
+                        <code>align-content</code>
+                        and
+                        <code>justify-content</code>
+                        .
+                    </li>
+                </ul>
+            </section>
+
+            <!--
+                Grid Container:
+
+                This lesson is about alignment.
+
+                Important:
+                - justify-items and align-items affect items inside their cells.
+                - justify-content and align-content affect the whole grid inside the container.
+                - To clearly see justify-content and align-content, the grid tracks should be smaller than the container.
+            -->
+            <div class="grid-container">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+            </div>
+
+            <section class="practice">
+                <h2>Practice</h2>
+
+                <ol>
+                    <li>
+                        Try
+                        <code>justify-items: start;</code>
+                        ,
+                        <code>center</code>
+                        ,
+                        <code>end</code>
+                        , and
+                        <code>stretch</code>
+                        .
+                    </li>
+                    <li>
+                        Try
+                        <code>align-items: start;</code>
+                        ,
+                        <code>center</code>
+                        ,
+                        <code>end</code>
+                        , and
+                        <code>stretch</code>
+                        .
+                    </li>
+                    <li>
+                        Try
+                        <code>place-items: center;</code>
+                        .
+                    </li>
+                    <li>
+                        Try
+                        <code>justify-content: start;</code>
+                        ,
+                        <code>center</code>
+                        ,
+                        <code>end</code>
+                        , and
+                        <code>space-between</code>
+                        .
+                    </li>
+                    <li>
+                        Try
+                        <code>align-content: start;</code>
+                        ,
+                        <code>center</code>
+                        , and
+                        <code>end</code>
+                        .
+                    </li>
+                </ol>
+            </section>
+        </main>
+    </body>
+</html>

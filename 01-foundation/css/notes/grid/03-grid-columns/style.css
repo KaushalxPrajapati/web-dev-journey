@@ -1,0 +1,182 @@
+/*
+    CSS GRID COLUMNS
+
+    Previous lessons:
+    01-grid-template taught how to create rows and columns.
+    02-grid-gaps taught how to add spacing between grid items.
+
+    Current lesson:
+    03-grid-columns teaches how to control the horizontal placement
+    of grid items using grid-column.
+
+    Main idea:
+    grid-column controls how an item starts, ends, or spans across columns.
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #222;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 25px;
+}
+
+.notes,
+.practice {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.notes h2,
+.practice h2 {
+    margin-bottom: 10px;
+}
+
+.notes p {
+    margin-bottom: 12px;
+}
+
+ul,
+ol {
+    padding-left: 22px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+code {
+    background-color: #eef1ff;
+    color: #2836c7;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+/*
+    Grid Container
+
+    This grid has 3 columns and automatic rows.
+
+    repeat(3, 1fr) means:
+    Create 3 equal columns.
+
+    gap creates spacing between grid items.
+    We already learned this in 02-grid-gaps.
+*/
+.grid-container {
+    width: 500px;
+    min-height: 500px;
+    margin: 0 auto 25px;
+    background-color: #222;
+    padding: 15px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 100px;
+    gap: 15px;
+}
+
+/*
+    Grid Items
+
+    These are direct children of .grid-container,
+    so they become grid items.
+*/
+.item {
+    background-color: lightblue;
+    border: 2px solid black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.item:nth-child(even) {
+    background-color: lightgreen;
+}
+
+/*
+    ITEM 1
+
+    grid-column: 1 / 4;
+
+    This means:
+    Start from column line 1.
+    End before column line 4.
+
+    In a 3-column grid, line 1 to line 4 covers all 3 columns.
+*/
+.item-1 {
+    grid-column: 1 / 4;
+    background-color: lightsalmon;
+}
+
+/*
+    ITEM 3
+
+    grid-column: 2 / 4;
+
+    This means:
+    Start from column line 2.
+    End before column line 4.
+
+    So this item covers column 2 and column 3.
+*/
+.item-3 {
+    grid-column: 2 / 4;
+    background-color: khaki;
+}
+
+/*
+    ITEM 6
+
+    grid-column: span 2;
+
+    This means:
+    Start from wherever the browser places the item,
+    then cover 2 columns from that position.
+*/
+.item-6 {
+    grid-column: span 2;
+    background-color: plum;
+}
+
+/*
+    Responsive adjustment
+
+    On small screens, the grid becomes smaller
+    so it does not overflow the page.
+*/
+@media (max-width: 600px) {
+    .grid-container {
+        width: 100%;
+    }
+}

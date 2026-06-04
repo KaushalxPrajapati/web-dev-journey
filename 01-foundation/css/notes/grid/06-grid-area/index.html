@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CSS Grid Area</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <main class="container">
+            <h1>CSS Grid Area</h1>
+
+            <p class="intro">
+                This lesson continues from
+                <strong>05-grid-properties</strong>
+                . Now we will learn how to create a complete layout using
+                <code>grid-template-areas</code>
+                and
+                <code>grid-area</code>
+                .
+            </p>
+
+            <section class="notes">
+                <h2>What is grid-area?</h2>
+
+                <p>
+                    The
+                    <code>grid-area</code>
+                    property can be used to place an item into a named area of the grid. This is useful for creating real page layouts like header, sidebar, content, and footer.
+                </p>
+
+                <ul>
+                    <li>
+                        <code>grid-template-areas</code>
+                        defines the layout structure on the container.
+                    </li>
+                    <li>
+                        <code>grid-area</code>
+                        assigns each item to a named area.
+                    </li>
+                    <li>Area names must match exactly between CSS container and CSS item.</li>
+                    <li>Named grid areas make layout code easier to read.</li>
+                </ul>
+            </section>
+
+            <!--
+                Grid Container:
+
+                This lesson creates a simple webpage layout.
+
+                Layout areas:
+                - header
+                - sidebar
+                - content
+                - footer
+
+                Important:
+                The area names in grid-template-areas must match the grid-area names
+                used on the individual child elements.
+            -->
+            <div class="layout">
+                <header class="box header">Header</header>
+                <aside class="box sidebar">Sidebar</aside>
+                <section class="box content">Main Content</section>
+                <footer class="box footer">Footer</footer>
+            </div>
+
+            <section class="practice">
+                <h2>Practice</h2>
+
+                <ol>
+                    <li>Change the sidebar from left side to right side.</li>
+                    <li>Make the header cover only the content area, not the sidebar.</li>
+                    <li>
+                        Increase the sidebar width from
+                        <code>180px</code>
+                        to
+                        <code>220px</code>
+                        .
+                    </li>
+                    <li>Change the layout for mobile screens inside the media query.</li>
+                    <li>
+                        Add one more area named
+                        <code>nav</code>
+                        and place it below the header.
+                    </li>
+                </ol>
+            </section>
+        </main>
+    </body>
+</html>

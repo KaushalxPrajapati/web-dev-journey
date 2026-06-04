@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CSS Grid Gaps</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <main class="container">
+            <h1>CSS Grid Gaps</h1>
+
+            <p class="intro">
+                This lesson continues from
+                <strong>01-grid-template</strong>
+                . In the previous lesson, we created rows and columns. In this lesson, we will learn how to add spacing between those rows and columns.
+            </p>
+
+            <section class="notes">
+                <h2>What is gap?</h2>
+
+                <p>
+                    In CSS Grid,
+                    <code>gap</code>
+                    is used to create space between grid items. It is better than using margin because the spacing is controlled by the grid container, not by each individual item.
+                </p>
+
+                <ul>
+                    <li>
+                        <code>row-gap</code>
+                        adds space between rows.
+                    </li>
+                    <li>
+                        <code>column-gap</code>
+                        adds space between columns.
+                    </li>
+                    <li>
+                        <code>gap</code>
+                        is a shorthand for both row and column gaps.
+                    </li>
+                </ul>
+            </section>
+
+            <!--
+                Grid Container:
+
+                This is the same 3 x 3 grid from the previous lesson.
+                The only new topic here is spacing between rows and columns.
+
+                Important:
+                - Use gap for spacing between grid items.
+                - Avoid using margin on grid items for normal grid spacing.
+                - Gap is controlled by the grid container.
+            -->
+            <div class="grid-container">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">7</div>
+                <div class="item">8</div>
+                <div class="item">9</div>
+            </div>
+
+            <section class="practice">
+                <h2>Practice</h2>
+
+                <ol>
+                    <li>
+                        Change
+                        <code>gap: 20px;</code>
+                        to
+                        <code>gap: 0;</code>
+                        .
+                    </li>
+                    <li>
+                        Try
+                        <code>row-gap: 10px;</code>
+                        and
+                        <code>column-gap: 30px;</code>
+                        .
+                    </li>
+                    <li>
+                        Try shorthand:
+                        <code>gap: 10px 30px;</code>
+                        .
+                    </li>
+                    <li>Increase the gap and notice how the grid items become smaller.</li>
+                </ol>
+            </section>
+        </main>
+    </body>
+</html>

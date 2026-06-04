@@ -1,0 +1,149 @@
+/*
+    CSS GRID GAPS
+
+    Previous lesson:
+    01-grid-template taught how to create rows and columns.
+
+    Current lesson:
+    02-grid-gaps teaches how to add space between those rows and columns.
+
+    Main idea:
+    Use gap for spacing between grid items.
+    Do not use margin for normal grid spacing.
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #222;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 25px;
+}
+
+.notes,
+.practice {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.notes h2,
+.practice h2 {
+    margin-bottom: 10px;
+}
+
+.notes p {
+    margin-bottom: 12px;
+}
+
+ul,
+ol {
+    padding-left: 22px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+code {
+    background-color: #eef1ff;
+    color: #2836c7;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+/*
+    Grid Container
+
+    display: grid activates CSS Grid.
+
+    grid-template-columns creates 3 equal columns.
+    grid-template-rows creates 3 equal rows.
+
+    gap creates space between rows and columns.
+*/
+.grid-container {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto 25px;
+    background-color: #222;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    /*
+        gap shorthand:
+
+        gap: 20px;
+        Same gap between rows and columns.
+    */
+    gap: 20px;
+
+    /*
+        You can also write gap separately:
+
+        row-gap: 10px;
+        column-gap: 30px;
+    */
+}
+
+/*
+    Grid Items
+
+    These are the direct children of .grid-container,
+    so they become grid items.
+
+    We do not use margin here because spacing is already handled by gap.
+*/
+.item {
+    background-color: lightblue;
+    border: 2px solid black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.item:nth-child(even) {
+    background-color: lightgreen;
+}
+
+/*
+    Responsive adjustment
+
+    On small screens, the grid should not overflow too much.
+*/
+@media (max-width: 600px) {
+    .grid-container {
+        width: 100%;
+        height: 350px;
+    }
+}

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CSS Grid Rows</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <main class="container">
+            <h1>CSS Grid Rows</h1>
+
+            <p class="intro">
+                This lesson continues from
+                <strong>03-grid-columns</strong>
+                . In the previous lesson, we controlled the horizontal placement of grid items. In this lesson, we will control the vertical placement of grid items using
+                <code>grid-row</code>
+                .
+            </p>
+
+            <section class="notes">
+                <h2>What is grid-row?</h2>
+
+                <p>
+                    The
+                    <code>grid-row</code>
+                    property controls how a grid item is placed across rows. It can decide where an item starts, where it ends, and how many rows it should cover.
+                </p>
+
+                <ul>
+                    <li>
+                        <code>grid-row-start</code>
+                        defines where the item starts vertically.
+                    </li>
+                    <li>
+                        <code>grid-row-end</code>
+                        defines where the item ends vertically.
+                    </li>
+                    <li>
+                        <code>grid-row</code>
+                        is the shorthand for row start and row end.
+                    </li>
+                    <li>
+                        <code>span</code>
+                        means the item should cover a certain number of rows.
+                    </li>
+                </ul>
+            </section>
+
+            <!--
+                Grid Container:
+
+                This grid has 3 equal columns.
+                Rows are created automatically using grid-auto-rows.
+
+                Important:
+                - Row lines start from 1.
+                - In a 3-row grid, there are 4 horizontal row lines.
+                - grid-row: 1 / 4 means start at row line 1 and end at row line 4.
+                - This makes the item cover 3 rows vertically.
+            -->
+            <div class="grid-container">
+                <div class="item item-1">1</div>
+                <div class="item item-2">2</div>
+                <div class="item item-3">3</div>
+                <div class="item item-4">4</div>
+                <div class="item item-5">5</div>
+                <div class="item item-6">6</div>
+                <div class="item item-7">7</div>
+            </div>
+
+            <section class="practice">
+                <h2>Practice</h2>
+
+                <ol>
+                    <li>
+                        Change
+                        <code>.item-1</code>
+                        from
+                        <code>grid-row: 1 / 4;</code>
+                        to
+                        <code>grid-row: 1 / 3;</code>
+                        .
+                    </li>
+                    <li>
+                        Try
+                        <code>grid-row: 2 / 4;</code>
+                        on any item.
+                    </li>
+                    <li>
+                        Try
+                        <code>grid-row: span 2;</code>
+                        and observe the result.
+                    </li>
+                    <li>
+                        Remove all
+                        <code>grid-row</code>
+                        properties and see the normal grid flow.
+                    </li>
+                    <li>
+                        Combine
+                        <code>grid-column</code>
+                        and
+                        <code>grid-row</code>
+                        on the same item.
+                    </li>
+                </ol>
+            </section>
+        </main>
+    </body>
+</html>

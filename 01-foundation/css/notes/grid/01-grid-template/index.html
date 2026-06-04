@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CSS Grid Template</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <main class="container">
+            <h1>CSS Grid Template</h1>
+
+            <p class="intro">
+                This is the first lesson of CSS Grid revision. Here we learn how to create rows and columns using
+                <code>grid-template-columns</code>
+                and
+                <code>grid-template-rows</code>
+                .
+            </p>
+
+            <section class="notes">
+                <h2>What is a grid template?</h2>
+
+                <p>A grid template defines the structure of a grid. It tells the browser how many columns and rows the grid should have, and how much space each column or row should take.</p>
+
+                <ul>
+                    <li>
+                        <code>display: grid;</code>
+                        turns an element into a grid container.
+                    </li>
+                    <li>Only direct children of the grid container become grid items.</li>
+                    <li>
+                        <code>grid-template-columns</code>
+                        defines the columns.
+                    </li>
+                    <li>
+                        <code>grid-template-rows</code>
+                        defines the rows.
+                    </li>
+                    <li>
+                        <code>fr</code>
+                        means fraction of the available space.
+                    </li>
+                </ul>
+            </section>
+
+            <!--
+                Grid Container:
+
+                This div becomes a grid container because we apply display: grid in CSS.
+
+                Important:
+                - The .item elements are direct children, so they become grid items.
+                - Grid items are placed from left to right by default.
+                - After one row is filled, the next item moves to the next row.
+            -->
+            <div class="grid-container">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">7</div>
+                <div class="item">8</div>
+                <div class="item">9</div>
+            </div>
+
+            <section class="practice">
+                <h2>Practice</h2>
+
+                <ol>
+                    <li>
+                        Try
+                        <code>grid-template-columns: 100px 100px 100px;</code>
+                        .
+                    </li>
+                    <li>
+                        Try
+                        <code>grid-template-columns: repeat(3, 100px);</code>
+                        .
+                    </li>
+                    <li>
+                        Try
+                        <code>grid-template-columns: repeat(3, 1fr);</code>
+                        .
+                    </li>
+                    <li>
+                        Try uneven columns:
+                        <code>grid-template-columns: 1fr 2fr 1fr;</code>
+                        .
+                    </li>
+                    <li>Add more grid items and observe how they move to the next row.</li>
+                </ol>
+            </section>
+        </main>
+    </body>
+</html>
