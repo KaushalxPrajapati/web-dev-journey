@@ -978,6 +978,7 @@ button {
     transform: translateY(-6px) scale(1.05);
     box-shadow: 0 20px 40px rgba(220, 39, 67, 0.35);
 }
+
 .ig-gradient-btn:hover::after {
     opacity: 0.8;
     filter: blur(20px);
@@ -988,17 +989,24 @@ button {
     width: 26px;
     height: 26px;
 }
+
 .ig-handle {
     letter-spacing: 0.5px;
 }
+
 .sparkle {
     display: inline-block;
     animation: sparkleHover 3s infinite ease-in-out;
 }
 
 @keyframes sparkleHover {
-    0%, 100% { transform: scale(1) rotate(0deg); }
-    50% { transform: scale(1.2) rotate(15deg); }
+    0%,
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.2) rotate(15deg);
+    }
 }
 
 .footer-bottom-links {
