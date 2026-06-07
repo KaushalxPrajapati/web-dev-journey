@@ -5,16 +5,16 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: sans-serif;
 }
 
-.centre {
+.btn-container {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    gap: 1em;
+    gap: 2em;
 }
 
 /* SUBSCRIBE BUTTON */
@@ -24,19 +24,26 @@ body {
 
     background-color: rgb(210, 44, 44); /* red background */
     color: white; /* white text */
+    letter-spacing: 1px;
+    
     border: none; /* no border */
-    border-radius: 4px; /* slightly rounded corners */
+    outline: none; /* no outline which have focus */
+    border-radius: 40px; /* slightly rounded corners */
     cursor: pointer; /* pointer cursor on hover */
-    margin-right: 10px; /* spacing between buttons */
     transition: opacity 0.25s; /* smooth fade effect on hover/active */
 }
 
+.is-subscribed {
+    background-color: #262626;
+    font-weight: bold;
+}
+
 .subscribe-button:hover {
-    opacity: 0.75; /* slightly transparent on hover */
+    opacity: 0.85; /* slightly transparent on hover */
 }
 
 .subscribe-button:active {
-    opacity: 0.5; /* more transparent when clicked */
+    opacity: 0.75; /* more transparent when clicked */
 }
 
 /* ---------------------------------------------- */
@@ -48,12 +55,13 @@ body {
 
     background-color: white; /* white background */
     color: rgb(41, 118, 220); /* blue text */
+    letter-spacing: 1px;
     border-color: rgb(41, 118, 220); /* blue border */
     border-style: solid;
     border-width: 1px;
     border-radius: 4px;
+    outline: none; /* no outline which have focus */
     cursor: pointer;
-    margin-right: 10px;
     transition:
         background-color 0.375s,
         color 0.375s; /* smooth bg and text color transition */
@@ -77,10 +85,12 @@ body {
 
     background-color: rgb(2, 155, 255); /* Twitter blue */
     color: white;
+    letter-spacing: 1px;
     font-size: 15px;
     font-weight: bold; /* bold text */
     border: none;
-    border-radius: 25px; /* pill-shaped button */
+    outline: none; /* no outline which have focus */
+    border-radius: 9999px; /* The Pill Logic */
     cursor: pointer;
 
     transition: box-shadow 0.375s ease-in-out; /* smooth shadow on hover */

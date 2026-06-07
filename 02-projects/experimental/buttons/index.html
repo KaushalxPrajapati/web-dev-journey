@@ -7,14 +7,31 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <div class="centre">
-            <button class="subscribe-button">SUBSCRIBE</button>
+        <div class="btn-container">
+            <button class="subscribe-button" onclick="subscribe()">SUBSCRIBE</button>
 
             <button class="join-button">JOIN</button>
 
             <button class="tweet-button">Tweet</button>
         </div>
     </body>
+
+    <script>
+        function subscribe() {
+            let subscribeButton = document.querySelector('.subscribe-button');
+            if (subscribeButton.innerText === 'SUBSCRIBE') {
+                subscribeButton.innerText = 'SUBSCRIBED';
+                subscribeButton.classList.add('is-subscribed');
+            } else {
+                subscribeButton.innerText = 'SUBSCRIBE';
+                subscribeButton.classList.remove('is-subscribed');
+            }
+
+            // setTimeout(() => {
+            //     subscribeButton.style.backgroundColor = 'rgb(210, 44, 44)';
+            // }, 500);
+        }
+    </script>
 </html>
 
 <!-- CSS Concepts Learned and Applied
