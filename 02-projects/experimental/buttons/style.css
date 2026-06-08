@@ -2,40 +2,45 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
     font-family: sans-serif;
 }
 
 .btn-container {
     height: 100vh;
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-
     gap: 2em;
 }
 
 /* SUBSCRIBE BUTTON */
 .subscribe-button {
-    /* Adding Padding instead of using height and width */
-    padding: 1.25em 2.125em;
+    width: 10rem;
+    padding: 1.25em 0;
 
     background-color: rgb(210, 44, 44); /* red background */
     color: white; /* white text */
+
     letter-spacing: 1px;
-    
+    font-weight: bold;
+
     border: none; /* no border */
     outline: none; /* no outline which have focus */
     border-radius: 40px; /* slightly rounded corners */
+
     cursor: pointer; /* pointer cursor on hover */
-    transition: opacity 0.25s; /* smooth fade effect on hover/active */
+    transition:
+        /* smooth fade effect on hover/active */
+        background-color 0.25s,
+        font-weight 0.25s,
+        opacity 0.25s;
 }
 
 .is-subscribed {
     background-color: #262626;
     font-weight: bold;
+    transition: text 0.25s;
 }
 
 .subscribe-button:hover {

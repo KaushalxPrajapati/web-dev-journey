@@ -6,15 +6,15 @@ if (marks >= 33) {
 
     // Inner if-else → Grade system
     if (marks >= 90 && marks <= 100) {
-        console.log("Grade: A");
+        console.log('Grade: A');
     } else if (marks >= 80 && marks < 90) {
-        console.log("Grade: B");
+        console.log('Grade: B');
     } else if (marks >= 70 && marks < 80) {
-        console.log("Grade: C");
+        console.log('Grade: C');
     } else {
         // Nested else → Handles remaining passing grades (33–69)
-        console.log("Grade: D");
+        console.log('Grade: D');
     }
 } else {
-    console.log("You have Failed");
+    console.log('You have Failed');
 }

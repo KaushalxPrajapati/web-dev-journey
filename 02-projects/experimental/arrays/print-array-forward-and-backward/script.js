@@ -10,7 +10,7 @@ let fruits = ['apple', 'banana', 'mango', 'orange', 'grape', 'pineapple', 'water
 // ------------------------------------------------------------
 // Print elements in forward direction
 // ------------------------------------------------------------
-console.log("Printing Array Forward");
+console.log('Printing Array Forward');
 
 // Loop starts from index 0 and goes up to the last index (fruits.length - 1)
 for (let i = 0; i < fruits.length; i++) {
@@ -22,7 +22,7 @@ for (let i = 0; i < fruits.length; i++) {
 // ------------------------------------------------------------
 // Print elements in backward direction
 // ------------------------------------------------------------
-console.log("Printing Array Backward");
+console.log('Printing Array Backward');
 
 // Loop starts from last index and goes back to 0
 for (let i = fruits.length - 1; i >= 0; i--) {
