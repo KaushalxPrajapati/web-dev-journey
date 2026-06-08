@@ -1031,3 +1031,7 @@ button {
     color: var(--border-hover);
     font-size: 1.2rem;
 }
+
+
+/* Added support for experimental mini-projects archive */
+.archive-folder-experimental { border-left: 2px solid var(--accent); padding-left: 1rem; }
