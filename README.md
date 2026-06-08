@@ -69,7 +69,7 @@ web-dev-journey/
 ├── 02-projects/          # The core archive
 │   ├── html-css/         # UI clones (Spotify, W3Schools)
 │   ├── html-css-js/      # Logic heavy apps (KP Living, Simon Says, Calculator)
-│   └── experimental/     # Micro-interactions (Modals, Custom Inputs, CSS Art)
+│   └── experimental/     # JS Logic challenges, mini-games, and array method scripts
 ├── 03-backend/           # Node.js & Express REST APIs
 └── 04-database/          # MySQL integrations and Mock Data generators
 ```
