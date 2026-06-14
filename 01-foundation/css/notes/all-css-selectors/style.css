@@ -1,0 +1,430 @@
+/* =====================================================
+   BASE STYLES
+   Keep this part active always.
+   These styles only make the page readable.
+===================================================== */
+
+body {
+    font-family: sans-serif;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 1.5em;
+}
+
+h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.demo-card,
+.target-box,
+.form-box {
+    margin: 24px 0;
+    padding: 24px;
+    border: 2px solid #333;
+}
+
+p,
+li,
+input,
+button {
+    padding: 8px;
+    margin: 8px 0;
+}
+
+input,
+button {
+    font-size: 1rem;
+}
+
+/* =====================================================
+   1. DESCENDANT COMBINATOR: A B
+
+   Meaning:
+   Selects all B elements inside A.
+   It can select deeply nested elements also.
+
+   Example:
+   div p means:
+   Select every <p> inside any <div>,
+   even if the <p> is inside section, article, etc.
+===================================================== */
+
+/*
+div p {
+    background-color: lightseagreen;
+}
+*/
+
+/* =====================================================
+   2. CHILD COMBINATOR: A > B
+
+   Meaning:
+   Selects only direct children.
+
+   Example:
+   .demo-card > p means:
+   Select only <p> elements that are direct children
+   of .demo-card.
+
+   It will select:
+   ONE (1)
+   TWO (2)
+
+   It will NOT select:
+   THREE (3), because THREE is inside <section>.
+===================================================== */
+
+/*
+.demo-card > p {
+    background-color: royalblue;
+    color: white;
+}
+*/
+
+/* =====================================================
+   3. NEXT SIBLING COMBINATOR: A + B
+
+   Meaning:
+   Selects the first B element immediately after A.
+
+   Example:
+   .target-box + p means:
+   Select the first <p> that comes immediately after
+   .target-box.
+
+   It will select:
+   SIX (6)
+
+   It will NOT select:
+   SEVEN (7)
+===================================================== */
+
+/*
+.target-box + p {
+    background-color: violet;
+    font-weight: bold;
+}
+*/
+
+/* =====================================================
+   4. GENERAL SIBLING COMBINATOR: A ~ B
+
+   Meaning:
+   Selects all B elements that come after A
+   at the same parent level.
+
+   Example:
+   .target-box ~ p means:
+   Select all <p> elements that come after .target-box.
+
+   It will select:
+   SIX (6)
+   SEVEN (7)
+===================================================== */
+
+/*
+.target-box ~ p {
+    background-color: violet;
+    font-weight: bold;
+}
+*/
+
+/* =====================================================
+   5. GROUPING SELECTOR: A, B, C
+
+   Meaning:
+   Applies the same CSS to multiple selectors.
+
+   This avoids repeating the same style again and again.
+===================================================== */
+
+/*
+.demo-card > p,
+.target-box + p,
+.target-box ~ p {
+    background-color: gold;
+    font-weight: bold;
+}
+*/
+
+/* =====================================================
+   6. ATTRIBUTE SELECTOR: [attr]
+
+   Meaning:
+   Selects elements that have a specific attribute.
+
+   Example:
+   [data-number] means:
+   Select every element that has data-number attribute.
+===================================================== */
+
+/*
+[data-number] {
+    background-color: lightyellow;
+}
+*/
+
+/* =====================================================
+   7. ATTRIBUTE SELECTOR: [attr="value"]
+
+   Meaning:
+   Selects elements where attribute value exactly matches.
+
+   Example:
+   [data-number="four"] means:
+   Select element where data-number is exactly four.
+===================================================== */
+
+/*
+[data-number="four"] {
+    background-color: orange;
+    font-weight: bold;
+}
+*/
+
+/* =====================================================
+   8. ATTRIBUTE SELECTOR: [attr~="value"]
+
+   Meaning:
+   Selects elements where the attribute contains
+   a complete word.
+
+   Example:
+   [class~="special-text"] means:
+   Select elements whose class list contains special-text.
+===================================================== */
+
+/*
+[class~="special-text"] {
+    background-color: lightpink;
+    font-weight: bold;
+}
+*/
+
+/* =====================================================
+   9. ATTRIBUTE SELECTOR: [attr^="value"]
+
+   Meaning:
+   Selects elements whose attribute value starts with
+   a specific text.
+
+   Example:
+   [data-number^="s"] means:
+   Select elements whose data-number starts with s.
+
+   It will select:
+   six
+   seven
+===================================================== */
+
+/*
+[data-number^="s"] {
+    background-color: lightgreen;
+}
+*/
+
+/* =====================================================
+   10. ATTRIBUTE SELECTOR: [attr$="value"]
+
+   Meaning:
+   Selects elements whose attribute value ends with
+   a specific text.
+
+   Example:
+   [data-number$="e"] means:
+   Select elements whose data-number ends with e.
+
+   It can select:
+   one
+   three
+   five
+===================================================== */
+
+/*
+[data-number$="e"] {
+    background-color: lightskyblue;
+}
+*/
+
+/* =====================================================
+   11. ATTRIBUTE SELECTOR: [attr*="value"]
+
+   Meaning:
+   Selects elements whose attribute value contains
+   specific text anywhere.
+
+   Example:
+   [title*="box"] means:
+   Select elements whose title contains box.
+===================================================== */
+
+/*
+[title*="box"] {
+    border: 4px dashed crimson;
+}
+*/
+
+/* =====================================================
+   12. PSEUDO-CLASS: :hover
+
+   Meaning:
+   Applies style when the mouse is over the element.
+
+   Example:
+   button:hover means:
+   Style the button when cursor is on it.
+===================================================== */
+
+/*
+button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+*/
+
+/* =====================================================
+   13. PSEUDO-CLASS: :focus
+
+   Meaning:
+   Applies style when an input is selected/clicked.
+
+   Example:
+   input:focus means:
+   Style input when user clicks inside it.
+===================================================== */
+
+/*
+input:focus {
+    outline: 3px solid dodgerblue;
+    background-color: lightcyan;
+}
+*/
+
+/* =====================================================
+   14. PSEUDO-CLASS: :first-child
+
+   Meaning:
+   Selects an element only if it is the first child
+   of its parent.
+
+   Example:
+   li:first-child means:
+   Select the first <li> inside its parent.
+===================================================== */
+
+/*
+li:first-child {
+    background-color: lightcoral;
+}
+*/
+
+/* =====================================================
+   15. PSEUDO-CLASS: :last-child
+
+   Meaning:
+   Selects an element only if it is the last child
+   of its parent.
+
+   Example:
+   li:last-child means:
+   Select the last <li> inside its parent.
+===================================================== */
+
+/*
+li:last-child {
+    background-color: lightblue;
+}
+*/
+
+/* =====================================================
+   16. PSEUDO-CLASS: :nth-child(n)
+
+   Meaning:
+   Selects elements based on their position.
+
+   Example:
+   p:nth-child(2) means:
+   Select <p> only if it is the 2nd child of its parent.
+
+   Important:
+   nth-child counts all child elements, not only <p>.
+===================================================== */
+
+/*
+p:nth-child(2) {
+    background-color: yellow;
+}
+*/
+
+/* =====================================================
+   17. PSEUDO-CLASS: :nth-of-type(n)
+
+   Meaning:
+   Selects elements based on their position among
+   the same tag type.
+
+   Example:
+   p:nth-of-type(2) means:
+   Select the 2nd <p> among other <p> elements.
+===================================================== */
+
+/*
+p:nth-of-type(2) {
+    background-color: lime;
+}
+*/
+
+/* =====================================================
+   18. CLASS SELECTOR: .class-name
+
+   Meaning:
+   Selects elements with a specific class.
+
+   Example:
+   .special-item means:
+   Select element having class special-item.
+===================================================== */
+
+/*
+.special-item {
+    background-color: purple;
+    color: white;
+}
+*/
+
+/* =====================================================
+   19. ELEMENT SELECTOR: tagname
+
+   Meaning:
+   Selects all elements of that tag.
+
+   Example:
+   li means:
+   Select all <li> elements.
+===================================================== */
+
+/*
+li {
+    background-color: lightgray;
+}
+*/
+
+/* =====================================================
+   20. UNIVERSAL SELECTOR: *
+
+   Meaning:
+   Selects every element on the page.
+
+   Usually used for reset styles.
+
+   Be careful:
+   This affects everything.
+===================================================== */
+
+/*
+* {
+    box-sizing: border-box;
+}
+*/

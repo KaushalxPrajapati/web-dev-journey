@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CSS Selectors Practice</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <h1>CSS Selectors Practice</h1>
+
+        <div class="demo-card card-box" data-box="demo" title="demo card">
+            <p data-number="one">ONE (1)</p>
+            <p data-number="two" class="special-text">TWO (2)</p>
+
+            <section>
+                <p data-number="three">THREE (3)</p>
+            </section>
+        </div>
+
+        <div class="target-box card-box" data-box="target" title="target box">
+            <ul>
+                <li data-item="first">Item 1</li>
+                <li data-item="second" class="special-item">Item 2</li>
+            </ul>
+
+            <p data-number="four">FOUR (4)</p>
+            <p data-number="five" class="special-text">FIVE (5)</p>
+        </div>
+
+        <p data-number="six">SIX (6)</p>
+        <p data-number="seven">SEVEN (7)</p>
+
+        <div class="form-box">
+            <input type="text" placeholder="Click here to test :focus" />
+            <button type="button">Hover Button</button>
+        </div>
+    </body>
+</html>
