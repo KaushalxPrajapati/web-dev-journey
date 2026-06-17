@@ -1,0 +1,26 @@
+body {
+    font-family: sans-serif;
+}
+
+.hero-section {
+    padding: 30px 0;
+    background-color: #ffffff;
+}
+
+.hero-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.btn.btn.btn-primary,
+.btn.btn-outline-secondary {
+    white-space: nowrap;
+}
+
+.btn.btn.btn-primary {
+    padding: 10px 24px;
+}
+
+.btn.btn-outline-secondary {
+    padding: 10px 24px;
+}
