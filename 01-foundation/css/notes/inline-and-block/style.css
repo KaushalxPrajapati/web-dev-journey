@@ -4,7 +4,10 @@
     background-color: lightskyblue;
     border: 2px solid black;
     margin: 10px;
+
+    /* Don't use ---> (display: inline) instead use inline-block, because inline-block is a block element that can be placed inline with other elements. */
     display: inline-block;
+
     text-align: center;
     align-content: center;
 }
