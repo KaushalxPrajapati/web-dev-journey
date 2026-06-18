@@ -55,7 +55,8 @@ body {
         transform 0.2s ease;
 }
 
-.navbar-links a:hover {
+.navbar-links a:hover,
+.navbar-links a:focus {
     color: white;
     transform: scale(1.1);
 }
