@@ -1,11 +1,12 @@
 function CarsList() {
     const cars = ['Ford', 'BMW', 'Audi'];
+
     return (
         <div>
-            <h1>My Cars</h1>
+            <h1>My Cars List</h1>
             <ul>
                 {cars.map((car) => (
-                    <li>{car}</li>
+                    <li key={car}>{car}</li>
                 ))}
             </ul>
         </div>

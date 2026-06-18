@@ -1,0 +1,28 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.name {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+label {
+    font-size: 1.2em;
+}
+
+input {
+    font-size: 1em;
+    padding: 8px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+}
