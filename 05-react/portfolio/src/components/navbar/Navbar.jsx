@@ -4,7 +4,7 @@ import './navbar.css';
 function Navbar() {
     return (
         <nav className="navbar d-flex justify-content-between px-4 py-2">
-            <p className="navbar-brand mb-0">Kaushal.dev</p>
+            <p className="navbar-brand mb-0">hellokaushal.dev</p>
             <ul className="navbar-links">
                 <li>
                     <Link to="/" className="nav-link">
