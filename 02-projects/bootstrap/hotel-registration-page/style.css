@@ -49,4 +49,19 @@ label input:focus {
 
 .form-check-input {
     cursor: pointer;
+    border-color: #6c757d;
+}
+
+/* Removing light blue highlighting outline on focus */
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus {
+    box-shadow: none !important;
+    border-color: #6c757d !important;
+}
+
+/* Match checked state to primary theme */
+.form-check-input:checked {
+    background-color: var(--hotel-primary);
+    /* border-color: var(--hotel-primary); */
 }
