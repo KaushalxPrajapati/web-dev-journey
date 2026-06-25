@@ -1,0 +1,20 @@
+.prices {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.old-price,
+.new-price {
+    margin-bottom: 0;
+    font-size: 1.25rem;
+}
+
+.old-price {
+    text-decoration: line-through;
+}
+
+.new-price {
+    color: black;
+    font-weight: bold;
+}
