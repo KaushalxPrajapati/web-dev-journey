@@ -50,3 +50,7 @@ coverage/
 *.docx
 
 02-projects/bootstrap/demo/
+
+# AI Assistants
+.claude/
+.continue/
