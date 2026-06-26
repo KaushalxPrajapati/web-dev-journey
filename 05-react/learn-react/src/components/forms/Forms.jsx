@@ -1,50 +1,62 @@
 import './Forms.css';
 
+function handleFormSubmit(event) {
+    event.preventDefault();
+    console.log('Form submitted!');
+}
+
 function Form() {
     return (
-        <form>
-            <div className="name">
-                <label>
-                    Enter first name: <input type="text" placeholder="First Name" />
+        <form className="form" onSubmit={handleFormSubmit}>
+            <div className="form-row">
+                <label className="field">
+                    <span>First name</span>
+                    <input type="text" placeholder="Enter your first name" />
                 </label>
 
-                <label>
-                    Enter last name: <input type="text" placeholder="Last Name" />
-                </label>
-
-                <button type="submit">Submit</button>
-            </div>
-
-            <div className="select-group">
-                {/* React Select */}
-                <label>
-                    <select>
-                        <option value="">Select Country</option>
-                        <option value="India">India</option>
-                        <option value="USA">USA</option>
-                        <option value="UK">UK</option>
-                    </select>
+                <label className="field">
+                    <span>Last name</span>
+                    <input type="text" placeholder="Enter your last name" />
                 </label>
             </div>
 
-            <div className="radio-btn-group">
-                {/* Radio Buttons */}
-                <p>Gender:</p>
-                <label>
-                    <input type="radio" name="gender" value="Male" /> Male
-                </label>
-                <br />
+            <label className="field">
+                <span>Country</span>
+                <select>
+                    <option value="">Select Country</option>
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                    <option value="UK">UK</option>
+                </select>
+            </label>
 
-                <label>
-                    <input type="radio" name="gender" value="Female" /> Female
-                </label>
+            <div className="field">
+                <span className="field-label">Gender</span>
+                <div className="radio-row">
+                    <label>
+                        <input type="radio" name="gender" value="Male" /> Male
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="Female" /> Female
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="Other" /> Other
+                    </label>
+                </div>
             </div>
 
-            <div className="text-area">
-                <label>
-                    Enter your message:
-                    <textarea></textarea>
-                </label>
+            <label className="field">
+                <span>Message</span>
+                <textarea rows="4" placeholder="Write your message here..."></textarea>
+            </label>
+
+            <div className="form-actions">
+                <button type="submit" className="primary">
+                    Submit
+                </button>
+                <button type="reset" className="secondary">
+                    Reset
+                </button>
             </div>
         </form>
     );

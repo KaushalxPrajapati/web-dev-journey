@@ -1,28 +1,123 @@
-form {
+/* Form container */
+.form {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 16px;
+    width: 100%;
+    max-width: 460px;
+    box-sizing: border-box;
+    margin: 24px auto;
+    padding: 28px;
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    font-family: system-ui, sans-serif;
 }
 
-.name {
+/* First + Last name on the same line */
+.form-row {
     display: flex;
-    flex-direction: row;
-    gap: 20px;
+    gap: 12px;
+    /* justify-content: space-between; */
+    /* align-items: center; */
 }
 
-label {
-    font-size: 1.2em;
+/* A single labelled field (label wraps input + span label) */
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-width: 0;
+}
+.field > span,
+.field-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #333;
 }
 
-input {
-    font-size: 1em;
-    padding: 8px;
+/* Inputs, select, textarea */
+.form input,
+.form select,
+.form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
+    padding: 10px 12px;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+    background: #fff;
+    outline: none;
+    font-family: inherit;
+    transition:
+        border-color 0.15s,
+        box-shadow 0.15s;
 }
 
-button {
-    padding: 10px 20px;
-    background-color: white;
-    color: black;
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.15);
+}
+
+.form textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+/* Radio row */
+.radio-row {
+    display: flex;
+    gap: 16px;
+    padding: 8px 0;
+}
+
+.radio-row label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #333;
+}
+
+/* Buttons */
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.form button {
+    padding: 10px 18px;
+    font-size: 1rem;
+    font-weight: 500;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    transition:
+        background-color 0.15s,
+        border-color 0.15s;
+}
+
+.primary {
+    background-color: #4a90e2;
+    color: #fff;
+    border-color: #4a90e2;
+}
+
+.primary:hover {
+    background-color: #357ab8;
+    border-color: #357ab8;
+}
+
+.secondary {
+    background-color: #fff;
+    color: #333;
+    border-color: #d0d0d0;
+}
+
+.secondary:hover {
+    background-color: #f5f5f5;
 }
