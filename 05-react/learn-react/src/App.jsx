@@ -1,15 +1,16 @@
 import { add, multiply, substract, divide } from './components/export/export.jsx';
-
 import CarsList from './components/cars/CarsList';
 import CarsObject from './components/cars/CarsObject';
 import Form from './components/forms/Forms';
-
 import Counter from './components/useState/Counter.jsx';
 import Timer from './components/useEffect/Timer.jsx';
-
 import SayHello from './components/SayHello.jsx';
+import Button from './components/onClick/Button.jsx';
+import Counter2 from './components/Counter/Counter2.jsx';
 
-function App() {
+import './App.css';
+
+export default function App() {
     return (
         <div>
             {/* <h1>Named Exports :</h1>
@@ -24,9 +25,11 @@ function App() {
             <Counter />
             <Timer />
 
-            <SayHello /> */}
+            <SayHello />
+
+            <Button />
+
+            <Counter2 /> */}
         </div>
     );
 }
-
-export default App;
