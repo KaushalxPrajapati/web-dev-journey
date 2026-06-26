@@ -1,0 +1,35 @@
+.button-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    font-family: sans-serif;
+}
+
+.button-group {
+    display: flex;
+    gap: 2rem;
+}
+
+button {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    color: white;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.instruction {
+    font-style: italic;
+    color: #555;
+}
