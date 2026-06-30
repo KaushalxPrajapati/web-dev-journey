@@ -1,4 +1,4 @@
-function SayHello() {
+export default function SayHello() {
     let userName = 'Kaushal';
     let textColor = 'green';
     return (
@@ -7,5 +7,3 @@ function SayHello() {
         </>
     );
 }
-
-export default SayHello;
