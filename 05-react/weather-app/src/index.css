@@ -1,0 +1,119 @@
+/* ============================================
+   Global Styles - Weather Dashboard
+   ============================================ */
+
+/* Inter font (was loaded from Google Fonts CDN in index.html; now imported via CSS) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0b0b1a;
+    color: #e0e0e0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Allow text selection in inputs */
+input,
+textarea {
+    user-select: auto;
+    -webkit-user-select: auto;
+}
+
+/* Prevent image dragging to a new tab */
+img,
+svg {
+    -webkit-user-drag: none;
+}
+
+/* Background decoration - floating dots effect */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(1px 1px at 10% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 100%),
+        radial-gradient(1px 1px at 80% 40%, rgba(255, 255, 255, 0.1) 0%, transparent 100%),
+        radial-gradient(1px 1px at 30% 70%, rgba(255, 255, 255, 0.12) 0%, transparent 100%),
+        radial-gradient(1px 1px at 60% 10%, rgba(255, 255, 255, 0.08) 0%, transparent 100%),
+        radial-gradient(1px 1px at 90% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 50% 50%, rgba(167, 139, 250, 0.08) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+#root {
+    position: relative;
+    z-index: 1;
+}
+
+/* Scrollbar styling */
+/* ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3d3d6a;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #5555a0;
+} */
+
+/* Common section title style */
+.section-title {
+    color: #e0e0e0;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* Selection color */
+::selection {
+    background-color: rgba(167, 139, 250, 0.3);
+    color: white;
+}
+
+/* Custom Bootstrap Tooltips */
+.tooltip-inner {
+    background-color: #a78bfa;
+    color: #0b0b1a;
+    font-weight: 600;
+    font-size: 0.75rem;
+    padding: 6px 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.bs-tooltip-end .tooltip-arrow::before {
+    border-right-color: #a78bfa;
+}
+
+.bs-tooltip-start .tooltip-arrow::before {
+    border-left-color: #a78bfa;
+}
+
+.bs-tooltip-top .tooltip-arrow::before {
+    border-top-color: #a78bfa;
+}
+
+.bs-tooltip-bottom .tooltip-arrow::before {
+    border-bottom-color: #a78bfa;
+}

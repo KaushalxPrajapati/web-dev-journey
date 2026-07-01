@@ -1,0 +1,106 @@
+/* SearchBar styles */
+.search-wrapper {
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    gap: 10px;
+}
+
+.search-input-wrapper {
+    flex: 1;
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6b7280;
+    font-size: 0.85rem;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 14px 12px 40px;
+    background-color: #1e1e38;
+    border: 1px solid #2d2d4a;
+    border-radius: 12px;
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-input::placeholder {
+    color: #6b7280;
+}
+
+.search-input:focus {
+    border-color: #a78bfa;
+}
+
+.search-btn {
+    padding: 12px 18px;
+    background: linear-gradient(135deg, #6c5ce7, #a78bfa);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(167, 139, 250, 0.3);
+}
+
+.search-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* City option buttons */
+.city-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+.city-option-btn {
+    flex: 1;
+    text-align: center;
+    padding: 5px 12px;
+    background-color: #252545;
+    border: 1px solid #2d2d4a;
+    border-radius: 20px;
+    color: #9ca3af;
+    font-size: 0.72rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.city-option-btn:hover {
+    background-color: #6c5ce7;
+    border-color: #6c5ce7;
+    color: white;
+    transform: translateY(-1px);
+}
+
+.city-option-btn.active {
+    background: linear-gradient(135deg, #6c5ce7, #a78bfa);
+    border-color: #a78bfa;
+    color: white;
+    box-shadow: 0 4px 10px rgba(108, 92, 231, 0.3);
+}
+
+.city-option-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
