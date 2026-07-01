@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Profile Card - UI Design</title>
+        <!-- Fontawesome CDN Link -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
+        <!-- Bootstrap loads first -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        />
+
+        <!-- Your CSS loads after — can override Bootstrap -->
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body class="bg-light d-flex justify-content-center align-items-center" style="min-height: 100vh">
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden" style="width: 325px">
+            <!-- Blue header -->
+            <div class="bg-primary" style="height: 90px"></div>
+
+            <!-- Avatar -->
+            <div class="d-flex justify-content-center" style="margin-top: -55px">
+                <img
+                    src="user-img.png"
+                    alt="Kaushal"
+                    class="rounded-circle border border-4 bg-white border-white shadow"
+                    style="width: 110px; height: 110px; object-fit: cover"
+                />
+            </div>
+
+            <!-- Body -->
+            <div class="card-body text-center pt-2 px-4">
+                <h4 class="fw-bold mb-1">Kaushal Prajapati</h4>
+                <p class="text-muted small mb-3">Student & Blogger</p>
+
+                <!-- Social -->
+                <div class="d-flex justify-content-center gap-2 mb-4">
+                    <a
+                        href="#"
+                        class="d-inline-flex align-items-center justify-content-center bg-primary text-white text-decoration-none rounded-circle"
+                        style="width: 36px; height: 36px"
+                    >
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a
+                        href="#"
+                        class="d-inline-flex align-items-center justify-content-center bg-info text-white text-decoration-none rounded-circle"
+                        style="width: 36px; height: 36px"
+                    >
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a
+                        href="#"
+                        class="d-inline-flex align-items-center justify-content-center text-white text-decoration-none rounded-circle"
+                        style="width: 36px; height: 36px; background: linear-gradient(#f56040, #c13584)"
+                    >
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a
+                        href="#"
+                        class="d-inline-flex align-items-center justify-content-center bg-danger text-white text-decoration-none rounded-circle"
+                        style="width: 36px; height: 36px"
+                    >
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+
+                <!-- Buttons -->
+                <div class="d-flex justify-content-center gap-3 mb-4">
+                    <button class="btn btn-primary px-4 py-2 rounded-pill fw-semibold">Subscribe</button>
+                    <button class="btn btn-outline-primary px-4 py-2 rounded-pill fw-semibold">Message</button>
+                </div>
+
+                <!-- Stats -->
+                <div class="d-flex justify-content-around pt-3 border-top">
+                    <div>
+                        <i class="fas fa-heart text-muted"></i>
+                        <span class="fw-bold ms-1">60k</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-comment text-muted"></i>
+                        <span class="fw-bold ms-1">20k</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-share text-muted"></i>
+                        <span class="fw-bold ms-1">12k</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
