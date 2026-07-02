@@ -1,76 +1,56 @@
-const input = document.querySelector('input');
-const button = document.querySelector('button');
-const h3 = document.querySelector('h3');
+// === Cache DOM elements once ===
+const form = document.getElementById('prime-form');
+const input = document.getElementById('number-input');
+const result = document.getElementById('result');
 
+// === Prime check: only loop up to sqrt(n) for efficiency ===
 function isPrime(n) {
-    // Returns only true or false
-    if (n <= 1) {
-        // Numbers less than or equal to 1 are not prime by definition
-        return false;
+    // Numbers less than 2 are not prime by definition
+    if (n < 2) return false;
+
+    // 2 and 3 are prime
+    if (n < 4) return true;
+
+    // Quick elimination of even numbers and multiples of 3
+    if (n % 2 === 0 || n % 3 === 0) return false;
+
+    // Only check divisors up to sqrt(n), skipping even numbers and multiples of 3
+    for (let i = 5; i * i <= n; i += 6) {
+        if (n % i === 0 || n % (i + 2) === 0) return false;
     }
 
-    for (let i = 2; i < n; i++) {
-        // let n = 7 then i will be check for 2, 3, 4, 5, and 6 and NOT 7 because it's not less than or equal to
-        if (n % i === 0) {
-            return false; // REturns false if any divisor is found!
-        }
-    }
-
-    return true; // In the end, it survived the loop means NO divisor is found other than 1 and itself of the entered no. 'n', so it's prime!
+    return true;
 }
 
-function trigger(event) {
-    const n = Number(input.value);
-    if (input.value === '') {
-        // If empty, user clicked Check without entering anything
-        h3.innerText = 'Please enter a number';
-        h3.style.color = 'black';
-        return; // Get out of the callback and wait for next click or enter press
-    }
-    if (!event || event.key === 'Enter')
-        if (isPrime(n)) {
-            h3.style.color = 'green';
-            h3.innerText = `${n} is Prime`;
-        } else {
-            h3.style.color = 'red';
-            h3.innerText = `${n} is NOT Prime`;
-        }
+// === Show the result message in the UI ===
+function showResult(message, type) {
+    // 'type' is "success" | "error" | "info" — drives the color via CSS class
+    result.textContent = message;
+    result.className = `result ${type}`;
 }
 
-button.addEventListener('click', () => {
-    // const n = Number(input.value);
+// === Handle the form submit (fires on button click AND Enter key) ===
+form.addEventListener('submit', (event) => {
+    event.preventDefault(); // Stop the page from reloading
 
-    // if (input.value === '') {
-    //     // If empty, user clicked Check without entering anything
-    //     h3.innerText = 'Please enter a number';
-    //     h3.style.color = 'black';
-    //     return; // Get out of the callback and wait for next click on button
-    // }
+    const value = input.value.trim();
 
-    // if (isPrime(n)) {
-    //     h3.style.color = 'green';
-    //     h3.innerText = `${n} is Prime`;
-    // } else {
-    //     h3.style.color = 'red';
-    //     h3.innerText = `${n} is NOT Prime`;
-    // }
+    if (value === '') {
+        showResult('Please enter a number', 'info');
+        return;
+    }
 
-    trigger();
-});
+    const n = Number(value);
 
-document.addEventListener('keydown', (event) => {
-    // const n = Number(input.value);
+    if (!Number.isInteger(n) || n < 2) {
+        // NaN, decimals, 0, 1, negatives — none are prime
+        showResult('Enter an integer of 2 or greater', 'error');
+        return;
+    }
 
-    // if (event.key === 'Enter') {
-    //     if (isPrime(n)) {
-    //         h3.style.color = 'green';
-    //         h3.innerText = `${n} is Prime`;
-    //     } else {
-    //         h3.style.color = 'red';
-    //         h3.innerText = `${n} is NOT Prime`;
-    //     }
-    // }
-
-    if (event.key !== 'Enter') return; // Ignore all keys except Enter
-    trigger(event);
+    if (isPrime(n)) {
+        showResult(`${n} is Prime`, 'success');
+    } else {
+        showResult(`${n} is NOT Prime`, 'error');
+    }
 });

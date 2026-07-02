@@ -1,26 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Prime Number Checker</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Prime no. checker</title>
-	<link rel="stylesheet" href="style.css">
-</head>
+    <body>
+        <main class="container">
+            <form class="card" id="prime-form">
+                <h1 class="title">Prime Number Checker</h1>
 
-<body>
-	<div class="main-container">
-		<div class="card">
-			<h2>Prime Number Checker</h2>
-			<div class="input-btn">
-				<input type="number" placeholder="Enter a number">
-				<button id="check-btn">Check</button>
-			</div>
-			<h3></h3>
-		</div>
-	</div>
+                <div class="input-container">
+                    <label for="number-input">Number</label>
+                    <input id="number-input" type="number" placeholder="Enter a number" min="2" required />
+                </div>
 
-	<script src="script.js"></script>
-</body>
+                <button id="check-btn" type="submit">Check</button>
 
+                <!-- Dedicated result area, separate from the title -->
+                <p id="result" class="result" role="status" aria-live="polite"></p>
+            </form>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
 </html>
