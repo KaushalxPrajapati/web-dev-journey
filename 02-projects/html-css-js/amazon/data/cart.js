@@ -4,7 +4,6 @@ const addToCartBtn = document.querySelectorAll('.add-to-cart-button');
 addToCartBtn.forEach((btn) => {
     btn.addEventListener('click', () => {
         const productId = btn.dataset.productId; // Get the product name from the data attribute
-        // Find the product object in the products array based on its name attribute
 
         let matchingItem = null;
 
@@ -12,8 +11,6 @@ addToCartBtn.forEach((btn) => {
         cart.forEach((item) => {
             if (productId === item.productId) {
                 matchingItem = item;
-            } else {
-                console.log('Item not found in cart');
             }
         });
 
@@ -26,6 +23,15 @@ addToCartBtn.forEach((btn) => {
             });
         }
 
-        console.log(cart);
+        let cartQuantity = 0;
+        cart.forEach((item) => {
+            cartQuantity += item.quantity; // Calculate the total quantity of items});
+        });
+
+        // Update the UI to reflect the changes in the cart
+        document.querySelector('.cart-quantity').textContent = cartQuantity;
+
+        console.log('Quantity:', cartQuantity);
+        console.log('Cart:', cart); // Log the updated cart
     });
 });
