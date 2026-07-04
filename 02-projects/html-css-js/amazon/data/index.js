@@ -1,4 +1,10 @@
+import { cartLogic } from './cart.js';
+import { products } from './products.js';
+
+// Initialize an empty string to hold the HTML for all products
 let productsHTML = '';
+
+// Loop through each product and generate its HTML representation.
 products.forEach((product) => {
     productsHTML += `
     <div class="product-container">
@@ -34,7 +40,7 @@ products.forEach((product) => {
 
         <div class="added-to-cart">
             <img src="images/icons/checkmark.png" />
-            Added
+            <span>Added</span>
         </div>
 
         <button class="add-to-cart-button button-primary" data-product-id='${product.id}'>Add to Cart</button>
@@ -42,4 +48,8 @@ products.forEach((product) => {
     `;
 });
 
+// Insert the products HTML into the page
 document.querySelector('.products-grid').innerHTML = productsHTML;
+
+// Call the cartLogic function to initialize the cart functionality
+cartLogic();
