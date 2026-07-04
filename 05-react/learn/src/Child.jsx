@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import UserContext from './UserContext.jsx';
+import UserContext from './components/UserContext.jsx';
 
 function Child() {
     const name = useContext(UserContext);
