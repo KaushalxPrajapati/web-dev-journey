@@ -54,9 +54,7 @@ document.addEventListener('keydown', function (event) {
     event.preventDefault();
 
     // step 5 — find the button in HTML whose data-key matches our mapped value
-    let matchingButton = document.querySelector(
-        '[data-key="' + mappedKey + '"]'
-    );
+    let matchingButton = document.querySelector('[data-key="' + mappedKey + '"]');
     console.log('matching button ->', matchingButton); // shows the actual DOM button element
 
     // step 6 — pretend the user clicked that button — reuses the same click logic below
@@ -94,10 +92,7 @@ allButtons.forEach(function (button) {
             if (shouldResetDisplay === true) {
                 numberOnScreen = key; // wipe and start fresh
                 shouldResetDisplay = false; // turn the flag off — only fires once
-                console.log(
-                    'display reset, new number starts ->',
-                    numberOnScreen
-                );
+                console.log('display reset, new number starts ->', numberOnScreen);
             } else if (numberOnScreen === '0' && key !== '.') {
                 // understanding: default screen shows "0" — pressing 5 should show "5" not "05"
                 // but pressing "." should show "0." so we exclude dot from this condition
@@ -114,11 +109,7 @@ allButtons.forEach(function (button) {
 
         // ─────────────────── Operator buttons (+, -, *, /) ───────────────────
 
-        let isOperator =
-            key === 'add' ||
-            key === 'subtract' ||
-            key === 'multiply' ||
-            key === 'divide';
+        let isOperator = key === 'add' || key === 'subtract' || key === 'multiply' || key === 'divide';
 
         if (isOperator) {
             // understanding: three things must happen together when an operator is pressed:
@@ -151,12 +142,7 @@ allButtons.forEach(function (button) {
             let secondNumber = parseFloat(numberOnScreen);
             let answer;
 
-            console.log(
-                'calculating ->',
-                firstNumber,
-                chosenOperator,
-                secondNumber
-            );
+            console.log('calculating ->', firstNumber, chosenOperator, secondNumber);
 
             if (chosenOperator === 'add') {
                 answer = firstNumber + secondNumber;
