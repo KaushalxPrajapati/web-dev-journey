@@ -22,7 +22,6 @@
 .btn.btn-success {
     color: white;
     padding: 0.875em;
-
     font-weight: bold;
     border: none;
     border-radius: 10px;
@@ -50,6 +49,22 @@ li {
 
 li::selection {
     background-color: transparent;
+}
+
+li.done {
+    text-decoration: line-through;
+    color: #888;
+    opacity: 0.7;
+}
+
+li.done .btn.btn-danger {
+    display: none;
+}
+
+li .btn.btn-outline-secondary {
+    opacity: 1;
+    cursor: pointer;
+    transition: opacity 0.25s ease;
 }
 
 li .btn.btn-danger {
