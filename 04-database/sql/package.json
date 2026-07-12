@@ -1,8 +1,4 @@
 {
-    "dependencies": {
-        "@faker-js/faker": "^10.4.0",
-        "mysql2": "^3.20.0"
-    },
     "name": "sql",
     "version": "1.0.0",
     "description": "",
@@ -13,5 +9,9 @@
     "keywords": [],
     "author": "Kaushal Prajapati",
     "license": "ISC",
-    "type": "module"
+    "type": "commonjs",
+    "dependencies": {
+        "@faker-js/faker": "^10.5.0",
+        "mysql2": "^3.22.5"
+    }
 }

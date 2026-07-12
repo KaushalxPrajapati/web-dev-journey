@@ -1,21 +1,53 @@
-import { faker } from '@faker-js/faker';
+const { faker } = require('@faker-js/faker');
+
+// Get the Client
 const mysql = require('mysql2');
 
+// Create the connection to database
+// typeof connection is 'object'
 const connection = mysql.createConnection({
-    host: 'localhost',
     user: 'root',
-    password: 123456,
-    database: 'sigma_app',
+    password: '123456',
+    host: 'localhost',
+    database: 'test',
 });
 
-let getRandomUser = () => {
-    return {
-        id: faker.string.uuid(),
-        username: faker.internet.username(),
-        email: faker.internet.email(),
-        avatar: faker.image.avatar(),
-        password: faker.internet.password(),
-    };
-};
+let q = 'SHOW TABLES';
 
-console.log(getRandomUser());
+try {
+    connection.query(q, (err, result) => {
+        if (err) throw err;
+        // We have the list of tables
+        let tables = [];
+        for (let i = 0; i < result.length; i++) {
+            tables.push(result[i][0]);
+        }
+
+        console.log('Tables:', tables);
+
+        // Check if there is a table named 'users'
+        if (!tables.includes('users')) {
+            console.log("Table 'users' does not exist");
+            connection.end();
+        } else {
+            let values = [];
+            for (let i = 0; i < 100; i++) {
+                let row = getRandomUser(); // This returns [uuid, username, email, password]
+                values.push(row);
+            }
+
+            let insertQuery = 'INSERT INTO users (id, username, email, password) VALUES ?';
+            connection.query(insertQuery, [values], (err, result) => {
+                if (err) throw err;
+                console.log('Rows inserted:', result.affectedRows);
+                connection.end();
+            });
+        }
+    });
+} catch (err) {
+    console.log(err);
+}
+
+let getRandomUser = () => {
+    return [faker.string.uuid(), faker.internet.username(), faker.internet.email(), faker.internet.password()];
+};
