@@ -1,32 +1,13 @@
-// Module-level state so other modules (like checkout.js) can import and share the cart.
-// Load any saved items from localStorage so the cart survives page reloads.
-// Step 1: read the raw text saved in localStorage under the key 'cart'.
-// If nothing was ever saved before (first time visiting), this will be null.
-const savedCartText = localStorage.getItem('cart');
-
-// Step 2: convert that raw text back into a real JavaScript array.
-// localStorage can only store plain text (strings). When the cart was saved earlier,
-// it had to be converted into text using JSON.stringify(). JSON.parse() reverses that.
-// If savedCartText was null, JSON.parse(null) also returns null.
-const parsedCart = JSON.parse(savedCartText);
-
-// Step 3: if nothing was saved (parsedCart is null), fall back to an empty array.
-// Without this, the rest of the code below would crash for a first-time visitor
-// who has never added anything to their cart yet.
-const cartFromStorage = parsedCart || [];
-
-// Step 4: build a clean new array from what was found.
-// Pull out only productId and quantity from each item, even if the saved data
-// happened to have extra leftover properties, so the cart always has the same shape.
-const cleanedCartItems = cartFromStorage.map((item) => {
-    return {
-        productId: item.productId,
-        quantity: item.quantity,
-    };
-});
-
-// Step 5: export this as "cart" so other files (like checkout.js) can import and use it.
-export const cart = cleanedCartItems;
+export const cart = [
+    {
+        productId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
+        quantity: 2,
+    },
+    {
+        productId: '15b6fc6f-327a-4ec4-896f-486349e85a3d',
+        quantity: 1,
+    },
+];
 
 const addedToCartTimers = {};
 
