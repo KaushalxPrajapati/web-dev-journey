@@ -1,0 +1,31 @@
+MongoDB Connection Error Explanation
+===================================
+
+Error observed:
+querySrv ECONNREFUSED _mongodb._tcp.cluster0.r4nasrl.mongodb.net
+
+What it means:
+This error means the Node.js server tried to connect to the MongoDB Atlas cluster using the SRV-based connection string, but the connection could not be established.
+
+Why it happened:
+- The application was using a MongoDB Atlas SRV URI.
+- The DNS/SRV lookup for the host failed from this environment.
+- In some cases, this is caused by network restrictions, DNS resolution issues, or Atlas connectivity settings.
+- The app then fell back to an in-memory store for local development.
+
+Why this happened in your case:
+- The URI was being loaded correctly from the .env file.
+- The problem was with reaching the Atlas endpoint from this environment.
+- The SRV record lookup failed, so the database connection was not established.
+
+Solution:
+1. Use a direct Atlas connection string instead of the SRV-style URI.
+2. Make sure your MongoDB Atlas network access allows your current IP address.
+3. Confirm the username and password in the connection string are correct.
+4. Restart the server after updating the .env file.
+
+Recommended connection format:
+mongodb://username:password@host1:27017,host2:27017,host3:27017/?ssl=true&authSource=admin&retryWrites=true&w=majority
+
+Result:
+Once the connection string is corrected and the network access is allowed, the app can connect to MongoDB Atlas successfully.

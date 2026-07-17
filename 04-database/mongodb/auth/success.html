@@ -29,20 +29,21 @@
                     <h2 class="fw-bold mb-2">Success!</h2>
                     <p class="text-muted mb-4">You have been logged in successfully.</p>
 
-                    <button onclick="logout()" id="logoutBtn" class="btn btn-outline-danger w-100">Logout</button>
+                    <button id="logoutBtn" class="btn btn-outline-danger w-100">Logout</button>
                 </div>
             </div>
         </div>
 
         <script>
-            function logout() {
-                const logoutBtn = document.querySelector('#logoutBtn');
-                logoutBtn.addEventListener('click', () => {
-                    sessionStorage.clear();
-                    alert('Logged out successfully!');
-                    window.location.href = 'login.html';
-                });
+            const user = sessionStorage.getItem('user');
+            if (!user) {
+                window.location.href = 'login.html';
             }
+
+            document.getElementById('logoutBtn').addEventListener('click', () => {
+                sessionStorage.clear();
+                window.location.href = 'login.html';
+            });
         </script>
     </body>
 </html>

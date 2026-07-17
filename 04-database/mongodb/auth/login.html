@@ -88,7 +88,7 @@
                             <p class="mb-0 text-muted">
                                 Don't have an account?
                                 <a
-                                    href="/createAcc.html"
+                                    href="createAcc.html"
                                     id="showRegister"
                                     class="text-primary text-decoration-none fw-semibold"
                                 >
@@ -102,9 +102,44 @@
         </div>
 
         <script>
+            const API_BASE = window.location.protocol === 'file:' ? 'http://localhost:3000' : '';
             const forgotPassLink = document.getElementById('forgotPass');
-            forgotPassLink.addEventListener('click', () => {
+            const loginForm = document.getElementById('loginForm');
+            const errorBox = document.getElementById('formError');
+
+            forgotPassLink.addEventListener('click', (e) => {
+                e.preventDefault();
                 window.location.href = 'resetPassword.html';
+            });
+
+            loginForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                errorBox.classList.add('d-none');
+
+                const payload = {
+                    email: document.getElementById('loginEmail').value,
+                    password: document.getElementById('loginPassword').value,
+                };
+
+                try {
+                    const response = await fetch(`${API_BASE}/api/login`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload),
+                    });
+
+                    const data = await response.json();
+
+                    if (!response.ok) {
+                        throw new Error(data.message || 'Login failed');
+                    }
+
+                    sessionStorage.setItem('user', JSON.stringify(data.user));
+                    window.location.href = 'success.html';
+                } catch (error) {
+                    errorBox.textContent = error.message;
+                    errorBox.classList.remove('d-none');
+                }
             });
         </script>
     </body>
