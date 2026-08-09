@@ -32,7 +32,7 @@ import UseMemoDemo from './components/04-hooks/05-useMemo/UseMemoDemo.jsx';
 import UseCallbackDemo from './components/04-hooks/06-useCallback/UseCallbackDemo.jsx';
 
 // 05 - Practice Project
-import TodoList from '../../todo-list/src/components/TodoList.jsx';
+import TodoList from '../../02-todo-list/src/components/TodoList.jsx';
 
 export default function App() {
     return (

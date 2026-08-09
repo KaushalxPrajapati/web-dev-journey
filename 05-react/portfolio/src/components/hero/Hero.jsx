@@ -1,4 +1,5 @@
-import './hero.css';
+import './Hero.css';
+import kaushalImg from '../../assets/kaushal.png';
 
 function Hero() {
     return (
@@ -11,7 +12,11 @@ function Hero() {
                         </div>
 
                         <div className="row">
-                            <p className="lead text-muted">I create simple, responsive, and user-friendly web experiences using HTML, CSS, JavaScript, React, and Bootstrap. I focus on writing clean code, improving real-world projects, and building strong frontend development skills step by step.</p>
+                            <p className="lead text-muted">
+                                I create simple, responsive, and user-friendly web experiences using HTML, CSS,
+                                JavaScript, React, and Bootstrap. I focus on writing clean code, improving real-world
+                                projects, and building strong frontend development skills step by step.
+                            </p>
                         </div>
 
                         <div className="row">
@@ -24,7 +29,7 @@ function Hero() {
                 </div>
 
                 <div className="col-6">
-                    <img src="/src/assets/bootstrap-img-1.png" alt="web design project showcase" className="img-fluid hero-img" />
+                    <img src={kaushalImg} alt="Kaushal Prajapati" className="img-fluid hero-img" />
                 </div>
             </div>
         </section>
