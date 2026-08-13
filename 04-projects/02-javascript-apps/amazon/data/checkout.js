@@ -1,11 +1,19 @@
-// Step 2: Import the necessary modules and functions.
 import { cart, removeFromCart } from './cart.js';
 import { products } from './products.js';
 import { formatCurrency } from '../utils/money.js';
-// import { formatDate } from '../utils/date.js';
+
+// 1. Calculate the total quantity across all items in the cart
+let cartQuantity = 0;
+
+cart.forEach((cartItem) => {
+    cartQuantity += cartItem.quantity;
+});
+
+// 2. Target the element using the class you added in Step 1 and set its text
+document.querySelector('.js-return-to-home-link').innerHTML = `${cartQuantity} items`;
 
 let cartSummaryHTML = '';
-// Step 3: Loop through the cart items and generate HTML for each item.
+
 cart.forEach((cartItem) => {
     const productId = cartItem.productId;
     const quantity = cartItem.quantity;
@@ -17,7 +25,7 @@ cart.forEach((cartItem) => {
         }
     });
 
-    cartSummaryHTML += `<!-- Item 1: Athletic Cotton Socks x2 ($10.90 each) -->
+    cartSummaryHTML += `
     <div class="cart-item-container js-cart-item-container-${matchingProduct.id}">
         <div class="delivery-date">Delivery date: Tuesday, June 21</div>
 
@@ -26,23 +34,21 @@ cart.forEach((cartItem) => {
 
             <div class="cart-item-details">
                 <div class="product-name">${matchingProduct.name}</div>
-                <div class="product-price">$${formatCurrency(matchingProduct.priceCents)}</span>
-            </div>
+                <div class="product-price">$${formatCurrency(matchingProduct.priceCents)}</div>
                 <div class="product-quantity">
                     <span>
                         Quantity:
-                        <span class="quantity-label">${cartItem.quantity}</span>
+                        <span class="quantity-label">${quantity}</span>
                     </span>
                     <span class="update-quantity-link link-primary">Update</span>
-                    <span class="delete-quantity-link link-primary" data-product-id=${matchingProduct.id}>Delete</span>
+                    <span class="delete-quantity-link link-primary" data-product-id="${matchingProduct.id}">Delete</span>
                 </div>
             </div>
 
             <div class="delivery-options">
                 <div class="delivery-options-title">Choose a delivery option:</div>
                 <div class="delivery-option">
-                    <input type="radio" class="delivery-option-input" name="delivery-option-${matchingProduct.id}"
-                    />
+                    <input type="radio" class="delivery-option-input" name="delivery-option-${matchingProduct.id}" />
                     <div>
                         <div class="delivery-option-date">Tuesday, June 21</div>
                         <div class="delivery-option-price">FREE Shipping</div>
