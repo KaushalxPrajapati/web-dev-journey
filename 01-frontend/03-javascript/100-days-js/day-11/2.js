@@ -11,7 +11,7 @@ countPositiveNumbers([-2, 5, 0, 7, -1, 3]) → 3
 countPositiveNumbers([-5, -2, 0]) → 0
 
 Note:
-0 is neither positive nor negative.
+0 is neither positive nor negative
 =============================================================================
 */
 

@@ -2,9 +2,9 @@
 =============================================================================
 Problem 1: Sum of Even Numbers
 
-Create a function called `sumEvenNumbers` that takes an array of numbers.
+Create a function called `sumEvenNumbers` that takes an array of numbers
 
-Return the sum of all even numbers in the array.
+Return the sum of all even numbers in the array
 
 Example:
 sumEvenNumbers([1, 2, 3, 4, 5, 6]) → 12

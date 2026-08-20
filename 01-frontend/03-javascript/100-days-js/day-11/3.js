@@ -2,9 +2,9 @@
 =============================================================================
 Problem 3: Find the Average of an Array
 
-Create a function called `findAverage` that takes an array of numbers.
+Create a function called `findAverage` that takes an array of numbers
 
-Return the average of all numbers in the array.
+Return the average of all numbers in the array
 
 Example:
 findAverage([10, 20, 30]) → 20
