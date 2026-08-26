@@ -2,8 +2,19 @@ import { cart, removeFromCart } from './cart.js';
 import { products } from './products.js';
 import { formatCurrency } from '../utils/money.js';
 
-// 1. Calculate the total quantity across all items in the cart
-let cartQuantity = 0;
+// Recalculates cart quantity and updates the header text
+function updateCartQuantity() {
+    // Calculate the total quantity across all items in the cart
+    let cartQuantity = 0;
+
+    cart.forEach((cartItem) => {
+        cartQuantity += cartItem.quantity;
+    });
+
+    document.querySelector('.js-return-to-home-link').innerHTML = `${cartQuantity} items`;
+}
+
+updateCartQuantity(); // initial call on page load
 
 cart.forEach((cartItem) => {
     cartQuantity += cartItem.quantity;
