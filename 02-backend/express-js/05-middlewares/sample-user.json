@@ -1,0 +1,37 @@
+{
+    "id": 1,
+    "firstName": "Kaushal",
+    "lastName": "Prajapati",
+    "fullName": "Kaushal Prajapati",
+    "username": "kaushalxdev",
+    "email": "kaushal.prajapati@example.com",
+    "phone": "+91-9876543210",
+    "dateOfBirth": "2007-03-15",
+    "gender": "Male",
+    "isVerified": true,
+    "role": "Student",
+    "skills": ["HTML", "CSS", "JavaScript", "Node.js", "Express.js"],
+    "address": {
+        "street": "Bistupur Main Road",
+        "city": "Jamshedpur",
+        "state": "Jharkhand",
+        "country": "India",
+        "postalCode": "831001"
+    },
+    "socialLinks": {
+        "github": "https://github.com/kaushalxdev",
+        "linkedin": "https://linkedin.com/in/kaushalxdev",
+        "portfolio": "https://kaushalxdev.dev"
+    },
+    "education": {
+        "degree": "Bachelor of Computer Applications",
+        "college": "Netaji Subhas University",
+        "year": 2026
+    },
+    "preferences": {
+        "theme": "dark",
+        "language": "English",
+        "notifications": true
+    },
+    "createdAt": "2026-05-27T18:30:00Z"
+}
