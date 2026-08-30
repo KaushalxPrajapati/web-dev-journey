@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CRUD APP</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <main class="container">
+            <h1>Simple CRUD App</h1>
+
+            <div class="input-grid">
+                <input type="text" id="name" placeholder="Enter Name" />
+                <input type="number" id="userId" placeholder="Enter User ID" />
+            </div>
+
+            <div class="buttons">
+                <button onclick="getUsers()">GET Users</button>
+                <button onclick="addUser()">ADD User</button>
+                <button>UPDATE User</button>
+                <button>DELETE User</button>
+            </div>
+
+            <p id="message"></p>
+
+            <h2>Users List</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+
+                <tbody id="userTable"></tbody>
+            </table>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
+</html>
