@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #1a1a1a;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 350px;
+    background-color: snow;
+    border-radius: 7px;
+    padding: 2rem 2.5rem;
+}
+
+h1 {
+    font-size: 2.125rem;
+    font-family: system-ui;
+    color: rgb(20, 135, 170);
+    text-align: center;
+    margin-bottom: 1.75rem;
+    cursor: pointer;
+}
+
+h1::selection {
+    background-color: transparent;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    margin-bottom: 1rem;
+}
+
+input {
+    font-size: 1rem;
+    padding: 0.75rem;
+
+    border-radius: 7px;
+    border: 1px solid gray;
+    outline: none;
+
+    transition: transform 0.5s ease;
+}
+
+input:hover {
+    transform: scale(1.1);
+}
+
+button {
+    width: 100%;
+    border: none;
+    outline: none;
+
+    background-color: rgb(20, 135, 20);
+    color: white;
+    font-weight: bold;
+    padding: 0.75rem;
+
+    border-radius: 7px;
+    cursor: pointer;
+
+    transition: transform 0.75s ease;
+}
+
+button:active {
+    transform: translateY(-5px);
+}
