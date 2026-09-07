@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Quiz Game</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <!-- Start Screen -->
+            <div class="card active" id="start-screen">
+                <h1>Quiz Time!</h1>
+                <p>Test your knowledge with these fun questions</p>
+
+                <button id="start-btn">Start Quiz</button>
+            </div>
+
+            <!-- Quiz Screen -->
+            <div class="card" id="quiz-screen">
+                <div class="quiz-header">
+                    <h2 id="question">Question</h2>
+
+                    <div class="quiz-info">
+                        <p>
+                            Question
+                            <span id="current-question"></span>
+                            of
+                            <span id="total-questions"></span>
+                        </p>
+
+                        <p>
+                            Score:
+                            <span id="score">0</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div id="answers-container"></div>
+
+                <!-- Progress -->
+                <div class="progress-bar">
+                    <div id="progress"></div>
+                </div>
+            </div>
+
+            <!-- Result Screen -->
+            <div class="card" id="result-screen">
+                <h1>Quiz Results</h1>
+
+                <div class="result-info">
+                    <p>
+                        Your score
+                        <span id="final-score"></span>
+                        out of
+                        <span id="max-score"></span>
+                    </p>
+
+                    <div id="result-msg">Good Job!</div>
+                </div>
+
+                <button id="restart-btn">Restart Quiz</button>
+            </div>
+        </div>
+
+        <script src="./script.js"></script>
+    </body>
+</html>
