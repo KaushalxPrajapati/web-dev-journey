@@ -19,18 +19,13 @@
 
 Welcome to my **Web Development Journey** repository!
 
-This project is a comprehensive, chronological archive of my transition from foundational HTML/CSS to advanced frontend architectures and backend explorations. Instead of scattering my progress across dozens of micro-repositories, I have consolidated my entire learning progression here.
+This repository serves as a **comprehensive, structured learning archive and codebase** documenting my progression across full-stack web development—from foundational HTML/CSS and modern JavaScript challenges to backend REST APIs, database management, and complete flagship projects.
 
-The repository serves two main purposes:
-
-1. **The Root Portfolio:** The main directory houses a fully responsive, custom-built, premium portfolio website that acts as a sleek directory for all my work.
-2. **The Archive:** Categorized subdirectories containing UI clones, JavaScript logic challenges, backend scripts, and full flagship projects.
+> 🌐 **Looking for my portfolio?** My personal portfolio and project showcase is maintained in a dedicated repository and is live at [**hellokaushal.dev**](https://hellokaushal.dev).
 
 ---
 
 ## ✨ Project Previews
-
-
 
 ## 🛠️ Tech Stack & Skills
 
@@ -45,7 +40,7 @@ The repository serves two main purposes:
 
 ### **KP Living — E-Commerce Furniture Store**
 
-Located in [`/02-projects/html-css-js/kp-living`](./02-projects/html-css-js/kp-living/).
+Located in [`/04-projects/02-javascript-apps/kp-living`](./04-projects/02-javascript-apps/kp-living/).
 
 This is the flagship project of the repository—a complete static e-commerce platform built strictly without heavy frameworks.
 
@@ -61,17 +56,12 @@ This is the flagship project of the repository—a complete static e-commerce pl
 ```text
 web-dev-journey/
 │
-├── index.html            # Main portfolio entry point
-├── style.css             # Premium custom CSS system
-├── script.js             # Portfolio interactivity & animations
-│
-├── 01-foundation/        # Early HTML/CSS concepts & assignments
-├── 02-projects/          # The core archive
-│   ├── html-css/         # UI clones (Spotify, W3Schools)
-│   ├── html-css-js/      # Logic heavy apps (KP Living, Simon Says, Calculator)
-│   └── experimental/     # JS Logic challenges, mini-games, and array method scripts
-├── 03-backend/           # Node.js & Express REST APIs
-└── 04-database/          # MySQL integrations and Mock Data generators
+├── 01-frontend/           # HTML, CSS, JavaScript (tasks & practice problems), React
+├── 02-backend/            # Node.js & Express REST APIs
+├── 03-database/           # SQL / MySQL integrations and mock data
+├── 04-projects/           # Static websites, JS apps, React apps, Bootstrap, Tailwind, Full Stack
+├── assets/                # Common media, branding, and icons
+└── notes/                 # Quick reference sheets and revision notes
 ```
 
 ---
@@ -80,32 +70,33 @@ web-dev-journey/
 
 ```mermaid
 graph TD;
-    A[Root Portfolio index.html] --> B{Categories};
-    B -->|Flagship| C[KP Living App];
-    B -->|UI Clones| D[Spotify Clone / Google UI];
-    B -->|JS Logic| E[Calculator / To-Do App];
-    B -->|Micro UIs| F[Modals / Forms / CSS Art];
+    A[Web Dev Journey Archive] --> B[01-frontend];
+    A --> C[02-backend];
+    A --> D[03-database];
+    A --> E[04-projects];
 
-    C -.-> G[(localStorage State)];
-    E -.-> G;
+    B --> B1[HTML / CSS / JavaScript / React];
+    B --> B2[Tasks & Practice Problems];
+    E --> E1[Flagship: KP Living];
+    E --> E2[React Apps & UI Clones];
 ```
 
 ---
 
 ## 💻 Installation & Local Setup
 
-Because the majority of this repository is built utilizing Vanilla web technologies, there is **no complex build step** required.
+Because the majority of this repository is built utilizing Vanilla web technologies alongside focused node/react modules, exploring projects is straightforward:
 
 1. **Clone the repository:**
     ```bash
     git clone https://github.com/KaushalxPrajapati/web-dev-journey.git
     ```
-2. **Open the directory** in your favorite IDE (e.g., VS Code).
-3. **Launch the app:**
-    - Use the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension on the root `index.html` file.
-    - Navigate through the UI to access any sub-project.
-4. **Backend Exploration:**
-    - For backend projects in `/03-backend`, navigate to the specific folder and run `npm install` followed by `node app.js` (or the respective script name).
+2. **Open the directory** in your favorite IDE (e.g., VS Code or Antigravity IDE).
+3. **Explore Frontend Projects & Practice:**
+    - Navigate to any project or practice folder (e.g., in `04-projects/` or `01-frontend/`).
+    - Open with the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension on its `index.html` file.
+4. **Backend & React Apps:**
+    - For backend modules in `02-backend` or React apps in `04-projects/03-react-apps`, navigate to the specific project folder, run `npm install`, and start the project (`npm run dev` or `node app.js`).
 
 ---
 
@@ -120,10 +111,10 @@ Because the majority of this repository is built utilizing Vanilla web technolog
 
 ## 🚀 Future Improvements
 
-- [ ] Implement a full dark/light mode toggle for the root portfolio.
 - [ ] Migrate the flagship `KP Living` project to React to demonstrate modern framework proficiency.
 - [ ] Add actual screenshot assets to the repository for this README.
-- [ ] Set up an automated testing suite for the vanilla JS logic.
+- [ ] Set up automated testing suites for the vanilla JS logic.
+- [ ] Continue expanding backend REST APIs and database integration modules.
 
 ---
 
