@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bootstrap Landing Page — Build Faster, Ship Sooner</title>
+
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+        />
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <!-- 1. NAVBAR -->
+        <header>
+            <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                <div class="container-fluid d-flex align-items-center justify-content-between px-4">
+                    <!-- Brand -->
+                    <a class="navbar-brand fw-bold" href="#">hellokaushal.dev</a>
+
+                    <!-- Search Bar -->
+                    <div class="w-50 d-none d-lg-block">
+                        <input type="text" class="form-control rounded-pill" placeholder="  Search..." />
+                    </div>
+
+                    <!-- Navigation Links -->
+                    <ul class="navbar-nav d-flex flex-row gap-4 d-block">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#features">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#pricing">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- 2. HERO SECTION -->
+        <section class="py-5 bg-dark text-white text-center">
+            <div class="container">
+                <h1 class="display-4 fw-bold mb-3">Build Faster, Ship Sooner</h1>
+                <p class="lead mb-4">Everything you need to launch your next project, in one place.</p>
+                <a href="#pricing" class="btn btn-primary btn-lg me-2">Get Started</a>
+                <a href="#features" class="btn btn-outline-light btn-lg">Learn More</a>
+            </div>
+        </section>
+
+        <!-- 3. FEATURE HIGHLIGHTS SECTION -->
+        <section class="min-vh-100 d-flex align-items-center py-5 bg-light" id="features">
+            <div class="container">
+                <div class="row g-5 justify-content-center">
+                    <!-- Card 1 -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="card h-100 border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <h3 class="h5 card-title fw-bold pb-1">Fast Performance</h3>
+                                <p class="card-text text-body-secondary">
+                                    Our platform loads quickly and delivers a smooth user experience across devices.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="card h-100 border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <h3 class="h5 card-title fw-bold pb-1">Secure by Design</h3>
+                                <p class="card-text text-body-secondary">
+                                    Built with strong security practices to help protect user data and system
+                                    reliability.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="card h-100 border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <h3 class="h5 card-title fw-bold pb-1">Reliable Support</h3>
+                                <p class="card-text text-body-secondary">
+                                    Get dependable assistance whenever needed, with clear guidance and quick solutions.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. PRICING PAGE -->
+        <section class="py-5" id="pricing">
+            <div class="container-fluid my-5 mx-0">
+                <h1 class="text-center">Pricing</h1>
+                <p class="text-center">Please checkout our most effective payment models</p>
+
+                <div class="row text-center justify-content-evenly">
+                    <!-- Card 1 -->
+                    <div class="card col-sm-5 col-md-3 px-0">
+                        <div class="card-header px-0">
+                            <h4>Free</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title">$0 / mo</h1>
+                            <ul class="list-unstyled">
+                                <li>10 users included</li>
+                                <li>2 GB of storage</li>
+                                <li>Email support</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary">Sign up for free</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="card col-sm-5 col-md-3 px-0">
+                        <div class="card-header">
+                            <h4>Pro</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title">$15 / mo</h1>
+                            <ul class="list-unstyled">
+                                <li>20 users included</li>
+                                <li>10 GB of storage</li>
+                                <li>Priority email support</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary">Get started</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="card col-sm-10 col-md-3 px-0">
+                        <div class="card-header">
+                            <h4>Enterprise</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title">$29 / mo</h1>
+                            <ul class="list-unstyled">
+                                <li>30 users included</li>
+                                <li>15 GB of storage</li>
+                                <li>Phone & email support</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary">Contact us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. FOOTER -->
+        <footer class="bg-dark text-white py-5 pb-4" id="contact">
+            <div class="container">
+                <div class="row g-4">
+                    <!-- Brand / intro column -->
+                    <div class="col-12 col-md-5">
+                        <h2 class="h4 fw-bold mb-3">Kaushal Prajapati</h2>
+                        <p class="text-white-50 mb-0">
+                            BCA student learning web development and building toward software engineering roles through
+                            consistent practice and real projects.
+                        </p>
+                    </div>
+
+                    <!-- Page links column -->
+                    <div class="col-6 col-md-2">
+                        <h3 class="h6 fw-bold mb-3">Pages</h3>
+
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2">
+                                <a href="#" class="text-white-50 text-decoration-none">Home</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#features" class="text-white-50 text-decoration-none">Features</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#pricing" class="text-white-50 text-decoration-none">Pricing</a>
+                            </li>
+                            <li>
+                                <a href="#contact" class="text-white-50 text-decoration-none">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Legal links column -->
+                    <div class="col-6 col-md-2">
+                        <h3 class="h6 fw-bold mb-3">Legal</h3>
+
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2">
+                                <a href="#" class="text-white-50 text-decoration-none">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-white-50 text-decoration-none">Terms of Service</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Social links column -->
+                    <div class="col-12 col-md-3">
+                        <h3 class="h6 fw-bold mb-3">Connect</h3>
+
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2">
+                                <a
+                                    href="https://github.com/KaushalxPrajapati"
+                                    class="text-white-50 text-decoration-none"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    GitHub
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a
+                                    href="https://www.linkedin.com/in/kaushal-prajapati-b651a8334/"
+                                    class="text-white-50 text-decoration-none"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    LinkedIn
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-white-50 text-decoration-none">Instagram</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr class="border-secondary my-4" />
+
+                <!-- Copyright -->
+                <p class="text-white-50 text-center mb-0">© 2026 Kaushal Prajapati. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <!-- Bootstrap JS Bundle -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
