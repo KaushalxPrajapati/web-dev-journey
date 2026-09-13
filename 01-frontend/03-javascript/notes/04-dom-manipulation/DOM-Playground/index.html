@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DOM Mastery Playground</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <!-- =========================================================
+         HEADER
+    ========================================================= -->
+
+        <header id="mainHeader">
+            <h1 id="mainTitle">JavaScript DOM Mastery Playground</h1>
+
+            <p id="headerDescription">
+                Practice selecting, modifying, creating, navigating, and removing HTML elements using JavaScript.
+            </p>
+        </header>
+
+        <!-- =========================================================
+         MAIN
+    ========================================================= -->
+
+        <main class="container" id="mainContainer">
+            <!-- =====================================================
+             SECTION 1 — BASIC TEXT
+        ====================================================== -->
+
+            <section class="section" id="textSection">
+                <h2 class="section-title">Section 1 — Text Manipulation</h2>
+
+                <p class="description" id="textDescription">
+                    This section contains several text elements for practicing textContent and innerHTML.
+                </p>
+
+                <div class="text-area" id="textArea">
+                    <p class="text-item">This is paragraph one.</p>
+
+                    <p class="text-item">This is paragraph two.</p>
+
+                    <p class="text-item">This is paragraph three.</p>
+
+                    <p class="text-item">This is paragraph four.</p>
+
+                    <p class="text-item highlight">This is the highlighted paragraph.</p>
+                </div>
+            </section>
+
+            <!-- =====================================================
+             SECTION 2 — DOM SELECTION
+        ====================================================== -->
+
+            <section class="section" id="selectionSection">
+                <h2 class="section-title">Section 2 — Element Selection</h2>
+
+                <p class="description">
+                    Use IDs, classes, tags, querySelector(), and querySelectorAll() to practice selection.
+                </p>
+
+                <div class="outer-box" id="selectionBox">
+                    <h3 id="selectionHeading">Selection Practice Box</h3>
+
+                    <p class="selection-text">Selection paragraph 1</p>
+
+                    <p class="selection-text">Selection paragraph 2</p>
+
+                    <p class="selection-text">Selection paragraph 3</p>
+                </div>
+            </section>
+
+            <!-- =====================================================
+             SECTION 3 — DOM NAVIGATION
+        ====================================================== -->
+
+            <section class="section" id="navigationSection">
+                <h2 class="section-title">Section 3 — DOM Navigation</h2>
+
+                <p class="description">
+                    Practice parentElement, children, firstElementChild, lastElementChild, nextElementSibling, and
+                    previousElementSibling.
+                </p>
+
+                <div class="outer-box" id="navigationParent">
+                    <h3 id="navigationHeading">Navigation Heading</h3>
+
+                    <p id="navigationParagraph1">Navigation paragraph one.</p>
+
+                    <p id="navigationParagraph2">Navigation paragraph two.</p>
+
+                    <p id="navigationParagraph3">Navigation paragraph three.</p>
+
+                    <div class="inner-box" id="navigationInnerBox">
+                        <h4 id="innerHeading">Inner Box Heading</h4>
+
+                        <p id="innerParagraph">Paragraph inside the inner box.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =====================================================
+             SECTION 4 — ITEMS
+        ====================================================== -->
+
+            <section class="section" id="itemsSection">
+                <h2 class="section-title">Section 4 — Working With Multiple Elements</h2>
+
+                <p class="description">Practice working with multiple elements having the same class.</p>
+
+                <div class="items-container" id="itemsContainer">
+                    <div class="item">
+                        <p class="item-title">Item 1</p>
+                        <p>First item description.</p>
+                    </div>
+
+                    <div class="item">
+                        <p class="item-title">Item 2</p>
+                        <p>Second item description.</p>
+                    </div>
+
+                    <div class="item">
+                        <p class="item-title">Item 3</p>
+                        <p>Third item description.</p>
+                    </div>
+
+                    <div class="item">
+                        <p class="item-title">Item 4</p>
+                        <p>Fourth item description.</p>
+                    </div>
+
+                    <div class="item">
+                        <p class="item-title">Item 5</p>
+                        <p>Fifth item description.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =====================================================
+             SECTION 5 — CARDS
+        ====================================================== -->
+
+            <section class="section" id="cardsSection">
+                <h2 class="section-title">Section 5 — Cards</h2>
+
+                <p class="description">
+                    Use these cards for class selection, content modification, style manipulation, and DOM navigation.
+                </p>
+
+                <div class="card-container" id="cardContainer">
+                    <div class="card">
+                        <h3 class="card-title">HTML</h3>
+
+                        <p class="card-description">HTML provides the structure of a webpage.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">CSS</h3>
+
+                        <p class="card-description">CSS controls the appearance of a webpage.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">JavaScript</h3>
+
+                        <p class="card-description">JavaScript adds behaviour and interaction.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =====================================================
+             SECTION 6 — ATTRIBUTES
+        ====================================================== -->
+
+            <section class="section" id="attributeSection">
+                <h2 class="section-title">Section 6 — Attributes</h2>
+
+                <p class="description">Practice getAttribute(), setAttribute(), and removeAttribute().</p>
+
+                <div class="links" id="linksContainer">
+                    <a id="googleLink" href="https://www.google.com" target="_blank" title="Google Search">Google</a>
+
+                    <a id="youtubeLink" href="https://www.youtube.com" target="_blank" title="YouTube">YouTube</a>
+
+                    <a id="githubLink" href="https://github.com" target="_blank" title="GitHub">GitHub</a>
+                </div>
+
+                <br />
+
+                <img
+                    id="practiceImage"
+                    src="https://via.placeholder.com/300x180"
+                    alt="Practice placeholder image"
+                    title="Practice image"
+                />
+            </section>
+
+            <!-- =====================================================
+             SECTION 7 — STYLE MANIPULATION
+        ====================================================== -->
+
+            <section class="section" id="styleSection">
+                <h2 class="section-title">Section 7 — Style Manipulation</h2>
+
+                <p class="description" id="styleDescription">
+                    Change this section, its heading, its text, and individual elements using JavaScript.
+                </p>
+
+                <div class="outer-box" id="styleBox">
+                    <h3 id="styleHeading">Style Practice Heading</h3>
+
+                    <p id="styleParagraph">Style practice paragraph.</p>
+
+                    <div class="button-group">
+                        <button class="btn" id="styleButton1">Style Button 1</button>
+
+                        <button class="btn secondary-btn" id="styleButton2">Style Button 2</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =====================================================
+             SECTION 8 — CLASSLIST
+        ====================================================== -->
+
+            <section class="section" id="classListSection">
+                <h2 class="section-title">Section 8 — classList</h2>
+
+                <p class="description">Practice add(), remove(), toggle(), and contains().</p>
+
+                <div class="outer-box" id="classBox">
+                    <h3 id="classHeading">ClassList Practice Box</h3>
+
+                    <p id="classParagraph">Use JavaScript to add and remove classes.</p>
+
+                    <span class="status" id="statusBadge">Current Status</span>
+                </div>
+            </section>
+
+            <!-- =====================================================
+             SECTION 9 — FORM
+        ====================================================== -->
+
+            <section class="section" id="formSection">
+                <h2 class="section-title">Section 9 — Form Elements</h2>
+
+                <p class="description">These elements give you additional HTML objects to select and manipulate.</p>
+
+                <div class="form-group">
+                    <label for="nameInput">Name</label>
+
+                    <input type="text" id="nameInput" placeholder="Enter your name" />
+                </div>
+
+                <div class="form-group">
+                    <label for="emailInput">Email</label>
+
+                    <input type="email" id="emailInput" placeholder="Enter your email" />
+                </div>
+
+                <div class="form-group">
+                    <label for="courseSelect">Course</label>
+
+                    <select id="courseSelect">
+                        <option value="bca">BCA</option>
+
+                        <option value="btech">B.Tech</option>
+
+                        <option value="mca">MCA</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="messageInput">Message</label>
+
+                    <textarea id="messageInput" placeholder="Write something..."></textarea>
+                </div>
+            </section>
+
+            <!-- =====================================================
+             SECTION 10 — PROFILE
+        ====================================================== -->
+
+            <section class="section" id="profileSection">
+                <h2 class="section-title">Section 10 — Profile</h2>
+
+                <div class="profile" id="profileCard">
+                    <img id="profileImage" src="https://via.placeholder.com/150" alt="Profile placeholder" />
+
+                    <div class="profile-info">
+                        <h3 id="profileName">Alex Johnson</h3>
+
+                        <p id="profileRole">Web Developer</p>
+
+                        <p id="profileBio">Learning HTML, CSS and JavaScript.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =====================================================
+             SECTION 11 — TABLE
+        ====================================================== -->
+
+            <section class="section" id="tableSection">
+                <h2 class="section-title">Section 11 — Table</h2>
+
+                <table id="studentTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+
+                            <th>Course</th>
+
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Rahul</td>
+
+                            <td>BCA</td>
+
+                            <td>Active</td>
+                        </tr>
+
+                        <tr>
+                            <td>Priya</td>
+
+                            <td>BCA</td>
+
+                            <td>Active</td>
+                        </tr>
+
+                        <tr>
+                            <td>Aman</td>
+
+                            <td>BCA</td>
+
+                            <td>Inactive</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- =====================================================
+             SECTION 12 — BUTTONS / CONTROLS
+        ====================================================== -->
+
+            <section class="section" id="controlsSection">
+                <h2 class="section-title">Section 12 — Controls</h2>
+
+                <p class="description">
+                    These buttons are useful for experimenting with selection, styling, classList, creating elements,
+                    and removing elements.
+                </p>
+
+                <div class="button-group">
+                    <button class="btn" id="primaryButton">Primary Button</button>
+
+                    <button class="btn secondary-btn" id="secondaryButton">Secondary Button</button>
+
+                    <button class="btn danger-btn" id="deleteButton">Delete Button</button>
+                </div>
+            </section>
+
+            <!-- =====================================================
+             SECTION 13 — DYNAMIC AREA
+        ====================================================== -->
+
+            <section class="section" id="dynamicSection">
+                <h2 class="section-title">Section 13 — Dynamic Element Area</h2>
+
+                <p class="description">
+                    This area is intentionally empty. Use JavaScript createElement(), textContent, classList, append(),
+                    and appendChild() to add elements here.
+                </p>
+
+                <div class="outer-box" id="dynamicContainer">
+                    <!--
+                    CREATE YOUR ELEMENTS HERE USING JAVASCRIPT
+                --></div>
+            </section>
+
+            <!-- =====================================================
+             SECTION 14 — REMOVE AREA
+        ====================================================== -->
+
+            <section class="section" id="removeSection">
+                <h2 class="section-title">Section 14 — Remove Practice</h2>
+
+                <p class="description">These elements are intended to be removed during DOM practice.</p>
+
+                <div id="removeContainer">
+                    <div class="item" id="removeItem1">Element to Remove — 1</div>
+
+                    <div class="item" id="removeItem2">Element to Remove — 2</div>
+
+                    <div class="item" id="removeItem3">Element to Remove — 3</div>
+                </div>
+            </section>
+
+            <!-- =====================================================
+             SECTION 15 — FINAL PLAYGROUND
+        ====================================================== -->
+
+            <section class="section" id="finalPlayground">
+                <h2 class="section-title">Section 15 — Final Free Practice</h2>
+
+                <p class="description" id="finalDescription">Experiment with anything you have learned so far.</p>
+
+                <div class="outer-box" id="finalBox">
+                    <h3 id="finalHeading">Final Playground Box</h3>
+
+                    <p class="final-text">Final paragraph one.</p>
+
+                    <p class="final-text">Final paragraph two.</p>
+
+                    <p class="final-text">Final paragraph three.</p>
+
+                    <div class="button-group">
+                        <button class="btn" id="finalButton">Final Practice Button</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+        <footer id="mainFooter">
+            <p>JavaScript DOM Practice Playground</p>
+
+            <p>Select → Manipulate → Create → Add → Navigate → Remove</p>
+        </footer>
+
+        <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+        <script src="script.js"></script>
+    </body>
+</html>
