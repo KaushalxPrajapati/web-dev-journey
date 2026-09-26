@@ -48,7 +48,7 @@ const studentSchema = new mongoose.Schema({
     },
 });
 
-// Making Model named Student
+// Making Model named "Student"
 const Student = mongoose.model('student', studentSchema);
 
 // ---------------------------------------------------
@@ -175,4 +175,51 @@ async function fixLowScores() {
     }
 }
 
-fixLowScores();
+// fixLowScores();
+
+// ============================================
+//                   TASK 7
+// ============================================
+
+async function updateSingleTagStudents() {
+    try {
+        // Step 1: Find students with only 1 tag (BEFORE)
+        const oldStudents = await Student.find({ tags: { $size: 1 } });
+
+        console.log('📊 BEFORE UPDATE:');
+        console.log(`Found ${oldStudents.length} students with 1 tag\n`);
+        oldStudents.forEach((student) => {
+            console.log(`  Name: ${student.name} | Score: ${student.score} | Tags: [${student.tags}]`);
+        });
+
+        // Step 2: Update all at once
+        const updateResult = await Student.updateMany(
+            { tags: { $size: 1 } },
+            {
+                $push: { tags: 'Updated' },
+                $inc: { score: 5 },
+            },
+            { runValidators: true }
+        );
+
+        console.log(`\nUpdated ${updateResult.modifiedCount} students\n`);
+
+        // Step 3: Fetch AGAIN to show updated data
+        const newStudents = await Student.find({ tags: { $size: 2 } });
+
+        console.log('AFTER UPDATE:');
+        console.log(`Found ${newStudents.length} students with 2 tags\n`);
+        newStudents.forEach((student) => {
+            console.log(`  Name: ${student.name} | Score: ${student.score} | Tags: [${student.tags}]`);
+        });
+
+        console.log('\n========== TASK 7 COMPLETE ==========\n');
+    } catch (error) {
+        console.log('Error:', error.message);
+    } finally {
+        // Close connection
+        await mongoose.connection.close();
+        console.log('🔌 MongoDB connection closed');
+        process.exit(0);
+    }
+}
