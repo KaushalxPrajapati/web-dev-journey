@@ -1,13 +1,13 @@
 {
-    "name": "with-express",
+    "name": "using-with-express",
     "version": "1.0.0",
-    "description": "",
+    "description": "Express and MongoDB integration practice with Mongoose",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "start": "node index.js"
     },
     "keywords": [],
-    "author": "",
+    "author": "Kaushal Prajapati",
     "license": "ISC",
     "type": "commonjs",
     "dependencies": {
