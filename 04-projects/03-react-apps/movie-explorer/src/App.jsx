@@ -6,6 +6,8 @@ import NavBar from './components/NavBar.jsx';
 
 import { Routes, Route } from 'react-router-dom';
 
+import test from './Test.jsx';
+
 function App() {
     return (
         <div>
