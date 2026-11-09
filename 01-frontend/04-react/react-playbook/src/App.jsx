@@ -42,9 +42,6 @@ import RouterDemo from './components/05-routing/RouterDemo.jsx';
 // Playground
 import Scratchpad from './components/playground/Scratchpad.jsx';
 
-// Practice Project
-import TodoList from '../../../../04-projects/03-react-apps/todo-list/src/components/TodoList.jsx';
-
 const TOPICS = [
     {
         category: 'Basics & JSX',
@@ -229,17 +226,6 @@ const TOPICS = [
                 title: 'Sandbox Scratchpad',
                 file: 'components/playground/Scratchpad.jsx',
                 component: <Scratchpad />,
-            },
-        ],
-    },
-    {
-        category: 'Projects',
-        items: [
-            {
-                id: 'todo-list',
-                title: 'Todo List Application',
-                file: '04-projects/03-react-apps/todo-list',
-                component: <TodoList />,
             },
         ],
     },
