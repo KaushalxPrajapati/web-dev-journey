@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 
 // Basics
@@ -8,6 +9,7 @@ import CarsList from './components/01-basics/CarsList.jsx';
 
 // Props
 import UserProfile from './components/02-props/UserProfile.jsx';
+import ProductTab from './components/02-props/ProductTab.jsx';
 
 // Events & Forms
 import Button from './components/03-events-and-forms/Button.jsx';
@@ -29,7 +31,7 @@ import LiveClock from './components/04-hooks/02-useEffect/LiveClock.jsx';
 import UserContext from './components/04-hooks/03-useContext/UserContext.jsx';
 import Child from './components/04-hooks/03-useContext/Child.jsx';
 
-// Hooks: Advanced (useRef, useMemo, useCallback)
+// Hooks: Advanced
 import UseRefDemo from './components/04-hooks/04-useRef/UseRefDemo.jsx';
 import UseMemoDemo from './components/04-hooks/05-useMemo/UseMemoDemo.jsx';
 import UseCallbackDemo from './components/04-hooks/06-useCallback/UseCallbackDemo.jsx';
@@ -37,128 +39,250 @@ import UseCallbackDemo from './components/04-hooks/06-useCallback/UseCallbackDem
 // Practice Project
 import TodoList from '../../../../04-projects/03-react-apps/todo-list/src/components/TodoList.jsx';
 
+const TOPICS = [
+    {
+        category: 'Basics & JSX',
+        items: [
+            {
+                id: 'say-hello',
+                title: 'JSX & Variable Interpolation',
+                file: 'components/01-basics/SayHello.jsx',
+                component: <SayHello />,
+            },
+            {
+                id: 'exports',
+                title: 'Module Exports & Imports',
+                file: 'components/01-basics/ExportFunctions.jsx',
+                component: (
+                    <div className="math-demo">
+                        <p>
+                            <code>add(5, 10)</code> &rarr; <strong>{add(5, 10)}</strong>
+                        </p>
+                        <p>
+                            <code>multiply(5, 10)</code> &rarr; <strong>{multiply(5, 10)}</strong>
+                        </p>
+                    </div>
+                ),
+            },
+            {
+                id: 'cars-list',
+                title: 'Rendering Lists with Keys',
+                file: 'components/01-basics/CarsList.jsx',
+                component: <CarsList />,
+            },
+            {
+                id: 'cars-object',
+                title: 'Rendering Object Properties',
+                file: 'components/01-basics/CarsObject.jsx',
+                component: <CarsObject />,
+            },
+        ],
+    },
+    {
+        category: 'Props & Communication',
+        items: [
+            {
+                id: 'user-profile',
+                title: 'Props & Callback Handlers',
+                file: 'components/02-props/UserProfile.jsx',
+                component: <UserProfile />,
+            },
+            {
+                id: 'product-cards',
+                title: 'Component Cards & Destructuring',
+                file: 'components/02-props/ProductTab.jsx',
+                component: <ProductTab />,
+            },
+        ],
+    },
+    {
+        category: 'Events & Forms',
+        items: [
+            {
+                id: 'button-events',
+                title: 'Synthetic Event Handlers',
+                file: 'components/03-events-and-forms/Button.jsx',
+                component: <Button />,
+            },
+            {
+                id: 'forms',
+                title: 'Form Inputs & Submissions',
+                file: 'components/03-events-and-forms/Forms.jsx',
+                component: <Forms />,
+            },
+        ],
+    },
+    {
+        category: 'Hooks: useState',
+        items: [
+            {
+                id: 'counter-1',
+                title: 'Counter (Functional Updater)',
+                file: 'components/04-hooks/01-useState/Counter1.jsx',
+                component: <Counter />,
+            },
+            {
+                id: 'counter-2',
+                title: 'Counter (Direct Updater)',
+                file: 'components/04-hooks/01-useState/Counter2.jsx',
+                component: <Counter2 />,
+            },
+            {
+                id: 'like-button',
+                title: 'Like Button (Boolean State)',
+                file: 'components/04-hooks/01-useState/LikeButton.jsx',
+                component: <LikeButton />,
+            },
+            {
+                id: 'ludo-board',
+                title: 'Ludo Board (Object State)',
+                file: 'components/04-hooks/01-useState/LudoBoard.jsx',
+                component: <LudoBoard />,
+            },
+            {
+                id: 'toggle-button',
+                title: 'Toggle Button',
+                file: 'components/04-hooks/01-useState/ToggleButton.jsx',
+                component: <ToggleButton />,
+            },
+            {
+                id: 'joke-api',
+                title: 'Async State Fetching',
+                file: 'components/04-hooks/01-useState/Joke.jsx',
+                component: <Joke />,
+            },
+        ],
+    },
+    {
+        category: 'Hooks: useEffect',
+        items: [
+            {
+                id: 'timer',
+                title: 'Render Count Timer',
+                file: 'components/04-hooks/02-useEffect/Timer.jsx',
+                component: <Timer />,
+            },
+            {
+                id: 'live-clock',
+                title: 'Live Clock Interval',
+                file: 'components/04-hooks/02-useEffect/LiveClock.jsx',
+                component: <LiveClock />,
+            },
+        ],
+    },
+    {
+        category: 'Hooks: useContext',
+        items: [
+            {
+                id: 'user-context',
+                title: 'Context Provider & Consumer',
+                file: 'components/04-hooks/03-useContext/UserContext.jsx',
+                component: (
+                    <UserContext.Provider value="Kaushal">
+                        <Child />
+                    </UserContext.Provider>
+                ),
+            },
+        ],
+    },
+    {
+        category: 'Hooks: Advanced',
+        items: [
+            {
+                id: 'use-ref',
+                title: 'useRef (DOM & Non-Rendering Ref)',
+                file: 'components/04-hooks/04-useRef/UseRefDemo.jsx',
+                component: <UseRefDemo />,
+            },
+            {
+                id: 'use-memo',
+                title: 'useMemo (Computation Cache)',
+                file: 'components/04-hooks/05-useMemo/UseMemoDemo.jsx',
+                component: <UseMemoDemo />,
+            },
+            {
+                id: 'use-callback',
+                title: 'useCallback (Function Cache)',
+                file: 'components/04-hooks/06-useCallback/UseCallbackDemo.jsx',
+                component: <UseCallbackDemo />,
+            },
+        ],
+    },
+    {
+        category: 'Projects',
+        items: [
+            {
+                id: 'todo-list',
+                title: 'Todo List Application',
+                file: '04-projects/03-react-apps/todo-list',
+                component: <TodoList />,
+            },
+        ],
+    },
+];
+
 export default function App() {
+    const [activeId, setActiveId] = useState('say-hello');
+
+    let currentItem = null;
+    let currentCategory = '';
+    for (const group of TOPICS) {
+        const found = group.items.find((item) => item.id === activeId);
+        if (found) {
+            currentItem = found;
+            currentCategory = group.category;
+            break;
+        }
+    }
+
     return (
-        <div className="app-container">
-            <h1>React Practice Gallery</h1>
+        <div className="app-shell">
+            {/* Clean Sidebar */}
+            <aside className="nav-sidebar">
+                <nav className="nav-tree">
+                    {TOPICS.map((group) => (
+                        <div key={group.category} className="nav-section">
+                            <div className="section-label">{group.category}</div>
+                            <ul className="section-list">
+                                {group.items.map((item) => {
+                                    const isSelected = activeId === item.id;
+                                    return (
+                                        <li key={item.id}>
+                                            <button
+                                                className={`nav-button ${isSelected ? 'active' : ''}`}
+                                                onClick={() => setActiveId(item.id)}
+                                            >
+                                                <span className="nav-label">{item.title}</span>
+                                            </button>
+                                        </li>
+                                    );
+                                })}
+                            </ul>
+                        </div>
+                    ))}
+                </nav>
+            </aside>
 
-            {/* React Basics & JSX */}
-            <div className="category-header">React Basics & JSX</div>
+            {/* Main Content Viewport */}
+            <main className="main-viewport">
+                <div className="focus-view">
+                    <header className="page-header">
+                        <div className="breadcrumb">
+                            <span>{currentCategory}</span>
+                            <span className="breadcrumb-separator">/</span>
+                            <span className="breadcrumb-current">{currentItem?.title}</span>
+                        </div>
+                        <div className="header-meta">
+                            <h1>{currentItem?.title}</h1>
+                            <code className="meta-path">{currentItem?.file}</code>
+                        </div>
+                    </header>
 
-            <section className="component-section">
-                <h2>Module Exports & Imports</h2>
-                <p>5 + 10 = {add(5, 10)}</p>
-                <p>5 * 10 = {multiply(5, 10)}</p>
-            </section>
-
-            <section className="component-section">
-                <h2>Basic Component & Variable Interpolation (SayHello)</h2>
-                <SayHello />
-            </section>
-
-            <section className="component-section">
-                <h2>Rendering Object Properties (CarsObject)</h2>
-                <CarsObject />
-            </section>
-
-            <section className="component-section">
-                <h2>Rendering Lists (CarsList)</h2>
-                <CarsList />
-            </section>
-
-            {/* Props & Component Communication */}
-            <div className="category-header">Props & Component Communication</div>
-
-            <section className="component-section">
-                <h2>Passing Props & Callbacks (UserProfile & Header)</h2>
-                <UserProfile />
-            </section>
-
-            {/* Events & Forms */}
-            <div className="category-header">Events & Forms</div>
-
-            <section className="component-section">
-                <h2>Event Handlers (Button)</h2>
-                <Button />
-            </section>
-
-            <section className="component-section">
-                <h2>Form Handling (Forms)</h2>
-                <Forms />
-            </section>
-
-            {/* React Hooks */}
-            <div className="category-header">React Hooks</div>
-
-            <section className="component-section">
-                <h2>useState: Basic Counter</h2>
-                <Counter />
-            </section>
-
-            <section className="component-section">
-                <h2>useState: Counter 2</h2>
-                <Counter2 />
-            </section>
-
-            <section className="component-section">
-                <h2>useState: Like Button</h2>
-                <LikeButton />
-            </section>
-
-            <section className="component-section">
-                <h2>useState: Ludo Board</h2>
-                <LudoBoard />
-            </section>
-
-            <section className="component-section">
-                <h2>useState: State Toggle Button (ToggleButton)</h2>
-                <ToggleButton />
-            </section>
-
-            <section className="component-section">
-                <h2>useState: API Data Fetching (Joke)</h2>
-                <Joke />
-            </section>
-
-            <section className="component-section">
-                <h2>useEffect: Timer</h2>
-                <Timer />
-            </section>
-
-            <section className="component-section">
-                <h2>useEffect: Live Clock (LiveClock)</h2>
-                <LiveClock />
-            </section>
-
-            <section className="component-section">
-                <h2>useContext: Global Context (UserContext & Child)</h2>
-                <UserContext.Provider value="Kaushal">
-                    <Child />
-                </UserContext.Provider>
-            </section>
-
-            <section className="component-section">
-                <h2>useRef: DOM Reference & Non-Rendering Ref</h2>
-                <UseRefDemo />
-            </section>
-
-            <section className="component-section">
-                <h2>useMemo: Caching Computation</h2>
-                <UseMemoDemo />
-            </section>
-
-            <section className="component-section">
-                <h2>useCallback: Caching Functions</h2>
-                <UseCallbackDemo />
-            </section>
-
-            {/* Practice Project */}
-            <div className="category-header">Practice Project</div>
-
-            <section className="component-section">
-                <h2>Todo List Application</h2>
-                <TodoList />
-            </section>
+                    <section className="preview-canvas">
+                        <div className="canvas-frame">{currentItem?.component}</div>
+                    </section>
+                </div>
+            </main>
         </div>
     );
 }
