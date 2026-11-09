@@ -36,6 +36,12 @@ import UseRefDemo from './components/04-hooks/04-useRef/UseRefDemo.jsx';
 import UseMemoDemo from './components/04-hooks/05-useMemo/UseMemoDemo.jsx';
 import UseCallbackDemo from './components/04-hooks/06-useCallback/UseCallbackDemo.jsx';
 
+// Routing & Single Page App
+import RouterDemo from './components/05-routing/RouterDemo.jsx';
+
+// Playground
+import Scratchpad from './components/playground/Scratchpad.jsx';
+
 // Practice Project
 import TodoList from '../../../../04-projects/03-react-apps/todo-list/src/components/TodoList.jsx';
 
@@ -55,12 +61,8 @@ const TOPICS = [
                 file: 'components/01-basics/ExportFunctions.jsx',
                 component: (
                     <div className="math-demo">
-                        <p>
-                            <code>add(5, 10)</code> &rarr; <strong>{add(5, 10)}</strong>
-                        </p>
-                        <p>
-                            <code>multiply(5, 10)</code> &rarr; <strong>{multiply(5, 10)}</strong>
-                        </p>
+                        <p><code>add(5, 10)</code> &rarr; <strong>{add(5, 10)}</strong></p>
+                        <p><code>multiply(5, 10)</code> &rarr; <strong>{multiply(5, 10)}</strong></p>
                     </div>
                 ),
             },
@@ -209,6 +211,28 @@ const TOPICS = [
         ],
     },
     {
+        category: 'Routing & Navigation',
+        items: [
+            {
+                id: 'react-router',
+                title: 'React Router (SPA Navigation)',
+                file: 'components/05-routing/RouterDemo.jsx',
+                component: <RouterDemo />,
+            },
+        ],
+    },
+    {
+        category: 'Playground',
+        items: [
+            {
+                id: 'scratchpad',
+                title: 'Sandbox Scratchpad',
+                file: 'components/playground/Scratchpad.jsx',
+                component: <Scratchpad />,
+            },
+        ],
+    },
+    {
         category: 'Projects',
         items: [
             {
@@ -237,7 +261,7 @@ export default function App() {
 
     return (
         <div className="app-shell">
-            {/* Clean Sidebar */}
+            {/* Sidebar */}
             <aside className="nav-sidebar">
                 <nav className="nav-tree">
                     {TOPICS.map((group) => (
@@ -279,7 +303,9 @@ export default function App() {
                     </header>
 
                     <section className="preview-canvas">
-                        <div className="canvas-frame">{currentItem?.component}</div>
+                        <div className="canvas-frame">
+                            {currentItem?.component}
+                        </div>
                     </section>
                 </div>
             </main>
