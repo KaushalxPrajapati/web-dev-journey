@@ -1,12 +1,26 @@
 .Product {
-    width: 250px;
-    background-color: whitesmoke;
-    border: 2px solid black;
-    border-radius: 12px;
+    width: 220px;
+    background-color: #ffffff;
+    border: 1px solid #e4e4e7;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
 
-    margin: 12px;
+.Product h3 {
+    font-size: 1.05rem;
+    color: #18181b;
+    margin-bottom: 6px;
+}
 
+.Product p {
+    font-size: 0.9rem;
+    color: #52525b;
+}
+
+.products-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
 }
