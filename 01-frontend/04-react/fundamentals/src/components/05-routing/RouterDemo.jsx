@@ -9,7 +9,7 @@ function RouterDemo() {
         // MemoryRouter keeps the history of your URL in memory (simulating a full browser router)
         <MemoryRouter initialEntries={['/']}>
             <div style={{ maxWidth: '520px' }}>
-                {/* 
+                {/*
                   Navigation Bar using <Link to="...">
                   Never use <a href="..."> in React! <Link> intercepts navigation and prevents full page reload.
                 */}
@@ -51,10 +51,17 @@ function RouterDemo() {
                     </Link>
                 </nav>
 
-                {/* 
+                {/*
                   <Routes> looks through all its children <Route> elements and renders the one that matches current URL
                 */}
-                <div style={{ padding: '16px', backgroundColor: '#fafafa', borderRadius: '8px', border: '1px solid #f4f4f5' }}>
+                <div
+                    style={{
+                        padding: '16px',
+                        backgroundColor: '#fafafa',
+                        borderRadius: '8px',
+                        border: '1px solid #f4f4f5',
+                    }}
+                >
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/about" element={<About />} />
