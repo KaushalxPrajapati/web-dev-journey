@@ -261,6 +261,7 @@ export default function App() {
                                             <button
                                                 className={`nav-button ${isSelected ? 'active' : ''}`}
                                                 onClick={() => setActiveId(item.id)}
+                                                title={item.title}
                                             >
                                                 <span className="nav-label">{item.title}</span>
                                             </button>

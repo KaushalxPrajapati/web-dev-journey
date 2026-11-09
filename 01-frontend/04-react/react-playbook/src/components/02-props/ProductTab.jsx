@@ -18,12 +18,12 @@ function ProductTab() {
     ];
 
     return (
-        <>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
             {/* Map over the info array and pass title and price as props */}
-            {info.map((item, i) => (
+            {info.map((item) => (
                 <Product key={item.title} title={item.title} price={item.price} />
             ))}
-        </>
+        </div>
     );
 }
 

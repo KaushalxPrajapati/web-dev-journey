@@ -3,10 +3,21 @@
     background-color: whitesmoke;
     border: 2px solid black;
     border-radius: 12px;
-
-    margin: 12px;
-
+    margin: 10px;
+    padding: 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 8px;
+}
+
+.Product h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.Product p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #333;
 }
