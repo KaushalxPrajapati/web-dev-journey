@@ -2,6 +2,7 @@ import './LudoBoard.css';
 import { useState } from 'react';
 
 export default function LudoBoard() {
+    // Complex state: an object with 4 counter properties
     const [moves, setMoves] = useState({
         blue: 0,
         yellow: 0,
@@ -9,73 +10,67 @@ export default function LudoBoard() {
         red: 0,
     });
 
+    // CRITICAL IMMUTABILITY RULE:
+    // Never mutate state directly (moves.blue += 1).
+    // React compares object references (prev === next). Direct mutation won't trigger re-render!
+    // Always use the spread operator {...prevMoves} to create a brand-new object.
     const updateBlue = () => {
-        setMoves((prevMoves) => {
-            return {
-                ...prevMoves,
-                blue: prevMoves.blue + 1,
-            };
-        });
+        setMoves((prevMoves) => ({
+            ...prevMoves,
+            blue: prevMoves.blue + 1,
+        }));
     };
 
     const updateYellow = () => {
-        setMoves((prevMoves) => {
-            return {
-                ...prevMoves,
-                yellow: prevMoves.yellow + 1,
-            };
-        });
+        setMoves((prevMoves) => ({
+            ...prevMoves,
+            yellow: prevMoves.yellow + 1,
+        }));
     };
 
     const updateGreen = () => {
-        setMoves((prevMoves) => {
-            return {
-                ...prevMoves,
-                green: prevMoves.green + 1,
-            };
-        });
+        setMoves((prevMoves) => ({
+            ...prevMoves,
+            green: prevMoves.green + 1,
+        }));
     };
 
     const updateRed = () => {
-        setMoves((prevMoves) => {
-            return {
-                ...prevMoves,
-                red: prevMoves.red + 1,
-            };
-        });
+        setMoves((prevMoves) => ({
+            ...prevMoves,
+            red: prevMoves.red + 1,
+        }));
     };
+
     return (
         <div className="container">
             <div className="row name-n-rules text-center">
-                <h1 className="display-5 fw-bold  border-bottom py-2">Ludo</h1>
+                <h1 className="display-5 fw-bold border-bottom py-2">Ludo Board</h1>
+                <p>Click any button below to update that token's score!</p>
             </div>
-
-            <div className="row text-center d-flex flex-column align-items-center ">
-                <div className="col-2 py-3">
-                    <p className="fw-bold py-2">Blue moves: {moves.blue}</p>
-                    <button className="btn btn-info px-3" onClick={updateBlue}>
-                        Roll
+            <div className="row justify-content-center text-center mt-4">
+                <div className="col-12 col-md-6 col-lg-3 my-2">
+                    <p className="fs-5">Blue moves = {moves.blue}</p>
+                    <button className="btn btn-primary" onClick={updateBlue}>
+                        +1 Blue
                     </button>
                 </div>
-
-                <div className="col-2 py-3">
-                    <p className="fw-bold py-2">Yellow moves: {moves.yellow} </p>
-                    <button className="btn btn-warning px-3" onClick={updateYellow}>
-                        Roll
+                <div className="col-12 col-md-6 col-lg-3 my-2">
+                    <p className="fs-5">Yellow moves = {moves.yellow}</p>
+                    <button className="btn btn-warning" onClick={updateYellow}>
+                        +1 Yellow
                     </button>
                 </div>
-
-                <div className="col-2 py-3">
-                    <p className="fw-bold py-2">Green moves: {moves.green}</p>
-                    <button className="btn btn-success px-3" onClick={updateGreen}>
-                        Roll
+                <div className="col-12 col-md-6 col-lg-3 my-2">
+                    <p className="fs-5">Green moves = {moves.green}</p>
+                    <button className="btn btn-success" onClick={updateGreen}>
+                        +1 Green
                     </button>
                 </div>
-
-                <div className="col-2 py-3">
-                    <p className="fw-bold py-2">Red moves: {moves.red}</p>
-                    <button className="btn btn-danger px-3" onClick={updateRed}>
-                        Roll
+                <div className="col-12 col-md-6 col-lg-3 my-2">
+                    <p className="fs-5">Red moves = {moves.red}</p>
+                    <button className="btn btn-danger" onClick={updateRed}>
+                        +1 Red
                     </button>
                 </div>
             </div>

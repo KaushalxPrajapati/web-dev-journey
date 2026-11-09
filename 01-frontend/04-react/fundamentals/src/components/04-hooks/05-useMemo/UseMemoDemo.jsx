@@ -1,9 +1,10 @@
 import { useState, useMemo } from 'react';
 
-// Artificial delay loop
+// Simulated expensive calculation function
 function slowCalculation(num) {
     console.log('Running slow calculation...');
-    for (let i = 0; i <= 1000000000; i++) {}
+    // Moderate loop: creates a noticeable pause (~100ms) without freezing browser
+    for (let i = 0; i <= 50000000; i++) {}
     return num * 2;
 }
 
@@ -11,48 +12,54 @@ export default function UseMemoDemo() {
     const [number, setNumber] = useState(0);
     const [darkTheme, setDarkTheme] = useState(false);
 
-    // Without useMemo, 'slowCalculation' would run EVERY single time the component re-renders.
-    // Even if we just clicked "Toggle Theme", it would freeze the app!
-    // With useMemo, it ONLY re-runs if 'number' changes.
+    // 💡 useMemo caches the return value of an expensive function.
+    // Without useMemo: toggling the theme would re-run `slowCalculation` and lag the UI!
+    // With useMemo: `slowCalculation` ONLY runs when `number` changes.
     const doubledNumber = useMemo(() => {
         return slowCalculation(number);
-    }, [number]); // Dependency array: only re-run when 'number' changes
+    }, [number]); // Dependency array: only re-compute when `number` changes
 
     const themeStyles = {
-        backgroundColor: darkTheme ? '#2c3e50' : '#ecf0f1',
-        color: darkTheme ? '#ecf0f1' : '#2c3e50',
+        backgroundColor: darkTheme ? '#18181b' : '#f4f4f5',
+        color: darkTheme ? '#fafafa' : '#18181b',
         padding: '20px',
         borderRadius: '8px',
-        maxWidth: '400px',
-        transition: 'all 0.3s ease',
+        maxWidth: '420px',
+        transition: 'all 0.2s ease',
     };
 
     return (
         <div style={themeStyles}>
-            <h2>useMemo Hook Demo</h2>
-            <p style={{ opacity: 0.8, marginBottom: '20px' }}>
-                useMemo caches the result of an expensive calculation so it doesn't slow down unrelated re-renders (like
-                theme toggling).
+            <h2 style={{ fontSize: '1.2rem', marginBottom: '8px' }}>useMemo Demo</h2>
+            <p style={{ opacity: 0.8, fontSize: '0.85rem', marginBottom: '16px' }}>
+                <code>useMemo</code> caches heavy computation results so unrelated re-renders (like theme toggle) stay fast.
             </p>
 
-            <div style={{ marginBottom: '15px' }}>
+            <div style={{ marginBottom: '14px' }}>
                 <input
                     type="number"
                     value={number}
                     onChange={(e) => setNumber(parseInt(e.target.value) || 0)}
-                    style={{ padding: '8px', width: '100px', marginRight: '10px' }}
+                    style={{ padding: '7px 10px', width: '90px', marginRight: '10px', borderRadius: '4px', border: '1px solid #d4d4d8' }}
                 />
                 <button
                     onClick={() => setDarkTheme((prevDark) => !prevDark)}
-                    style={{ padding: '8px 16px', cursor: 'pointer' }}
+                    style={{
+                        padding: '7px 14px',
+                        cursor: 'pointer',
+                        borderRadius: '4px',
+                        border: '1px solid #d4d4d8',
+                        background: darkTheme ? '#27272a' : '#ffffff',
+                        color: darkTheme ? '#ffffff' : '#000000',
+                    }}
                 >
                     Toggle Theme
                 </button>
             </div>
 
-            <div style={{ marginTop: '20px', padding: '10px', background: 'rgba(0,0,0,0.1)', borderRadius: '4px' }}>
-                <strong>Calculated Result: {doubledNumber}</strong>
-            </div>
+            <p style={{ fontSize: '0.95rem', fontWeight: 600 }}>
+                Doubled Value: {doubledNumber}
+            </p>
         </div>
     );
 }

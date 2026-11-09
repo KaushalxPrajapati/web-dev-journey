@@ -4,16 +4,23 @@ export default function LiveClock() {
     const [time, setTime] = useState(new Date().toLocaleTimeString());
 
     useEffect(() => {
-        const timerId = setTimeout(() => {
+        // Update current time string every 1 second
+        const timerId = setInterval(() => {
             setTime(new Date().toLocaleTimeString());
         }, 1000);
 
-        return () => clearTimeout(timerId);
-    }, [time]);
+        // Cleanup: stops interval when component unmounts
+        return () => {
+            clearInterval(timerId);
+        };
+    }, []); // Empty dependency array: run once on mount
 
     return (
         <div>
-            <p>Current Time: {time}</p>
+            <h2 style={{ fontSize: '1.4rem', color: '#18181b', marginBottom: '6px' }}>{time}</h2>
+            <p style={{ color: '#71717a', fontSize: '0.85rem' }}>
+                Live clock ticking via <code>setInterval</code> with cleanup.
+            </p>
         </div>
     );
 }

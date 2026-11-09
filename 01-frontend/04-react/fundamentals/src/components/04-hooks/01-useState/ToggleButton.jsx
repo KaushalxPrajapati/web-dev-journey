@@ -1,24 +1,30 @@
 import { useState } from 'react';
 
 export default function ToggleButton() {
-    const [state, setState] = useState(true);
+    // Boolean state representing ON (true) or OFF (false)
+    const [isOn, setIsOn] = useState(true);
 
-    const handleClick = () => {
-        setState(!state);
+    // Toggle handler using functional updater
+    const handleToggle = () => {
+        setIsOn((prevState) => !prevState);
     };
 
+    // Dynamic style object based on state
     const buttonStyle = {
-        backgroundColor: state ? 'green' : 'gray',
+        backgroundColor: isOn ? '#16a34a' : '#71717a',
         color: 'white',
-        padding: '10px 20px',
+        padding: '10px 22px',
         border: 'none',
-        borderRadius: '4px',
+        borderRadius: '6px',
         cursor: 'pointer',
+        fontWeight: 600,
+        fontSize: '0.95rem',
+        transition: 'background-color 0.15s ease',
     };
 
     return (
-        <button style={buttonStyle} onClick={handleClick}>
-            {state ? 'ON' : 'OFF'}
+        <button style={buttonStyle} onClick={handleToggle}>
+            {isOn ? 'ON' : 'OFF'}
         </button>
     );
 }
