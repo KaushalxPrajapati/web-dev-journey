@@ -2,60 +2,41 @@ import './TodoList.css';
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
+import TodoForm from './TodoForm';
+import TodoItem from './TodoItem';
+
 function TodoList() {
-    // State to store all todo items
-    // Each task: { task: string, id: string, isDone: boolean }
-    const [task, setTask] = useState([]);
+    // The full list of tasks
+    const [tasks, setTasks] = useState([]);
 
-    // State to store what user is typing in the input field
-    const [newTodo, setNewTodo] = useState('');
+    // Add a task
+    function addTask(text) {
+        if (!text.trim()) return; // skip empty
 
-    // Add a new task to the list
-    function addTask() {
-        if (newTodo.trim() === '') {
-            return; // Don't add empty tasks
-        }
-
-        const newTaskObject = {
-            task: newTodo,
-            id: uuidv4(), // Unique ID for each task
-            isDone: false, // New tasks start as not done
+        const newTask = {
+            task: text,
+            id: uuidv4(),
+            isDone: false,
         };
 
-        // Add new task to the list (immutable update)
-        setTask([...task, newTaskObject]);
-        setNewTodo(''); // Clear input field
+        setTasks([...tasks, newTask]);
     }
 
-    // Update input field as user types
-    function updateTask(event) {
-        setNewTodo(event.target.value);
-    }
-
-    // Prevent form from reloading the page
-    function handleSubmit(event) {
-        event.preventDefault();
-    }
-
-    // Toggle task between Done and Undone
-    function markDone(taskId) {
-        const updatedTasks = task.map((t) => {
-            if (t.id === taskId) {
-                return {
-                    ...t, // Copy all properties
-                    isDone: !t.isDone, // Toggle true ↔ false
-                };
+    // Mark done / undone
+    function toggleTask(id) {
+        const updated = tasks.map((t) => {
+            if (t.id === id) {
+                return { ...t, isDone: !t.isDone };
             }
-            return t; // Keep other tasks unchanged
+            return t;
         });
-
-        setTask(updatedTasks);
+        setTasks(updated);
     }
 
-    // Delete a task from the list
-    function removeTask(taskId) {
-        const updatedTasks = task.filter((t) => t.id !== taskId);
-        setTask(updatedTasks);
+    // Delete a task
+    function removeTask(id) {
+        const updated = tasks.filter((t) => t.id !== id);
+        setTasks(updated);
     }
 
     return (
@@ -66,63 +47,23 @@ function TodoList() {
                 </div>
             </div>
 
-            {/* Add New Task Form */}
-            <div className="row">
-                <form
-                    className="col-md-5 d-flex justify-content-center align-items-center my-4 px-0"
-                    onSubmit={handleSubmit}
-                >
-                    <input
-                        type="text"
-                        placeholder="Add a task..."
-                        className="form-control form-control-lg css-input"
-                        value={newTodo}
-                        onChange={updateTask}
-                        autoFocus
-                    />
-
-                    <button className="btn btn-success px-3 text-nowrap" type="submit" onClick={addTask}>
-                        Add Task
-                    </button>
-                </form>
+            {/* Form - we pass addTask down as a prop */}
+            <div className="row justify-content-center">
+                <TodoForm onAdd={addTask} />
             </div>
 
-            {/* Task List */}
-            <div className="row">
-                <div className="col">
-                    <ul>
-                        {task.map((t) => {
-                            // Dynamic class for completed tasks
-                            let liClassName = 'single-task';
-                            if (t.isDone === true) {
-                                liClassName += ' done';
-                            }
-
-                            // Conditional button styling & text
-                            let markDoneButtonClassName = t.isDone
-                                ? 'btn btn-success mx-4'
-                                : 'btn btn-outline-secondary mx-4';
-
-                            let markDoneButtonText = t.isDone ? 'Mark as Undone' : 'Mark as Done';
-
-                            return (
-                                <li key={t.id} className={liClassName}>
-                                    {/* Task Text - First letter capitalized */}
-                                    {t.task.charAt(0).toUpperCase() + t.task.slice(1)}
-
-                                    {/* Mark Done / Undone Button */}
-                                    <button className={markDoneButtonClassName} onClick={() => markDone(t.id)}>
-                                        {markDoneButtonText}
-                                    </button>
-
-                                    {/* Delete Button */}
-                                    <button className="btn btn-danger mx-4" onClick={() => removeTask(t.id)}>
-                                        Delete
-                                    </button>
-                                </li>
-                            );
-                        })}
-                    </ul>
+            {/* List - we pass tasks + both actions down as props */}
+            <div className="row justify-content-center">
+                <div className="col-md-5">
+                    {tasks.length === 0 ? (
+                        <p className="text-center text-muted mt-3">No tasks yet — add one above!</p>
+                    ) : (
+                        <ul className="list-unstyled">
+                            {tasks.map((t) => (
+                                <TodoItem key={t.id} todo={t} onToggle={toggleTask} onRemove={removeTask} />
+                            ))}
+                        </ul>
+                    )}
                 </div>
             </div>
         </div>

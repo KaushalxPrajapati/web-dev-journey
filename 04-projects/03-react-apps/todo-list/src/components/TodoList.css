@@ -76,3 +76,28 @@ li .btn.btn-danger {
 li:hover .btn.btn-danger {
     opacity: 1;
 }
+
+/* Make each task a flexbox row */
+.single-task {
+    display: flex;
+    justify-content: space-between; /* Puts text on left, buttons on right */
+    align-items: center; /* Vertically centers everything */
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+/* Make the completed task look crossed out and faded */
+.single-task.done .task-text {
+    text-decoration: line-through;
+    color: #888;
+}
+
+/* Keep the two buttons next to each other */
+.task-buttons {
+    display: flex;
+    gap: 8px; /* space between the buttons */
+}
