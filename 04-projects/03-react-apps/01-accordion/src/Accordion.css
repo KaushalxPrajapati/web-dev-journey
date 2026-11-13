@@ -1,0 +1,87 @@
+/* Main wrapper */
+.container {
+    max-width: 600px;
+    margin: 2rem auto;
+    font-family: sans-serif;
+    padding: 0 1rem;
+}
+
+/* Outer accordion box */
+.accordion {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+/* Individual item */
+.item {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Remove border from last item to avoid double line */
+.item:last-child {
+    border-bottom: none;
+}
+
+/* Clickable header (title + icon) */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    transition: background-color 0.2s ease;
+
+    /* FIXES: Stops text from highlighting white when clicked */
+    user-select: none;
+}
+
+.header:hover {
+    background-color: #eee;
+}
+
+/* Title */
+.title {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+    flex: 1;
+
+    /* FIXES: Forces away any weird background colors */
+    background-color: transparent !important;
+}
+
+/* Icon */
+.icon {
+    color: #555;
+    transition: transform 0.3s ease;
+}
+
+/* Rotate icon when open */
+.icon.open {
+    transform: rotate(180deg);
+}
+
+/* Content area */
+.content {
+    padding: 1rem;
+    background-color: #fff;
+    color: #555;
+    line-height: 1.5;
+    border-top: 1px solid #ddd;
+}
+
+/* Fallback when no data */
+.no-data {
+    padding: 1rem;
+    text-align: center;
+    color: #888;
+}
+
+/* FIXES: Removes default browser focus outlines */
+.title:focus,
+.header:focus {
+    outline: none;
+}
