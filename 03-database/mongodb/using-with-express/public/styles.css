@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+h1 {
+    padding: 10px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+
+    gap: 1rem;
+    padding: 1.25rem;
+}
+
+.chat-box {
+    width: 325px;
+    padding: 25px;
+    background-color: lightgrey;
+    border-radius: 14px;
+}
+
+.chat-info {
+    margin-bottom: 25px;
+}
+
+.form-btn-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+#new-chat-btn,
+.edit button,
+.delete button {
+    padding: 12px 24px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.edit button {
+    background-color: rgb(244, 166, 42);
+}
+
+.delete button {
+    background-color: rgb(250, 63, 25);
+}
+
+#new-chat-btn {
+    background-color: rgb(35, 210, 35);
+}
+
+.date-time {
+    text-align: center;
+    border-top: 1px solid rgba(128, 128, 128, 0.68);
+    margin-top: 25px;
+    padding-top: 20px;
+}
